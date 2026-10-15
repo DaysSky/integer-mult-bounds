@@ -2,8 +2,9 @@
 k by k sections (rank-3 frames through t).  The new sections must cover Need = R(t) n (left perps) minus (kept
 perps), and a release needs them to cover at least one line lying in exactly one kept perp (the forced memberships
 of lttri_rho5_minrel.py are such lines).  Feasible <=> some left set lets T(X) release.  k = 2 cross-checks the
-exhaustive lttri_leave2.py; k = 3 keeps a single triangle node.  usage: lttri_leavek.py k target_index ..."""
-import sys, json, itertools, collections
+exhaustive lttri_leave2.py; k = 3 keeps a single triangle node.  env MAXREL=1: maximise the number of release lines covered instead.
+usage: lttri_leavek.py k target_index ..."""
+import sys, os, json, itertools, collections
 from lgeo import *
 from ortools.sat.python import cp_model
 sol = [tuple(tuple(T) for T in node) for node in json.load(open('lttri_design_z11.json'))]
@@ -37,7 +38,13 @@ for xi in map(int, sys.argv[2:]):
         M = cp_model.CpModel(); x = [M.NewBoolVar('') for _ in frames]
         M.Add(sum(x) <= k)
         for s in bits(need): M.AddBoolOr([x[f] for f in range(len(frames)) if fperp[f] >> s & 1])
-        M.AddBoolOr([x[f] for f in range(len(frames)) if fperp[f] & rel])
+        if os.environ.get('MAXREL'):   # maximise the number of release-candidate lines covered
+            cov = []
+            for s in bits(rel):
+                c = M.NewBoolVar(''); cov.append(c)
+                M.AddBoolOr([x[f] for f in range(len(frames)) if fperp[f] >> s & 1] + [c.Not()])
+            M.Maximize(sum(cov))
+        else: M.AddBoolOr([x[f] for f in range(len(frames)) if fperp[f] & rel])
         sv = cp_model.CpSolver(); sv.parameters.max_time_in_seconds = 300; sv.parameters.num_workers = 4
-        st = sv.Solve(M); res.append((tuple(nodes_of[X][i] for i in left), pc(need), pc(rel), sv.StatusName(st)))
+        st = sv.Solve(M); res.append((tuple(nodes_of[X][i] for i in left), pc(need), pc(rel), sv.StatusName(st)) + ((sv.ObjectiveValue(), sv.BestObjectiveBound()) if os.environ.get('MAXREL') and st in (cp_model.OPTIMAL, cp_model.FEASIBLE) else ()))
     print('k', k, '| target', X, '| frames', len(frames), '| (left nodes, |Need|, |release cand|, status):', res, flush=True)

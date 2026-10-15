@@ -1755,3 +1755,16 @@
 - Releasing targets must leave >= 2 triangle nodes: lttri_remove.py MINLEFT=2 and lttri_leave2.py (frame pairs) test this.
 - lsrccell3.py (exact two-cell source coverage): STOPPED at its time limit (~50 min) with NO output (not even the P
   case).  Unrun obligation; the K-doubling loop likely needs a pruned / LP-bounded variant.  No conclusion drawn.
+- lttri_leave2.py, target (0,1,2), exhaustive over all 14945 rank-3 frames through t: for each of the 6 ways to leave
+  2 of its 4 triangle nodes, |Need| = 50 (rank 10) and the ONLY frame pair covering Need is the original pair; no
+  pair holds a release line.  => target (0,1,2) cannot release by leaving 2 nodes either.
+- lttri_remove.py K=2 MINLEFT=2 (releasing targets leave >= 2 nodes): best r = 96 (|S| = 130), CP-SAT bound 62 (300 s).
+  Counting: S-targets sit in <= 2 retained nodes and use >= 2 of the 3r removed slots, so 220 - r <= 3r/2, r >= 88.
+  So 88 <= r_min <= 96 -- moot if leaving 2 nodes cannot release (lttri_leave2.py / lttri_leavek.py).
+- Design symmetry: node set preserved by the 55 affine maps x -> ax+b (a in {1,3,4,5,9}) of Z11; targets fall into
+  3 orbits, reps (0,1,2), (0,1,3), (0,1,5) (indices 0, 1, 3) -- checking these covers all 165 targets.
+- lttri_leavek.py target (0,1,2): k=2 INFEASIBLE for all 6 left pairs (agrees with exhaustive lttri_leave2.py);
+  k=3 (keep ONE triangle node) FEASIBLE for all 4: three new frames cover Need (78 lines) and >= 1 of the 25 release
+  candidates.  Counting with releasers in <= 1 retained node: 2(220 - r) <= s <= r, so r >= 147 removed of 220
+  (if every retained node is to be zero-cost) -- the triangle design essentially dissolves.  Max release coverage:
+  MAXREL run.
