@@ -682,6 +682,14 @@ content.
       P(E) can read in-chain there from the triangle's pairwise-sum registers.  Choosing P(E)'s in-chain part as
       one of those combinations removes the P floor of 55, leaving the top at ~83-121.  The decisive layer is
       then the hub middle.
+  - **Rank-5 feeding test (`lttri_rho5local2.py`, `lttri_hublocal.py`):**
+    - The only possible rank-<=5 basis of a node span is {P_p + P_q, P_p + P_r, P_A + P_B + P_C}.
+    - Exhaustively, over own-A2 patterns, pivots and the 14,361 maximal rank-5 subsets, it is impossible at
+      node 0.  All 220 nodes are equivalent under M11, through a regular V4 action on the 4 parallel classes.
+    - The hub condition alone (two pairwise sums of rank <= 5) is satisfiable.  So the obstruction is the triple
+      sum, which contains P(E).
+    - With rank-5 pieces below the node, every triangle node costs >= 1, so T-part >= 220 and R >= 660.
+    - Exceptions: riders at the triple-sum stops (none found), or rank-6 stops (untested).
   - **Middle of a triangle node:**
     - Its good vectors, the pairwise sums, all lie in the hub M_n = A2(A) + A2(B) + A2(C) + 27 transversals
       (36 lines, rank 7).

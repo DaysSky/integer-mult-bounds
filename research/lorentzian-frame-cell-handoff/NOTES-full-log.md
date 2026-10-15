@@ -1642,3 +1642,13 @@
   {two pairwise sums, triple sum}; the general version with own-A2 flags and arbitrary rank-5 closed subsets is
   being checked locally: llp/lttri_rho5local.py.)
 - Faithful node-waste CP-SAT (RHO 7): 119 after 141 s.
+- GENERAL LOCAL RANK-5 TEST (llp/lttri_rho5local2.py, all delta patterns x pivots, candidate rank-5 closed subsets
+  from the 14,361 maximal ones of the node perp, CP-SAT per sub-problem): node 0 has NO configuration in which
+  {P_p+P_q, P_p+P_r, P_A+P_B+P_C} are all rank <= 5.  All 220 nodes are equivalent (the design is the S(4,5,11)
+  structure; M11's pair stabilizer acts on the 4 parallel classes of the derived AG(2,3) through Q8/{+-1} = V4,
+  regularly; the forced/free membership invariant is identical at all 220 nodes; nodes 1, 57, 130, 219 re-checked in
+  background).  The hub condition alone (two pairwise sums rank <= 5, llp/lttri_hublocal.py) IS satisfiable for
+  every delta pattern.  => The obstruction is the triple sum (contains P(E)): with rank-5 pieces below the node
+  (directly, or via rank-7 stops whose only register is the triple sum), every triangle node with three delivered
+  users costs >= 1 extra register; nodes with in-chain users cost >= 1 anyway.  T-part >= 220 -> R >= 660 for these
+  chains, unless riders exist at the triple-sum stops (not found) or rank-6 stops are used (not tested).
