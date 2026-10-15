@@ -1636,3 +1636,9 @@
   in-chain part is chosen as one of those combinations, the P in-chain floor (55) disappears: top waste ~ T-part
   (83-121) + P delivered single-user nodes (0 if their parts stay rank <= 7).  The decisive layer is then the
   triangle hub middle (kappa5(M_n) >= 3, pairwise sums must have rank-5-aligned XOR structure).
+- RHO-5 ALIGNMENT OF TRIANGLE NODES (llp/lttri_cpsat5.py, exact for its structure): with own-A2 = 0 at the node,
+  XOR of the three transversal sets empty and the pivot's two pairwise sums inside A2 + A2 + one slice (rank 5),
+  CP-SAT proves (OPTIMAL, 4 s) that NO triangle node can be aligned.  (Only possible rank-<=5 basis of S is
+  {two pairwise sums, triple sum}; the general version with own-A2 flags and arbitrary rank-5 closed subsets is
+  being checked locally: llp/lttri_rho5local.py.)
+- Faithful node-waste CP-SAT (RHO 7): 119 after 141 s.
