@@ -690,6 +690,7 @@ content.
       sum, which contains P(E).
     - With rank-5 pieces below the node, every triangle node costs >= 1, so T-part >= 220 and R >= 660.
     - Exceptions: riders at the triple-sum stops (none found), or rank-6 stops (untested).
+    - Re-checked at nodes 1, 57, 130 and 219: all infeasible.
   - **Middle of a triangle node:**
     - Its good vectors, the pairwise sums, all lie in the hub M_n = A2(A) + A2(B) + A2(C) + 27 transversals
       (36 lines, rank 7).

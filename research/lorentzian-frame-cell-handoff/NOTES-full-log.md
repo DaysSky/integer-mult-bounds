@@ -1652,3 +1652,8 @@
   (directly, or via rank-7 stops whose only register is the triple sum), every triangle node with three delivered
   users costs >= 1 extra register; nodes with in-chain users cost >= 1 anyway.  T-part >= 220 -> R >= 660 for these
   chains, unless riders exist at the triple-sum stops (not found) or rank-6 stops are used (not tested).
+- Re-check (llp/lttri_rho5local2.py) at nodes 1, 57, 130, 219: all infeasible as node 0 (consistent with M11
+  transitivity).  Faithful node-waste CP-SAT (RHO 7, lttri_cpsat3): 114 after 707 s.
+- With riders: the P(E) T-node {P(E),T(B1),T(B2),T(B3)} registers stop at the hub M_n of the triangle of P(E)'s
+  chosen class (55 of 220 hubs), which can relax the hub span condition there; the failing triple-sum stop has no
+  rider source found.  Estimated T-part >= ~165-220 including the middle -> no gain from the M11 triangle family.
