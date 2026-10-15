@@ -1319,3 +1319,24 @@
   lines: 147 A3s need >= 294 P-incidences > 220).  Z11 design CP-SAT (llp/lr8design.py, 84,205 frame orbits:
   sizes 3: 59,360, 4: 21,755, 5: 1,890, 6: 1,200) running: each line in exactly 4 used frames + every orthogonal pair
   covered.
+- RANK-8 SECTIONS, refined requirement: full consistency is NOT needed.  Delivered parts are per-target registers
+  (free subsets of their section perps, partitioning R(t) with the in-chain part); only each target's single in-chain
+  part must be a combination of delivered co-users' parts on that section (simplest: identical to one co-user b's
+  delivered part, A_in(t) = A_F(b) within F-perp, F containing t and b).  Registers = 660 deliveries -> R = 440.
+  Middle (the crux): each section node F-perp with k delivered users needs k inputs (zero waste) whose span contains
+  the k parts; inputs from rank-5 mids carry <= 20 lines; per line u >= ~97 delivered parts contain u, reachable by
+  fan-out 6 cell registers -> ~24 at rank 3 -> ~50 at rank 5 -> ~150 parts (counting OK); exact GF(2) content with
+  every target's 4 parts summing to R(t) is the open problem (needs algebraic structure, as R420's D4 quads).
+- EXCLUSIVE PARTS OF ALL EXACT UNION COVERS (llp/lexcl_union.py): P: all 252 covers (= good frames) have NO section
+  whose exclusive part fits a proper rank-8 node -> P lines cannot be covered by 3 perps of rank-3 frames (rigorous:
+  such a 3-cover refines an exact 3-section union cover {t,a_i}-perp and needs each exclusive part inside one rank-8
+  node).  T: the 420 (PT-disj)^3 covers (not good frames: {T, 3 disjoint P lines}) have ALL THREE exclusive parts
+  inside proper rank-8 nodes (kappa_ex = 1!); the 420 good frames and 280 TT* covers have none.  So T lines may admit
+  3-covers by rank-8 nodes (3 sections, kappa = 1, 2 deliveries per T target) - CP-SAT check running.
+- PROVEN (llp/lr3cover_exact.py, exhaustive): NO line has R(t) covered by 3 perps of rank-3 frames through t
+  (= 3 rank-8 nodes).  Reduction: every rank-3 frame F through t contains a line a with {t,a} a 2-line plane, so
+  F-perp lies in the pair section {t,a}-perp; a 3-cover refines an exact 3-section pair cover (covers3.pkl: P 252,
+  T 1120) with nodes N_i = S_i & x-perp containing the exclusive parts.  P: no cover has any exclusive part inside a
+  node; T: 11,340 node triples from the 420 (PT-disj)^3 covers, none covers R(t).  Consequences: rank-8-section tops
+  need >= 4 sections per target; sources whose first mixing is at rank >= 3 (no cells) need >= 4 branches (unless
+  targets read x_u at rank <= 2).  (lr3cover.py CP-SAT: P case UNKNOWN at 600 s - superseded.)
