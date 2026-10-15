@@ -1736,3 +1736,11 @@
   sections of every target are triangles.  A released membership therefore forces that target to trade one of its 4
   triangle sections for a non-triangle section (it then sits in only 3 triangle nodes, and its multiplicity-1 set
   changes).  The min-release numbers are a per-node local demand, not yet a design cost.
+- OBJ=users (minimise 100*#releasing users + #releases), node 0, all sub-problems OPTIMAL: best 208 = 2 users, 8 releases.
+  => a zero-cost (rank-5 fed, no extra register) triangle node of this design needs >= 2 of its 3 users releasing.
+  One releasing user is never enough (proven: every sub-problem's optimum >= 208).
+- Counting consequence, within modifications of THIS M11 design (users not in S keep their 4 triangle nodes, so
+  their forced sets are unchanged; local problem is M11-invariant): remove r triangle nodes, their <= 3r users form S,
+  each S-user sits in 3 retained nodes => zero-cost retained nodes Z <= 9r/2; all-zero-cost needs 220 - r <= 9r/2,
+  r >= 40 (120 targets on non-triangle sections, 120 new non-triangle sections).  Each retained node still pays >= 1
+  unless Z covers it.  Cost of the new non-triangle sections not yet evaluated -> open, not dead.

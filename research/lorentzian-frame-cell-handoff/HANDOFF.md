@@ -853,6 +853,17 @@ break-even once all layers are counted.  The items below are the remaining looph
          forced) is FEASIBLE for 7 of the 8 own-A2 patterns.  So the obstruction lives entirely in the
          coverage-forced transversal memberships.  A mixed design must cover some of those transversals at other
          (non-triangle) nodes; `code/llp/lttri_rho5_minrel.py` computes the minimum number to release.
+       - **Min-release (`lttri_rho5_minrel.py`, node 0, every sub-problem solved to optimality):** at least 8 of the
+         54 coverage-forced memberships must be released, and at least 2 of the 3 users must release (OBJ=users
+         optimum 208 = 2 users + 8 lines).  A transversal T(x,y,z) (x in A) lies in a triangle node's perp iff that
+         node splits {y,z}, so a multiplicity-1 transversal lies in no other triangle node of T(A).  Every target
+         already sits in exactly 4 triangle nodes, so each releasing user must trade one triangle section for a
+         non-triangle section.
+       - **Counting (modifications of this design):** removing r triangle nodes creates <= 3r releasing targets,
+         each in 3 retained nodes, so at most 9r/2 retained nodes can be zero-cost; all zero-cost needs r >= 40,
+         i.e. 120 non-triangle sections.  Their price is NOT yet evaluated.  This is the concrete next test
+         for (c'): design ~40 removed nodes' replacement sections and price them against the >= 1 register per
+         retained node they save.
      - (d) **Varying-part piece design (the only zero-waste shape left).**
        - At each node, the users' parts are XOR combinations of a few rank-5 pieces.  The DISTINCT parts must span
          exactly the arriving pieces (m = d).  Equal parts are served by copies.
