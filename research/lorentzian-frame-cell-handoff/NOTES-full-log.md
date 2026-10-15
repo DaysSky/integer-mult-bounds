@@ -1302,3 +1302,20 @@
   First-frame layer: >= 25,296 / 26,070 incidences covered (240 s, not optimal).  => weak routability alone does not
   help: unstructured systems fail at kappa / node sharing.  Next: structured frames {t, opp_X(t), a, opp_Y(a)} from
   the 27-block A3 packing (A3-perp node shared by the block's 3 opposite-pair sections) - llp/lroute_a3.py running.
+- STRUCTURED A3-OPPOSITE FRAMES (llp/lroute_a3.py: block lines of the 27-block A3 packing must take a frame containing
+  their A3-opposite, so A3-perp nodes are shared by the block's 3 opposite-pair sections): only 3-13 frame options per
+  block line; weak routability stuck at U ~ 1,700-2,150 (good / all covers).  Structure vs routability tension (as Z11).
+- CELL-FREE SOURCES (first mixing at rank-3 frames, chain 1 -> 3 -> 5 -> 8): break-even ~688 vs 656 with cells, but
+  reach needs R(u) covered by the perps of u's first frames: min cover of R(u) by perps of rank-3 frames through u is
+  4 for P and T (CP-SAT found 4; proof of 'no 3-cover' running, llp/lr3cover.py).  Argument: each such perp lies in a
+  plane section through u, so 3 of them must refine a 3-section union cover whose exclusive parts have full closure
+  (no rank-8 node holds them) - proven for frame/defect-1 triples, CP-SAT check pending for the other covers.
+- RANK-8 FRAME SECTIONS (new top class): sections F-perp for rank-3 frames F through t (users = lines of F, 3-6);
+  R(t) union-covered by 4 such perps (exists); 1 in-chain (target chain 0 -> F0-perp (8) -> t-perp), 3 delivered
+  with DISTINCT parts; in-chain parts read as combinations of the section's delivered outputs -> every cell-stage
+  register is a delivery, no copies: R = 440 in counting.  Prices (price/price_r8sec.py), R = 440: cells + middle
+  stops (3,5): +13.5%, break-even 662; cells (5): +16.9% / 710; cells (3): +19.7% / 746; no cell (3,5): +16.0% / 698.
+  (Matches the earlier inch2v +19.7..23.4% at R = 2v.)  All-A3 version impossible by counting (each A3 has >= 2 P
+  lines: 147 A3s need >= 294 P-incidences > 220).  Z11 design CP-SAT (llp/lr8design.py, 84,205 frame orbits:
+  sizes 3: 59,360, 4: 21,755, 5: 1,890, 6: 1,200) running: each line in exactly 4 used frames + every orthogonal pair
+  covered.
