@@ -1551,3 +1551,10 @@
   stops (closure sharing, kappa5) as found per design.
 - Anneals with MID=1 FAITH=1 on the shareable pool (seed 41, random start) and the flex pool (seed 42, from flex MIP)
   launched (60 min).
+- *** The T-triangle design IS the Steiner system S(4,5,11) (M11) ***: in lttri_design_z11.json every pair E has
+  exactly 4 nodes; their 12 triples form an affine plane AG(2,3) (S(2,3,9)) on the 9 other points, the 4 nodes being
+  its 4 parallel classes; the 66 sets E u T are the blocks of S(4,5,11) (all 330 four-sets covered exactly once).
+  Closed form: triangle nodes = parallel classes of the derived affine planes of S(4,5,11) at each pair (55 x 4 =
+  220).  Automorphism group M11 (order 7,920).  (Triangle tops still cost >= 1 per node: proven above.)
+  The P-line cover type ({P(ab)} + A2(B_i) for a parallel class {B_1,B_2,B_3} + {P(ab),T(B_1),T(B_2),T(B_3)}) uses
+  the same derived planes: M11 is the natural symmetry for any further Lorentzian top design.

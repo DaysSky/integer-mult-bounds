@@ -630,6 +630,10 @@ content.
 - **Construction:** a Z11-symmetric CP-SAT finds, in 5 s, 220 nodes with every triple in exactly 4 nodes, each
   triple's nodes forming a valid cover.
 - **Geometric check:** all 165 T lines are covered, each with overlap exactly 33, the proven minimum.
+- **Closed form (checked):** this is the Steiner system S(4,5,11).  For each pair E, the 12 triples T with E u T a
+  block form the affine plane AG(2,3) on the other 9 points.  The 4 nodes over E are its 4 parallel classes:
+  55 x 4 = 220 nodes, invariant under M11 (order 7,920).  The best P cover type uses the same derived planes, so
+  M11 is the natural symmetry for further Lorentzian top designs.
 - So all 660 T uses sit on 220 nodes used by all their users.  Pool searches needed ~780 or more.
 - **Forced contents at a node:** T(A) receives f_A = A2(B) + A2(C) + P(E) there, a rank-5 set.
   - Own A2(A): received once (odd) over its 4 nodes.
