@@ -870,6 +870,16 @@ break-even once all layers are counted.  The items below are the remaining looph
          perp.  A replacement section must contain them, so its frame IS the old frame, and it holds no transversal
          released at another node.  So the r = 40 configuration is dead; releasing targets must leave >= 2 triangle
          nodes (`lttri_remove.py` with MINLEFT=2, `lttri_leave2.py` for which frame pairs can replace two nodes).
+       - **Leaving two nodes cannot release either (proven, exhaustive):** over all 14,945 rank-3 frames through
+         T(X), for every pair of left nodes the only frame pair covering the 50 needed lines is the original pair.
+         Checked for the 3 target-orbit representatives of the design's 55-element affine symmetry group
+         (x -> ax+b, a in {1,3,4,5,9}), so it holds for all 165 targets.  `lttri_leavek.py` (CP-SAT) agrees.
+       - **Leaving three nodes CAN release** (`lttri_leavek.py 3 0`: feasible for all 4 choices).  But then each
+         releasing target sits in only one retained triangle node.  Counting: zero-cost retained nodes <= r/2, so
+         the triangle lower bound only falls from 220 to 220 - 1.5r, while 3r non-triangle sections appear.  Full
+         zero cost needs r >= 147 of 220, so the triangle design essentially dissolves.  **Verdict for (c'):**
+         mixed covers built from this triangle design pay >= 1 register per retained node except through
+         near-total replacement.  This is no longer a triangle-family idea; it is the general design problem.
      - (d) **Varying-part piece design (the only zero-waste shape left).**
        - At each node, the users' parts are XOR combinations of a few rank-5 pieces.  The DISTINCT parts must span
          exactly the arriving pieces (m = d).  Equal parts are served by copies.

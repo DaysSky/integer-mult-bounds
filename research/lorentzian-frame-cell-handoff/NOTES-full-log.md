@@ -1768,3 +1768,10 @@
   candidates.  Counting with releasers in <= 1 retained node: 2(220 - r) <= s <= r, so r >= 147 removed of 220
   (if every retained node is to be zero-cost) -- the triangle design essentially dissolves.  Max release coverage:
   MAXREL run.
+- lttri_leave2.py on the other orbit reps (0,1,3), (0,1,5): identical -- for every left pair, the only covering frame
+  pair is the original one; no release.  With the 55-element symmetry: PROVEN for all 165 targets that leaving 2
+  nodes cannot release.  With lttri_needrank (leave 1): a target releases at a retained triangle node ONLY if it
+  leaves 3 of its 4 triangle nodes.
+- Accounting in this modification family: releasers keep exactly 1 triangle node, s <= r, zero-cost retained nodes
+  Z <= s/2 <= r/2, so the triangle lower bound drops from 220 to >= 220 - 1.5 r while 3r non-triangle sections are
+  created (each removed node lowers the bound by <= 1.5 and adds 3 new sections of unknown cost).
