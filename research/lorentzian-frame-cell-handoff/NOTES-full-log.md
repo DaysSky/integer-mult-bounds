@@ -1380,3 +1380,34 @@
 - I11 RANK-8 COVER POOL (llp/lr8covers.py, vectorised greedy seeded from every frame with perp >= 40): ~1,640 covers per
   P line, ~630 per T line (Z11 rotations of the 20 orbit reps).  Exact hosting annealer (llp/lr8host_sa.py, targeted
   'co-user adopts the shared frame' moves, CP-SAT exact hosting per step ~0.2 s): started 17:38.
+- I11 hosting structure at 75 hosted (llp/lr8host_anal.py): riders per host 1/2/3 = 44/14/1; 4 hosts are themselves
+  hosted (E8: 0); host _|_ rider 26, not 49; hosting frames mostly A3 (62 of 75; 6-user sections).  The E8 v/2 cap
+  mechanism does not hold strictly in I11.
+- I11 rank-8 LEFTOVER PROBLEM (lr8host_anal.py on the 82-hosted OPTIMAL selection): 794 used sections, 414 of them have
+  exactly one delivered user (each +1 assembly leftover, conservative) -> R ~ 440 + U + L ~ 990.  Hosting-only
+  objective is the wrong target.  New objective cost = U + L (lr8host_sa2.py, exact hosting layer): SA from random
+  covers ~1000 -> ~930 in 3 min (slow; single-target moves cannot create shared frames).
+- Z11-symmetric pool CP-SAT relaxation (llp/lr8poolmip.py: choose cover + in-chain frame per orbit rep; hosted = in-
+  chain frame delivered by some co-user; single = frame orbit with exactly one delivered user; no exact part identity):
+  U + L = 506 at 52 s, 484 at 97 s (still improving).  Break-even needs U + L <= ~222 (R <= 662).
+- EXHAUSTIVE 4-covers (llp/lr8allcovers.py): frames through t: P 11,515 in 24 Stab(t)-orbits, T 14,945 in 29 orbits;
+  exact enumeration of covers per orbit representative running.
+- Conservative Z11 pool MIP (all single-delivered sections cost 1): U+L 429 at 165 s (stopped; superseded).
+- LEFTOVER RULE CORRECTED (cost model above: "a single spanning needer needs 2 arrivals"): a section costs an assembly
+  leftover only if its ONLY delivered user's part spans the rank-8 node.  Exclusive parts of pool covers: P rank 5-7
+  (never 8), T rank 5-8 (rank 8 in ~13%).  A rank-7 exclusive part stays non-spanning iff every multiply-covered line
+  assigned to it lies in span(ex) (exact).
+- SPANNING-AWARE Z11 pool MIP (llp/lr8poolmip2.py, relaxation: hosting = co-user delivers the in-chain frame, no part
+  identity; leftover only for forced rank-8 exclusive parts): OPTIMAL 0 in 228 s (every rep hosted, no leftover).
+- EXACT checks of MIP2 designs:
+  - non-equivariant exact layer (llp/lr8exact2.py, 300 s FEASIBLE) on an early MIP2 snapshot: hosted 119, U 101,
+    spanning leftovers L 4 -> U + L = 105, R ~ 545.
+  - Z11-equivariant exact layer (llp/lr8z11.py, OPTIMAL) on the final MIP2 design: 9 of 20 rep orbits hosted, L 0 ->
+    U + L = 121, R ~ 561.
+- Price with the extras as full delivered pieces (realistic; dead-empty pricing is optimistic): U+L = 0 +13.5%,
+  50 +8.4%, 105 +3.2%, 150 -0.7%, 200 -4.7% (cells, mids 3,5); cell-free 3,5: 105 +5.6%, 150 +1.6%.
+  Break-even U + L ~ 140 (cells) / ~170 (cell-free).  => rank-8 sections now have a COUNTING-MODEL margin of ~+3%
+  (exact hosting/leftovers; middle layer, reach and word NOT yet built).
+- EXHAUSTIVE 4-covers per P line (llp/lr8allcovers.py): 65,170 (greedy pool had ~1,640).  Frame orbits that occur in
+  covers (Stab(t)-orbit size: covers containing rep): A3 36:2520, 84:925, 252:70, 252:10, 280:19, 378:25, 378:25,
+  504:10, 756:10, 1260:3, 1260:25; the other 13 frame orbits occur in NO 4-cover.
