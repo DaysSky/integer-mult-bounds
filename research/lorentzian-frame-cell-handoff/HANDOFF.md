@@ -16,6 +16,14 @@ architectural potential improvement suffices.
 - A complete, independently verified Lorentzian frame-cell word exists (R = 11,494), but it is about 20x the cell
   floor.
 - The realistic outlook from all constructions so far is negative (heuristic, not proven).
+- Session 3 (rank-8 frame sections, section 3c):
+  - **Top counting:** R = 572-583.
+  - **Proven node and middle walls for the examined families:**
+    - per-design R >= 1,001-1,133;
+    - triangle tops R >= 660;
+    - >= 260 nodes in any design.
+  - **New structure:** the M11 / S(4,5,11) triangle design gives perfect T sharing.
+  - **Remaining shape:** varying-part piece designs aligned at every level.
 
 ## 1. Setup and conventions
 
