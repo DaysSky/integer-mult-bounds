@@ -1514,3 +1514,7 @@
   => identical parts + copies: R >= 440 + #nodes with m_F >= 2 (avg part ~30 lines -> m_F >= 2 nearly always)
   ~ 700 -> (cells,3,5) with copies ~ +0.8% at N = 260 even with a FREE lower middle: at best break-even.
   Varying parts (d_F = m_F) keep the +13.5% counting potential but need an aligned lower middle.
+- Correction: "identical parts -> R >= ~700" is an ESTIMATE (assumes m_F >= 2 at all >= 260 nodes).  Rigorous
+  incidence bound: each use beyond 20 lines needs extra pieces; with <= 6 users per node, waste >= (26,070 - 880*20)
+  / 120 ~ 71 -> R >= ~511 (rank-5 subsets <= 20 lines: verified in the 6 largest T node types: max lines in rank-k
+  closed subsets 1/3/6/12/20; (5,37,8) node 1/3/6/11/17).

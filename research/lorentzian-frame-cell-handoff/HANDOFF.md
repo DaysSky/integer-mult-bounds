@@ -613,8 +613,12 @@ content.
 - Node type = (frame lines, perp size, usable P users, usable T users).  P has 11 node-type cover classes, T 60.
 - Every node of a type serves at most its usable users of each kind.  Merging types by key is a relaxation.
 - Result: **any rank-8-section design needs >= 260 distinct nodes.**
-- So identical parts + copies give R >= ~700, which is break-even at best even with a free lower middle.  Only
-  varying-part designs with an aligned middle keep the +13.5% counting potential.
+- Consequence for identical parts + copies (R = 440 + sum of (m_F - 1)):
+  - **Estimate:** R ~ 700 if every node needs m_F >= 2 pieces (average part ~30 lines).  That is break-even at best,
+    even with a free lower middle.
+  - **Rigorous (incidence count):** only R >= ~511.  This uses rank-5 subsets of <= 20 lines, verified for the six
+    largest T node types (`lclosed.py`).
+- Only varying-part designs with an aligned middle keep the +13.5% counting potential.
 
 **Natural hub family (not yet used).**
 - For a coordinate set S, L(S) = {P(ij), T(ijk) inside S} has rank |S| and C(|S|,2) + C(|S|,3) lines:
