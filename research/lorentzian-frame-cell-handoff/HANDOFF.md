@@ -743,9 +743,12 @@ content.
   - >= 260 nodes in any design;
   - the T rank-capacity lemma;
   - the per-design middle bounds R >= 1,001-1,133.
-- **Heuristic:** every concrete design family evaluated so far failed by >= ~200 registers, against a margin of
-  ~145-190.  That covers greedy, flex, shareable and identical-parts designs.  The M11 triangle design is being
-  re-optimised after the retraction.
+- **Heuristic:** every concrete design family evaluated failed by >= ~200 registers, against a margin of ~145-190.
+  That covers greedy, flex, shareable and identical-parts designs.
+- **The M11 triangle design**, re-examined after the retraction:
+  - node waste 114-121 under RHO = 7;
+  - with rank-5 feeding, every node costs >= 1 because of the triple-sum obstruction, so R >= 660 (local
+    exhaustive test, all nodes M11-equivalent).
 - **Observed trade-off:**
   - A sharing-maximal design (`lr8tshare.py`, 528 nodes) has node waste 462, so R ~ 902.
   - The cover-driven f0 has node waste 143 but 429 isolated rank-7 closures.
