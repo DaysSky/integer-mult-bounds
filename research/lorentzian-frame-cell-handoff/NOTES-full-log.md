@@ -1558,3 +1558,13 @@
   220).  Automorphism group M11 (order 7,920).  (Triangle tops still cost >= 1 per node: proven above.)
   The P-line cover type ({P(ab)} + A2(B_i) for a parallel class {B_1,B_2,B_3} + {P(ab),T(B_1),T(B_2),T(B_3)}) uses
   the same derived planes: M11 is the natural symmetry for any further Lorentzian top design.
+- RANK CAPACITY LEMMA (T, proven): a set of lines of rank <= r contains at most c(r) of the 84 lines T(x,y,z)
+  (x in abc, {y,z} in D) of R(T(abc)), c(5) = 12, c(6) = 20, c(7) = 30.  Proof: W = span; projecting onto
+  span{e_x, f} gives s = #x used independent images, so dim W = s + dim(W cap D-coords) >= s + max_x (r_x - 1)
+  where r_x = rank of the edge vectors e_y + e_z of x's edges; a graph with edge-vector rank r has <= e(r) =
+  max(C(r,2), floor((r+1)^2/4)) edges (rank = #vertices - #bipartite components): e = 1,2,4,6,10,15,21 for r = 1..7.
+  rank <= 6: s=1 -> 15, s=2 -> 2 e(5) = 20, s=3 -> 3 e(4) = 18.  => four parts of rank <= 6 hold <= 80 < 84 of
+  these lines (odd-cover semantics too): EVERY T line has a part of rank >= 7 in any 4-section design.  Such a part
+  sits either at a rank-8 node as rank 7 (its rank-7 stop needs a shared closure, >= kappa5 registers) or is
+  full-rank at its node (needs the sum structure; impossible for triangle nodes).  P analogue (84 lines T(xyz)
+  inside the 9-set; conjectured max C(r,3): 20 at rank 6) being checked exhaustively (llp/lrankcap.py).
