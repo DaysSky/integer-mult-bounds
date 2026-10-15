@@ -464,6 +464,19 @@ content.
     triples covers R(t).
   - Consequences: rank-8-section tops need >= 4 sections; sources without cells need >= 4 branches.
 
+**E8 analogue: 4-covers by rank-5 flats** (`code/e8r5/`).
+- All E8 4-covers of R(t) by rank-5 flats are (D5, D5, D5, A5): three A3-perps plus a single-user A5.  There are
+  5,040 per target.  All exclusive parts span their flats, so the A5 costs one assembly leftover per target.
+- Locally any two users of an A3 can get identical parts.  But the **exact** hosting layer (consistent assignment of
+  multiply-covered lines) hosts only **53-58 of 120** targets.  Annealing on the exact objective did not improve
+  this, which suggests a structural cap near v/2.
+- Realistic E8 price (rank-3 middle stop, reach-compliant):
+  - all hosted: R = 360, +1.5%;
+  - 30 unhosted: -2.1%;
+  - 60 unhosted: -5.4%.
+- So the E8 version is <= ~1.5% even in the ideal case.  This corrects the earlier +7.4% figure, which used a
+  different chain model and no A5 leftovers.
+
 **Assessment (end of session 2).**
 - **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  Both top classes have positive
   *ideal* potential:
