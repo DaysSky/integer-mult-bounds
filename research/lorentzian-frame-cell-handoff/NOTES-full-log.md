@@ -1565,6 +1565,8 @@
   max(C(r,2), floor((r+1)^2/4)) edges (rank = #vertices - #bipartite components): e = 1,2,4,6,10,15,21 for r = 1..7.
   rank <= 6: s=1 -> 15, s=2 -> 2 e(5) = 20, s=3 -> 3 e(4) = 18.  => four parts of rank <= 6 hold <= 80 < 84 of
   these lines (odd-cover semantics too): EVERY T line has a part of rank >= 7 in any 4-section design.  Such a part
-  sits either at a rank-8 node as rank 7 (its rank-7 stop needs a shared closure, >= kappa5 registers) or is
-  full-rank at its node (needs the sum structure; impossible for triangle nodes).  P analogue (84 lines T(xyz)
+  is (a) delivered with rank 7 at a rank-8 node (its rank-7 stop needs a shared closure, >= kappa5 registers), or
+  (b) full-rank at its node (needs the sum structure; impossible for triangle nodes), or (c) the line's IN-CHAIN
+  part, hosted as a GF(2) sum of co-users' delivered parts (no own register) -- (c) escapes the lemma's force, so
+  the lemma alone gives no waste bound.  P analogue (84 lines T(xyz)
   inside the 9-set; conjectured max C(r,3): 20 at rank 6) being checked exhaustively (llp/lrankcap.py).

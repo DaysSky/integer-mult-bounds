@@ -650,6 +650,16 @@ content.
 - **P lines:** their best fully P-shareable cover type is A3({a, b, c, d}) + 2 lone A2(B) + P(ab) + a mixed A3.  Its
   lone A2 + P nodes are not used by their A2 members.  A role-aware P design is next.
 
+**Rank capacity lemma (proven for T; P being checked, `lrankcap.py`).**
+- A set of lines of rank <= 6 contains at most 20 of the 84 lines T(x, y, z) of R(T(abc)).  At rank <= 5 the
+  maximum is 12, at rank <= 7 it is 30.
+- Proof: projection onto the x- and f-coordinates, plus edge-vector ranks of graphs.
+- So every T line has a part of rank >= 7.  That part is one of:
+  - a rank-7 delivered part at a rank-8 node, whose closure must be shared;
+  - a full-rank part, which needs a sum structure;
+  - the line's in-chain part, hosted by co-users' delivered parts.
+- The third case escapes, so this gives no waste bound on its own.
+
 **Natural hub family (not yet used).**
 - For a coordinate set S, L(S) = {P(ij), T(ijk) inside S} has rank |S| and C(|S|,2) + C(|S|,3) lines:
   - 4 lines at |S| = 3;
