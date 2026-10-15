@@ -1340,3 +1340,9 @@
   node; T: 11,340 node triples from the 420 (PT-disj)^3 covers, none covers R(t).  Consequences: rank-8-section tops
   need >= 4 sections per target; sources whose first mixing is at rank >= 3 (no cells) need >= 4 branches (unless
   targets read x_u at rank <= 2).  (lr3cover.py CP-SAT: P case UNKNOWN at 600 s - superseded.)
+- RANK-8 SECTIONS, overhead sensitivity (cells, stops 3,5): extra dead empties: R 480 +10.9%, 520 +8.3%, 560 +5.8%,
+  600 +3.5%, 640 +1.3%, 660 +0.2%.  In-chain parts NOT spanned by co-users' delivered parts need their own full piece
+  (dies at the node): 55 -> +8.1%, 110 -> +3.2%, 220 -> -5.4%.  Matching-based symmetric T frames {T, P_x, P_y}
+  (perfect matching of the other 8 points) never cover R(T) (32 lines always missed).  Zero waste needs, at every
+  section node F-perp, exactly (#delivered users of F) <= 6 inputs (registers that reach F-perp can only be delivered
+  to users of F), each carrying <= 20 lines (rank-5 mids).
