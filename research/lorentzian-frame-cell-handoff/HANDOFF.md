@@ -706,6 +706,20 @@ content.
 - **New structure:** the M11 / S(4,5,11) triangle design gives every T line a perfectly shared 4-cover.  Any further
   attempt should use M11 symmetry.  Next candidates: node types with 4 usable T users, (6,42,0,4) and (5,37,1,4).
 
+**Session-3 reproduction commands** (run in `code/llp/`; times on 4 cores).
+- `python3 lr8allcovers.py P` / `T`: exhaustive rank-8 4-covers per Stab(t) orbit representative (3 / 16 min).
+- `python3 lr7refine.py P|T`: no perp-closed rank-7 4-covers (seconds).
+- `python3 lr8exactcov.py`: no disjoint 4-covers (1 min).
+- `python3 lr8usable.py`; `python3 lr8covtypes.py`: usable users, cover-type census, LP >= 259.7 nodes (2-5 min).
+- `python3 lttri_design.py 600 z11`; `python3 lttri_check.py lttri_design_z11.json`: the M11 triangle design (5 s).
+- `python3 lttri_cost.py lttri_design_z11.json 7 1`: triangle node cost.
+- Exact layer and costs for a Z11 design:
+  - `FAITH=1 python3 <mkdet> sel.json det.json`, where mkdet calls `lr8z11.solve(want=True)`;
+  - then `python3 lr8nodecost.py det.json 7 [5]` and `python3 lr8midlb.py det.json`.
+  - Pools are chosen by env `POOL`: `r8covers.pkl`, `r8flex.pkl` (`lr8flexpool.py`), `r8share.pkl`
+    (`lr8sharepool.py`).
+- `python3 lrankcap.py 6` (env `KINDS`): exhaustive rank-capacity check (long).
+
 **Overarching insight (session 3).**
 - All open classes (rank-8 sections, frame union, A3/TT*) hit the same wall: **hub alignment**.
 - **Zero waste** needs, at every frame of the network, the span of arriving contents to equal the span of needed
