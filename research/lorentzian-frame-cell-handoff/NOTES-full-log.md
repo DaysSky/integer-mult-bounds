@@ -1346,3 +1346,14 @@
   (perfect matching of the other 8 points) never cover R(T) (32 lines always missed).  Zero waste needs, at every
   section node F-perp, exactly (#delivered users of F) <= 6 inputs (registers that reach F-perp can only be delivered
   to users of F), each carrying <= 20 lines (rank-5 mids).
+- RANK-8 MIDDLE MODEL (spec for the exact layer, not yet built).  Given: top (4 section frames per target, in-chain
+  choice), delivered parts A_b(F) per (delivered user, section) and in-chain parts in their span; source cells =
+  3 pair cells per line from an exact union cover (reach rank 2: pair sections cover R(u)).
+  Registers: 660 = one per (line, cell) branch.  Path of register r: cell c(r) (2) -> first frame F'(r) = span(c, y)
+  (rank 3) -> mid M(r) (rank 5, F' inside M) -> section node N(r) = F-perp (rank 8, M inside F-perp) -> delivered to a
+  user b of F with b's part.  Nesting needs c(r) inside F-perp, i.e. both lines of the cell _|_ every line of F.
+  Mixing: at every node (cell, F', M, F-perp) the registers present undergo an invertible GF(2) map; content-in-frame
+  at each level.  Zero waste: at section node F-perp, #registers = #delivered users of F, outputs = their parts.
+  Necessary checks first: per section node, span{A_b} has a basis of rank-<=5-supported vectors (lr8midcheck.py);
+  per mid, its outputs (one per section node it feeds) must be supported in M (<= 20 lines); per line u, its <= 6
+  cell registers must fan out to every delivered part containing u (reach, fan-out counts OK on average).
