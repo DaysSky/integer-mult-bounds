@@ -1674,3 +1674,14 @@
   The I11 analogue of this template (orthogonal 4-frames, 330 cells) is the known 3.5v = 770 bound; beating P111
   needs <= ~3.7 registers per line, i.e. MORE efficient than R420's own 4.5 -- the rank-8 4-section ideal (3 per
   line) is, but needs the alignment R420 buys with its extra registers.
+- SOURCE SIDE OF THE R = 440 COUNT (transpose of the rank-8 top; llp/lsrccell.py, exhaustive): with R420-style
+  orthogonal-pair cells carrying 3 registers each, 660 registers force every line u into exactly 2 cells {u,f1},
+  {u,f2}; the 4 registers carrying x_u at the cell level (x_u, x_u+x_f per cell) first stop at frames containing
+  their cell, and by the reach lemma their perps must cover R(u) (minus targets reading x_u at rank <= 2).  NO
+  4-cover of R(u) (P: 0 / 3,642, T: 0 / 13,101 representative covers) splits into two pairs through common
+  orthogonal partners f1 != f2.  Higher-rank first hubs refine to rank-3 frames containing the cell (rank >= 5 has
+  reach <= 25, 4 x 25 < 115), so this holds for any hub ranks.  Best two-cell coverage found (top-60 frame pairs per
+  cell): P 105 / 129 (24 uncovered), T 99 / 115 (16 uncovered); exact maximum being computed (llp/lsrccell3.py).
+  Targets can read at most ~2 lines each at rank <= 2 (440 reads in total) against ~16-24 per source needed
+  (3,500+): if the exact minimum uncovered is >= 3 per source on average, R420-style cell sources cannot support
+  R = 440.  Untested: A2 cells, cells with other register contents.
