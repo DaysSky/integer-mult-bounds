@@ -1,4 +1,4 @@
-"""(env OBJ=users: minimise 100*#releasing users + #releases.)  MIN-RELEASE probe: the minimum number of coverage-forced (multiplicity-1) transversal memberships that must be
+"""(env RELA2=1: A2(other) lines are releasable memberships too.)  (env OBJ=users: minimise 100*#releasing users + #releases.)  MIN-RELEASE probe: the minimum number of coverage-forced (multiplicity-1) transversal memberships that must be
 released (covered elsewhere, as in a mixed design) for the node to admit a rank-5 basis.  Released = forced line set to 0.
 RELAX may still contain pe / a2.  Original header of lttri_rho5_relax.py follows.
   env RELAX (comma list) frees, per user:
@@ -47,7 +47,10 @@ for ni in map(int, sys.argv[1:]):
                 f = set(A2(others[0]) + A2(others[1]))
                 for s in lines:
                     if s == Ln('P', E): part[(u, s)] = pe[u] if 'pe' in RELAX else 1
-                    elif s in f: part[(u, s)] = M.NewBoolVar('') if 'a2' in RELAX else 1
+                    elif s in f:
+                        if os.environ.get('RELA2'):   # A2(other) memberships releasable too, counted as releases
+                            v = M.NewBoolVar(''); part[(u, s)] = v; rel.append(v); relu[u].append(v)
+                        else: part[(u, s)] = M.NewBoolVar('') if 'a2' in RELAX else 1
                     elif KIND[s] == 'P' and s in A2(X): part[(u, s)] = dl[u]
                     elif s in trans:
                         pair = tuple(sorted(x for x in SUPP[s] if x not in X))
