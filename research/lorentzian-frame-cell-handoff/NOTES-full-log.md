@@ -1570,3 +1570,14 @@
   part, hosted as a GF(2) sum of co-users' delivered parts (no own register) -- (c) escapes the lemma's force, so
   the lemma alone gives no waste bound.  P analogue (84 lines T(xyz)
   inside the 9-set; conjectured max C(r,3): 20 at rank 6) being checked exhaustively (llp/lrankcap.py).
+- 4-T-user node (6,42,0,4): frame {T(h,x,y) : xy an edge of a 4-cycle on 4 points} + the two diagonals P(..) (e.g.
+  P03 P14 T012 T024 T123 T234: hub 2, cycle 0-1-3-4-0; T012 - T234 = P03 + P14, T024 - T123 = P03 - P14), rank 3,
+  perp 42, rank 8; usable by its 4 T lines (not by the diagonals).  Other 4-T-user type: (5,37,1,4)
+  {P01, T023, T123, T045, T145}.  Sharing-maximising Z11 design over covers whose nodes all have >= 3 usable T
+  users (llp/lr8tshare.py) running.
+- SHARING vs NODE-RANK TRADE-OFF (observed): sharing-maximal Z11 design over covers whose nodes all have >= 3 usable
+  users of the line's kind (llp/lr8tshare.py, 400 sampled covers per rep, CP-SAT 600 s): 528 nodes (bound 275)
+  but exact layer (FAITH=1) node cost 462 at RHO 7 (R = 902; 946-968 with rank-7 nodes fed at rank 5), midlb 121.
+  Compare the cover-driven f0: node cost 143 (R 583) but 429 isolated rank-7 closures.  Shared nodes force
+  full-rank parts (as proven for triangles); unshared nodes isolate closures.  Both ends exceed the margin
+  (break-even X ~ 145-190).

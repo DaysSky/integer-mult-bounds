@@ -689,6 +689,10 @@ content.
   - the per-design middle bounds R >= 1,001-1,133.
 - **Heuristic:** every concrete design family failed by >= ~200 registers, against a margin of ~145-190.  That
   covers greedy, flex, shareable and identical-parts designs, and the M11 triangle design.
+- **Observed trade-off:**
+  - A sharing-maximal design (`lr8tshare.py`, 528 nodes) has node waste 462, so R ~ 902.
+  - The cover-driven f0 has node waste 143 but 429 isolated rank-7 closures.
+  - Sharing forces full-rank parts; not sharing isolates closures.
 - **The wall is hub alignment.**  At every frame the arriving span must equal the needed span, with copies free.  It
   first bites at the rank-7 stops: closure sharing of rank-7 parts, kappa5.
 - **New structure:** the M11 / S(4,5,11) triangle design gives every T line a perfectly shared 4-cover.  Any further
