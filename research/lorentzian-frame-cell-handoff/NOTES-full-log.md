@@ -1724,3 +1724,15 @@
 - RELAX=pe,a2 (P(E) optional AND A2(other) lines free; multiplicity-1 transversals forced): NONE feasible
   (every sub-problem INFEASIBLE or pruned; UNKNOWN would have been listed).  => A2/P(E) freedom does not help;
   the forced transversal fibres alone carry the obstruction.
+
+## Min-release (lttri_rho5_minrel.py, RELAX=pe, node 0) -- all sub-problems solved to OPTIMAL
+- 54 coverage-forced (user, transversal) memberships at the node (multiplicity-1 pairs, summed over 3 users).
+- min #released over (delta, pivot): 8 (delta 000 any pivot; 001/p2; 010/p1; 100/p0); others 10-12; delta 111 pruned (dead).
+- Geometry: T(xyz).T(abc) = |xyz n abc| - 1, so a transversal T(x,y,z) (x in A) lies in the perp of a triangle node
+  {T(A),T(B'),T(C')} iff {y,z} is split by B',C'.  Multiplicity 1 => no other triangle node of T(A) contains it.
+  So every released membership must be covered by a NON-triangle section of that target: mixed design needed,
+  >= 8 such (target, line) memberships per triangle node (if every node is to be rank-5 zero-cost).
+- Design census (lttri_design_z11.json): 220 nodes, 165 targets, every target in exactly 4 triangle nodes, so ALL 4
+  sections of every target are triangles.  A released membership therefore forces that target to trade one of its 4
+  triangle sections for a non-triangle section (it then sits in only 3 triangle nodes, and its multiplicity-1 set
+  changes).  The min-release numbers are a per-node local demand, not yet a design cost.

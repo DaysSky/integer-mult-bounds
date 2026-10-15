@@ -1,4 +1,4 @@
-"""MIN-RELEASE probe: the minimum number of coverage-forced (multiplicity-1) transversal memberships that must be
+"""(env OBJ=users: minimise 100*#releasing users + #releases.)  MIN-RELEASE probe: the minimum number of coverage-forced (multiplicity-1) transversal memberships that must be
 released (covered elsewhere, as in a mixed design) for the node to admit a rank-5 basis.  Released = forced line set to 0.
 RELAX may still contain pe / a2.  Original header of lttri_rho5_relax.py follows.
   env RELAX (comma list) frees, per user:
@@ -40,7 +40,7 @@ for ni in map(int, sys.argv[1:]):
         for p in range(3):
             q, r = [x for x in range(3) if x != p]
             M = cp_model.CpModel()
-            part = {}; rel = []
+            part = {}; rel = []; relu = {0: [], 1: [], 2: []}
             pe = [M.NewBoolVar('') for _ in range(3)]   # P(E) optional per user (mixed covers)
             for u, X in enumerate(users):
                 others = [T for T in users if T != X]
@@ -52,7 +52,7 @@ for ni in map(int, sys.argv[1:]):
                     elif s in trans:
                         pair = tuple(sorted(x for x in SUPP[s] if x not in X))
                         if mult(X, pair) == 1:
-                            v = M.NewBoolVar(''); part[(u, s)] = v; rel.append(v)
+                            v = M.NewBoolVar(''); part[(u, s)] = v; rel.append(v); relu[u].append(v)
                         else: part[(u, s)] = M.NewBoolVar('')
                     else: part[(u, s)] = 0
             def xr(vals):
@@ -74,7 +74,12 @@ for ni in map(int, sys.argv[1:]):
                         if Q >> s & 1 or isinstance(v, int): continue
                         M.AddImplication(c, v.Not())
             if dead: continue
-            M.Minimize(len(rel) - sum(rel))
+            if os.environ.get('OBJ') == 'users':   # minimise #users with >= 1 release, then #releases
+                ru = [M.NewBoolVar('') for _ in range(3)]
+                for u in range(3):
+                    for v in relu[u]: M.AddImplication(v.Not(), ru[u])
+                M.Minimize(100 * sum(ru) + len(rel) - sum(rel))
+            else: M.Minimize(len(rel) - sum(rel))
             sv = cp_model.CpSolver(); sv.parameters.max_time_in_seconds = float(os.environ.get("TL", "60")); sv.parameters.num_workers = 4
             st = sv.Solve(M)
             if st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
