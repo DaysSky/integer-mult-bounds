@@ -781,8 +781,9 @@ content.
   - No such cover exists (P 0 / 3,642, T 0 / 13,101 representative covers).
   - The argument extends to hubs of any rank.
 - Without target reads at rank <= 2, the best coverage found leaves 24 (P) and 16 (T) lines uncovered (top-60
-  heuristic).  Targets can read only ~2 lines each at rank <= 2.  The exact computation (`lsrccell3.py`) is
-  pending.
+  heuristic).  Targets can read only ~2 lines each at rank <= 2.  The exact computation (`lsrccell3.py`) did NOT
+  finish: it was stopped at its ~50-minute limit with no output (not even the P case).  So the 24/16 figures remain
+  heuristic; an exact version needs a pruned or LP-bounded pair search.
 - General cells: the budget forces 220 sum registers plus 440 single ones.  The weak per-line conditions are
   satisfiable, so the general source side is a design problem mirroring the top.
 

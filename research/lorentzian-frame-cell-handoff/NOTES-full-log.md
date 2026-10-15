@@ -1753,3 +1753,5 @@
   n0-perp, F' = n0's frame, and it holds no transversal released elsewhere (those are split only by their own node).
   => PROVEN: a target that leaves exactly ONE triangle node cannot release anything.  The r = 40 configuration is dead.
 - Releasing targets must leave >= 2 triangle nodes: lttri_remove.py MINLEFT=2 and lttri_leave2.py (frame pairs) test this.
+- lsrccell3.py (exact two-cell source coverage): STOPPED at its time limit (~50 min) with NO output (not even the P
+  case).  Unrun obligation; the K-doubling loop likely needs a pruned / LP-bounded variant.  No conclusion drawn.
