@@ -82,5 +82,16 @@ sv = cp_model.CpSolver(); sv.parameters.max_time_in_seconds = TL; sv.parameters.
 st = sv.Solve(M)
 log('status', sv.StatusName(st))
 if st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-    json.dump({'c': {'%d,%s' % (k[0], hex(k[1])): sv.Value(v) for k, v in C.items()},
-               'p': {'%d,%s,%d' % (k[0], hex(k[1]), k[2]): sv.Value(v) for k, v in P.items()}}, open('lr8parts_sol.json', 'w'))
+    out = {}
+    for F in used:
+        d = {}
+        for b in bits(F):
+            if (b, F) and canon(b, F) in C and sv.Value(C[canon(b, F)]) == 0:
+                A = 0
+                for u in bits(pm(F)):
+                    key = canon(b, F, u)
+                    if key in P and sv.Value(P[key]): A |= 1 << u
+                d[str(b)] = hex(A)
+        out[hex(F)] = d
+    json.dump(out, open('lr8parts_sol.json', 'w'))
+    log('saved delivered parts per section')
