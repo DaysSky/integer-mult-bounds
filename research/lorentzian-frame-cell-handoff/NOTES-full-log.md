@@ -1534,3 +1534,13 @@
 - P lines: best fully-P-shareable cover type ((4,42)^2,(6,47),(6,56)): A3({a,b,c,d}) + two lone A2(B_i)+P(ab) + mixed
   A3 A2({a,b,e}) u {T(x,c,d)}: lone A2+P nodes are not used by their A2 members in this type -> ~110 single-user
   nodes unless covers mix roles.  Next: role-aware P design (analogue of the triangle design).
+- PROVEN: T-TRIANGLE TOPS COST >= 1 EXTRA REGISTER PER NODE (any chain; node inputs have rank <= 7).
+  (i) A user T(A) at node (A,B,C) can receive crossing pairs only from B x C (9 per node); it needs all 28 pairs of
+  D_A over its 4 nodes, so it must receive transversals at EVERY node (3 nodes give <= 27 < 28).
+  (ii) A part with transversals contains f_A (span A2(B),A2(C),P(E): rank 5) plus full A-fibres (A2(A) directions,
+  2) plus a T direction (1): rank 8 = the whole node.  The sum of the three parts contains A2(A)+A2(B)+A2(C)+P(E)
+  (rank 7) plus transversals: rank 8.  So in span{P_A,P_B,P_C} the only vectors of rank <= 7 are pairwise sums,
+  which span at most dim - 1.  Cases (3 distinct / 2 identical / all identical parts) all give m >= d + 1.
+  => waste >= 1 at each of the 220 nodes -> R >= 440 + 220 = 660 > every rank-8 break-even (max X ~ 190).
+  The triangle design is a perfect-sharing top but NOT a viable word top.  (llp/lttri_cost.py: explicit assignment
+  gives 380 extra at RHO 7 with a naive in-chain choice.)

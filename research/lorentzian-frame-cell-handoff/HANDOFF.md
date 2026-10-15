@@ -635,8 +635,14 @@ content.
   - Own A2(A): received once (odd) over its 4 nodes.
   - Transversal-type T lines (84 per T line): received an odd number of times.
   - Because P(E) is needed by all three users, an in-chain user can be hosted only by an identical delivered part.
-- **Open:** do the node parts (f plus transversal slices, at most 9 transversals per rank-5 piece) admit <= 3
-  rank-5 pieces per node?  Then the aligned middle.
+- **proven: >= 1 extra register per triangle node, for any chain.**  Node inputs always have rank <= 7.
+  - A user receives crossing pairs only from B x C, 9 per node, and needs all 28.  So it must take transversals at
+    every one of its 4 nodes, since 3 nodes give only 27.
+  - A part with transversals has rank 8.  In span{P_A, P_B, P_C} only the pairwise sums have rank <= 7, and they
+    span at most dim - 1.
+  - Hence R >= 440 + 220 = 660, beyond every rank-8 break-even (largest X ~ 190).
+  - The design is a perfect-sharing top but not a viable word top (`lttri_cost.py` gives 380 extra with a naive
+    in-chain choice).
 - **P lines:** their best fully P-shareable cover type is A3({a, b, c, d}) + 2 lone A2(B) + P(ab) + a mixed A3.  Its
   lone A2 + P nodes are not used by their A2 members.  A role-aware P design is next.
 
