@@ -1703,3 +1703,7 @@
   obstruction -- but its PRICE kills it (code/price/price_t11.py): at the 4-section count R = 2v = 330 every
   realistic shape is -33% to -37%; even with NO middle stops (impossible) R = 330 gives -11.6%, R = 250 -4.2%,
   R = 165 +4.5% (would need R < ~200 = 1.2v).  T_11 is verifiably uncompetitive (pricing bound).
+- Larger system check (pricer): I_{13,1} (v 364, h 13) at the 4-section count R = 2v = 728 with rank-10 nodes:
+  (cells,3,5) +14.9% (break-even X ~ 270 = 0.74 per target), (cells,3,6) +14.1%, (cells,3,5,7) +10.1% (~0.47 per
+  target).  I_{11,1}: +13.5% (0.66 per target).  Rank-10 nodes are 5 ranks above the rank-5 stop, so I13 likely needs
+  the extra stop -> no easier than I11.
