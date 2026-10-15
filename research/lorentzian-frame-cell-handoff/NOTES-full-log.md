@@ -1373,3 +1373,7 @@
   (span their sections) -> A5 single-user leftover is unavoidable.  Realistic E8 price (deliveries 360 + U,
   120 A5 leftovers, rank-3 middle stop, unhosted targets fully delivered): U = 0 -> R 360 +1.5%; U 30 -> -2.1%;
   U 60 -> -5.4% (no-middle shape +6.5% at U = 0 is reach-infeasible).  => E8 4-cover potential <= ~1.5%.
+- E8 hosting structure (best selection, 58 hosted): host relations 58; hosts are NOT A3-opposites mostly (8 orthogonal,
+  50 not); hosts serving 1 / 2 / 3 riders: 49 / 3 / 1; NO host is itself hosted.  If general, hosted <= v - #hosts
+  ~ v/2 (one rider per host) -> E8 4-cover U >= ~60 -> loses.  Same mechanism may cap I11 rank-8 hosting at ~v/2
+  (U ~ 110 -> R ~ 550, ~+3% before other overheads).  To test on I11 (lr8host_sa.py on frame-seeded covers).
