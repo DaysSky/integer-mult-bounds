@@ -1357,3 +1357,19 @@
   Necessary checks first: per section node, span{A_b} has a basis of rank-<=5-supported vectors (lr8midcheck.py);
   per mid, its outputs (one per section node it feeds) must be supported in M (<= 20 lines); per line u, its <= 6
   cell registers must fan out to every delivered part containing u (reach, fan-out counts OK on average).
+- I11 strict rank-8 design (llp/lr8design.py, Z11, every line in exactly 4 used frames): 1500 s FEASIBLE but only
+  1804 / 2370 rep (t,u) pairs covered (264 frames: 231 x 3-line, 22 x A3, 11 x 5-line); not a design; undecided.
+- E8 4-COVER ARCHITECTURE (earlier this session, e8lean notes): all 4-covers of R(t) by rank-5 flats are
+  (D5, D5, D5, A5) = perps of three A3s through t (pairwise meeting only in t) + Z = t x A2 (A5 single-user ->
+  1 assembly leftover per target).  5,040 covers per target (re-derived: e8r5/e8cov2.py, mapped by reflections).
+  Registers 3 deliveries + 1 leftover per target = 480 -> R = 360 IF every in-chain (pre-reader) part rides free
+  on co-users' delivered parts; otherwise R ~ 480.  Price at R = 360 (cells -> 3 -> D5 node -> t-perp): +7.4%
+  (also the earlier exact 1.86135e-3).  The free-riding question was never resolved -> decisive test now.
+- E8 FREE-RIDING TEST (scratchpad e8r5/): locally every pair of users of an A3 can get identical parts on X-perp
+  (791 achievable parts per user, sizes 15-20).  Globally: a cover selection with a potential host for all 120
+  targets exists (annealer e8host_sa.py), but the EXACT parts layer (e8parts.py: multiply-covered lines assigned once
+  per target, host delivered with identical part) hosts only 53-58 of 120 (OPTIMAL for those selections); exact-
+  objective annealing running.  Exclusive parts: D5 parts 15 lines, A5 part 12 lines, all of closure rank 5
+  (span their sections) -> A5 single-user leftover is unavoidable.  Realistic E8 price (deliveries 360 + U,
+  120 A5 leftovers, rank-3 middle stop, unhosted targets fully delivered): U = 0 -> R 360 +1.5%; U 30 -> -2.1%;
+  U 60 -> -5.4% (no-middle shape +6.5% at U = 0 is reach-infeasible).  => E8 4-cover potential <= ~1.5%.
