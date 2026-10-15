@@ -8,7 +8,8 @@ cover AND the rotated assignment (equivariant).  Exact layer (CP-SAT, solved to 
     assigned line outside span(ex) when rank(ex) = 7 (exact); rank(ex) <= 6: outside-span assignment counted
     spanning, conservative).
 Cost = #unhosted targets + #leftovers = 11 * (orbit counts); R ~ 440 + cost.
-usage: lr8z11.py init.json|random seed minutes  -> lr8z11_<seed>.json {rep: cover index}"""
+usage: lr8z11.py init.json|random seed minutes  -> lr8z11_<seed>.json {rep: cover index}
+env XOR=1: in-chain part may be any GF(2) combination of delivered co-user parts on the section (default: identical to one)"""
 import sys, json, pickle, random, time, math, collections
 from lgeo import *
 from ortools.sat.python import cp_model
@@ -28,6 +29,9 @@ for s in range(V):
     for k in range(n): orb[x] = (len(reps) - 1, k); x = rot[x]
 NR = len(reps)
 cov = pickle.load(open('r8covers.pkl', 'rb'))
+import os
+XOR = int(os.environ.get('XOR', '0'))
+FAITH = int(os.environ.get('FAITH', '0'))  # 2: also +1 for an unhosted spanning in-chain part; 1: cost = unhosted + every DELIVERED part spanning rank 8 (rank-7 last middle stop; lr8nodecost)   # 1: hosted iff in-chain part = GF(2) sum of delivered co-user parts
 PM = {}
 def pmc(F):
     if F not in PM: PM[F] = pm(F)
@@ -43,7 +47,7 @@ def excl(ri, c):
             out.append((P[i], ex, rx, outside))
         EXC[key] = out
     return EXC[key]
-def solve(sel, TL=10.0, workers=1, want=False):
+def solve(sel, TL=10.0, workers=1, want=False, force=None, only=None):
     M = cp_model.CpModel(); A = {}
     secs = [list(cov[reps[ri]][sel[ri]]) for ri in range(NR)]
     info = [excl(ri, sel[ri]) for ri in range(NR)]
@@ -78,6 +82,36 @@ def solve(sel, TL=10.0, workers=1, want=False):
     hosted = []
     for ri in range(NR):
         r = reps[ri]; opts = []
+        if XOR:
+            for i, F in enumerate(secs[ri]):
+                P = pmc(F)
+                co = [(b, secidx(b, F)) for b in bits(F) if b != r]; co = [(b, sj) for b, sj in co if sj is not None]
+                if not co: continue
+                h = M.NewBoolVar(''); M.AddImplication(h, cin[(ri, i)])
+                zs = []
+                for b, (o, j) in co:
+                    z = M.NewBoolVar(''); M.AddImplication(z, h); M.AddImplication(z, cin[(o, j)].Not()); zs.append((z, b, j))
+                for u in bits(P):
+                    a = A.get((ri, i, u), False)
+                    ws = []
+                    for z, b, j in zs:
+                        c = Av(b, j, u)
+                        if c is False: continue
+                        if c is True: ws.append(z)
+                        else:
+                            w = M.NewBoolVar(''); M.AddBoolAnd([z, c]).OnlyEnforceIf(w); M.AddBoolOr([z.Not(), c.Not(), w]); ws.append(w)
+                    av = 1 if a is True else (0 if a is False else a)
+                    if not ws:
+                        if a is True: M.Add(h == 0)
+                        elif a is not False: M.AddImplication(h, a.Not())
+                        continue
+                    k = M.NewIntVar(0, (len(ws) + 1) // 2 + 1, '')
+                    M.Add(av + sum(ws) == 2 * k).OnlyEnforceIf(h)
+                opts.append(h)
+            hv = M.NewBoolVar(''); hosted.append(hv)
+            if opts: M.AddBoolOr(opts + [hv.Not()])
+            else: M.Add(hv == 0)
+            continue
         for i, F in enumerate(secs[ri]):
             P = pmc(F)
             for b in bits(F):
@@ -104,6 +138,31 @@ def solve(sel, TL=10.0, workers=1, want=False):
         hv = M.NewBoolVar(''); hosted.append(hv)
         if opts: M.AddBoolOr(opts + [hv.Not()])
         else: M.Add(hv == 0)
+    if FAITH:
+        singles = []
+        for ri in range(NR):
+            for i in range(4):
+                sp = SPN[(ri, i)]
+                if sp is False: continue
+                s = M.NewBoolVar(''); singles.append(s)
+                M.Add(s >= (1 if sp is True else sp) - cin[(ri, i)])
+                # unhosted in-chain part spanning rank 8 needs two registers
+                if FAITH >= 2:
+                    s2 = M.NewBoolVar(''); singles.append(s2)
+                    M.Add(s2 >= (1 if sp is True else sp) + cin[(ri, i)] - 1 - hosted[ri])
+        M.Minimize(NR - sum(hosted) + sum(singles))
+        if force is not None: M.Add(hosted[force] == 1)
+        if only is not None: return M, hosted, cin, A
+        sv = cp_model.CpSolver(); sv.parameters.max_time_in_seconds = TL; sv.parameters.num_workers = workers
+        st = sv.Solve(M)
+        if st not in (cp_model.OPTIMAL, cp_model.FEASIBLE): return 10 ** 6, None
+        val = int(round(sv.ObjectiveValue())); det = None
+        if want:
+            det = {'status': sv.StatusName(st), 'bound': sv.BestObjectiveBound(),
+                   'hosted': [sv.Value(h) for h in hosted], 'L': sum(sv.Value(s) for s in singles),
+                   'cin': [[sv.Value(cin[(ri, i)]) for i in range(4)] for ri in range(NR)],
+                   'assign': {'%d,%d,%d' % k: (1 if v is True else sv.Value(v)) for k, v in A.items() if v is not False}}
+        return val, det
     # leftovers per frame orbit
     seen = set(); singles = []
     for ri in range(NR):
@@ -118,6 +177,8 @@ def solve(sel, TL=10.0, workers=1, want=False):
                 others = [cin[sj2].Not() for b2, sj2 in us if b2 != b]
                 s = M.NewBoolVar(''); singles.append(s)
                 M.Add(s + sum(others) >= (1 if sp is True else sp) - cin[(o, j)])
+    if force is not None: M.Add(hosted[force] == 1)
+    if only is not None: return M, hosted, cin, A
     M.Minimize(NR - sum(hosted) + sum(singles))
     sv = cp_model.CpSolver(); sv.parameters.max_time_in_seconds = TL; sv.parameters.num_workers = workers
     st = sv.Solve(M)

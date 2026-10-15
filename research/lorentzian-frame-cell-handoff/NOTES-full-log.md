@@ -1411,3 +1411,26 @@
 - EXHAUSTIVE 4-covers per P line (llp/lr8allcovers.py): 65,170 (greedy pool had ~1,640).  Frame orbits that occur in
   covers (Stab(t)-orbit size: covers containing rep): A3 36:2520, 84:925, 252:70, 252:10, 280:19, 378:25, 378:25,
   504:10, 756:10, 1260:3, 1260:25; the other 13 frame orbits occur in NO 4-cover.
+- EXHAUSTIVE 4-covers per T line: 258,020 (P: 65,170).
+- NODE COST CORRECTED (llp/lr8nodecost.py).  At a section node F-perp with k delivered users, the registers arriving
+  from the last middle stop (rank RHO) carry contents supported in rank-<=RHO closed sets; the node needs
+  m = min #such vectors spanning S = span(all delivered + in-chain parts); registers = max(m, k).  So the "rank-8
+  spanning" leftover rule holds only for RHO = 7.  Best design (MIP2 covers, Z11 exact layer, FAITH objective,
+  llp/lr8det_f0.json): RHO = 7 -> extra 143 -> R = 583;  RHO = 5 -> extra 737..836 -> R ~ 1180-1280 (hopeless).
+  Pricing (price_mid7 in scratchpad): (cells,3,7) X=0 +15.06%, break-even X ~ 160; (cells,3,5,7) +10.3%, b-e 110;
+  (cells,3,5) +13.5%, b-e 145; (nocell,3,7) +17.6%, b-e 190.  => top X = 143 under (3,7) ~ +1.4% IF the middle were
+  zero-waste.
+- MIDDLE IS THE WALL (3 -> 7): at a rank-7 stop M with j registers, the contents leaving M must lie in the span of the
+  j contents arriving from rank-3 stops (<= 6 lines each), so j >= kappa3(union of supports) (rank-3 cover number).
+  Delivered parts of the best design: 660, mean 28.3 lines, rank 5/6/7/8 = 99/44/451/66; kappa3 of parts 3-13
+  (CP-SAT upper bounds); the 594 rank-<=7 parts have 539 DISTINCT closures (multiplicity 1-2).  With c = part (forced
+  for small k) each M would need ~7-13 registers but holds 1-2 -> middle waste of several registers per part.
+  Zero waste needs a top whose parts share rank-7 closures in groups of >= kappa3 (~8) with tiled unions: a hub
+  structure (rank-4 Q, M = Q-perp), the same node-sharing problem that blocks the frame-union line.  (Design-
+  specific evidence, NOT a general proof.)
+- PROVEN (exhaustive up to Stab(t), llp/lr7refine.py): no P or T line has R(t) covered by 4 PERP-CLOSED rank-7 sets
+  Q-perp (Q a rank-4 closed set through t).  => rank-7 perp-section tops need >= 5 sections -> pieces >= 880 ->
+  R >= 660: (nocell,3) +0.39%, (cells,3) -2.06%, (cells,3,5) -6.6% even with zero waste (price_r7 in scratchpad).
+- Rank-7 SPAN-closed sub-sections (hyperplane line sets inside a rank-8 node, users = lines of F): every rank-8
+  4-cover tested so far refines to 4 of them (llp/lr7refine2.py running).  They lower the node to rank 7 (chain
+  cells,3 -> 7: +17.9% at X = 0) but do not change the middle problem.
