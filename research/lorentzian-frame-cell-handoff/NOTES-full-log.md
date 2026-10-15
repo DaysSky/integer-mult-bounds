@@ -1606,3 +1606,15 @@
   lclosed) -> kappa5(M_n) >= 3, and pm(M_n) contains no other used node (only T(A),T(B),T(C),P(E)) -> at the rank-7
   stop each triangle node needs >= 3 registers from its own <= 2-3 good vectors unless W_n is smaller: the middle
   likely costs ~1 per node on top of the node waste.
+- Correct local test (llp/lttri_local2.py): zero waste at a triangle node with 3 delivered users needs the XOR
+  transversal set inside the zero set of a nonzero additive g(a,b,c) = alpha_a + beta_b + gamma_c (hyperplane
+  through P(E)); 18,361 zero sets (2,223 maximal, max 18 lines).  Every node has exactly 6 must-odd transversals
+  and they always fit a zero set -> LOCALLY possible at all 220 nodes (no node-level impossibility).  A first
+  attempt (lttri_local.py, "avoid one coordinate value") was too strong a condition and was discarded.
+- Triangle optimiser (llp/lttri_opt.py, exact node model): fast-cooling 30 s run 385 -> 363 (floor 83 from in-chain
+  hosting); long runs restarted after the container restart.
+- COMBINED M11 TOP (llp/lm11design.py, all 220 covers verified): T on triangle nodes; P(E) on one parallel class of
+  the derived AG(2,3): A2(B_i)+P(E) x3 + {P(E),T(B1),T(B2),T(B3)} (whose perp = the triangle hub M_n, so the P
+  register is a rider there).  440 nodes: 220 triangles (3 users) + 220 single-user P nodes.  Exact layer
+  (FAITH=1): node waste 297 (R 737; 792 with rank-7 nodes fed at rank 5), midlb 110 (55 riders matched).
+  Total >= 407 >> margin.  The P side has no sharing: A2+P nodes are not used by their members in this cover type.
