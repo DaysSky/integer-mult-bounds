@@ -714,7 +714,7 @@ content.
 - `python3 lttri_design.py 600 z11`; `python3 lttri_check.py lttri_design_z11.json`: the M11 triangle design (5 s).
 - `python3 lttri_cost.py lttri_design_z11.json 7 1`: triangle node cost.
 - Exact layer and costs for a Z11 design:
-  - `FAITH=1 python3 <mkdet> sel.json det.json`, where mkdet calls `lr8z11.solve(want=True)`;
+  - `FAITH=1 python3 lr8mkdet.py sel.json det.json`;
   - then `python3 lr8nodecost.py det.json 7 [5]` and `python3 lr8midlb.py det.json`.
   - Pools are chosen by env `POOL`: `r8covers.pkl`, `r8flex.pkl` (`lr8flexpool.py`), `r8share.pkl`
     (`lr8sharepool.py`).
