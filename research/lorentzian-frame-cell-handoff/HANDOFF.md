@@ -674,12 +674,15 @@ break-even once all layers are counted.  The items below are the remaining looph
    - **Key mechanism (proven in the triangle case):** a node whose users' parts span the whole node rank needs an
      extra register, unless the part span has a basis of lower-rank vectors.  Coverage forces such full-rank parts.
    - **Next, in order:**
-     - (a) A general version of the triangle argument.  For every node type, decide whether some assignment
-       of the users' parts admits a good (rank < node rank) basis while the users still cover their R(t).  Use a
-       local CP-SAT per node orbit, with forced content from the usable-cover census.  If no node type admits one,
-       the rank-8 class is dead: R >= 440 + 260.
-     - (b) Otherwise, build the top from the node types that pass (a), then the coordinate hub hierarchy
-       L(3) < L(5) < L(7).
+     - (a) **Checked:** the triangle argument does not generalise through exclusive parts (`lr8forced.py`).
+       Exclusives are rarely full-rank, so node-level zero waste (RHO = 7) is locally possible.  The binding
+       constraint is the rank-7 stop.  Every rank-7 part's closure M needs >= kappa5(W_M) >= 2 registers: shared
+       by aligned co-users of the same node, or by riders from nodes F' inside pm(M).
+       - Aim for an LP or exhaustive bound on the minimum number of isolated closures over all designs.
+       - Alternatively, a design search with an exact closure-sharing objective.  `lr8z11.py MID=1` is a first
+         version; runs on the share and flex pools were launched.
+     - (b) Build the top from aligned node types (P-A3 L(7-set) nodes, A2 + X nodes), then the coordinate hub
+       hierarchy L(3) < L(5) < L(7).
      - (c) The P-line analogue of the triangle design (role-aware: A2 + P nodes used by their members).
    - Older notes below are kept for context.
    (Original item:) **Rank-8 frame sections** (the only class whose counting reaches the union-LP floor R = 440:
