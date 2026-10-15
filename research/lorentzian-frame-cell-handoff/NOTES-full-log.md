@@ -1631,3 +1631,8 @@
   => M11 triangle family: top waste >= 138 even optimistically (realistic ~121 + 55 = 176), before ANY middle cost
   (triangle hub kappa5 >= 3 per node).  Break-even X: (cells,3,5) 145, (cells,3,7) 160, (nocell,3,7) 190.
   VERDICT (heuristic, top-level floors rigorous): at best break-even, no gain from this family.
+- SYNERGY TO TEST NEXT: P(E)'s node {P(E),T(B1),T(B2),T(B3)} has perp = the triangle hub M_n, so P(E) can read
+  in-chain at M_n from the triangle node's registers stopping there (pairwise sums P_A+P_B, P_A+P_C).  If P(E)'s
+  in-chain part is chosen as one of those combinations, the P in-chain floor (55) disappears: top waste ~ T-part
+  (83-121) + P delivered single-user nodes (0 if their parts stay rank <= 7).  The decisive layer is then the
+  triangle hub middle (kappa5(M_n) >= 3, pairwise sums must have rank-5-aligned XOR structure).

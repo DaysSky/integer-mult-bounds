@@ -677,7 +677,11 @@ content.
     - Faithful costs (waste = m - d) reach 121, against that model's floor of 110.
     - With the P lines' in-chain floor of 55 (single-user P nodes), the M11 family's top waste is >= 138
       optimistically and ~176 realistically, before any middle cost.
-    - **Verdict (heuristic; the floors are rigorous):** break-even at best.
+    - **Verdict (heuristic; the floors are rigorous):** break-even at best, unless the synergy below works.
+    - **Synergy to test:** P(E)'s node {P(E), T(B1), T(B2), T(B3)} has perp equal to the triangle hub M_n.  So
+      P(E) can read in-chain there from the triangle's pairwise-sum registers.  Choosing P(E)'s in-chain part as
+      one of those combinations removes the P floor of 55, leaving the top at ~83-121.  The decisive layer is
+      then the hub middle.
   - **Middle of a triangle node:**
     - Its good vectors, the pairwise sums, all lie in the hub M_n = A2(A) + A2(B) + A2(C) + 27 transversals
       (36 lines, rank 7).
