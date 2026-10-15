@@ -1496,3 +1496,11 @@
   needs kappa3(piece) - 1 ~ 3 leftovers at its hub unless pieces are shared/aligned).
 - PARTS NEED NOT PARTITION R(t): only the target's final sum matters (exact F2 semantics), so delivered contents may
   contain lines that cancel against the target's other contributions (overlap lines).  Not yet exploited.
+- USABLE USERS (exhaustive, llp/lr8usable.py): for each frame orbit occurring in 4-covers, which of its lines can use it
+  in some 4-cover.  Fully usable: P-A3 (6/6), {P01,P23,P24,P34} (4/4, perp 42), mixed A3 {P03,P04,P34,T012,T123,T124}
+  (6/6, perp 47), {P34,P35,P45,T012} (4/4, perp 43 rank 7: the main T node, 5,270 covers), 5-line {P01,T023,T045,
+  T123,T145} (5/5) ...  Poorly usable: L(012) (perp A7, 1 of 4: only the T line), {P01,P03,P13,T012,T023,T123}
+  (3 of 6), {P01,P34,T012} (1 of 3).  Covers with all four nodes usable by >= 4 lines: P 44,380 / 65,170,
+  T 31,080 / 258,020 (llp/lr8sharepool.py -> r8share.pkl).
+- Identical-parts sharing on the 60-cover overlap/random pool: >= 638 nodes for 880 uses (CP-SAT bound 58 orbits)
+  -> that pool cannot share; re-run on the shareable pool r8share.pkl (150 covers per rep) running.

@@ -8,6 +8,7 @@ import sys, pickle, itertools, collections, time, json, os
 from lgeo import *
 from ortools.sat.python import cp_model
 NPOOL = int(sys.argv[1]); TL = float(sys.argv[2]); t0 = time.time()
+PARITY = int(os.environ.get('PARITY', '0'))   # 1: each line of R(t) in an ODD number of its nodes' parts (F2 sum)
 def log(*a): print('[%5.0fs]' % (time.time() - t0), *a, flush=True)
 def inv(p):
     q = [0] * n
@@ -26,7 +27,8 @@ for s in range(V):
     reps.append(s); x = s
     for k in range(n): orb[x] = (len(reps) - 1, k); x = rot[x]
 pool = {}
-for kind in ('P', 'T'):
+POOLF = os.environ.get('POOL')
+for kind in (() if POOLF else ('P', 'T')):
     D = pickle.load(open('lr8allcovers_%s.pkl' % kind, 'rb')); t = D['t']; R = HYP[t]
     fr = set()
     for a, b in itertools.combinations([x for x in range(V) if x != t], 2):
@@ -46,7 +48,10 @@ for kind in ('P', 'T'):
     log(kind, 'covers', len(allc))
 covs = {}
 import random; random.seed(3)
-for r in reps:
+if POOLF:
+    _pl = pickle.load(open(POOLF, 'rb'))
+    for r in reps: covs[r] = _pl[r][:NPOOL]
+for r in ([] if POOLF else reps):
     t, allc = pool[KIND[r]]
     src = list(SUPP[t]); dst = list(SUPP[r])
     rest_s = [x for x in range(n) if x not in src]; rest_d = [x for x in range(n) if x not in dst]
@@ -85,7 +90,10 @@ for ri, r in enumerate(reps):
             w = wvar(F, u); z = M.NewBoolVar('')
             M.AddBoolAnd([x, w]).OnlyEnforceIf(z); M.AddBoolOr([x.Not(), w.Not(), z])
             zs.append(z)
-        M.AddExactlyOne(zs)
+        if PARITY:
+            kk = M.NewIntVar(0, len(zs) // 2, ''); M.Add(sum(zs) == 2 * kk + 1)
+        else:
+            M.AddExactlyOne(zs)
     # a used node's part must be non-empty for this user (else it is not a 4-cover use)
     for F, x in X.items():
         M.AddBoolOr([wvar(F, u) for u in bits(PM[F])]).OnlyEnforceIf(x)

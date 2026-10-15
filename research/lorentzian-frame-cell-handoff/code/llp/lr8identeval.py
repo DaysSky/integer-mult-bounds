@@ -49,9 +49,19 @@ for F in users:
         r = rank(W)
         if r <= 5: done[key] = (1, 1, r)
         else:
-            lv = closed_sets(W, 5)
-            k5, lb, stt = kappa(W, lv[5], tl=30)
-            done[key] = (k5, max(-(-r // 5), lb), r)
+            # greedy partition into rank-<=5 pieces (best of several line orders) as the upper bound
+            import random as _r
+            best = 99; Wl = bits(W)
+            for trial in range(30):
+                _r.seed(trial); order = Wl[:]; _r.shuffle(order); rem = list(order); cnt = 0
+                while rem:
+                    S = 0; nxt = []
+                    for u in rem:
+                        if rank(S | (1 << u)) <= 5: S |= 1 << u
+                        else: nxt.append(u)
+                    rem = nxt; cnt += 1
+                best = min(best, cnt)
+            done[key] = (best, -(-r // 5), r)
     mF[F], mlo[F], _ = done[key]
 print('node part rank histogram', sorted(collections.Counter(done[fkey(F)[0]][2] for F in users).items()))
 print('m_F (kappa5 upper) histogram', sorted(collections.Counter(mF.values()).items()))

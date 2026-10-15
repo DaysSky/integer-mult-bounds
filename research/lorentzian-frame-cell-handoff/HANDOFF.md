@@ -563,6 +563,52 @@ content.
   13,101 representative covers; `lr7refine2.py`).  Nondegeneracy of those subspaces is not checked.  They lower the
   node to rank 7 but leave the middle problem unchanged.
 
+**More exhaustive facts (session 3).**
+- **No disjoint 4-covers** (`lr8exactcov.py`): every 4-cover of R(t) by rank-3-frame perps overlaps.  The minimum
+  total overlap is 33 lines for both P and T.  So unlike E8's exact frame triples, users of a node cannot all take
+  the whole perp.
+- **P covers contain at most 2 rank-7 nodes** (`lr8autoshare.py`).  A rank-7 node is one whose perp has rank 7, so
+  all rank-7 parts there share the node as their closure.  T has 931 all-rank-7 representative covers.
+- **Usable users** (`lr8usable.py`): which lines of a frame can use it in some 4-cover.
+  - Fully usable:
+    - P-A3: 6/6;
+    - A2(B) + P(de): 4/4, perp 42;
+    - A2(B) + T(abc): 4/4, perp 43, rank 7;
+    - mixed A3 {A2(K), T(12k) : k in K}: 6/6, perp 47;
+    - {P(ab), T(B1), T(B2), T(B3)}: 4/4, perp 36, rank 7.
+  - Poor: L(abc), whose perp is A7, is usable only by its T line (1 of 4).
+  - Covers whose four nodes all have >= 4 usable users: P 44,380 of 65,170; T 31,080 of 258,020
+    (`lr8sharepool.py` -> `r8share.pkl`).
+- **Flex covers** have no rank-8 node with an exclusive part of rank >= 7: P 4,060, T 64,120 per line
+  (`lr8flexcov.py`, `lr8flexpool.py`).  Their designs still fail the middle (R ~ 990-1,089 with rank-7 nodes fed at
+  rank 5).
+
+**Register accounting with copies (corrects the node model).**
+- At any frame, gates are invertible, so the final contents span exactly the arriving non-empty span (m dims).
+- Delivered registers cover d = dim span(delivered contents); dead registers carry the rest.
+- Empty registers can take copies for free.  So registers at a frame = k + (m - d).
+- `lr8nodecost.py` uses this formula; it gives the same result as max(k, m) when the delivered parts are independent.
+- **Identical parts + copies:** all users of a node take the same W_F.  One register is assembled from m_F pieces;
+  the other delivered users get copies (empties 0 -> 8 -> 10 -> 11, a cheap chain).  Cost m_F - 1 per node.
+- Prices with m_F = 2 (`code/price/price_copies.py`):
+
+  | chain | N = 147 | N = 220 | N = 260 |
+  |---|---|---|---|
+  | (cells, 3, 5) | +14.4% | +5.2% | +0.8% |
+  | (3, 5, 7) | — | +3.4% | — |
+
+  Break-even is ~270 nodes, *provided the pieces themselves cost nothing*.  The lower levels repeat the same
+  assembly problem: every distinct rank-5 piece needs kappa3 - 1 ~ 3 leftovers unless pieces are shared or aligned.
+- Varying parts (users take different unions of a node's pieces, with d_F = m_F) remove the top-level leftover
+  entirely.
+- Parts need not partition R(t).  Only the target's F2 sum matters, so overlap lines can cancel.  This is not yet
+  exploited.
+- Identical-parts CP-SAT (`lr8identical.py`, Z11; `PARITY=1` uses the F2 version):
+  - Feasible at once, but with 880 single-user nodes.
+  - Maximising sharing: the 60-cover overlap/random pool needs >= 638 nodes (CP-SAT bound).
+  - The shareable pool (150 per rep) was still at ~825 nodes after a few minutes.
+  - Sharing needs a globally consistent symmetric structure, not pool search.
+
 **Natural hub family (not yet used).**
 - For a coordinate set S, L(S) = {P(ij), T(ijk) inside S} has rank |S| and C(|S|,2) + C(|S|,3) lines:
   - 4 lines at |S| = 3;
