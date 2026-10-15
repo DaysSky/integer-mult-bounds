@@ -20,8 +20,8 @@ architectural potential improvement suffices.
   - **Top counting:** R = 572-583.
   - **Proven node and middle walls for the examined families:**
     - per-design R >= 1,001-1,133;
-    - triangle tops R >= 660;
     - >= 260 nodes in any design.
+    - (A triangle-top bound R >= 660 was retracted.)
   - **New structure:** the M11 / S(4,5,11) triangle design gives perfect T sharing.
   - **Remaining shape:** varying-part piece designs aligned at every level.
 
@@ -649,14 +649,21 @@ content.
   - Own A2(A): received once (odd) over its 4 nodes.
   - Transversal-type T lines (84 per T line): received an odd number of times.
   - Because P(E) is needed by all three users, an in-chain user can be hosted only by an identical delivered part.
-- **proven: >= 1 extra register per triangle node, for any chain.**  Node inputs always have rank <= 7.
-  - A user receives crossing pairs only from B x C, 9 per node, and needs all 28.  So it must take transversals at
-    every one of its 4 nodes, since 3 nodes give only 27.
-  - A part with transversals has rank 8.  In span{P_A, P_B, P_C} only the pairwise sums have rank <= 7, and they
-    span at most dim - 1.
-  - Hence R >= 440 + 220 = 660, beyond every rank-8 break-even (largest X ~ 190).
-  - The design is a perfect-sharing top but not a viable word top (`lttri_cost.py` gives 380 extra with a naive
-    in-chain choice).
+- **RETRACTED (session 3, same day):** the claim ">= 1 extra register per triangle node, R >= 660" was wrong.  It
+  used f_A + f_B + f_C = A2(A) + A2(B) + A2(C) + P(E); the correct sum is P(E).
+  - **Still true:**
+    - A user takes a full fibre at every node.  Each node has >= 1 single-crossing pair, since there are only 8
+      doubly-crossing pairs.  So every part at a triangle node has rank 8.
+    - Pairwise sums P_A + P_B always have rank <= 7.
+    - An in-chain user can be hosted only by an IDENTICAL delivered part.
+  - **Corrected node condition:**
+    - With three delivered users, the node is zero-waste iff P_A + P_B + P_C (= P(E) + own-A2 terms + XOR of the
+      transversal sets) has rank <= 7, e.g. when the transversal sets XOR to 0.
+    - A node with an in-chain user costs >= 1.  So the T-part waste is >= ~83, from 165 in-chain uses with two per
+      node.
+  - So the triangle top is NOT ruled out.  `lttri_cost.py` gives 380 with random assignments; 5 nodes were already
+    zero-waste.
+  - An optimiser is next (`lttri_opt.py`).
 - **P lines:** their best fully P-shareable cover type is A3({a, b, c, d}) + 2 lone A2(B) + P(ab) + a mixed A3.  Its
   lone A2 + P nodes are not used by their A2 members.  A role-aware P design is next.
 
@@ -692,11 +699,11 @@ content.
   - no 3-covers, and no disjoint 4-covers;
   - no rank-7 perp-section 4-covers;
   - >= 260 nodes in any design;
-  - triangle tops cost >= 1 extra register per node;
   - the T rank-capacity lemma;
   - the per-design middle bounds R >= 1,001-1,133.
-- **Heuristic:** every concrete design family failed by >= ~200 registers, against a margin of ~145-190.  That
-  covers greedy, flex, shareable and identical-parts designs, and the M11 triangle design.
+- **Heuristic:** every concrete design family evaluated so far failed by >= ~200 registers, against a margin of
+  ~145-190.  That covers greedy, flex, shareable and identical-parts designs.  The M11 triangle design is being
+  re-optimised after the retraction.
 - **Observed trade-off:**
   - A sharing-maximal design (`lr8tshare.py`, 528 nodes) has node waste 462, so R ~ 902.
   - The cover-driven f0 has node waste 143 but 429 isolated rank-7 closures.
@@ -742,7 +749,7 @@ break-even once all layers are counted.  The items below are the remaining looph
      - The top counting reaches R = 572-583 (RHO = 7).
      - Every cover-driven top is dead in the middle: proven per design, R >= 1,001-1,133.
      - Any design needs >= 260 nodes (LP).
-     - The perfect-sharing T-triangle top is dead at the node level: proven, R >= 660.
+     - (A triangle-top impossibility claimed here was RETRACTED; see 3c.)
    - **Key mechanism (proven in the triangle case):** a node whose users' parts span the whole node rank needs an
      extra register, unless the part span has a basis of lower-rank vectors.  Coverage forces such full-rank parts.
    - **Next, in order:**
