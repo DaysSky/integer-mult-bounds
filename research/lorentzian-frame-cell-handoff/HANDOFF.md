@@ -848,6 +848,11 @@ break-even once all layers are counted.  The items below are the remaining looph
          forced transversal / A2 fibres.  A mixed cover must also change which A2/transversal lines each triangle
          user carries, i.e. it must break the triangle-node part structure itself, not just the parity of P(E).
          Scope: one node (all nodes are M11-equivalent in the pure design; in a mixed design they need not be).
+       - **Relaxation probes (`code/llp/lttri_rho5_relax.py`, node 0):** freeing P(E) and the A2(other) lines
+         (transversals still forced) is INFEASIBLE; freeing P(E) and the multiplicity-1 transversals (A2 still
+         forced) is FEASIBLE for 7 of the 8 own-A2 patterns.  So the obstruction lives entirely in the
+         coverage-forced transversal memberships.  A mixed design must cover some of those transversals at other
+         (non-triangle) nodes; `code/llp/lttri_rho5_minrel.py` computes the minimum number to release.
      - (d) **Varying-part piece design (the only zero-waste shape left).**
        - At each node, the users' parts are XOR combinations of a few rank-5 pieces.  The DISTINCT parts must span
          exactly the arriving pieces (m = d).  Equal parts are served by copies.

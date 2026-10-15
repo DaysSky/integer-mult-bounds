@@ -1713,3 +1713,14 @@
 - Node 0: maximal rank-5 subsets 14361; feasible (delta,pivot) sub-problems: NONE even with P(E) optional.
 - Conclusion (scoped to this node / pure-triangle forced fibres): the triple-sum obstruction does not need P(E);
   mixed covers must alter A2/transversal memberships, not only P(E) parity.
+
+## Relaxation probes (lttri_rho5_relax.py, node 0)
+- RELAX=pe,trans (P(E) optional AND the multiplicity-1 transversals free; A2(other) lines forced):
+  FEASIBLE for own-A2 patterns delta in {000,001,010,011,100,101,110} (pivot 0); delta=111 not feasible.
+  => the rank-5 obstruction is driven by the coverage-forced transversal memberships.
+  Caveat: freeing them is a relaxation; any freed transversal must be covered by another node in a mixed design.
+  (Trivially: with every transversal dropped, parts are A2(others)+delta, pairwise sums rank 4 -> rank-5 basis exists.)
+- Quantitative follow-up: lttri_rho5_minrel.py = minimum number of forced memberships to release.
+- RELAX=pe,a2 (P(E) optional AND A2(other) lines free; multiplicity-1 transversals forced): NONE feasible
+  (every sub-problem INFEASIBLE or pruned; UNKNOWN would have been listed).  => A2/P(E) freedom does not help;
+  the forced transversal fibres alone carry the obstruction.
