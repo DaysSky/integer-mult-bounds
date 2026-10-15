@@ -1696,3 +1696,10 @@
   deliveries per target (660 = 440 + 220 sources) and break-even allows only ~145-190 extra registers = 0.66-0.86
   non-delivering registers per target.  => an I11 word must run with about HALF of R420's relative overhead; R420's
   own template on I11 gives the known 3.5v = 770.
+- P111-tuned has the SAME skeleton as R420 (code/e8r420/align.py on research/e8-bit-p111-tuned): lines (3.57 regs),
+  153 cells (3), 70 D4 (7.2), 180 D6 (3), 120 t-perp (3) -- a punctured R420.
+- T_11 = the 165 T lines alone (h = 11) has the natural point-total decoder (tot_i = sum of x_u over lines through
+  i: |supp u & supp t| is odd exactly for the T-neighbours and for t) and the M11 triangle design without the P(E)
+  obstruction -- but its PRICE kills it (code/price/price_t11.py): at the 4-section count R = 2v = 330 every
+  realistic shape is -33% to -37%; even with NO middle stops (impossible) R = 330 gives -11.6%, R = 250 -4.2%,
+  R = 165 +4.5% (would need R < ~200 = 1.2v).  T_11 is verifiably uncompetitive (pricing bound).

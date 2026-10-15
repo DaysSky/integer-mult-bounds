@@ -784,6 +784,14 @@ content.
 - General cells: the budget forces 220 sum registers plus 440 single ones.  The weak per-line conditions are
   satisfiable, so the general source side is a design problem mirroring the top.
 
+**Punctured / sub-systems (session 3).**
+- P111-tuned uses the R420 skeleton, punctured (`code/e8r420/align.py`).
+- **T_11 (the 165 T lines, h = 11):**
+  - It has a natural point-total decoder.
+  - On it the M11 triangle design would avoid the P(E) obstruction.
+  - It is **verifiably uncompetitive by price** (`price/price_t11.py`).  At R = 2v = 330, realistic shapes give
+    -33% to -37%.  Even with no middle stops, R = 330 gives -11.6%, and it would need R < ~1.2v.
+
 **Overarching insight (session 3).**
 - All open classes (rank-8 sections, frame union, A3/TT*) hit the same wall: **hub alignment**.
 - **Zero waste** needs, at every frame of the network, the span of arriving contents to equal the span of needed
