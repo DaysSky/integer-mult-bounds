@@ -249,6 +249,39 @@ tot(Q1-perp) + tot(Q2-perp) + tot({t, opp t}-perp) = 1_{R(t)} + x_{opp t}, with 
 **Exact U = 0 own-frame routability** (`code/lmid/fru0.py`): Z11 and no-symmetry both UNKNOWN after 1 h each, so it is
 undecided.
 
+**Parity-top landscape (proven for the representative targets, exhaustive).**  Sections may be plane sections or
+A3-perp frames (rank 8, 6 users).  Combinations of <= 4 sections with defect <= 1 are ONLY:
+- the A3 triples (E8 378, I11 P 612, I11 T 276);
+- 1204 TT-non-orthogonal triples per I11 T line.
+
+So every top is a frame triple (defect 3) or one of these.  Sections have <= 3 users.
+
+**Section-assembly accounting.**
+- **proven, independence lemma:** registers delivered from one section to different users are linearly independent.
+  If k arrival groups each carry a line that every delivered user needs exclusively, then
+  arrivals >= k + (#delivered users) - 1.
+- **heuristic, cost model:** the remaining steps assume R420-type assembly (sections carry exclusive parts, the
+  triple-overlap part is delivered once per target, nodes fed by cell registers).
+- **heuristic, E8:** frame top: k = 2 per D6, giving R420's 540 registers exactly.  A3 top: k_E6 = 3 (any 4 E6
+  pieces span the E6), giving >= 580 registers.  So frame tops are optimal in E8 and the A3 design does not beat R420.
+- **I_{11,1}:**
+  - The triple overlap per target is 25-56 lines (E8: B' 12 + 8).
+  - **proven:** K4-type exclusive parts have closure = the whole section (no proper node contains them), so k >= 2 at
+    any depth.
+  - **heuristic:** partition-like systems share the triple part but meet the cell lemma (3 registers per cell, R >= 770).
+    Non-partition systems avoid it, but must assemble 25-56-line triple parts per target: in one level that costs
+    ~20 dead registers per block, and in two levels the break-even drops to 570-634.
+  - **heuristic:** every accounting tried lands at R ~ 650-770, above the best break-evens (570-677).
+- **proven, chain constraint:** the move lever "carriers copy at the cell (0 -> 2)" would raise break-evens by 20-33,
+  but it is not available: >= 2 fresh helpers per source must stop at <s>.
+
+**Assessment.**
+- **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  The binding reason is structural:
+  sections, exclusive parts and triple-overlap blocks are 2-5x larger than the largest shareable nodes (~20-30 lines),
+  whereas in E8 the triple part B' (12 lines) is itself a node.
+- **proven gap:** a rigorous all-word bound is still missing.  The union-coverage LP only gives 660, and exact-assembly
+  bounds were derived only for the classes above.
+
 ## 4. Next goals (priority order)
 
 1. **Frame-routable source system** (the only route to an R420-style cheap top).

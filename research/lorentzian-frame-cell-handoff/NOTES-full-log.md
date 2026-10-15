@@ -1114,3 +1114,19 @@
 - Same accounting for I_{11,1}: sections of 56-85 lines need kappa >= 3 pieces from shareable nodes (<= ~30 lines);
   registers per target ~ sum over its sections (kappa + users - 1)/users >= 5.3 (A3 top) / 6 (frame top) vs ~3.9 at
   break-even (852-897 registers).  Heuristic accounting, NOT a proof (union-coverage LP allows 660).
+- PARITY-TOP LANDSCAPE (llp/lparity_a3s.py, lparity_a3s_e8.py; meet-in-the-middle, exhaustive for the representative
+  targets): with sections = plane sections + A3-perp sections (rank-8 frames, 6 users; E8 D5 20 lines, I_{11,1}
+  42-56 lines), combinations of <= 4 sections with defect <= 1 are ONLY the A3 triples (E8 378, I11 P 612, T 276) and,
+  for I11 T lines, the 1204 triples through non-orthogonal TT pairs.  No 4-section defect-<=1 tops exist, and no
+  top uses an A3-perp section.  => tops are frame triples (defect 3) or these triples; sections have <= 3 users.
+- TRIPLE-OVERLAP STRUCTURE of I_{11,1} tops (exhaustive over each representative's tops): the 3 sections of a top
+  share 25-56 lines (A3 tops 36-56, frame tops 25-30) -- needed once (mod 2), like B' in R420; exclusive parts are
+  14-32 lines per section.  For an A3 top the triple part is the A3-perp (42-56 lines, 6 users).
+- K4 block analysis (P targets, A3 = K4 on {a,b,c,d}): section {ab,ac,bc}-perp (85) = lines on Q=[11]-abcd (56,
+  triple) + 'touching d' (29, exclusive, common to its 3 users).  The closure of the touching-d part is the WHOLE
+  section (85 lines, rank 9): no proper node contains it, so kappa_ex >= 2 at any depth.  Per block (6 targets):
+  arrivals >= 7 kappa_ex + 11 (6 Q-deliveries + 5 copies as differentiators) -> >= 4.17 registers per target,
+  R >~ 697 (one- or two-level) > every break-even (611-677).  The triple part (56 lines) also cannot be assembled
+  one-level without ~22 dead registers per block (cell registers carry <= 3 lines; 6 useful outputs).
+- kappa (union cover of a whole section by proper closed nodes, llp/lkappa.py): PP section (70 lines) 3 (optimal);
+  with shareable nodes (>= |N|/2 sink planes) 4 found.
