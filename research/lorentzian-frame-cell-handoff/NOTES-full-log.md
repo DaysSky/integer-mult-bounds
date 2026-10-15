@@ -1744,3 +1744,12 @@
   each S-user sits in 3 retained nodes => zero-cost retained nodes Z <= 9r/2; all-zero-cost needs 220 - r <= 9r/2,
   r >= 40 (120 targets on non-triangle sections, 120 new non-triangle sections).  Each retained node still pays >= 1
   unless Z covers it.  Cost of the new non-triangle sections not yet evaluated -> open, not dead.
+
+## Removal structure (lttri_remove.py, lttri_needrank.py)
+- K=2, MINLEFT=1: min removed nodes r = 40 found (|S| = 120); counting lower bound 40 => OPTIMAL (CP-SAT bound 33 only).
+- lttri_needrank.py: for EVERY (node, user) of the 660, the lines of R(T(X)) covered only by that node among X's 4
+  triangle nodes number 25 (A2(B)+A2(C)+P(E) + 18 mult-1 transversals) and have real rank 8 = rank of the node perp
+  (within the rank-11 line space, F-perp is 8-dimensional).  So a replacement section F'-perp containing them equals
+  n0-perp, F' = n0's frame, and it holds no transversal released elsewhere (those are split only by their own node).
+  => PROVEN: a target that leaves exactly ONE triangle node cannot release anything.  The r = 40 configuration is dead.
+- Releasing targets must leave >= 2 triangle nodes: lttri_remove.py MINLEFT=2 and lttri_leave2.py (frame pairs) test this.

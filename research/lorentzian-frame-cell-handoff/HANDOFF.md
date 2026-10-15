@@ -863,9 +863,12 @@ break-even once all layers are counted.  The items below are the remaining looph
          non-triangle section.
        - **Counting (modifications of this design):** removing r triangle nodes creates <= 3r releasing targets,
          each in 3 retained nodes, so at most 9r/2 retained nodes can be zero-cost; all zero-cost needs r >= 40,
-         i.e. 120 non-triangle sections.  Their price is NOT yet evaluated.  This is the concrete next test
-         for (c'): design ~40 removed nodes' replacement sections and price them against the >= 1 register per
-         retained node they save.
+         i.e. 120 non-triangle sections (`lttri_remove.py` attains r = 40, so it is optimal).
+       - **But leaving one node cannot release (proven, `lttri_needrank.py`):** for all 660 (node, user) pairs, the
+         lines of R(T(X)) covered only by that node among X's 4 nodes (25 lines) have rank 8 = the rank of the node
+         perp.  A replacement section must contain them, so its frame IS the old frame, and it holds no transversal
+         released at another node.  So the r = 40 configuration is dead; releasing targets must leave >= 2 triangle
+         nodes (`lttri_remove.py` with MINLEFT=2, `lttri_leave2.py` for which frame pairs can replace two nodes).
      - (d) **Varying-part piece design (the only zero-waste shape left).**
        - At each node, the users' parts are XOR combinations of a few rank-5 pieces.  The DISTINCT parts must span
          exactly the arriving pieces (m = d).  Equal parts are served by copies.
