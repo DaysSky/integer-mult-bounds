@@ -672,6 +672,13 @@ content.
     class (three A2(B_i) + P(E) nodes and {P(E), T(B1), T(B2), T(B3)}, which shares the triangle hub M_n).
     - Exact layer node waste is 297 (R = 737), with middle bound >= 110 (55 riders).
     - Total >= 407, well over the margin.  The P side has no sharing.
+  - **Middle of a triangle node:**
+    - Its good vectors, the pairwise sums, all lie in the hub M_n = A2(A) + A2(B) + A2(C) + 27 transversals
+      (36 lines, rank 7).
+    - Rank-5 subsets of M_n hold <= 17 lines, so kappa5(M_n) >= 3.  pm(M_n) holds no other triangle.
+    - So the two pairwise-sum registers stopping at M_n need their XOR span to have a rank-5 basis.  That requires
+      transversal choices aligned to single slices (e.g. P_A + P_B = A2(A) + A2(B) + one C-slice, rank 5).  This
+      can be encoded as a further constraint in `lttri_opt.py`.
 - **P lines:** their best fully P-shareable cover type is A3({a, b, c, d}) + 2 lone A2(B) + P(ab) + a mixed A3.  Its
   lone A2 + P nodes are not used by their A2 members.  A role-aware P design is next.
 
