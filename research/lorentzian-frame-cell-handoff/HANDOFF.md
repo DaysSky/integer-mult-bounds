@@ -500,13 +500,96 @@ content.
   - The union-coverage LP gives only R >= 440.
   - The class floors are model-based: A3 715 / 705.8; frame union 550 + 0.5 x (non-reciprocal mates).
 
+## 3c. Session 3 (continuation, 2026-10-15 17:40-) — rank-8 sections: top solved, middle is the wall
+
+**Cover enumeration (proven, exhaustive up to Stab(t), `code/llp/lr8allcovers.py`).**
+- Frames through t: P 11,515 in 24 Stab(t)-orbits; T 14,945 in 29 orbits.
+- 4-covers of R(t) by rank-8 nodes F-perp: **65,170 per P line, 258,020 per T line**.  The greedy pool
+  (`r8covers.pkl`) had ~1,640 / ~630 of them.
+- 13 of the 24 P frame orbits occur in no 4-cover.  Lists per orbit representative: `lr8allcovers_P.pkl`, `_T.pkl`.
+
+**Top layer (heuristic searches, exact evaluation).**
+- Z11 pool CP-SAT relaxations (`lr8poolmip.py`, `lr8poolmip2.py`, `lr8poolmip3.py`) reach cost 0 quickly, because
+  they ignore part identity.
+- Exact equivariant parts layer plus annealing over covers (`lr8z11.py`; env `XOR=1` allows GF(2)-combination
+  hosting, `FAITH=1` uses the faithful-style objective).
+- **Faithful node cost** (`lr8nodecost.py`):
+  - At node F-perp the registers arrive from the last middle stop (rank RHO), so their contents are supported in
+    rank-<=RHO sets.
+  - Node registers = max(k, m), where m = min #such vectors spanning all delivered and in-chain parts.
+  - R = 440 + sum of extras.
+  - **Correction:** my earlier "only rank-8 single parts cost a leftover" rule holds only for RHO = 7.
+- Best tops:
+
+  | design | RHO = 7 | RHO = 5 |
+  |---|---|---|
+  | MIP2 covers, FAITH layer (`lr8det_f0.json`) | R = 583 | R ~ 1,180-1,280 |
+  | annealed (`lr8det_f21.json`) | R = 572 | — |
+
+- Prices with extras as full pieces (`code/price/price_mid7.py`):
+
+  | chain | price at X = 0 | break-even X |
+  |---|---|---|
+  | (cells, 3, 7) | +15.06% | ~160 |
+  | (cells, 3, 5, 7) | +10.3% | ~110 |
+  | (cells, 3, 5) | +13.5% | ~145 |
+  | (no cell, 3, 7) | +17.6% | ~190 |
+
+  So the top alone would be ~+1.4% to +2% under (3, 7), *if the middle had zero waste*.
+
+**Middle: the wall (proven for the given tops, `code/llp/lr8midlb.py`).**
+- **Mechanism:**
+  - A register reaching the node with a rank-7 content c must stop at the rank-7 set M = span-closure(c).
+  - At M the contents come from rank-<=5 stops, so M needs >= kappa5(W_M) >= 2 registers.
+  - A rider for M can only come from another used node F' with F' inside pm(M).
+- **Results:**
+  - `lr8det_f0` (R = 583 top): 385 forced rank-7 closures hold a single register, and NONE has a possible rider.
+    Middle waste >= 385, so R >= 968.
+  - `lr8det_f21` (R = 572 top): waste >= 561, so R >= 1,133.
+  - Both are far beyond break-even.
+- **Observed for f0 (heuristic):** delivered parts average 28.3 lines (rank 5/6/7/8 = 99/44/451/66).  kappa3 of the
+  parts is 3-13, and the 594 rank-<=7 parts have 539 distinct closures.
+- **Consequence:** cover-driven tops cannot work.  A viable rank-8 design must be *hub-aligned*: delivered parts
+  must share rank-7 closures in groups of >= kappa5(W_M), and likewise at every lower level.  This is the same
+  node-sharing requirement that blocks the frame-union line, now with a clean necessary condition.
+
+**Rank-7 sections.**
+- **proven, exhaustive (`code/llp/lr7refine.py`):** no P or T line has R(t) covered by 4 perp-closed rank-7 sets
+  Q-perp (Q a rank-4 closed set through t).
+- So rank-7 perp-section tops need >= 5 sections, hence R >= 660 even at zero waste: (no cell, 3) +0.39%,
+  (cells, 3) -2.06% (`price_r7.py`).
+- Span-closed rank-7 hyperplane subsets of rank-8 nodes do refine most 4-covers (P 3,642 / 3,642; T 12,376 /
+  13,101 representative covers; `lr7refine2.py`).  Nondegeneracy of those subspaces is not checked.  They lower the
+  node to rank 7 but leave the middle problem unchanged.
+
+**Natural hub family (not yet used).**
+- For a coordinate set S, L(S) = {P(ij), T(ijk) inside S} has rank |S| and C(|S|,2) + C(|S|,3) lines:
+  - 4 lines at |S| = 3;
+  - 10 at 4;
+  - 20 at 5;
+  - 35 at 6;
+  - 56 at 7.
+- L(S) is positive definite for |S| <= 8.
+- P-type A3 nodes (A3 on 4 coordinates) have F-perp = L(complement), which is rank 7 with 56 lines and 6 users.
+  Every rank-7 part on such a node has the same closure, so these nodes share automatically.
+- Mixed A3 frames {T(abx), P(xy) : x,y in {c,d,e}} have 47-line perps.
+- Rank-3 hubs inside L(5): kappa3(L(5)) ~ 4-5 using mixed A3s (the T triples through a K2 + K3 edge set).
+- A hub-aligned design would mirror E8's quad partition on this coordinate hierarchy.
+
 ## 4. Next goals (priority order)
 
 Updated at the end of session 2.  Every class examined is at or below break-even once all layers are counted.  The
 items below are the remaining loopholes, in order of plausibility.
 
-0. **Rank-8 frame sections** (the only class whose counting reaches the union-LP floor R = 440: +13.5% there,
-   break-even 662 with a reach-compliant middle).  See 3b.
+0. **Rank-8 frame sections: HUB-ALIGNED design** (session 3, see 3c).  The top is solved (R = 572-583 under
+   RHO = 7).  Cover-driven tops are dead in the middle (proven per design: R >= 968).  Next:
+   - Build a top whose delivered parts share rank-7 closures, e.g. P-A3 nodes F-perp = L(7-set) with >= kappa5
+     delivered users.  Add a "closure shared" constraint to `lr8z11.py`, then re-run `lr8midlb.py` and
+     `lr8nodecost.py`.
+   - Design the coordinate hierarchy L(3) < L(5) < L(7) as hubs, E8-quad style, and check kappa at every level.
+   - Older notes below are kept for context.
+   (Original item:) **Rank-8 frame sections** (the only class whose counting reaches the union-LP floor R = 440:
+   +13.5% there, break-even 662 with a reach-compliant middle).  See 3b.
    - (a) Top design: 4 frames per line covering R(t), and each in-chain section has a delivered co-user.
      `code/llp/lr8design.py` (strict, Z11) and `lr8design2.py` (relaxed).
    - (b) Parts: the in-chain span condition plus independent delivered parts (`lr8parts.py`).
