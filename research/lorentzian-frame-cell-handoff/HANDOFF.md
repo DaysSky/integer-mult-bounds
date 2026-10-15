@@ -691,6 +691,11 @@ content.
     - With rank-5 pieces below the node, every triangle node costs >= 1, so T-part >= 220 and R >= 660.
     - Exceptions: riders at the triple-sum stops (none found), or rank-6 stops (untested).
     - Re-checked at nodes 1, 57, 130 and 219: all infeasible.
+    - **Rank-6 stops do not help.**  A register alone at its rank-6 stop must still be assembled there from
+      rank-<=5 inputs, so it needs rank <= 5 itself.  Only riders can relax this.
+    - **Riders at the hubs M_n:** they come from P(E)'s node {P(E), T(B1), T(B2), T(B3)}.  Each P line picks one
+      class, so at most 55 of the 220 hubs get one.  None were found for the triple-sum stops.
+    - So T-part waste is >= ~165 including the first middle level.  No gain from the M11 triangle family.
   - **Middle of a triangle node:**
     - Its good vectors, the pairwise sums, all lie in the hub M_n = A2(A) + A2(B) + A2(C) + 27 transversals
       (36 lines, rank 7).
