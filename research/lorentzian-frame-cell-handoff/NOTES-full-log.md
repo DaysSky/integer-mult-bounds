@@ -1518,3 +1518,19 @@
   incidence bound: each use beyond 20 lines needs extra pieces; with <= 6 users per node, waste >= (26,070 - 880*20)
   / 120 ~ 71 -> R >= ~511 (rank-5 subsets <= 20 lines: verified in the 6 largest T node types: max lines in rank-k
   closed subsets 1/3/6/12/20; (5,37,8) node 1/3/6/11/17).
+- *** T-TRIANGLE DESIGN (llp/lttri_design.py, verified geometrically by llp/lttri_check.py) ***  A triangle node is
+  3 pairwise disjoint triples {A,B,C} of the 11 points: frame {T(A),T(B),T(C)} (rank 3, perp 37 = A2(A)+A2(B)+A2(C)
+  +P(E)+27 transversal T lines, E = leftover pair), usable by all three T lines.  For T(A) four triangle nodes
+  (A,B_i,C_i,E_i) cover R(T(A)) iff every pair of D = [11]-A is inside a block (B_i, C_i or E_i) of some node and
+  across B_i x C_i of some node (840 such 4-sets per T line).  CP-SAT (Z11-symmetric, 5 s) finds 220 nodes with
+  every triple in exactly 4 nodes, each triple's 4 nodes a valid cover; geometric check: all 165 T lines covered,
+  overlap exactly 33 each (= the proven minimum).  => PERFECT top-level sharing for all T lines (each node used by
+  all its 3 users), versus >= ~780 nodes found by pool searches.  File llp/lttri_design_z11.json.
+- Within-block pairs partition exactly (4 x 7 = 28), so at node (A,B,C) user T(A) must receive A2(B)+A2(C)+P(E)
+  there (f_A, rank 5), T(B) gets f_B, T(C) gets f_C; span{f_A,f_B,f_C} = 3 dims of rank-5 vectors.  Own A2(A) once
+  (or odd) over the user's 4 nodes; each of its 84 transversal-type T lines odd over its nodes (8 doubly-covered
+  pairs).  P(E) is needed by all three users at the node -> an in-chain user's part can be in the delivered span only
+  as an IDENTICAL copy of a delivered part (sum of the three parts always contains P(E)).
+- P lines: best fully-P-shareable cover type ((4,42)^2,(6,47),(6,56)): A3({a,b,c,d}) + two lone A2(B_i)+P(ab) + mixed
+  A3 A2({a,b,e}) u {T(x,c,d)}: lone A2+P nodes are not used by their A2 members in this type -> ~110 single-user
+  nodes unless covers mix roles.  Next: role-aware P design (analogue of the triangle design).

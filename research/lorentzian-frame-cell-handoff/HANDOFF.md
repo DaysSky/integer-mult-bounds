@@ -620,6 +620,26 @@ content.
     largest T node types (`lclosed.py`).
 - Only varying-part designs with an aligned middle keep the +13.5% counting potential.
 
+**T-triangle design: perfect top sharing for all T lines (proven by construction).**
+- Files: `code/llp/lttri_design.py`, `lttri_check.py`, `lttri_design_z11.json`.
+- **Triangle node:** three pairwise disjoint triples {A, B, C}.  The frame {T(A), T(B), T(C)} has rank 3 and perp
+  37 = A2(A) + A2(B) + A2(C) + P(E) + 27 transversal T lines, where E is the leftover pair.  All three T lines can
+  use the node.
+- **Cover condition:** four nodes (A, B_i, C_i, E_i) cover R(T(A)) iff every pair of the complement D lies inside a
+  block of some node and across B_i x C_i of some node.  There are 840 such 4-sets per T line.
+- **Construction:** a Z11-symmetric CP-SAT finds, in 5 s, 220 nodes with every triple in exactly 4 nodes, each
+  triple's nodes forming a valid cover.
+- **Geometric check:** all 165 T lines are covered, each with overlap exactly 33, the proven minimum.
+- So all 660 T uses sit on 220 nodes used by all their users.  Pool searches needed ~780 or more.
+- **Forced contents at a node:** T(A) receives f_A = A2(B) + A2(C) + P(E) there, a rank-5 set.
+  - Own A2(A): received once (odd) over its 4 nodes.
+  - Transversal-type T lines (84 per T line): received an odd number of times.
+  - Because P(E) is needed by all three users, an in-chain user can be hosted only by an identical delivered part.
+- **Open:** do the node parts (f plus transversal slices, at most 9 transversals per rank-5 piece) admit <= 3
+  rank-5 pieces per node?  Then the aligned middle.
+- **P lines:** their best fully P-shareable cover type is A3({a, b, c, d}) + 2 lone A2(B) + P(ab) + a mixed A3.  Its
+  lone A2 + P nodes are not used by their A2 members.  A role-aware P design is next.
+
 **Natural hub family (not yet used).**
 - For a coordinate set S, L(S) = {P(ij), T(ijk) inside S} has rank |S| and C(|S|,2) + C(|S|,3) lines:
   - 4 lines at |S| = 3;
