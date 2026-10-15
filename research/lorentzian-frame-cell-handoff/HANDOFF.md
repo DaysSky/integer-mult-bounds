@@ -836,6 +836,12 @@ break-even once all layers are counted.  The items below are the remaining looph
      - (b) Build the top from aligned node types (P-A3 L(7-set) nodes, A2 + X nodes), then the coordinate hub
        hierarchy L(3) < L(5) < L(7).
      - (c) The P-line analogue of the triangle design (role-aware: A2 + P nodes used by their members).
+     - (c') **Mixed triangle covers.**
+       - The triple-sum obstruction comes from P(E) being forced into all three users' parts.  In the pure M11
+         design the within-block pairs are covered exactly once (4 x 7 = 28), which forces this.
+       - Covers mixing 2-3 triangle nodes with other node types, e.g. A2(B) + T nodes, can cover some P lines of D
+         twice and release the parity.
+       - Test with `lttri_rho5local2.py` adapted to mixed nodes.
      - (d) **Varying-part piece design (the only zero-waste shape left).**
        - At each node, the users' parts are XOR combinations of a few rank-5 pieces.  The DISTINCT parts must span
          exactly the arriving pieces (m = d).  Equal parts are served by copies.
