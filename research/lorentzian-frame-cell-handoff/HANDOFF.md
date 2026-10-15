@@ -842,6 +842,12 @@ break-even once all layers are counted.  The items below are the remaining looph
        - Covers mixing 2-3 triangle nodes with other node types, e.g. A2(B) + T nodes, can cover some P lines of D
          twice and release the parity.
        - Test with `lttri_rho5local2.py` adapted to mixed nodes.
+       - **Probe done (`code/llp/lttri_rho5_pe.py`):** making P(E) OPTIONAL per user (a Boolean per user, all
+         other forced parts kept) is still infeasible at node 0: 14361 maximal rank-5 subsets, no feasible
+         (delta, pivot) sub-problem.  So releasing P(E) alone does not help; the obstruction already comes from the
+         forced transversal / A2 fibres.  A mixed cover must also change which A2/transversal lines each triangle
+         user carries, i.e. it must break the triangle-node part structure itself, not just the parity of P(E).
+         Scope: one node (all nodes are M11-equivalent in the pure design; in a mixed design they need not be).
      - (d) **Varying-part piece design (the only zero-waste shape left).**
        - At each node, the users' parts are XOR combinations of a few rank-5 pieces.  The DISTINCT parts must span
          exactly the arriving pieces (m = d).  Equal parts are served by copies.

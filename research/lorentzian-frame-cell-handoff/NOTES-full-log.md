@@ -1707,3 +1707,9 @@
   (cells,3,5) +14.9% (break-even X ~ 270 = 0.74 per target), (cells,3,6) +14.1%, (cells,3,5,7) +10.1% (~0.47 per
   target).  I_{11,1}: +13.5% (0.66 per target).  Rank-10 nodes are 5 ranks above the rank-5 stop, so I13 likely needs
   the extra stop -> no easier than I11.
+
+## P(E)-optional rank-5 probe (lttri_rho5_pe.py)
+- Same as lttri_rho5local2 but part[(u, P(E))] is a free Boolean pe[u]; A2(others) parts stay forced.
+- Node 0: maximal rank-5 subsets 14361; feasible (delta,pivot) sub-problems: NONE even with P(E) optional.
+- Conclusion (scoped to this node / pure-triangle forced fibres): the triple-sum obstruction does not need P(E);
+  mixed covers must alter A2/transversal memberships, not only P(E) parity.
