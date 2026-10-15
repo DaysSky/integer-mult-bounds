@@ -772,6 +772,18 @@ content.
     (`lr8sharepool.py`).
 - `python3 lrankcap.py 6` (env `KINDS`): exhaustive rank-capacity check (long).
 
+**Source side of the R = 440 count (`lsrccell.py` .. `lsrccell4.py`).**
+- **proven:** R420-style cells (orthogonal pair, 3 registers each) at 660 registers put every line in exactly 2
+  cells.  Its 4 first hubs must then form a 4-cover of R(u) splitting into two pairs through distinct orthogonal
+  cell partners.
+  - No such cover exists (P 0 / 3,642, T 0 / 13,101 representative covers).
+  - The argument extends to hubs of any rank.
+- Without target reads at rank <= 2, the best coverage found leaves 24 (P) and 16 (T) lines uncovered (top-60
+  heuristic).  Targets can read only ~2 lines each at rank <= 2.  The exact computation (`lsrccell3.py`) is
+  pending.
+- General cells: the budget forces 220 sum registers plus 440 single ones.  The weak per-line conditions are
+  satisfiable, so the general source side is a design problem mirroring the top.
+
 **Overarching insight (session 3).**
 - All open classes (rank-8 sections, frame union, A3/TT*) hit the same wall: **hub alignment**.
 - **Zero waste** needs, at every frame of the network, the span of arriving contents to equal the span of needed

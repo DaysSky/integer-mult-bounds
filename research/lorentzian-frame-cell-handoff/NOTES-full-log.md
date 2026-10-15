@@ -1685,3 +1685,9 @@
   Targets can read at most ~2 lines each at rank <= 2 (440 reads in total) against ~16-24 per source needed
   (3,500+): if the exact minimum uncovered is >= 3 per source on average, R420-style cell sources cannot support
   R = 440.  Untested: A2 cells, cells with other register contents.
+- General source side (llp/lsrccell4.py): the 660-register budget with orthogonal-pair cells forces 880 carrier slots
+  = 220 SUM registers (hub shared by the cell's two lines) + 440 single registers (if cells may hold more than 3
+  registers, a line can sit in fewer or more cells).  Weak conditions are satisfiable: all 4 frames contain a partner
+  orthogonal to u in 3,032 / 3,642 P and 8,661 / 13,101 T representative covers; most covers have 3-4 frames
+  shareable with a partner.  So only the strict R420 template (3 registers per cell, 2 cells per line) is ruled
+  out; the general source side is a design problem mirroring the top (transpose symmetry).
