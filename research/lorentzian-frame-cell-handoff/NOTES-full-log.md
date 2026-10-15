@@ -1504,3 +1504,13 @@
   T 31,080 / 258,020 (llp/lr8sharepool.py -> r8share.pkl).
 - Identical-parts sharing on the 60-cover overlap/random pool: >= 638 nodes for 880 uses (CP-SAT bound 58 orbits)
   -> that pool cannot share; re-run on the shareable pool r8share.pkl (150 covers per rep) running.
+- COVER-TYPE CENSUS (exhaustive, llp/lr8covtypes.py; node type = (frame lines, perp size, usable P users, usable T
+  users)): P has 11 node-type covers, T 60.  Lowest per-target node cost sum 1/users: P 0.783
+  ((4,42,4,0),(5,37,1,4),(6,56,6,0)^2), T 0.833 ((4,37,1,3),(4,43,3,1),(6,47,3,3)^2 and (4,43,3,1)^2,(6,47,3,3)^2).
+- RIGOROUS LP BOUND on the number of nodes (llp/lr8covtypes.py; every node of a type serves at most its usable P and
+  T users; types merged by key, a relaxation): any rank-8-section design (4 nodes per line) has >= 259.7 -> 260
+  distinct nodes.  LP optimum: P all ((4,42,4,0)^2,(6,47,3,3),(6,56,6,0)); T 146.7 x ((3,37,0,3)^4) + 18.3 x
+  ((3,31,0,2),(6,47,3,3)^3).
+  => identical parts + copies: R >= 440 + #nodes with m_F >= 2 (avg part ~30 lines -> m_F >= 2 nearly always)
+  ~ 700 -> (cells,3,5) with copies ~ +0.8% at N = 260 even with a FREE lower middle: at best break-even.
+  Varying parts (d_F = m_F) keep the +13.5% counting potential but need an aligned lower middle.

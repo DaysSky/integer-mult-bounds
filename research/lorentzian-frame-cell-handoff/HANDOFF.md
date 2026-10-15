@@ -609,6 +609,13 @@ content.
   - The shareable pool (150 per rep) was still at ~825 nodes after a few minutes.
   - Sharing needs a globally consistent symmetric structure, not pool search.
 
+**Node-count LP (proven, `lr8covtypes.py`).**
+- Node type = (frame lines, perp size, usable P users, usable T users).  P has 11 node-type cover classes, T 60.
+- Every node of a type serves at most its usable users of each kind.  Merging types by key is a relaxation.
+- Result: **any rank-8-section design needs >= 260 distinct nodes.**
+- So identical parts + copies give R >= ~700, which is break-even at best even with a free lower middle.  Only
+  varying-part designs with an aligned middle keep the +13.5% counting potential.
+
 **Natural hub family (not yet used).**
 - For a coordinate set S, L(S) = {P(ij), T(ijk) inside S} has rank |S| and C(|S|,2) + C(|S|,3) lines:
   - 4 lines at |S| = 3;
