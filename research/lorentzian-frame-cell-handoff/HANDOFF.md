@@ -722,6 +722,14 @@ break-even once all layers are counted.  The items below are the remaining looph
      - (b) Build the top from aligned node types (P-A3 L(7-set) nodes, A2 + X nodes), then the coordinate hub
        hierarchy L(3) < L(5) < L(7).
      - (c) The P-line analogue of the triangle design (role-aware: A2 + P nodes used by their members).
+     - (d) **Varying-part piece design (the only zero-waste shape left).**
+       - At each node, the users' parts are XOR combinations of a few rank-5 pieces.  The DISTINCT parts must span
+         exactly the arriving pieces (m = d).  Equal parts are served by copies.
+       - Nested parts, e.g. user 1 takes a + b and user 2 takes a, make the rank-7 or rank-5 stop zero-waste,
+         because every arriving dimension is needed by some user.
+       - Each user's 4 parts must still XOR to R(t).
+       - Formulate as a CP-SAT over a fixed candidate piece family per node orbit (rank-5 closed subsets of the
+         perp), under Z11 or a subgroup of M11.  Start from the low-waste f0 covers, not from shared nodes.
    - Older notes below are kept for context.
    (Original item:) **Rank-8 frame sections** (the only class whose counting reaches the union-LP floor R = 440:
    +13.5% there, break-even 662 with a reach-compliant middle).  See 3b.
