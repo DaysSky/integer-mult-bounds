@@ -549,6 +549,17 @@ items below are the remaining loopholes, in order of plausibility.
   - `tword/gcheck.py`;
   - `price/pricer.py`, `price/lor_fc_price3.py`;
   - `cellb/routepar.py`.
+- **Session 2 scripts:**
+  - `llp/`:
+    - LP / top analysis: lpsolve, lparity*, la3*, lexcl*, lkappa, lkex*, lpar4_*, lpar_inchain, lunion_min,
+      lexcl_union, lr3cover_exact;
+    - A3 designs: e11design*, e11eval, e11agglp*, e11lpdesign;
+    - frame union routability: lroute_sa*, lroute_z11, lroute_a3, lcovers (covers3.pkl), lmatch*, lframe1,
+      lmidcap, lfull_eval.sh;
+    - rank-8 sections: lr8design*, lr8parts, lr8midcheck, lr8slots.
+  - `price/`: price_a3exact*, price_a3reach, price_a3mix, price_frame*, price_general, price_4sec*, price_r8sec,
+    price_ceiling, price_stops, budget.
+  - Systems: `llp/lroute_best_11.json` (weak U = 0); `llp/a3part_11.json` (27-block A3 packing).
 - `data/` holds the systems (JSON line -> frame mask):
   - lsa6_q548 (best exact floor 567) and its cached top;
   - n548, q550, n550, s185_a, nr596, r140_a, lsa3_best_f, lsys3np_5_0, lsys3np_8_0;
