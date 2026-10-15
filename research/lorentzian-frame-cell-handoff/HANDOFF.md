@@ -652,8 +652,8 @@ content.
 - **RETRACTED (session 3, same day):** the claim ">= 1 extra register per triangle node, R >= 660" was wrong.  It
   used f_A + f_B + f_C = A2(A) + A2(B) + A2(C) + P(E); the correct sum is P(E).
   - **Still true:**
-    - A user takes a full fibre at every node.  Each node has >= 1 single-crossing pair, since there are only 8
-      doubly-crossing pairs.  So every part at a triangle node has rank 8.
+    - A user takes a full fibre at every node.  Each node has >= 1 single-crossing pair, since at most 8 pairs cross more than
+      once; in the M11 design, 24 pairs cross once and 4 cross three times.  So every part at a triangle node has rank 8.
     - Pairwise sums P_A + P_B always have rank <= 7.
     - An in-chain user can be hosted only by an IDENTICAL delivered part.
   - **Corrected node condition:**

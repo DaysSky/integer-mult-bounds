@@ -1593,7 +1593,8 @@
   running 55 min.  Break-even needs the TOTAL extra (these two plus all deeper waste) <= ~145-190.
 - *** RETRACTION ***: the "PROVEN: T-triangle tops cost >= 1 per node (R >= 660)" entry above is WRONG: it used
   f_A+f_B+f_C = A2(A)+A2(B)+A2(C)+P(E), but the sum is P(E) (each A2 appears in two f's).  Correct analysis: every
-  part at a triangle node has rank 8 (each node has >= 1 single-crossing pair because only 8 pairs cross twice, so
+  part at a triangle node has rank 8 (each node has >= 1 single-crossing pair because at most 8 pairs cross more than once -- in the M11
+  design 24 pairs cross once and 4 cross three times -- so
   a full X-fibre is taken); pairwise sums P_A+P_B have rank <= 7 always; with three delivered users the node is
   zero-waste iff P_A+P_B+P_C (= P(E) + own-A2 terms + XOR of transversal sets) has rank <= 7 (e.g. transversal
   sets XOR to 0); in-chain users need identical parts -> nodes with an in-chain user cost >= 1 -> T-part waste
