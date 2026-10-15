@@ -1130,3 +1130,42 @@
   one-level without ~22 dead registers per block (cell registers carry <= 3 lines; 6 useful outputs).
 - kappa (union cover of a whole section by proper closed nodes, llp/lkappa.py): PP section (70 lines) 3 (optimal);
   with shareable nodes (>= |N|/2 sink planes) 4 found.
+- EXCLUSIVE-PART CLOSURES (llp/lexcl.py, exhaustive over all 3-section tops of both representatives): for EVERY frame
+  triple and EVERY defect-1 triple, each section's exclusive lines (14-43 lines) have closure = the whole section line
+  set -> no proper node contains an exclusive part -> every delivery of an exclusive part needs >= 2 node arrivals
+  (any depth).  (E8 R420 also has kappa = 2; for I11 this combines with 1.5 cells/target and 25-56-line triple parts.)
+- Break-even ratios across I_{n,1} (price/price_i13.py): I10,1 2.56-3.18 v, I11,1 2.78-3.43 v, I13,1 2.90-3.54 v
+  (two-level ... zero-level).  An exact R420 analogue (3.5 v) loses in every size, as in E8 (R420 -4.6%).  I13,1 has
+  no good-frame parity obstruction (78 P lines, T-T degree sum even) but that only buys R420-type 3.5 v.
+- 4-SECTION TOPS (llp/lexcl4.py, 3000 sampled union 4-covers per representative, <= 3 lines left to the rank<=2 read):
+  exclusive parts shrink to mostly 5-14 lines and ~85% have PROPER closures -> one node output per delivery
+  (kappa_ex = 1) is geometrically possible.  This is the remaining loophole: a zero-waste 4-section design needs every
+  node's outputs to be exactly a basis of its input span (users' needed vectors), every cell register used once.
+  Earlier exact section-level models of 4-section Lorentzian designs (lsec/lstageS, lhub) hit the node squeeze
+  (R >= 880 for design R3; hub-only middle INFEASIBLE) -- not a proof for jointly optimised designs.
+- PRICING CORRECTION / NEW: the pricer is extremely sensitive to local rank mass at fixed R (deficit ~0.5% of mW);
+  histograms MUST be mass-consistent (sources climb 10, helpers 11, targets 10, totals 10 for I11).  With exact
+  counts (price/price_a3exact.py; control: standard one-level rank 5 breaks even at R = 629 as before) the
+  A3-PARITY ARCHITECTURE SHAPE prices much better: targets 0 -> <d> -> t-perp (2 moves), copies/differentiators
+  without middle node (empties 0-9-10-11, carrier copies 0-1-2-9-10-11), merged-away pieces die without the t-perp
+  stop.  Break-even R ~ 777 (rank-5 nodes) / ~811 (rank 3 or 8) vs 629/675 for the standard shapes.
+  E8 version (price/price_e8a3.py; R420 control reproduced -4.59%): E8 A3 shape at R = 460 is -5.1..-6.0% -> no E8 gain.
+- kappa of EXCLUSIVE parts (llp/lkex.py, exact CP-SAT over maximal proper nodes S & x-perp): EXACTLY 2 for every
+  section of every 3-section top (both target types); pieces 12-35 lines.  Full sections need 3 (optimal).
+- Shareability of the 2-piece covers (llp/lkex2.py; sinks of pp(piece) vs ceil(|piece|/2) inputs): OK (ratio >= 1)
+  for PT-inc 56, PT-disj 66 (|E| 19), PP 70 (|E| 14), PTT 71 (|E| 24), TT 56; NOT for big A2 exclusive parts
+  (PPP 85 |E| 29-43, PTT 71 |E| 29-34: ratio 0.54-0.78) and TT* 61 (0.75).  No P-target top is fully shareable;
+  T-target (PTT,PTT,TT) tops may be.
+- IDEALISED A3 ACCOUNTING (I11): per 6 targets 7 sections x kappa_ex 2 + 11 differentiators (6 Q + 5 copies) = 25
+  registers -> R ~ 697 -> +4.3% (rank 5) .. +6.5% (rank 3/8) over P111-tuned IF all pieces shareable.  With the
+  measured shareability (A2 sections effectively ~2.7 arrivals) -> R ~ 800 ~ break-even (777-811).  Not yet counted:
+  defects, leftover lines outside A3/TT* tops, routability, node-capacity mismatch, keeper-read conflicts.
+  STATUS: closest Lorentzian candidate so far -- at break-even in idealised accounting, not a gain.
+- PER-TARGET A3 ACCOUNTING with measured shareability (per user of a section: kappa_eff/u + (u-1)/u,
+  kappa_eff = 2/min(1, ratio)): best P tops ~4.45-4.54 registers/target (PP+PTT+PTT / PP+PPP+PPP), best T tops
+  ~4.17 ((PTT,PTT,TT) with 71|24 sections) -> ~933 registers, R ~ 713 vs A3-shape break-even 777-811 -> +3..5%
+  IF realisable.  Caveats: (i) the 6 Q-delivery registers per block need a second middle level (cell -> mid ->
+  A3-perp node) to carry the 42-56-line triple part; (ii) users of a shared section have different exclusive parts
+  (union larger -> more arrivals) unless they share an A3 block; (iii) block designs: <= 27 disjoint A3s (2+ P lines
+  each) -> 58 lines need TT*/frame tops (~5.2/target) -> R ~ 777 ~ break-even; (iv) defects, routability, keeper
+  reads, totals not counted.  => ARCHITECTURAL POTENTIAL at break-even +- a few %, not a realised gain.

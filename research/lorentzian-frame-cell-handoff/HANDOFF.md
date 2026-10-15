@@ -275,6 +275,40 @@ So every top is a frame triple (defect 3) or one of these.  Sections have <= 3 u
 - **proven, chain constraint:** the move lever "carriers copy at the cell (0 -> 2)" would raise break-evens by 20-33,
   but it is not available: >= 2 fresh helpers per source must stop at <s>.
 
+**A3-parity architecture: the closest Lorentzian candidate** (`code/llp/lkex*.py`, `code/price/price_a3exact.py`).
+
+*Pricing.*
+- **proven:** the pricer is extremely sensitive to local rank mass at fixed R, so histograms must be mass-consistent.
+  Sources climb 10, helpers 11, targets 10, totals 10.
+- **proven, exact pricer on the shape:** the A3 shape is much cheaper than the standard shapes.
+  - Targets go 0 -> <d> -> t-perp.
+  - Differentiators skip the middle: empties 0-9-10-11, carrier copies 0-1-2-9-10-11.
+  - Merged-away pieces die without the t-perp stop.
+  - Break-even is R ~ 777 (rank-5 nodes) to ~811 (rank 3/8), versus 629-675 for the standard one-level shapes.
+- **proven, E8 control:** R420 is reproduced (-4.59%).  The E8 A3 shape at R = 460 gives -5..-6%, so there is no E8 gain.
+
+*Section assembly.*
+- **proven:** the exclusive part of every section of every 3-section top is covered by EXACTLY 2 proper nodes (optimal;
+  pieces 12-35 lines).  Full sections need 3.
+- **proven, shareability** (sinks >= ceil(|piece|/2)):
+  - OK for PT-inc 56, PT-disj 66 (|E| 19), PP 70 (|E| 14), PTT 71 (|E| 24) and TT 56.
+  - NOT OK for large A2 exclusive parts (ratio 0.54-0.78) or for TT* 61.
+
+*Accounting.*
+- **heuristic, idealized:** 25 registers per 6 targets, R ~ 697, +4..6%.
+- **heuristic, per-target best tops with measured shareability:** P ~4.5 and T ~4.17 registers per target, so
+  R ~ 713, +3..5%, IF realizable.
+
+*Caveats, which push the estimate to break-even:*
+- Q-deliveries need a second middle level to carry the 42-56-line A3-perp triple part.
+- Users of a shared section have different exclusive parts unless they share an A3 block.
+- At most 27 disjoint A3s exist, so 58 lines need TT* or frame tops; this gives R ~ 777.
+- Defects, routability, keeper reads and decoder totals are not counted.
+
+*Verdict.*  **heuristic:** an architectural potential at break-even +- a few %, not a realized gain.  This is the
+next thing to build: a globally consistent design (tops + cells + shared nodes) with exact section-level GF(2)
+content.
+
 **Assessment.**
 - **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  The binding reason is structural:
   sections, exclusive parts and triple-overlap blocks are 2-5x larger than the largest shareable nodes (~20-30 lines),
