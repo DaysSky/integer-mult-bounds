@@ -1618,3 +1618,10 @@
   register is a rider there).  440 nodes: 220 triangles (3 users) + 220 single-user P nodes.  Exact layer
   (FAITH=1): node waste 297 (R 737; 792 with rank-7 nodes fed at rank 5), midlb 110 (55 riders matched).
   Total >= 407 >> margin.  The P side has no sharing: A2+P nodes are not used by their members in this cover type.
+- TRIANGLE TOP CP-SAT (llp/lttri_cpsat.py / lttri_cpsat2.py / lttri_cpsat3.py; variables: in-chain node per T line,
+  node per (triple-crossing pair, a), hyperplane zero set per node; own A2 taken at the in-chain node):
+  - zero-waste count model: 155 of 220 nodes zero-waste in 30 s;
+  - lower-cost model (cost 1 per node with an in-chain user, 2 if all three in-chain): 83 = the in-chain floor,
+    reached in 25 s (138 hyperplane nodes);
+  - faithful costs (waste = m - d: c=0 -> 1-hp, c=1 -> 2-hp, c>=2 -> 2) running.  Note c=1 nodes cost >= 1 and
+    c=2 nodes >= 2 unless all three parts are identical, so the faithful optimum is >= ~110-165.
