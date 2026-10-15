@@ -5,7 +5,7 @@ style count, see lr8nodecost.py).  Original description (lr8poolmip2): Z11-symme
 exclusive part of rank 8 (the part then spans the rank-8 section: assembly leftover)  (x11 = U + L_span).
 Optimistic about rank-7 exclusive parts (assumes multiply-covered lines can be kept inside their span; lr8exact2 checks).
 Relaxation of lr8host_sa2 (no exact part-identity for hosting); a lower cost here is necessary, not sufficient.
-usage: lr8poolmip3.py timelimit -> lr8poolmip3.json {rep: [cover index, in-chain frame hex]}"""
+usage: lr8poolmip3.py timelimit -> ' + __import__('os').environ.get('OUT', 'lr8poolmip3.json') + ' {rep: [cover index, in-chain frame hex]}"""
 import sys, json, pickle, collections, time, os
 from lgeo import *
 from ortools.sat.python import cp_model
@@ -23,7 +23,7 @@ for s in range(V):
     if s in orb: continue
     reps.append(s); x = s
     for k in range(n): orb[x] = (len(reps) - 1, k); x = rot[x]
-cov = pickle.load(open('r8covers.pkl', 'rb'))
+cov = pickle.load(open(__import__('os').environ.get('POOL', 'r8covers.pkl'), 'rb'))
 FORCED = {}
 for ri, r in enumerate(reps):
     R = HYP[r]
@@ -87,7 +87,7 @@ class CB(cp_model.CpSolverSolutionCallback):
             c = [i for i, y in enumerate(Y[ri]) if self.Value(y)][0]
             F = [F for (rj, F), ci in CIN.items() if rj == ri and self.Value(ci)][0]
             out[r] = [c, hex(F)]
-        json.dump(out, open('lr8poolmip3.json', 'w'))
+        json.dump(out, open('' + __import__('os').environ.get('OUT', 'lr8poolmip3.json') + '', 'w'))
 st = sv.Solve(M, CB())
 log('status', sv.StatusName(st), 'obj', sv.ObjectiveValue() if st in (cp_model.OPTIMAL, cp_model.FEASIBLE) else None, 'bound', sv.BestObjectiveBound())
 if st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
@@ -96,5 +96,5 @@ if st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
         c = [i for i, y in enumerate(Y[ri]) if sv.Value(y)][0]
         F = [F for (rj, F), ci in CIN.items() if rj == ri and sv.Value(ci)][0]
         out[r] = [c, hex(F)]
-    json.dump(out, open('lr8poolmip3.json', 'w'))
+    json.dump(out, open('' + __import__('os').environ.get('OUT', 'lr8poolmip3.json') + '', 'w'))
     log('hosted reps', sum(sv.Value(h) for h in hosted), 'single frame orbits', sum(sv.Value(s) for s in singles))

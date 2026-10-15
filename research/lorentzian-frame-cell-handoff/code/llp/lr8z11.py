@@ -28,9 +28,10 @@ for s in range(V):
     reps.append(s); x = s
     for k in range(n): orb[x] = (len(reps) - 1, k); x = rot[x]
 NR = len(reps)
-cov = pickle.load(open('r8covers.pkl', 'rb'))
+cov = pickle.load(open(__import__('os').environ.get('POOL', 'r8covers.pkl'), 'rb'))
 import os
 XOR = int(os.environ.get('XOR', '0'))
+MID = int(os.environ.get('MID', '0'))   # 1: +1 per delivered part with rank-7 exclusive whose closure is not shared by a delivered co-user part on the same node (rank-7 stop needs >= 2 registers)
 FAITH = int(os.environ.get('FAITH', '0'))  # 2: also +1 for an unhosted spanning in-chain part; 1: cost = unhosted + every DELIVERED part spanning rank 8 (rank-7 last middle stop; lr8nodecost)   # 1: hosted iff in-chain part = GF(2) sum of delivered co-user parts
 PM = {}
 def pmc(F):
@@ -150,6 +151,32 @@ def solve(sel, TL=10.0, workers=1, want=False, force=None, only=None):
                 if FAITH >= 2:
                     s2 = M.NewBoolVar(''); singles.append(s2)
                     M.Add(s2 >= (1 if sp is True else sp) + cin[(ri, i)] - 1 - hosted[ri])
+        if MID:
+            for ri in range(NR):
+                r = reps[ri]
+                for i, F in enumerate(secs[ri]):
+                    P, ex, rx, outside = info[ri][i]
+                    if rx != 7: continue
+                    H = 0
+                    for u in bits(pmc(F)):
+                        if rank(ex | (1 << u)) == 7: H |= 1 << u
+                    shs = []
+                    for b in bits(F):
+                        if b == r: continue
+                        sj = secidx(b, F)
+                        if sj is None: continue
+                        o, j = sj; ob, kb = orb[b]
+                        Pb, exb, rxb, _ = info[o][j]
+                        if rotm(exb, kb) & ~H: continue
+                        out_lines = [u for u in bits(rotm(Pb, kb) & ~H)]
+                        if any(Av(b, j, u) is True for u in out_lines): continue
+                        sh = M.NewBoolVar(''); M.AddImplication(sh, cin[(o, j)].Not())
+                        for u in out_lines:
+                            a = Av(b, j, u)
+                            if a is not False: M.AddImplication(sh, a.Not())
+                        shs.append(sh)
+                    cst = M.NewBoolVar(''); singles.append(cst)
+                    M.Add(cst + sum(shs) >= 1 - cin[(ri, i)])
         M.Minimize(NR - sum(hosted) + sum(singles))
         if force is not None: M.Add(hosted[force] == 1)
         if only is not None: return M, hosted, cin, A

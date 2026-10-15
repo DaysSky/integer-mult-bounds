@@ -5,10 +5,11 @@ the last middle stop, each with content supported in a closed set of rank <= RHO
 (rank <= RHO)-supported contents span a space containing S:
   m = dim S if the good vectors of S (support rank <= RHO) span S; otherwise dim S + 1 <= m <= dim S + (dim S - g).
 Registers at the node = max(m, k); extra = max(m, k) - k.  R = 440 + sum of extras (sum k = 660).
-usage: lr8nodecost.py det.json RHO"""
+usage: lr8nodecost.py det.json RHO [AUTO]  (AUTO = input rank used at rank-7 nodes, chain ...,AUTO,7 -> node)"""
 import sys, json, collections, pickle
 from lgeo import *
 D = json.load(open(sys.argv[1])); RHO = int(sys.argv[2])
+AUTO = int(sys.argv[3]) if len(sys.argv) > 3 else 0   # e.g. 5: rank-7 nodes get inputs from rank-5 stops
 sel = {int(k): v for k, v in D['sel'].items()}; det = D['det']
 rot = [img_line(s, [(i + 1) % n for i in range(n)]) for s in range(V)]
 rotp = [list(range(V))]
@@ -22,7 +23,7 @@ for s in range(V):
     if s in orb: continue
     reps.append(s); x = s
     for k in range(n): orb[x] = (len(reps) - 1, k); x = rot[x]
-cov = pickle.load(open('r8covers.pkl', 'rb'))
+cov = pickle.load(open(__import__('os').environ.get('POOL', 'r8covers.pkl'), 'rb'))
 # rep parts
 asg = collections.defaultdict(int)
 for key, v in det['assign'].items():
@@ -70,7 +71,9 @@ for F, us in users.items():
     # enumerate span
     vecs = [0]
     for b in B: vecs = vecs + [v ^ b for v in vecs]
-    good = [v for v in vecs if v and srank(v) <= RHO]
+    rho = RHO
+    if AUTO and rank(pm(F)) <= 7: rho = AUTO      # rank-7 node: the stop before it is the rank-AUTO stop (e.g. 5)
+    good = [v for v in vecs if v and srank(v) <= rho]
     g = len(gf2_basis(good))
     mlo = s if g == s else s + 1; mhi = s if g == s else 2 * s - g
     lo += max(mlo, k) - k; hi += max(mhi, k) - k

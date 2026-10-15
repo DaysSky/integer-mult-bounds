@@ -21,7 +21,7 @@ for s in range(V):
     if s in orb: continue
     reps.append(s); x = s
     for k in range(n): orb[x] = (len(reps) - 1, k); x = rot[x]
-cov = pickle.load(open('r8covers.pkl', 'rb'))
+cov = pickle.load(open(__import__('os').environ.get('POOL', 'r8covers.pkl'), 'rb'))
 FORCED = {}
 for ri, r in enumerate(reps):
     R = HYP[r]

@@ -1434,3 +1434,36 @@
 - Rank-7 SPAN-closed sub-sections (hyperplane line sets inside a rank-8 node, users = lines of F): every rank-8
   4-cover tested so far refines to 4 of them (llp/lr7refine2.py running).  They lower the node to rank 7 (chain
   cells,3 -> 7: +17.9% at X = 0) but do not change the middle problem.
+- MIDDLE LOWER BOUND per design (llp/lr8midlb.py, rigorous for the given top; chains whose stop before the rank-8 node
+  is rank 7 fed from rank <= 5): f0 top (R 583) -> 385 forced singleton rank-7 closures, none with a possible rider
+  node (F' inside pm(M)) -> waste >= 385, R >= 968; f21 top (R 572) -> 561 -> R >= 1133.
+- AUTO-SHARING NODES (llp/lr8autoshare.py, exhaustive over representative covers): nodes F-perp of RANK 7 (all rank-7
+  parts there share the node as closure).  P covers contain only 1-2 rank-7 nodes (1,329 / 2,313 representative
+  covers) -> every P cover has >= 2 rank-8 nodes.  T: 931 of 13,101 representative covers are all-rank-7
+  (main type (4-line/28, 4/36, 4/43, 4/43) 546; (4/43)^4 120).  Frame classes: L(3-set) has perp A7 (28 P lines,
+  rank 7, users P(ab),P(ac),P(bc),T(abc)); P-A3 has perp L(7-set) (56 lines, rank 7, 6 P users).
+- Same-node alignment (pool, 45,716 user pairs on rank-8 nodes): 67% have some exclusive-part pair inside one
+  hyperplane (mostly because one exclusive has rank <= 6); pairs with both exclusives rank 7: 374 aligned / 3,707.
+- lr8z11.py MID=1: +1 per delivered part whose exclusive has rank 7 unless a delivered co-user of the same node has
+  its whole part in the same hyperplane.  On MIP2 covers: node extra 253 (R 693), midlb 286 -> covers not aligned.
+  Annealing with MID=1 FAITH=1 (seeds 31, 32 from MIP2/f21 covers, 33 random) running.
+- Necessary condition is only >= 2 registers per rank-7 closure; the true requirement is kappa5(W_M), and with
+  parts ~28 lines (rank-5 sets hold <= ~20 lines) two aligned parts give |W_M| ~ 40-50 -> kappa5 >= 3.
+- FLEX COVERS (llp/lr8flexcov.py, exhaustive census of representative covers): covers with no frame whose node has
+  rank 8 AND exclusive rank >= 7: P 276 / 3,642 (main type: 4-line/42/rank-8 ex rank 5, 5-line/37/rank-8 ex rank 6,
+  two P-A3 nodes L(7-set)), T 4,023 / 13,101.  Full lists rebuilt (llp/lr8flexpool.py, checks: P 65,170 and
+  T 258,020 covers recovered exactly): flex covers per line P 4,060, T 64,120; pool r8flex.pkl (1,500 per rep).
+- Flex-pool design (lr8poolmip3 relaxed OPTIMAL 0; exact Z11 layer MID=1 FAITH=1; lr8det_flex0.json):
+  node cost RHO=7 everywhere -> R = 627; with rank-7 (auto) nodes fed from rank-5 stops (lr8nodecost ... 7 5) ->
+  R = 990-1089; midlb 319.  => cover-driven designs (greedy pool, flex pool) all fail at the first middle level by
+  hundreds of registers.  Parts must be DESIGNED as combinations of shared rank-5 pieces (hub-first).
+- MID=1 anneal on the greedy pool (seed 32, from f21 covers): objective 308 after 21 min (no breakthrough).
+- HUB-FIRST FORMULATION (next session): every node F gets k_F (= #delivered users) registers carrying rank-5-supported
+  pieces; all parts at F (delivered + in-chain) lie in their span (e.g. disjoint pieces, parts = unions of pieces);
+  each target's 4 parts partition R(t) (>= 6-7 pieces per target since a rank-5 set holds <= 20 lines in L(7));
+  at a rank-5 hub N the pieces stopping there must be spanned by rank-3-supported inputs, so N is used by
+  >= kappa3(W_N) pieces (identical pieces = dimension 1, allowed); same at rank 3 (kappa2) and cells.  Counting
+  passes (660 pieces, >= 1,430 piece-uses needed, capacity ~660 x users).  Natural hubs: coordinate sets L(S).
+  L(7) (56 lines, rank 7, positive definite): rank-k closed sets 56 / 1,050 / 8,120 / 26,463 / 37,163 for k = 1..5,
+  max lines 1 / 3 / 6 / 12 / 20 (D4 inside); kappa5(L7) <= 4, kappa4 <= 8, kappa3 <= 11 (CP-SAT feasible).
+  P-A3 node design needs a 2-(11,4,lambda) style block family (each P line uses 2 A3 nodes with disjoint D-pairs).
