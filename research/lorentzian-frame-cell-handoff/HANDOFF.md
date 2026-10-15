@@ -663,7 +663,15 @@ content.
       node.
   - So the triangle top is NOT ruled out.  `lttri_cost.py` gives 380 with random assignments; 5 nodes were already
     zero-waste.
-  - An optimiser is next (`lttri_opt.py`).
+  - **Local test (`lttri_local2.py`):** zero waste needs the XOR transversal set inside the zero set of a nonzero
+    additive alpha_a + beta_b + gamma_c.  The 6 forced-odd transversals of every node always fit one, so a node
+    is never ruled out locally.
+  - **Optimiser (`lttri_opt.py`, exact node model):** fast cooling took 385 to 363 in 30 s.  The floor from
+    in-chain hosting is 83.
+  - **Combined M11 top (`lm11design.py`, all covers verified):** T lines on triangles; each P(E) on one parallel
+    class (three A2(B_i) + P(E) nodes and {P(E), T(B1), T(B2), T(B3)}, which shares the triangle hub M_n).
+    - Exact layer node waste is 297 (R = 737), with middle bound >= 110 (55 riders).
+    - Total >= 407, well over the margin.  The P side has no sharing.
 - **P lines:** their best fully P-shareable cover type is A3({a, b, c, d}) + 2 lone A2(B) + P(ab) + a mixed A3.  Its
   lone A2 + P nodes are not used by their A2 members.  A role-aware P design is next.
 
