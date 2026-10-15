@@ -687,7 +687,9 @@ content.
     - Exhaustively, over own-A2 patterns, pivots and the 14,361 maximal rank-5 subsets, it is impossible at
       node 0.  All 220 nodes are equivalent under M11, through a regular V4 action on the 4 parallel classes.
     - The hub condition alone (two pairwise sums of rank <= 5) is satisfiable.  So the obstruction is the triple
-      sum, which contains P(E).
+      sum, which contains P(E).  **Refined later:** it persists with P(E) optional and with the A2(other) lines
+      free, and disappears when the multiplicity-1 transversals are free; it lives in those coverage-forced
+      transversals (see next step (c')).
     - With rank-5 pieces below the node, every triangle node costs >= 1, so T-part >= 220 and R >= 660.
     - Exceptions: riders at the triple-sum stops (none found), or rank-6 stops (untested).
     - Re-checked at nodes 1, 57, 130 and 219: all infeasible.
