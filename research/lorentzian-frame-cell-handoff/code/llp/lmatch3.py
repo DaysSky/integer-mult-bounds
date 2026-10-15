@@ -5,12 +5,17 @@ take u through a single-user (non-reciprocal) routable section ('free private');
 reciprocal section ('diff', +1 piece for that section) or are unroutable.  Max-weight matching maximises service.
 Then: parts per section, 2-node (kappa <= 2) test per part, in-chain orientation (bipartite matching), model-A
 register count: reciprocal 2 (+1 if both users delivered, +1 if parts differ), single-user 2, kappa-3 parts +1,
-+1 private register per target with unroutable lines.  usage: lmatch3.py system.json [parts_out.json]"""
++1 private register per target with unroutable lines.  usage: lmatch3.py system.json [parts_out.json] [blocks.json]
+With blocks.json (A3 packing), matching edges {t, opp_X(t)} carrying a line u of X-perp get weight 3 (prefer
+routing each block's A3-perp through its 3 opposite-pair sections -> shared A3-perp node)."""
 import sys, json, collections
 import networkx as nx
 from lgeo import *
 sysm = {int(k): v for k, v in json.load(open(sys.argv[1])).items()}
 M = {s: [x for x in bits(sysm[s]) if x != s] for s in range(V)}
+BL = json.load(open(sys.argv[3])) if len(sys.argv) > 3 else []
+blk = {t: i for i, X in enumerate(BL) for t in X}
+Xperp = [HYP[X[0]] & HYP[X[1]] & HYP[X[2]] & HYP[X[3]] & HYP[X[4]] & HYP[X[5]] for X in BL]
 O = lambda a, b: G[a][b] == 0
 recip = set((min(t, e), max(t, e)) for t in range(V) for e in M[t] if t in M[e])
 single = set((t, e) for t in range(V) for e in M[t] if (min(t, e), max(t, e)) not in recip)
@@ -23,7 +28,9 @@ for u in range(V):
     opts = {t: rsecs(t, u) for t in Ru}
     for t in Ru:
         for e in opts[t]:
-            if (min(t, e), max(t, e)) in recip and e in opts and t in rsecs(e, u): H.add_edge(t, e, weight=2)
+            if (min(t, e), max(t, e)) in recip and e in opts and t in rsecs(e, u):
+                w = 3 if (t in blk and blk.get(e) == blk[t] and Xperp[blk[t]] >> u & 1) else 2
+                H.add_edge(t, e, weight=w)
         if any((t, e) in single for e in opts[t]): H.add_edge(t, ('free', t), weight=1)
     mt = nx.max_weight_matching(H)
     served = set()
@@ -75,5 +82,5 @@ print('  incidences: shared %d, free private %d, differing-part %d (in %d recipr
 print('  kappa of parts:', sorted(kst.items(), key=str))
 print('  in-chain covers %d reciprocal sections -> (del,del) %d' % (covered, deldel))
 print('  model-A registers: pieces/diff %d + copies %d + unroutable privates %d = %d -> R ~ %d' % (regs_pieces, deldel, len(unr_t), total, total - 220))
-if len(sys.argv) > 2:
+if len(sys.argv) > 2 and sys.argv[2] != '-':
     json.dump({'%d,%d' % k: hex(v) for k, v in part.items() if v}, open(sys.argv[2], 'w'))

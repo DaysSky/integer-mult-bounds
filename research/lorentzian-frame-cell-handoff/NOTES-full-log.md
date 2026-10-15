@@ -1288,3 +1288,17 @@
   lines, so no Z11-transversal D5 (needs 5 P) and no D5 partition (55 P lines); D4 (12 lines, 6 P), A4-type (10 lines,
   4/6/10 P) blocks have even P counts vs 55 P lines (odd); frames impossible (P matching); A3s <= 27 disjoint.  The
   odd number of P lines blocks every balanced self-dual block partition that gives E8 its D4 quads.
+- MIDDLE DEPTH vs PRICE for frame union in-chain tops (model-A counts, R = 550 ideal): piece chain middle stops
+  (8): +15.9% / BE 808 [reach-infeasible]; (3,8): +11.3% / 740 [needs rank-8 inputs of >= ~17 lines: rank-3 frames
+  carry <= 6 -> infeasible with node sharing <= 3]; (5,8): +8.9% / 704 [reach at level 2: 6 x 25 >= 129 ok only with
+  max-reach rank-5 frames]; (3,5,8): +5.9% / 656; (4,6,8), (3,5,7): +5.2% / 640.  Register conservation per level
+  (k in -> k out; outputs may overlap; identical outputs need empties) + content caps (rank 3: 6, rank 5: 20 lines) +
+  reach (>= 22 registers carrying u at rank <= 5 before rank-8 nodes) are consistent with a three-level zero-waste
+  middle (6 -> ~24 -> ~72 registers carrying u), which prices at break-even ~656.
+- U = 0 SYSTEM EVALUATED (llp/lroute_best_11.json, lfull_eval.sh): 281 reciprocal + 98 single-user sections;
+  shared 22,492 / free private 3,374 / differing 204 incidences, unroutable 0; parts kappa: 107 sections need 3
+  nodes; top-level model-A R ~ 870 (matching not optimised for kappa).  Middle screen: 544 pieces on 481 nodes
+  (423 nodes with 1 piece), 107 parts without 2-node decomposition, ~1,449 cell-stage registers needed vs 660.
+  First-frame layer: >= 25,296 / 26,070 incidences covered (240 s, not optimal).  => weak routability alone does not
+  help: unstructured systems fail at kappa / node sharing.  Next: structured frames {t, opp_X(t), a, opp_Y(a)} from
+  the 27-block A3 packing (A3-perp node shared by the block's 3 opposite-pair sections) - llp/lroute_a3.py running.
