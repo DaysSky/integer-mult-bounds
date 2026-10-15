@@ -429,12 +429,28 @@ content.
   So the realistic potential of this line is break-even ~656, against the floor 550 + 0.5 x (non-reciprocal mates) +
   overheads.
 
-**Assessment.**
-- **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  The binding reason is structural:
-  sections, exclusive parts and triple-overlap blocks are 2-5x larger than the largest shareable nodes (~20-30 lines),
-  whereas in E8 the triple part B' (12 lines) is itself a node.
-- **proven gap:** a rigorous all-word bound is still missing.  The union-coverage LP only gives 660, and exact-assembly
-  bounds were derived only for the classes above.
+**Assessment (end of session 2).**
+- **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  Both top classes have positive
+  *ideal* potential:
+
+  | top class | ideal (zero-waste) potential | break-even R |
+  |---|---|---|
+  | A3 parity | <= ~2% | ~720-725 |
+  | frame union, in-chain | +6..8% at model-A R = 550 | ~656-688 (three-level reach-compliant middle) |
+
+  Every attempt to realise zero waste fails at a lower layer:
+  - consistency (no consistent A3 design found);
+  - routability: reachable (U = 0), but only for unstructured systems;
+  - middle capacity: node sharing needs partition-like structure, and structured systems have U ~ 1,700-2,150.
+- **Structural reasons** (the proven ones carry their label):
+  1. **proven:** the reach lemma.  h = 11 makes rank-8 nodes reach <= 6 targets, forcing extra middle levels (each
+     costs ~0.5-1.5%).
+  2. **proven, exhaustive:** 4-section parity tops are impossible.
+  3. The odd number of P lines (55) blocks every balanced block partition (frames, D4, D5, A4-type, A3); in E8 the
+     D4 partition gives R420 its zero-waste quads.
+- **proven gap:** no rigorous all-word bound reaches break-even.
+  - The union-coverage LP gives only R >= 440.
+  - The class floors are model-based: A3 715 / 705.8; frame union 550 + 0.5 x (non-reciprocal mates).
 
 ## 4. Next goals (priority order)
 
