@@ -1662,3 +1662,15 @@
   for every own-A2 pattern and pivot.  The triple sum remains the obstruction -> every triangle node costs >= 1 with
   rank-5 pieces below (rank-6 stops do not help; only riders at the triple-sum stop could, none known) ->
   M11 triangle top: R >= 660 at these chains.  FINAL for this family: no gain.
+- E8 R420 ALIGNMENT PATTERN (code/e8r420/align.py on research/e8-bit-r420/data/bitE8mut-r420.json.gz, phases A+B,
+  z registers, helpers empty): per frame rank: #frames | registers | dim before -> after | mean content size
+    rank 1 (lines):   120 | 3.00 | 1 -> 1 (3 copies)          | 0.3 -> 1.0
+    rank 2 (cells):   180 | 3.00 | 2 -> 2 (3 nonzero)         | 0.7 -> 1.7   (0.67 target reads per cell)
+    rank 4 (D4):       70 | 6.86 | 6.86 -> 6.86 (full rank)   | 1.9 -> 9.4   (60 quads + 10 block nodes)
+    rank 6 (D6):      180 | 3.00 | 3 -> 3                     | 8.5 -> 17.4
+    rank 7 (t-perp):  120 | 3.00 | 3 -> 3 (+1 target read)    | 21.5
+  => at EVERY frame #registers = span dim (zero waste), stops 1-2-4-6-7 (gaps of 2), assembly concentrated in the
+  rank-4 quads (~7 registers each).  Cost: 540 registers = 4.5 per line (3 per cell x 1.5 cells per line).
+  The I11 analogue of this template (orthogonal 4-frames, 330 cells) is the known 3.5v = 770 bound; beating P111
+  needs <= ~3.7 registers per line, i.e. MORE efficient than R420's own 4.5 -- the rank-8 4-section ideal (3 per
+  line) is, but needs the alignment R420 buys with its extra registers.

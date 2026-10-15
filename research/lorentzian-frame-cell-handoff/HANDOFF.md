@@ -780,7 +780,12 @@ content.
   odd, there are no disjoint 4-covers, and shared nodes force full-rank parts.
 - The M11 geometry (S(4,5,11), derived AG(2,3) planes) is the only large symmetric structure found that organises
   the top.  The next session should:
-  - (i) extract E8 R420's alignment pattern level by level, as the frame-by-frame spans of its word;
+  - (i) **DONE (`code/e8r420/align.py`):** E8 R420's alignment pattern.
+    - Frames and registers per frame: lines (3 registers) -> cells (3, rank 2) -> D4 quads and blocks (~7,
+      rank 4) -> D6 (3, rank 6) -> t-perp (3 needers, rank 7).
+    - At every frame #registers = span dim, i.e. zero waste.
+    - That costs 4.5 registers per line, while I_{11,1} must reach <= ~3.7 per line to beat P111.  So I_{11,1}
+      needs a template MORE efficient than R420's own; the rank-8 ideal is 3 per line.
   - (ii) look for the M11 analogue, or prove that no I_{11,1} frame hierarchy admits one, e.g. by a
     dimension-count LP over frame orbits with the per-frame condition arriving span = needed span.
 
