@@ -1691,3 +1691,8 @@
   orthogonal to u in 3,032 / 3,642 P and 8,661 / 13,101 T representative covers; most covers have 3-4 frames
   shareable with a partner.  So only the strict R420 template (3 registers per cell, 2 cells per line) is ruled
   out; the general source side is a design problem mirroring the top (transpose symmetry).
+- R420 OVERHEAD: of its 540 z registers, 360 are read by targets (3 needers per target) and 180 (1.5 per target)
+  are never read by a target (cell/D6 intermediates, dead o2, decoder-total hosts).  The I11 rank-8 count has 3
+  deliveries per target (660 = 440 + 220 sources) and break-even allows only ~145-190 extra registers = 0.66-0.86
+  non-delivering registers per target.  => an I11 word must run with about HALF of R420's relative overhead; R420's
+  own template on I11 gives the known 3.5v = 770.

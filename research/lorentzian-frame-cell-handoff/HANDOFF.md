@@ -798,6 +798,9 @@ content.
     - At every frame #registers = span dim, i.e. zero waste.
     - That costs 4.5 registers per line, while I_{11,1} must reach <= ~3.7 per line to beat P111.  So I_{11,1}
       needs a template MORE efficient than R420's own; the rank-8 ideal is 3 per line.
+    - R420 delivers 360 registers (3 needers per target).  Another 180, 1.5 per target, are never read by a
+      target.
+    - I_{11,1} can afford only ~0.7-0.9 such registers per target, about half of R420's relative overhead.
   - (ii) look for the M11 analogue, or prove that no I_{11,1} frame hierarchy admits one, e.g. by a
     dimension-count LP over frame orbits with the per-frame condition arriving span = needed span.
 
