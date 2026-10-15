@@ -1247,3 +1247,44 @@
   These are the frame tops of the old main line (union reads with in-chain section, mate corrections).
 - The union-coverage LP (R >= 440) is reach-compatible (arrivals from node N go only to sections containing N; nodes
   fan out by mixing), so its gap to realistic words is mod-2 exactness + independence, not reach.
+- FRAME UNION TOPS + IN-CHAIN, re-priced with the cheap-chain rules (price/price_frameinchain.py, price_general.py):
+  model-A counts (330 pair sections: 220 with an in-chain user cost 2, 110 with two delivered users cost 3) give
+  R = 550 (= 3S - v).  Shape: pieces two-level (cell -> low stop m1 -> rank-8 node -> S), dead pieces skip t-perp,
+  copies 0-9-10-11, targets 0 -> S0 -> t-perp (exact union covers need no defect read).  At R = 550: +11.25%
+  (m1 = 3, phi = 1), +8.9% (m1 = 5); break-even ~739 / ~703.  Break-even map (D deliveries, X extra cell registers):
+  targets 0-9-10, m1 3: D 440 X 0 -> 740, X 50 -> 716, X 108 -> 692, X 220 loses; targets 0-2-9-10 about -40.
+  (Matches the earlier inch2v estimate: zero-waste in-chain R = 2v = 440 -> +20%, break-even 682-743.)  On the old
+  systems (lsa6_q548: >= 667 deliveries, 108 defects) the same rules give -1..+2% at R = 660.  The handoff's
+  'R <= 600' target was for a stop-heavy shape; in-chain union shapes allow R up to ~690-740.
+- KAPPA = 2 SHARED PARTS: frame-top exclusive parts have full closure (proven earlier), so both users of a pair
+  section must receive IDENTICAL parts (only P1 + P2 has full closure in span{P1, P2}).  Then for every line u the
+  targets in R(u) are paired by the sections delivering u -> needs a perfect matching of R(u); |R(u)| = 129 / 115 is
+  ODD -> >= 1 non-shared delivery per line (>= 220 private incidences; cheap if concentrated in 1-user sections).
+- WEAK ROUTABILITY (the real union-top requirement, symmetric): orthogonal pair (t,u) is routable iff some e in M(t),
+  f in M(u) have e _|_ u, f _|_ t, e _|_ f (cell {u,f} inside section {t,e}-perp).  Only ONE routable section per
+  (t,u) is needed (fru0 demanded every line of every section).  Stored systems (llp/lmatch.py): lsa6_q548 8014
+  unroutable (t,u) of 26070, sharing deficiency 12112; nr596 7688; lsa3_best_f 7436.  Annealer llp/lroute_sa.py
+  (10k moves/s): random start 4491 unroutable unordered pairs (of 13035) -> 2321 in 20k moves; long runs going.
+- A3/TT* full LP (llp/e11lpdesign.py, no symmetry, no consistency): killed at the 50-min limit, no result (the
+  aggregated LPs already give the class floors 715 / 705.8).
+- WEAK-ROUTABILITY ANNEAL (llp/lroute_sa.py, good frames, LAM 1): unroutable unordered pairs 4491 (random) -> 2 with
+  100 non-reciprocal mate incidences after 5.5M moves (still cooling).  LAM 4 got stuck at ~690; 'all covers'
+  (lroute_sa2.py, incl. (PTd)^3 and TT* covers) at LAM 2: 233 / 430 mid-run.  => near-complete weak routability IS
+  reachable (contrast: fru0's strong condition undecided; stored systems ~7400-8000).
+- Top-level evaluator llp/lmatch3.py (per-line sharing matchings with free private deliveries through single-user
+  sections, parts, 2-node kappa test, in-chain orientation, model-A count).  lsa6_q548: R ~ 1093.  First-frame layer
+  llp/lframe1.py (each cell register picks one rank-3 first frame span(cell, y); a delivery needs a frame inside the
+  section): lsa6_q548 covers 15108 / 18056 incidences in 60 s (not optimal).
+- WEAK ROUTABILITY U = 0 REACHED (llp/lroute_sa.py seed 11, good frames, LAM 1): every one of the 13,035 orthogonal
+  pairs has a routable (cell, section) pair, with 98 non-reciprocal mate incidences.  Z11-symmetric version
+  (llp/lroute_z11.py, 20 orbit choices): stuck at U ~ 1750 (symmetric good-frame systems far from routable).
+- MIDDLE CAPACITY SCREEN (llp/lmidcap.py): reach forces first frames of rank <= ~5 (inputs carry <= 6 lines at rank
+  3, <= 20 at rank 5); pieces sharing a node through a common user are DISJOINT (a target's parts partition R(t));
+  a node with k inputs has k outputs (zero waste needs k useful pieces = k sink sections).  lsa6_q548: 702 pieces on
+  688 distinct nodes (no sharing), 607 nodes need more inputs than pieces -> ~1880 cell-stage registers vs 660.
+  => the frame union line's binding obstacle is node sharing with overlapping content (R420's D4 quads), which needs
+  partition-like frame structure (cell lemma, R ~ 770 > break-even ~690-740).
+- NO R420-STYLE BLOCK PARTITION (node orbits, nodes.pkl): rank-5 20-line nodes (D5 type, perp 20 or 15) all have 10 P
+  lines, so no Z11-transversal D5 (needs 5 P) and no D5 partition (55 P lines); D4 (12 lines, 6 P), A4-type (10 lines,
+  4/6/10 P) blocks have even P counts vs 55 P lines (odd); frames impossible (P matching); A3s <= 27 disjoint.  The
+  odd number of P lines blocks every balanced self-dual block partition that gives E8 its D4 quads.

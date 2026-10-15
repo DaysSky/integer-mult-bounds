@@ -62,8 +62,12 @@ architectural potential improvement suffices.
 - about 545 for two levels + node read.
 
 These are shape models (sources 1-2-mid-9-10/11, carriers 0-1-2-mid-9-.., targets 0-2-9-10, 660 deliveries,
-11 totals at rank 10), not words.  A word must reach roughly **R <= 600 with one-level-like chains** to beat
-P111-tuned.
+11 totals at rank 10), not words.  For those stop-heavy shapes a word must reach roughly **R <= 600**.
+
+**Superseded by session 2:** shapes with cheap chains price much better.  Those shapes have dead pieces skipping
+t-perp, copies as empties, in-chain targets 0 -> S0 -> t-perp, and 440 deliveries.  Their break-even is ~690-740 for
+frame union tops and ~720-757 for A3 tops; see 3b.  The reach lemma (3b) decides which of these shapes are
+feasible.
 
 ## 2. Proven structural facts
 
@@ -378,6 +382,38 @@ content.
 - The union-coverage LP (R >= 440) is compatible with the reach lemma, so its gap is mod-2 exactness plus
   independence.
 
+**Frame union tops re-priced; routability and middle capacity (`code/llp/lroute_sa.py`, `lmatch3.py`,
+`lframe1.py`, `lmidcap.py`; `code/price/price_frameinchain.py`, `price_general.py`).**
+- **Cheap-chain pricing of in-chain union tops:** dead pieces skip t-perp, copies are 0-9-10-11, and targets read
+  0 -> S0 -> t-perp.  This moves the break-even for the old main line from ~600 to **~690-740**.
+
+  | case | break-even R |
+  |---|---|
+  | no extra cell registers | 740 |
+  | 50 extra cell registers | 716 |
+  | 108 extra cell registers | 692 |
+  | targets with a rank-2 read | about 40 lower |
+
+  - Model-A counts: R = 550 at +11.25% (two-level pieces, low stop at rank 3).  This matches the earlier inch2v
+    estimate (break-even 682-743).
+  - Section 1's "R <= ~600" target applies only to the old stop-heavy shapes.
+- **Shared parts must be identical** (kappa = 2 with full-closure parts).  So the deliveries of each line u pair up
+  the targets in R(u).  |R(u)| is odd, which forces >= 1 non-shared delivery per line.
+- **Weak routability is the real union-top requirement.**  A target-line pair (t,u) is routable if some section of
+  t contains some cell of u (some e in M(t), f in M(u) with e _|_ u, f _|_ t, e _|_ f).  This is much weaker than the
+  fru0 condition.
+  - Stored systems have 7,400-8,000 unroutable (t,u) pairs.
+  - A good-frame anneal reaches **U = 0**, with 98 non-reciprocal mates.
+  - Z11-symmetric systems stay at U ~ 1,750.
+- **Binding obstacle: middle capacity.**
+  1. Reach forces low first frames: rank 3 carries <= 6 lines, rank 5 <= 20.
+  2. Pieces sharing a node through a common user are disjoint.
+  3. A node with k inputs has only k outputs.
+  4. Pieces of 15-30 lines therefore need node sharing with overlapping content (R420's D4 quads).  That needs
+     partition-like frames, which bring the cell lemma (R ~ 770).
+  5. Unstructured systems waste inputs.  For lsa6_q548: 702 pieces on 688 distinct nodes, about 1,880 cell-stage
+     registers needed against 660.
+
 **Assessment.**
 - **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  The binding reason is structural:
   sections, exclusive parts and triple-overlap blocks are 2-5x larger than the largest shareable nodes (~20-30 lines),
@@ -387,31 +423,32 @@ content.
 
 ## 4. Next goals (priority order)
 
-Updated after session 2.  Items 1-3 are new; old items are kept below where still relevant.
+Updated at the end of session 2.  Every class examined is at or below break-even once all layers are counted.  The
+items below are the remaining loopholes, in order of plausibility.
 
-1. **A3-parity architecture, consistent design + exact GF(2) model** (closest candidate; the room is now <= ~1%:
-   rigorous class floor R >= 715 versus a reach-compliant break-even ~720-725).
-   - A gain needs a perfect zero-waste consistent design at the LP-A optimum structure: P lines (PP, PTT, PTT);
-     55 T lines (TT, PTT, PTT); 110 T lines (PTT, TT*, TT).
-   - Every cell must send >= 2 registers through a low (rank-3) first frame (reach lemma).
-   - Tools: `code/llp/e11design4.py` (no symmetry, model A/B), `e11eval.py`, `e11agglp.py`, `e11lpdesign.py` (full LP
-     relaxation).
-   - If such a design exists, write the exact section-level GF(2) content and price the real histogram.
-2. **4-section zero-waste loophole** (`code/llp/lexcl4.py`).
-   - With 4 sections per target, exclusive parts shrink to 5-14 lines and ~85% have proper closures, so one node
-     output per delivery is geometrically possible.
-   - Needed: a design where every node's outputs are exactly a basis of its users' needed vectors and every cell
-     register is used once.  Earlier 4-section models (lsec/lstageS, lhub) hit the node squeeze, but they were not
-     jointly optimised.
-3. **Rigorous class bounds.**  Turn the heuristic accountings (section assembly, independence lemma, kappa_ex = 2,
-   shareability) into proofs for named architecture classes; a rigorous all-word bound beyond the LP's 660 is missing.
-4. *(kept)* **Frame-routable source system**: frame tops price at -3.5..-5.6% even with cheap differentiators, so this
-   is now only useful as an ingredient (routable cells), not as a top.
-5. *(kept)* **Exact-read-aware system search** (score by an LP relaxation of the `lexact.py` read packing; best exact
-   floor 567) and **closing CP-SAT gaps** (559-567).
-6. *(superseded)* Laminar public-frame middle and apex route: both feed frame-type tops, which lose in pricing.
-7. **Pricing gate.**  Any candidate word must be priced with the exact pricer (mass-consistent histogram, see 3b) and
-   compared with P111-tuned 0.001733427039589844.
+1. **Node sharing for frame union tops** (largest nominal room: model-A R = 550 against a break-even of ~690-740).
+   - A routable system exists: weak U = 0, `code/llp/lroute_sa.py`.
+   - The blocker is middle capacity.  A rank-8 node with k inputs needs k useful outputs, and reach limits inputs to
+     <= 6 lines (rank-3 first frames).
+   - Look for designs where many sections take overlapping content from one node, without a full frame partition.
+     Candidates:
+     - A3-perp triple parts: the 3 orthogonal-pair sections of an A3 have disjoint users.
+     - Rank-5/6 hubs: D5 has 20 lines and reach 20.
+   - Measure with `lmatch3.py`, `lmidcap.py` and `lframe1.py`; price with `price/price_general.py`.
+2. **A3/TT* class** (room <= ~2% under optimistic assumptions).
+   - Needs a perfect zero-waste consistent design: CP-SAT found none.
+   - Floors: 715, or 705.8 with in-chain TT*.  Break-even ~720-725.
+3. **Rigorous class bounds.**
+   - Combine the reach lemma (proven), the forced-projection / independence lemma and an exact-partition node-capacity
+     argument into an LP over node orbits.
+   - Goal: a rigorous R_min above the break-even for frame-cell classes ("verifiably bad").
+4. **Structural explanation to test:** the odd number of P lines (55) blocks every balanced self-dual block partition
+   that gives E8 its D4 quads.  Check whether punctured Lorentzian systems (e.g. 54 P lines) admit one; P111 itself is
+   a punctured E8.
+5. *(kept)* Exact-read-aware system search and closing CP-SAT gaps on the old systems.  These are lower priority:
+   those systems have ~8,000 weakly unroutable pairs.
+6. **Pricing gate.**  Every candidate must be priced with the exact pricer (mass-consistent histogram) or the budget
+   tool, and compared with P111-tuned 0.001733427039589844.
 
 ## 5. Not to repeat / user rules
 
