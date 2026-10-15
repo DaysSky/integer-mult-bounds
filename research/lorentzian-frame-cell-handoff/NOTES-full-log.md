@@ -1377,3 +1377,6 @@
   50 not); hosts serving 1 / 2 / 3 riders: 49 / 3 / 1; NO host is itself hosted.  If general, hosted <= v - #hosts
   ~ v/2 (one rider per host) -> E8 4-cover U >= ~60 -> loses.  Same mechanism may cap I11 rank-8 hosting at ~v/2
   (U ~ 110 -> R ~ 550, ~+3% before other overheads).  To test on I11 (lr8host_sa.py on frame-seeded covers).
+- I11 RANK-8 COVER POOL (llp/lr8covers.py, vectorised greedy seeded from every frame with perp >= 40): ~1,640 covers per
+  P line, ~630 per T line (Z11 rotations of the 20 orbit reps).  Exact hosting annealer (llp/lr8host_sa.py, targeted
+  'co-user adopts the shared frame' moves, CP-SAT exact hosting per step ~0.2 s): started 17:38.

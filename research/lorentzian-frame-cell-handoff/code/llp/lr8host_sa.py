@@ -8,6 +8,11 @@ from ortools.sat.python import cp_model
 seed = int(sys.argv[1]); MIN = float(sys.argv[2]); random.seed(seed)
 cov = pickle.load(open('r8covers.pkl', 'rb'))
 PM = {}
+import collections
+withF = {t: collections.defaultdict(list) for t in range(V)}
+for t in range(V):
+    for ci, c in enumerate(cov[t]):
+        for F in c: withF[t][F].append(ci)
 def pmc(F):
     if F not in PM: PM[F] = pm(F)
     return PM[F]
@@ -61,9 +66,15 @@ while time.time() - t0 < MIN * 60:
     it += 1
     un = [t for t in range(V) if not h[t]]
     t = random.choice(un) if un and random.random() < 0.8 else random.randrange(V)
-    if random.random() < 0.5:
-        F = random.choice(cov[t][sel[t]]); t = random.choice(bits(F))
-    old = sel[t]; sel[t] = random.randrange(len(cov[t]))
+    r_ = random.random()
+    if r_ < 0.6:
+        F = random.choice(cov[t][sel[t]]); bs = [b for b in bits(F) if b != t and withF[b].get(F)]
+        if bs:
+            b = random.choice(bs); old_t = t; t = b
+            newc = random.choice(withF[b][F])
+        else: newc = random.randrange(len(cov[t]))
+    else: newc = random.randrange(len(cov[t]))
+    old = sel[t]; sel[t] = newc
     val, h2 = solve(sel)
     T = 1.0 * (0.05 / 1.0) ** ((time.time() - t0) / (MIN * 60))
     if val >= cur or random.random() < math.exp((val - cur) / T):
