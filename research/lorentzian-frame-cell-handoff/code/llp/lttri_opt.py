@@ -66,7 +66,7 @@ def node_cost(ni):
     g = len(basis([v for v in span if v and srank(v) <= RHO]))
     return (s if g == s else s + 1) - d, (s if g == s else 2 * s - g) - d
 cost = {ni: node_cost(ni) for ni in range(len(sol))}
-cur = sum(c[0] for c in cost.values()); best = cur
+cur = sum(c[0] for c in cost.values()); best = cur; lastp = cur
 print('[%4.0fs] init waste %d (upper %d)' % (time.time() - t0, cur, sum(c[1] for c in cost.values())), flush=True)
 it = 0
 while time.time() - t0 < MIN * 60:
@@ -88,7 +88,8 @@ while time.time() - t0 < MIN * 60:
         cur += delta
         if cur < best:
             best = cur
-            if it % 50 == 0 or best < 150: print('[%4.0fs] it %d waste %d (upper %d)' % (time.time() - t0, it, best, sum(c[1] for c in cost.values())), flush=True)
+            if best <= lastp - 5 or best < 150:
+                lastp = best; print('[%4.0fs] it %d waste %d (upper %d)' % (time.time() - t0, it, best, sum(c[1] for c in cost.values())), flush=True)
     else:
         kind, key, val = old
         if kind == 'd': S['dch'][key] = val

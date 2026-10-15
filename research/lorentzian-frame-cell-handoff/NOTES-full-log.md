@@ -1599,3 +1599,10 @@
   zero-waste iff P_A+P_B+P_C (= P(E) + own-A2 terms + XOR of transversal sets) has rank <= 7 (e.g. transversal
   sets XOR to 0); in-chain users need identical parts -> nodes with an in-chain user cost >= 1 -> T-part waste
   >= ~83 (165 in-chain uses, 2 per node).  Triangle top NOT ruled out; optimiser next.
+- Frontier anneals (stopped by a container restart): greedy pool from MIP2 covers 445 -> 332 (node 176 + isolated
+  156) in 4 min; shareable pool from scratch -> 324 (node 198 + isolated 126) in 2 min.  Still ~2x the margin.
+- Triangle-node hub: at node (A,B,C,E) every rank-<=7 good vector (pairwise sums P_X + P_Y) lies in M_n =
+  A2(A)+A2(B)+A2(C)+27 transversals (36 lines, rank 7); rank-5 closed subsets of M_n hold <= 17 lines (exhaustive,
+  lclosed) -> kappa5(M_n) >= 3, and pm(M_n) contains no other used node (only T(A),T(B),T(C),P(E)) -> at the rank-7
+  stop each triangle node needs >= 3 registers from its own <= 2-3 good vectors unless W_n is smaller: the middle
+  likely costs ~1 per node on top of the node waste.
