@@ -695,7 +695,10 @@ content.
       rank-<=5 inputs, so it needs rank <= 5 itself.  Only riders can relax this.
     - **Riders at the hubs M_n:** they come from P(E)'s node {P(E), T(B1), T(B2), T(B3)}.  Each P line picks one
       class, so at most 55 of the 220 hubs get one.  None were found for the triple-sum stops.
-    - So T-part waste is >= ~165 including the first middle level.  No gain from the M11 triangle family.
+    - Even a rider at the hub does not rescue a node (`lttri_riderlocal.py`, node 0 infeasible), because the
+      triple sum must still have rank <= 5.  So T-part waste is >= 220 (R >= 660) with rank-5 feeding.
+    - **Final for this family: no gain.**  The one remaining loophole would be riders at the triple-sum stops,
+      and none are known.
   - **Middle of a triangle node:**
     - Its good vectors, the pairwise sums, all lie in the hub M_n = A2(A) + A2(B) + A2(C) + 27 transversals
       (36 lines, rank 7).

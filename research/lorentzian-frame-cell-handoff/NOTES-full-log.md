@@ -1657,3 +1657,8 @@
 - With riders: the P(E) T-node {P(E),T(B1),T(B2),T(B3)} registers stop at the hub M_n of the triangle of P(E)'s
   chosen class (55 of 220 hubs), which can relax the hub span condition there; the failing triple-sum stop has no
   rider source found.  Estimated T-part >= ~165-220 including the middle -> no gain from the M11 triangle family.
+- Rider test (llp/lttri_riderlocal.py): even with an extra rider register r (P(E)'s T-node part, any subset of the
+  hub) and the pattern {c1+r, c2+r, r} all rank <= 5, together with the triple sum rank <= 5, node 0 is infeasible
+  for every own-A2 pattern and pivot.  The triple sum remains the obstruction -> every triangle node costs >= 1 with
+  rank-5 pieces below (rank-6 stops do not help; only riders at the triple-sum stop could, none known) ->
+  M11 triangle top: R >= 660 at these chains.  FINAL for this family: no gain.
