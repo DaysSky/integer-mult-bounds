@@ -662,15 +662,25 @@ content.
 
 ## 4. Next goals (priority order)
 
-Updated at the end of session 2.  Every class examined is at or below break-even once all layers are counted.  The
-items below are the remaining loopholes, in order of plausibility.
+Updated in session 3 (rank-8 item 0); the rest dates from session 2.  Every class examined is at or below
+break-even once all layers are counted.  The items below are the remaining loopholes, in order of plausibility.
 
-0. **Rank-8 frame sections: HUB-ALIGNED design** (session 3, see 3c).  The top is solved (R = 572-583 under
-   RHO = 7).  Cover-driven tops are dead in the middle (proven per design: R >= 968).  Next:
-   - Build a top whose delivered parts share rank-7 closures, e.g. P-A3 nodes F-perp = L(7-set) with >= kappa5
-     delivered users.  Add a "closure shared" constraint to `lr8z11.py`, then re-run `lr8midlb.py` and
-     `lr8nodecost.py`.
-   - Design the coordinate hierarchy L(3) < L(5) < L(7) as hubs, E8-quad style, and check kappa at every level.
+0. **Rank-8 frame sections: the NODE-RANK WALL** (session 3, see 3c).
+   - **Established:**
+     - The top counting reaches R = 572-583 (RHO = 7).
+     - Every cover-driven top is dead in the middle: proven per design, R >= 1,001-1,133.
+     - Any design needs >= 260 nodes (LP).
+     - The perfect-sharing T-triangle top is dead at the node level: proven, R >= 660.
+   - **Key mechanism (proven in the triangle case):** a node whose users' parts span the whole node rank needs an
+     extra register, unless the part span has a basis of lower-rank vectors.  Coverage forces such full-rank parts.
+   - **Next, in order:**
+     - (a) A general version of the triangle argument.  For every node type, decide whether some assignment
+       of the users' parts admits a good (rank < node rank) basis while the users still cover their R(t).  Use a
+       local CP-SAT per node orbit, with forced content from the usable-cover census.  If no node type admits one,
+       the rank-8 class is dead: R >= 440 + 260.
+     - (b) Otherwise, build the top from the node types that pass (a), then the coordinate hub hierarchy
+       L(3) < L(5) < L(7).
+     - (c) The P-line analogue of the triangle design (role-aware: A2 + P nodes used by their members).
    - Older notes below are kept for context.
    (Original item:) **Rank-8 frame sections** (the only class whose counting reaches the union-LP floor R = 440:
    +13.5% there, break-even 662 with a reach-compliant middle).  See 3b.
