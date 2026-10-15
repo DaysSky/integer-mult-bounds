@@ -1544,3 +1544,10 @@
   => waste >= 1 at each of the 220 nodes -> R >= 440 + 220 = 660 > every rank-8 break-even (max X ~ 190).
   The triangle design is a perfect-sharing top but NOT a viable word top.  (llp/lttri_cost.py: explicit assignment
   gives 380 extra at RHO 7 with a naive in-chain choice.)
+- FORCED-RANK CENSUS (exhaustive, llp/lr8forced.py): for every node type through P(0,1)/T(0,1,2), the exclusive part
+  over all covers containing it has rank 5-7 in most covers; only {P34,T012,T345} (perp 28, rank 7) forces a
+  full-rank exclusive.  => the triangle waste argument does NOT generalise via exclusives: parts can usually be
+  kept non-full-rank, so node-level zero waste (RHO = 7) is locally possible; the wall then sits at the rank-7
+  stops (closure sharing, kappa5) as found per design.
+- Anneals with MID=1 FAITH=1 on the shareable pool (seed 41, random start) and the flex pool (seed 42, from flex MIP)
+  launched (60 min).
