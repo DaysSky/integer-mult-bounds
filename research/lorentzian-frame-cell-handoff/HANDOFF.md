@@ -318,6 +318,54 @@ So every top is a frame triple (defect 3) or one of these.  Sections have <= 3 u
 next thing to build: a globally consistent design (tops + cells + shared nodes) with exact section-level GF(2)
 content.
 
+**Reach lemma (proven; `code/llp/nodes.pkl` for the reach table).**
+- From the checker rules (every gate operand climbs to the gate frame; frames are nested), along any content path
+  s_u -> r1 -> ... -> target t the gate frames are nested, so t lies in F-perp for every frame F on the path.
+- Let A run over the registers that carry x_u at a frame of rank <= 2, and F_A = A's first frame of rank >= 3.  Then
+  R(u) is covered by the sets lines(F_A-perp), plus targets that read x_u themselves at rank <= 2.
+- Max reach |lines(F-perp)| by rank of F (exhaustive over node orbits):
+
+  | rank of F | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+  |---|---|---|---|---|---|---|---|---|
+  | max reach | 129 | 85 | 56 | 36 | 25 | 17 | 11 | 6 |
+
+  E8 control: D4 quads reach 12, and R420 gives 9 x 12 = 108 >= 63.
+- **Consequence:** with 3 branches per line and cells of <= 3 lines, <= 8-9 cell-stage registers carry x_u.  Direct
+  cell -> rank-8-node chains then reach <= 54 < 115-129 targets, so that shape is impossible.
+- The A3-shape break-even ~757 (pieces cell -> 8) was for an infeasible shape.
+- In self-dual A3 designs, a cell's exclusive targets must be covered by its registers' first-frame perps.  This is
+  exactly the kappa_ex = 2 cover, so >= 2 registers per cell take a low stop: phi >= 2/3..1.
+- Prices (`price/price_a3mix.py`, `price/price_a3reach.py`):
+
+  | low stop at rank 3, fraction phi | 1/4 | 1/3 | 1/2 | 1 |
+  |---|---|---|---|---|
+  | break-even R | 755 | 749 | 739 | 705 |
+
+  At phi ~ 0.75 the break-even is ~720-725.
+- I_{11,1} needs one more middle level than E8 (fan-out at rank <= 5-6, fan-in at rank 8), and every extra stop
+  costs.
+
+**Aggregated counting LP for A3/TT* designs (proven within its cost models; `code/llp/e11agglp.py`).**
+- Plane-type balance over the exact option classes.
+- With kappa = 2 for every section (the rigorous arrivals model): registers >= 935, so R >= 715, consistent or not.
+- With measured shareability per option, consistent designs: R >= 828.
+- The Z11 consistent CP-SAT (`e11design2.py`) found no design at all in 900 s.  Its bound was R >= 794 (shareability
+  costs).
+- **A3/TT* class, heuristic:** the floor is R >= 715 against a reach-compliant break-even of ~720-725.  At most ~1% of
+  room, and only for a perfect zero-waste consistent design, which has not been found.
+
+**Stop-entropy budget (`code/price/budget.py`).**
+- At fixed R the word beats P111-tuned iff the sum over all local jumps of r (m/r)^q* stays under a budget B(R):
+  q* = c(P111-tuned), m = 91.
+- Budget above the all-single-jump baseline: 26.1 units at R = 660, 23.9 at R = 720, 22.5 at R = 760.
+- Exchange rate: one extra register ~0.057 units; one extra stop 0.005-0.012 units.  So one register is worth ~5-10
+  stops.
+- Per-chain costs are listed by the script, e.g. carrier 0-1-2-8-9-10-11 0.027, target 0-1-10 0.006.
+
+**4-part kappa = 1 shapes** (`price/price_4sec.py`, `price/price_4sec2.py`).
+- Pieces cell -> 8 -> t-perp would give +9.8% at the ideal R = 660, but that violates the reach lemma.
+- The reach-compliant version (cell -> m1 -> 8 -> t-perp) gives +2.2..+4.3% at R = 660, break-even ~700-735.
+
 **Assessment.**
 - **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  The binding reason is structural:
   sections, exclusive parts and triple-overlap blocks are 2-5x larger than the largest shareable nodes (~20-30 lines),
@@ -329,14 +377,14 @@ content.
 
 Updated after session 2.  Items 1-3 are new; old items are kept below where still relevant.
 
-1. **A3-parity architecture, consistent design + exact GF(2) model** (closest candidate; ideal +0.85..+3.4% over the
-   corrected break-even 712-756).
-   - Build a globally consistent design: tops (A3 triples for as many lines as possible, TT* triples for the rest),
-     cells = the used planes, shared nodes for exclusive parts (kappa_ex = 2) and two-level Q-deliveries.
-   - `code/llp/e11design2.py` (CP-SAT, Z11, defect-1 triples, consistency enforced) produces a design;
-     `code/llp/e11eval.py` estimates registers (sum kappa_eff + users - 1) and counts unroutable incidences.
-   - Then write the exact section-level GF(2) content (every section's needed vectors, every node's output basis)
-     and price the real histogram with the exact pricer.  Success: R <= ~700 with that shape.
+1. **A3-parity architecture, consistent design + exact GF(2) model** (closest candidate; the room is now <= ~1%:
+   rigorous class floor R >= 715 versus a reach-compliant break-even ~720-725).
+   - A gain needs a perfect zero-waste consistent design at the LP-A optimum structure: P lines (PP, PTT, PTT);
+     55 T lines (TT, PTT, PTT); 110 T lines (PTT, TT*, TT).
+   - Every cell must send >= 2 registers through a low (rank-3) first frame (reach lemma).
+   - Tools: `code/llp/e11design4.py` (no symmetry, model A/B), `e11eval.py`, `e11agglp.py`, `e11lpdesign.py` (full LP
+     relaxation).
+   - If such a design exists, write the exact section-level GF(2) content and price the real histogram.
 2. **4-section zero-waste loophole** (`code/llp/lexcl4.py`).
    - With 4 sections per target, exclusive parts shrink to 5-14 lines and ~85% have proper closures, so one node
      output per delivery is geometrically possible.

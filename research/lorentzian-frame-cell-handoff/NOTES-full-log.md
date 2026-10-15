@@ -1178,3 +1178,50 @@
 - FRAME-TOP shape with cheap differentiators (price/price_frame.py), I11, R = 770 (330 sections x (2 pieces + 1)):
   -3.5..-5.6% with two-level Q-deliveries (needed: triple parts 25-30 lines); +0.6% only if Q were plain empties
   (impossible).  Frame tops lose; A3-parity tops are the better Lorentzian shape (ideal +0.85..3.4%).
+- PRICING CEILING (price/price_ceiling.py): all chains single jumps (sources 1->11, helpers 0->11, targets 0->10)
+  give +40% at R = 700 and +27% at R = 875 (hosting wall ~880) -> the loss is in the intermediate stops (chain
+  entropy), not in R.  Marginal value of single stops in the A3 shape at R = 696 (price/price_stops.py): source
+  section stop 2.2%, target <d> stop 1.6%, piece node/section stops 1.6% each, others 0.1-0.9%.
+- A3 SHAPE WITH SEPARATE RANKS (price/price_a3exact3.py): exclusive-part pieces live in S & x-perp nodes (rank 8);
+  with pieces at rank 8 the break-even is R ~ 749-757 for every Q-mid rank 3-6 (Q-node 8), ~747 with Q-node 7;
+  pieces at rank 7 -> 731, rank 6 -> 719.  => realistic A3 break-even ~750 (rank-8 pieces are the natural ones).
+- DESIGN COST MODEL LOWER BOUND (per-line min over defect-1 triples, ignores consistency): 937.4 registers ->
+  R >= 717.4 in the e11design2 cost model (P best 4.54 = PPP,PPP,PP; T best 4.17 = PTT 71,PTT 71,PT-disj 66, 84 of
+  1480 options).  Room to the ~750 break-even: ~33 registers.
+- DEFECT-LINE POSITION in defect-1 triples (exhaustive, both representatives): for every P-line triple and every T-line
+  A3 triple the defect line d lies in NONE of the 3 sections (so the target must read x_d at <d> and cannot read a
+  section in-chain).  EXCEPTION: 280 of the 700 (61,61,66) TT*-triples per T line have d in 2 sections -> such T
+  targets can run 0 -> <d> -> S -> t-perp with an in-chain read of one section (R420-type).  Not yet priced.
+- CONSISTENT Z11 DESIGN (llp/e11design2.py; every line a defect-1 triple (A3 or TT*), used planes used by all their
+  lines, Z11; cost = per (user, section) kappa_eff/u + (u-1)/u with the MEASURED lkex2 shareability ratios -- all 9
+  option signatures are in the table, no defaults): CP-SAT 900 s, 4 workers: UNKNOWN (no feasible design found),
+  proven objective bound 1014.42 registers -> R >= 794 for EVERY consistent Z11 design in this cost model, above the
+  A3-shape break-even (~757 with rank-8 pieces).  Option costs: P 4.54 (PP70,PPP85|29 x2), 4.73 (PT-disj66,PTT71|24,
+  PPP85|38), 4.82 (PP70|28, PTT71|29 x2), 4.92 (PT-inc56, PTT71|29, PPP85|43); T 4.17 (PT-disj66|19, PTT71|24 x2),
+  4.54 (TT56|14, PTT71|29 x2), 4.85 (TT56|19, TT*61, PTT71|34), 5.17 (TT*61 x2, PT-disj66|29), 6.44 (TT*61 x2,
+  PT-disj66|30).  Scope: consistent + Z11 + this cost model (shareability penalty heuristic).  Running: LP bounds
+  without symmetry and without consistency (llp/e11lpdesign.py).
+- REACH LEMMA (rigorous, from the checker rules: every gate operand climbs to the gate frame; frames nested).
+  Along any content path s_u -> r1 -> r2 -> ... -> target t the gate frames are nested, so t lies in F-perp for every
+  frame F on the path.  Let A run over the registers that carry x_u at a frame of rank <= 2 (sources, carriers, cell
+  registers of cells containing u, targets reading at rank <= 2), and F_A = A's first frame of rank >= 3.  Then
+  R(u) is contained in the union of lines(F_A-perp) (plus targets that read x_u themselves at rank <= 2).
+  Max reach |lines(F-perp)| by rank of F (exhaustive over node orbits, llp/nodes.pkl): rank 1: 129, 2: 85, 3: 56,
+  4: 36, 5: 25, 6: 17, 7: 11, 8: 6.  E8 control: D4 quads reach 12, R420 9 x 12 = 108 >= 63.
+  => I_{11,1} with 3 branches per line and cells of <= 3 lines (<= 8-9 cell-stage registers carry x_u): direct
+  cell -> rank-8 node chains reach <= 54 < 115..129 targets: IMPOSSIBLE.  Several cell registers per line need a low
+  first stop (rank <= 4..6).  The A3-shape break-even ~757 (price_a3exact3, pieces cell -> 8) was for an infeasible
+  shape.
+- Self-dual A3 designs, sharper: targets that need x_u only through cell c (u's exclusive targets for that cell,
+  14-43) must be covered by the perps of c's registers' first frames F (F-perp <= c-perp & y-perp, a rank-8 node):
+  this is exactly the kappa_ex cover, so >= 2 registers per cell take a low first stop (rank 3 = span(c, y)):
+  phi >= 2/3 (triangle cells) .. 1 (pair cells).  Prices (price/price_a3mix.py, price_a3reach.py): low stop rank 3,
+  phi = 1/4: break-even 755; 1/3: 749; 1/2: 739; phi = 1 (all pieces two-level): 705.  So phi ~ 0.75 -> ~720-725.
+- AGGREGATED COUNTING LP for defect-1-triple designs (llp/e11agglp.py; plane-type balance, exact option classes):
+  kappa = 2 everywhere (rigorous arrivals model): registers >= 935 -> R >= 715 (consistent or not).  Shareability
+  per-option costs, consistent designs: >= 1048.3 -> R >= 828.  (Type-min shareability: 715 / 751.7.)
+  => A3/TT* class: rigorous-model floor R >= 715 vs reach-compliant break-even ~720-725 (shape model): at most
+  ~1% of room, needing a perfect zero-waste consistent design (none found: e11design2 Z11 UNKNOWN, no solution).
+- 4-SECTION / 4-PART kappa=1 SHAPES (price/price_4sec.py, price_4sec2.py): with pieces cell -> 8 -> t-perp (no section
+  stop) the ideal R = 660 would give +9.8%, but that shape violates the reach lemma; reach-compliant
+  (cell -> m1 -> 8 -> t-perp): +2.2..4.3% at R = 660, break-even ~700-735.
