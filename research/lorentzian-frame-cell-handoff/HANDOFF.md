@@ -366,6 +366,18 @@ content.
 - Pieces cell -> 8 -> t-perp would give +9.8% at the ideal R = 660, but that violates the reach lemma.
 - The reach-compliant version (cell -> m1 -> 8 -> t-perp) gives +2.2..+4.3% at R = 660, break-even ~700-735.
 
+**Top landscape completed (proven, exhaustive per representative; `code/llp/lpar4_min.py`, `lpar_inchain.py`,
+`lunion_min.py`, `e11agglp2.py`).**
+- **Parity tops with 4 plane sections are impossible:** the minimum defect over 4 sections through t is 42 lines
+  (P and T).  The method was validated by recounting the 3-section defect-1 tops (612 / 1480).
+- 3-section parity tops with defect 2-3 never have all defect lines inside one section.  In-chain parity reads exist
+  only through 280 TT* tops per T line, where d (a P line) lies in both TT* sections.
+- With that option the optimistic aggregated floor drops to R >= 705.8.
+- **Exact union covers by 3 sections exist:** P 252 (PP, PT-disj, PT-inc); T 1120.  These are the frame tops of the
+  old main line.  4-section exact union covers are plentiful.
+- The union-coverage LP (R >= 440) is compatible with the reach lemma, so its gap is mod-2 exactness plus
+  independence.
+
 **Assessment.**
 - **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  The binding reason is structural:
   sections, exclusive parts and triple-overlap blocks are 2-5x larger than the largest shareable nodes (~20-30 lines),

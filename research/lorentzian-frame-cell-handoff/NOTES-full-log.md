@@ -1225,3 +1225,25 @@
 - 4-SECTION / 4-PART kappa=1 SHAPES (price/price_4sec.py, price_4sec2.py): with pieces cell -> 8 -> t-perp (no section
   stop) the ideal R = 660 would give +9.8%, but that shape violates the reach lemma; reach-compliant
   (cell -> m1 -> 8 -> t-perp): +2.2..4.3% at R = 660, break-even ~700-735.
+- REACH LEMMA, level k (same proof): R(u) is covered by lines(G_A-perp) over registers A carrying x_u at rank <= k,
+  G_A = A's first frame of rank > k.  Rank-8 frames reach <= 6 -> every line needs >= 22 (P) / 20 (T) registers
+  carrying it when stepping up to rank >= 8.  With <= 9 cell registers per line, cell registers must MIX at a
+  low frame (k_F inputs -> k_F outputs all carrying the group's lines) before rank 8: with groups of ~6, >= 3 low-stop
+  registers per line (phi >= 1/3); the level-2 exclusive-target cover gives phi >= 2/3..1 (the binding one).
+  Lines x reach Pareto (nodes.pkl): rank 3 (6, 56); 4 (12, 30); 5 (20, 20) [D5 _|_ D5']; 6 (35, 10), (15, 17);
+  7 (56, 6), (25, 11); 8 (47, 6).  Best product at rank 5 (D5: 400) vs E8 D4 144.
+- IN-CHAIN TT* OPTION (llp/e11agglp2.py): 280 of each T line's (PT-disj, TT*, TT*) tops have d (a P line) in BOTH
+  TT* sections, and the other user of each TT* section is also _|_ d -> 0 -> <d> -> S -> t-perp with S read in-chain
+  (by both users: 2 arrivals, no differentiator, if their needs coincide).  Aggregated LP (model A + this option,
+  optimistic): registers >= 925.83 -> R >= 705.8 (P: all (PPP, PT-disj, PTT); T: 110 (PTT, TT*, TT) + 55 in-chain
+  (PT-disj, TT*, TT*_in)).  Window vs reach-compliant break-even (~720-725): <= ~2% under optimistic assumptions.
+- PARITY TOPS WITH 4 SECTIONS ARE IMPOSSIBLE (llp/lpar4_min.py, exhaustive numpy pair-xor matching; validated by
+  recounting the 3-section defect-1 tops: 612 P / 1480 T): the minimum defect |S1^S2^S3^S4^R(t)| over 4 distinct plane
+  sections through t is 42 (both P and T).  3-section tops with defect 2-3 that are in-chain capable (all defect
+  lines in one section): NONE (llp/lpar_inchain.py).  => in-chain parity reads exist only via the TT* defect-1 tops
+  of T lines.
+- EXACT UNION COVERS (llp/lunion_min.py): R(t) = S1 u S2 u S3 exactly for P: 252 (PP, PT-disj, PT-inc) = frame tops;
+  T: 1120 ((PTd)^3 420, (PTd, PTi, TT) 84, (PTd, TT*, TT*) 280, (TT)^3 336).  4-section exact union covers: many.
+  These are the frame tops of the old main line (union reads with in-chain section, mate corrections).
+- The union-coverage LP (R >= 440) is reach-compatible (arrivals from node N go only to sections containing N; nodes
+  fan out by mixing), so its gap to realistic words is mod-2 exactness + independence, not reach.
