@@ -413,6 +413,21 @@ content.
      partition-like frames, which bring the cell lemma (R ~ 770).
   5. Unstructured systems waste inputs.  For lsa6_q548: 702 pieces on 688 distinct nodes, about 1,880 cell-stage
      registers needed against 660.
+- The U = 0 system (`code/llp/lroute_best_11.json`, 98 non-reciprocal mates) does no better:
+  - top-level model-A R ~ 870 (107 parts need 3 nodes; 135 sections have differing parts);
+  - 544 pieces on 481 nodes, so ~1,449 cell-stage registers needed against 660;
+  - the first-frame layer covers >= 97% of incidences.
+- **Middle depth versus price** (model-A R = 550):
+
+  | piece-chain middle stops | price at R = 550 | break-even R | feasibility |
+  |---|---|---|---|
+  | (3, 8) | +11.3% | 740 | rank-8 nodes would need inputs of >= ~17 lines; rank-3 frames carry <= 6 |
+  | (5, 8) | +8.9% | 704 | reach is tight |
+  | (3, 5, 8) | +5.9% | 656 | consistent with register conservation + content caps + reach |
+  | (4, 6, 8) | +5.2% | 640 | |
+
+  So the realistic potential of this line is break-even ~656, against the floor 550 + 0.5 x (non-reciprocal mates) +
+  overheads.
 
 **Assessment.**
 - **heuristic:** no Lorentzian frame-cell architecture found beats P111-tuned.  The binding reason is structural:
