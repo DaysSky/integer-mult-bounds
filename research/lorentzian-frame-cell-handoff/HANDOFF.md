@@ -202,6 +202,53 @@ each target reads ONE cell.
 - **Paired top** (`ltopP.py`: in-chain read of a co-user's full delivery): CP-SAT found only 956 deliveries
   (bound 126); not usable as formulated.
 
+## 3b. Session 2 (9-hour run, 2026-10-15 13:12-) — new results
+
+All scripts are in `code/llp/` and `code/price/`; the full log is `NOTES-full-log.md`.
+
+**Pricing (exact pricer, chain-shape model, vs P111-tuned).**  Uneven jumps price better.
+
+| shape | break-even R |
+|---|---|
+| zero-level (cell -> section) | ~755 |
+| one-level, middle rank 3 or 8 | ~677 |
+| one-level, rank 4 or 7 / rank 5 or 6 | ~642 / ~632 |
+| one-level + target node read, rank 3 or 8 | ~656 |
+| two-level (3,4), (3,8), (7,8) | ~611 |
+| two-level (4,6), (4,7), (5,7) | ~570 |
+
+**proven: all-systems union-coverage LP** (`lpsolve.py`, `lp_model.md`; S11-symmetric, 319 node orbits = all closed line
+sets with >= 2 perp lines, 7 plane-section orbits).  Optimum = 660 registers = the branch floor, so R >= 440 only.
+Coverage counting cannot separate one-level words from the floor (with or without the >= 2 deliveries cut, which holds
+because two plane sections always leave >= 15 lines of rank 9 uncovered: `l2cover.py`).  What decides the question is
+exact mod-2 assembly, not coverage.
+
+**proven: defect-1 parity tops** (`lparity3.py`, `la3.py`).  For an A3 subsystem (6 lines = edges of K4: 4 A2
+triangles, 3 orthogonal opposite pairs) and t in it:
+tot(Q1-perp) + tot(Q2-perp) + tot({t, opp t}-perp) = 1_{R(t)} + x_{opp t}, with Q1, Q2 the two triangles through t.
+- These are exactly the defect-1 triples: E8 7,560 A3s (378 per line); I_{11,1} 13,200 A3s (612 per P line, 276 per T
+  line), plus T-line triples through non-orthogonal TT pairs (61-line sections).
+- A2 sections have 3 users, so sections are shared more than in the frame top (defect 3, 2-user sections).
+- The defect line lies in none of t's sections, so it must come from a keeper read at <opp t>; then t cannot also read
+  a section in-chain (nesting), so targets take 3 deliveries (R420-like).
+- I_{11,1}: at most 27 disjoint A3s (every A3 holds >= 2 P lines; OPTIMAL), covering 162 of 220 lines.
+- Compatible A3 packings (sections meeting other blocks only in whole cells): E8 none of full size (exhaustive), both
+  lattices about 8 blocks.
+
+**proven: fully routable A3 design on R420's D4 partition** (`e8a3.py`, `data/e8a3_sol_0.json`).
+- Each line takes 2 triangle cells (in its block) + 1 R420 pair cell, forming an A3; the top is self-dual.
+- 140 sections (80 E6 + 60 D6), versus R420's 180; 0 unroutable incidences.
+- Anatomy: E6 = B' + 8 triangle pieces (one per other block); D6 = R420's D6.
+- **heuristic, middle cost:** any 4 E6 pieces span the whole E6, so each E6 needs >= 3 node arrivals (best nodes are
+  rank-4 D4s with 3 pieces serving 4 E6s).  With R420's mechanism (merge + Q-deliveries + copies) this gives about 580
+  registers, R ~ 460 > 420.  Not excluded: cross-section corrections through the 8 non-B' lines that lie in all three
+  of a target's sections.
+- **heuristic, same accounting for I_{11,1}:** with kappa >= 3 pieces per section, the cost is >= 5.3 registers per
+  target, versus ~3.9 at break-even.
+
+**Exact U = 0 own-frame routability** (`code/lmid/fru0.py`): Z11 and no-symmetry both UNKNOWN after 1 h each, so it is
+undecided.
+
 ## 4. Next goals (priority order)
 
 1. **Frame-routable source system** (the only route to an R420-style cheap top).

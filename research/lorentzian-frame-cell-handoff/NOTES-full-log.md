@@ -1045,3 +1045,72 @@
   system of PUBLIC frames (small flats inside many sections, each a meeting point for broadcasters and collectors,
   arranged so that every collector's reads lie on one nested chain) -- the analogue of R420's quads/D4 blocks; no
   such structure is known for I_{11,1} (no frame partition; apex hub lattices fail the nesting).  Open.
+
+## 9-hour session (start 13:12 UTC; user: do not stop, do not dismiss anything until verifiably bad)
+- frs.py: own-frame-top routability search (U = unroutable (section,line) pairs + lam*defects); lsa6_q548 starts U=8115.
+- E8 calibration: R420's 180 cells give U = 0 (every D6 section = cell perp is covered by cells inside it) -> full
+  own-frame routability is R420's defining property.
+- I_{11,1}: no plane section of lsa6_q548 is fully routable (deficits 5-30, typical 20; lfullrt.py).  frs.py (local
+  search on U + 2*defects): from lsa6_q548 U 8115 -> ~1850 but defects 108 -> ~590 (symmetry destroyed); from random
+  similar.  Block-structured random systems (blocks.py: apex D4 blocks D(A,x) = 3 PPTT frames, cube blocks = 2 TTTT
+  frames + 3 P) give U ~ 8000 with 64-82 defects -- blocks alone do not create routability.
+- Good-frame closures: PPTT frame -> apex D4 block D({abcd},x) (12 lines, 3 frames); TTTT frame -> cube block on a
+  pairing {ab,cd,ef}: 8 transversal T lines (2 TTTT frames) + 3 matching P lines (11 lines).
+- Hand analysis (PPTT-framed P(ij), partner pair {k,l}, apex y): P(ij) is unroutable into the section of a PT cell
+  {P(ab),T(abx)} iff x not in {k,l,y} and {a,b} meets {k,l} (with {a,b,x} disjoint from {i,j}) -> full routability
+  forces every PPTT-framed P line touching k or l to have its apex in {i,j,l,y}: very strong apex coherence.
+- fru0.py: exact CP-SAT for fully routable (U = 0) good-frame systems, defects free: running Z11 and no-symmetry.
+- PRICE GRID (price/price_2lvl.py, price_0lvl.py; exact pricer, v=220, h=11, 660 deliveries, model of lor_fc_price3):
+  uneven jumps are cheaper.  Break-even R vs P111-tuned: zero-level (cell -> section) ~755; one-level mid rank 3/8 ~677,
+  4/7 ~642, 5/6 ~632; one-level + target node read rank 3/8 ~656, 4/7 ~616, 5/6 ~603; two-level (3,4),(3,8),(7,8) ~611,
+  (3,5),(3,7),(4,5),(4,8),(6,7),(6,8) ~587, (3,6),(5,6),(5,8) ~580, (4,6),(4,7),(5,7) ~570.
+- lreach4 (per-rank one-level reach, q548), first cell: rank-3 nodes <= 12 per register, rank 4 <= 18, rank 5 <= 31,
+  rank 8 <= 12 -> rank-3/8 one-level designs need ~2x the registers of rank-5 ones; their price advantage cannot
+  compensate (full run pending).
+- llp/: S11-symmetric LP lower bound for STRICT ONE-LEVEL words over ALL good-frame systems (lp_model.md).
+  313 node orbits (closed line sets, rank <= 8, |perp| >= 2); 7 plane-section orbits (2|70 PP, 3|85 PPP, 2|66 PT-disj,
+  2|56 PT-inc, 2|61 TT non-orth (2-line plane), 2|56 TT, 3|71 PTT); 1.3M concrete closed sets inside sections.
+- RESULT (llp/lpsolve.py, all systems, strict one-level, union coverage): LP optimum = 660 registers exactly (the
+  branch-register floor) -> R >= 440 only.  Union-coverage counting cannot separate one-level words from the floor; the
+  q548 reach bound (603) comes from that system's cells, not from geometry.  Whatever kills (or allows) one-level words is
+  EXACT mod-2 assembly (spans), not coverage.  LP optimum structure (fractional): rank-7 nodes with 21-26 lines and
+  7-10-line perps; T targets read TT-nonorthogonal sections ({T(abc),T(def)}, disjoint triples, 61 lines) in-chain,
+  P targets PT-disjoint sections (66 lines); ~1.4 deliveries per target from 66/56/70-line sections.
+- fru0 (exact CP-SAT, fully routable own-frame systems): Z11 UNKNOWN after 3600 s (no solution; defect bound 4),
+  no-symmetry UNKNOWN after 3600 s (no solution; bound 0).  Own-frame U=0 routability remains undecided (not ruled out).
+- NEW (llp/lparity3.py, exhaustive per target): PARITY TRIPLES of plane sections with defect ONE line:
+  section totals of 3 plane sections through t XOR to 1_{R(t)} + 1_{d} (d in R(t), in none of the 3 sections).
+  I_{11,1} P(ab): {ab,ac,bc}+{ab,ad,bd}+{ab,cd} (PPP,PPP,PP; d = P(cd); 36 per target), PPP+PT(inc)+PTT (324),
+  PP+PTT+PTT (252).  T(bcd): PT(disj)+PTT+PTT (108), PT+TT*+TT* (700), PTT+PTT+TT (168), PTT+TT+TT* (504)
+  (TT* = non-orthogonal disjoint-triple pair, 61-line section).  E8 (I_{9,1} lines): (E6, E6, D6) with defect 1,
+  378 per line (vs the frame top (D6,D6,D6) + 3 mates).  A2 sections have 3 users -> fewer sections than frame tops
+  (ideal: E8 140 vs 180; I_{11,1} ~257 vs 330).  Earlier E6/A2 work used 4-section UNION covers; the 3-section parity
+  version is new.  Caveat: d lies in none of t's sections, so with an in-chain section read (cell read nested inside
+  it) d needs a private register; with 3 deliveries (R420-style targets 0 -> cell -> t-perp) the cell read supplies d.
+- A3 STRUCTURE (llp/la3.py, exact): the defect-1 parity triples are exactly the A3 subsystems.  For an A3 (6 lines =
+  edges of K4; 4 A2 triangles; 3 orthogonal opposite pairs) and a line t in it: tot(Q1-perp) + tot(Q2-perp) +
+  tot({t,opp(t)}-perp) = 1_{R(t)} + x_{opp(t)}, Q1, Q2 = the two triangles through t.  E8: 7560 A3s, 378 per line;
+  identity verified.  An A3 PARTITION would share every section fully: per block 4 A2 sections (3 users) + 3 cell
+  sections (2 users) = 7 sections for 6 targets (frame top: 1.5 per target).  Transposed source side: each line
+  branches at its 2 triangles (A2 cells, 3 registers) + its opposite-pair cell -> 3 registers per line, 18 per block.
+  The defect target opp(t) reads x_t at the rank-1 frame <t> (keeper read); then no in-chain section read is
+  possible (opp(t) lies in none of t's sections), so targets take 3 deliveries (R420-like 0 -> <d> -> t-perp).
+  E8 max disjoint A3s: >= 18 found (108 of 120 lines), bound 20 (300 s) - partition existence open; longer run going.
+- A3 COMPATIBILITY (llp/la3compat.py, la3clique.py, exact DFS): a block system whose sections meet other blocks only in
+  whole cells needs pairwise "compatible" A3s.  E8: 1200 compatible partners per A3; NO compatible A3 partition
+  (exhaustive, 1 s); largest compatible packing found 8 blocks.  I_{11,1}: 13,200 A3s (4 orbits), compatible packing
+  found 8 blocks (600 s, not proven max).  Random E8 A3 packings: ~37% unroutable (section,line) pairs.
+- E8 A3 DESIGN ON R420's D4 PARTITION (llp/e8a3.py, CP-SAT OPTIMAL 3 s): every line takes 2 triangle cells (A2 in its
+  block) + 1 pair cell (an R420 cell) forming an A3 (120 distinct A3s, not a partition); self-dual top.  Result:
+  0 unroutable incidences, 140 sections (80 E6 + 60 D6) vs R420's 180.  Anatomy (e8a3anat.py): E6 = B' (12) + one chosen
+  triangle cell from each of the 8 other blocks; D6 = B' + d-cell + 8 chosen pair cells (= R420's D6).  Each cell is a
+  piece of 8 sections.  Per target: B' + 8 more lines lie in all 3 sections, 42 lines in one, d in none.
+- Middle for that design (e8a3quad.py, e8a3tri.py): D6 pieces sit in R420's D4 quads (2 per D6, 6 sections per quad);
+  E6 pieces: any 4 of them span the whole E6 (rank 6); best shared nodes are rank-4 D4s with 3 pieces serving 4 E6s
+  (160 such).  => each E6 needs >= 3 piece arrivals.  R420-style accounting (arrivals = pieces + copies, one delivered
+  register per user carrying the full piece sum): E6 5, D6 3 -> 580 registers, R ~ 460 > 420.  The 22% section saving
+  is eaten by harder E6 assembly + 3-way copies.  Escape not excluded: cross-section corrections through the 8
+  triple-overlap lines (not modelled).
+- Same accounting for I_{11,1}: sections of 56-85 lines need kappa >= 3 pieces from shareable nodes (<= ~30 lines);
+  registers per target ~ sum over its sections (kappa + users - 1)/users >= 5.3 (A3 top) / 6 (frame top) vs ~3.9 at
+  break-even (852-897 registers).  Heuristic accounting, NOT a proof (union-coverage LP allows 660).
