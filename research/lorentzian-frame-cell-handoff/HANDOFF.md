@@ -706,6 +706,18 @@ content.
 - **New structure:** the M11 / S(4,5,11) triangle design gives every T line a perfectly shared 4-cover.  Any further
   attempt should use M11 symmetry.  Next candidates: node types with 4 usable T users, (6,42,0,4) and (5,37,1,4).
 
+**Overarching insight (session 3).**
+- All open classes (rank-8 sections, frame union, A3/TT*) hit the same wall: **hub alignment**.
+- **Zero waste** needs, at every frame of the network, the span of arriving contents to equal the span of needed
+  outgoing contents.  Copies are free, so identical needs cost nothing.
+- E8's R420 achieves this through its D4-quad partition.  I_{11,1} has no comparable partition: the 55 P lines are
+  odd, there are no disjoint 4-covers, and shared nodes force full-rank parts.
+- The M11 geometry (S(4,5,11), derived AG(2,3) planes) is the only large symmetric structure found that organises
+  the top.  The next session should:
+  - (i) extract E8 R420's alignment pattern level by level, as the frame-by-frame spans of its word;
+  - (ii) look for the M11 analogue, or prove that no I_{11,1} frame hierarchy admits one, e.g. by a
+    dimension-count LP over frame orbits with the per-frame condition arriving span = needed span.
+
 ## 4. Next goals (priority order)
 
 Updated in session 3 (rank-8 item 0); the rest dates from session 2.  Every class examined is at or below
