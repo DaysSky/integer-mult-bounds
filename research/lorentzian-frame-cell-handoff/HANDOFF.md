@@ -500,7 +500,7 @@ content.
   - The union-coverage LP gives only R >= 440.
   - The class floors are model-based: A3 715 / 705.8; frame union 550 + 0.5 x (non-reciprocal mates).
 
-## 3c. Session 3 (continuation, 2026-10-15 17:40-) — rank-8 sections: top solved, middle is the wall
+## 3c. Session 3 (continuation, 2026-10-15 17:40-22:10) — rank-8 sections: top counting fine, node/middle wall, M11 triangle design
 
 **Cover enumeration (proven, exhaustive up to Stab(t), `code/llp/lr8allcovers.py`).**
 - Frames through t: P 11,515 in 24 Stab(t)-orbits; T 14,945 in 29 orbits.
@@ -516,7 +516,9 @@ content.
 - **Faithful node cost** (`lr8nodecost.py`):
   - At node F-perp the registers arrive from the last middle stop (rank RHO), so their contents are supported in
     rank-<=RHO sets.
-  - Node registers = max(k, m), where m = min #such vectors spanning all delivered and in-chain parts.
+  - Node registers = k + (m - d).  Here m = min #such vectors spanning all delivered and in-chain parts, and
+    d = dim span(delivered parts).  This equals max(k, m) when the delivered parts are independent; see "Register
+    accounting with copies" below.
   - R = 440 + sum of extras.
   - **Correction:** my earlier "only rank-8 single parts cost a leftover" rule holds only for RHO = 7.
 - Best tops:
