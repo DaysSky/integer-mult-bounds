@@ -1588,3 +1588,6 @@
   T(2,y,z) (15); 27 of its lines are T-neighbours of each user.
 - Random greedy check (20,000 trials) of the rank-capacity lemma: max 20 lines in rank-6 closed subsets for both T
   and P (P case consistent with C(6,3) = 20; exhaustive P run still going).
+- COMBINED FRONTIER ANNEAL (llp/lr8frontier.py; objective = node extra (RHO 7) + isolated rank-7 closures, exact Z11
+  layer with 3 s CP-SAT per step; greedy pool, start MIP2 covers): 445 -> 387 in 21 s (node 220 + isolated 167);
+  running 55 min.  Break-even needs the TOTAL extra (these two plus all deeper waste) <= ~145-190.
