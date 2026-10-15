@@ -1581,3 +1581,10 @@
   Compare the cover-driven f0: node cost 143 (R 583) but 429 isolated rank-7 closures.  Shared nodes force
   full-rank parts (as proven for triangles); unshared nodes isolate closures.  Both ends exceed the margin
   (break-even X ~ 145-190).
+- 4-T-user nodes (exhaustive cover types): T covers contain at most THREE (6,42,0,4) nodes (types with
+  (4,43,3,1) or (3,33,2,1) as the fourth); no cover uses four.  The fourth node has 1 usable T user and 2-3 P users,
+  but P lines (220 uses) cannot fill the P-member roles of 165+ such nodes -> balance obstruction (as in the LP).
+  (6,42,0,4) node perp (hub 2, cycle 0-1-3-4): A5 on the other 6 points (15 P) + T(0,3,k), T(1,4,k) (12) +
+  T(2,y,z) (15); 27 of its lines are T-neighbours of each user.
+- Random greedy check (20,000 trials) of the rank-capacity lemma: max 20 lines in rank-6 closed subsets for both T
+  and P (P case consistent with C(6,3) = 20; exhaustive P run still going).
