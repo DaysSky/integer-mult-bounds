@@ -63,7 +63,7 @@ for r in reps:
         M.AddBoolOr(co).OnlyEnforceIf(cv(r, F))
 log('vars x', len(X), 'c', len(C), 'coverage', len(cov))
 M.Maximize(sum(cov))
-sv = cp_model.CpSolver(); sv.parameters.max_time_in_seconds = TL; sv.parameters.num_workers = 3
+sv = cp_model.CpSolver(); sv.parameters.max_time_in_seconds = TL; sv.parameters.num_workers = int(__import__("os").environ.get("NW", "3"))
 st = sv.Solve(M)
 log('status', sv.StatusName(st), 'covered', int(sv.ObjectiveValue()) if st in (cp_model.OPTIMAL, cp_model.FEASIBLE) else None, 'of', len(cov), 'bound', sv.BestObjectiveBound())
 if st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
