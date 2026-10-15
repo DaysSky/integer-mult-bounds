@@ -284,7 +284,13 @@ So every top is a frame triple (defect 3) or one of these.  Sections have <= 3 u
   - Targets go 0 -> <d> -> t-perp.
   - Differentiators skip the middle: empties 0-9-10-11, carrier copies 0-1-2-9-10-11.
   - Merged-away pieces die without the t-perp stop.
-  - Break-even is R ~ 777 (rank-5 nodes) to ~811 (rank 3/8), versus 629-675 for the standard one-level shapes.
+  - With one-level Q-deliveries the break-even would be R ~ 777 (rank-5 nodes) to ~811 (rank 3/8), versus 629-675
+    for the standard one-level shapes.
+  - **Corrected** (`price/price_a3exact2.py`): the Q-deliveries carry the 42-56-line A3-perp triple part, so they need
+    two middle levels (cell -> mid -> A3-perp node of rank 7/8 -> section).  Break-even is then R ~ 712 (mid rank 5)
+    to ~756 (mid rank 3, Q-node 8).  Use these numbers.
+- **proven, frame-top shape** (`price/price_frame.py`, R = 770 = 330 sections x (2 pieces + 1)): -3.5..-5.6% with
+  two-level Q-deliveries; +0.6% only if Q-deliveries were plain empties, which is impossible.  Frame tops lose.
 - **proven, E8 control:** R420 is reproduced (-4.59%).  The E8 A3 shape at R = 460 gives -5..-6%, so there is no E8 gain.
 
 *Section assembly.*
@@ -295,9 +301,12 @@ So every top is a frame triple (defect 3) or one of these.  Sections have <= 3 u
   - NOT OK for large A2 exclusive parts (ratio 0.54-0.78) or for TT* 61.
 
 *Accounting.*
-- **heuristic, idealized:** 25 registers per 6 targets, R ~ 697, +4..6%.
+- **heuristic, idealized:** 25 registers per 6 targets, R ~ 696; against the corrected break-even 712-756 this is
+  only +0.85..+3.4%.
 - **heuristic, per-target best tops with measured shareability:** P ~4.5 and T ~4.17 registers per target, so
-  R ~ 713, +3..5%, IF realizable.
+  R ~ 713, i.e. at the corrected break-even, IF realizable.
+- **proven, counting:** no consistent all-A3 design exists in I_{11,1}.  T lines need 165 PTT triangles but P lines
+  offer only 110 triangle slots, so >= ~55 T lines take TT* (or frame) tops at about +1 register each.
 
 *Caveats, which push the estimate to break-even:*
 - Q-deliveries need a second middle level to carry the 42-56-line A3-perp triple part.
@@ -318,30 +327,31 @@ content.
 
 ## 4. Next goals (priority order)
 
-1. **Frame-routable source system** (the only route to an R420-style cheap top).
-   - Find a good-frame system, with defects allowed, whose own (or freely chosen) frame sections are routable: every
-     u in {t,e}-perp has a system cell inside it.
-   - Then R(t) = 3 shared section totals + mate corrections, giving 3 deliveries per target with free in-chain reads.
-   - Previous local search (lsa5: Z11, own frames, objective 1000*no_route + defects) got stuck above 2000 no-route
-     pairs; redesign it.
-   - Structured idea: apex block pairs D(A,p) ⊥ D(B,p) (5|5).  Each D5 hub splits into 5 PPTT frames {P(ij), T(ijp),
-     P(kl), T(klp)}, the analogue of E8's D4|D4 blocks.  Parity forces defects; measure unroutable pairs for block-
-     structured systems first.
-   - Success target: unroutable pairs below about 50, and the mate-correction system solvable.
-2. **Laminar "public frame" middle.**
-   - Small flats lying inside many sections, where broadcasters and collectors meet.
-   - Every collector's reads must lie on one nested chain (the analogue of R420's quads).
-   - Search jointly over broadcaster chains and collector chains; coverage counting allows it (frames with about 10
-     lines and about 7 users suffice).  Nesting is the binding constraint.
-3. **Exact-read-aware system search.**
-   - Score systems by an LP relaxation of the read set-packing (`lexact.py` model) inside `lsa6.py`, not by pool
-     counting.  Current best exact floor: 567.
-4. **Close CP-SAT gaps** for the best systems (559-567): longer runs, more workers, cuts.
-5. **Apex route.**
-   - Find frame-legal ways to share D8 totals: 495 totals, 2 users each.
-   - P targets need 9 apex terms, so a P-specific top is needed (P(bc)-perp contains E8(M)).
-6. **Pricing gate.**  Any candidate word must reach R <= ~600 with one-level-like chains; price it with gcheck
-   `--price` and compare with P111-tuned 0.001733427039589844.
+Updated after session 2.  Items 1-3 are new; old items are kept below where still relevant.
+
+1. **A3-parity architecture, consistent design + exact GF(2) model** (closest candidate; ideal +0.85..+3.4% over the
+   corrected break-even 712-756).
+   - Build a globally consistent design: tops (A3 triples for as many lines as possible, TT* triples for the rest),
+     cells = the used planes, shared nodes for exclusive parts (kappa_ex = 2) and two-level Q-deliveries.
+   - `code/llp/e11design2.py` (CP-SAT, Z11, defect-1 triples, consistency enforced) produces a design;
+     `code/llp/e11eval.py` estimates registers (sum kappa_eff + users - 1) and counts unroutable incidences.
+   - Then write the exact section-level GF(2) content (every section's needed vectors, every node's output basis)
+     and price the real histogram with the exact pricer.  Success: R <= ~700 with that shape.
+2. **4-section zero-waste loophole** (`code/llp/lexcl4.py`).
+   - With 4 sections per target, exclusive parts shrink to 5-14 lines and ~85% have proper closures, so one node
+     output per delivery is geometrically possible.
+   - Needed: a design where every node's outputs are exactly a basis of its users' needed vectors and every cell
+     register is used once.  Earlier 4-section models (lsec/lstageS, lhub) hit the node squeeze, but they were not
+     jointly optimised.
+3. **Rigorous class bounds.**  Turn the heuristic accountings (section assembly, independence lemma, kappa_ex = 2,
+   shareability) into proofs for named architecture classes; a rigorous all-word bound beyond the LP's 660 is missing.
+4. *(kept)* **Frame-routable source system**: frame tops price at -3.5..-5.6% even with cheap differentiators, so this
+   is now only useful as an ingredient (routable cells), not as a top.
+5. *(kept)* **Exact-read-aware system search** (score by an LP relaxation of the `lexact.py` read packing; best exact
+   floor 567) and **closing CP-SAT gaps** (559-567).
+6. *(superseded)* Laminar public-frame middle and apex route: both feed frame-type tops, which lose in pricing.
+7. **Pricing gate.**  Any candidate word must be priced with the exact pricer (mass-consistent histogram, see 3b) and
+   compared with P111-tuned 0.001733427039589844.
 
 ## 5. Not to repeat / user rules
 

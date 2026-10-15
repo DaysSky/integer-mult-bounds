@@ -1169,3 +1169,12 @@
   (union larger -> more arrivals) unless they share an A3 block; (iii) block designs: <= 27 disjoint A3s (2+ P lines
   each) -> 58 lines need TT*/frame tops (~5.2/target) -> R ~ 777 ~ break-even; (iv) defects, routability, keeper
   reads, totals not counted.  => ARCHITECTURAL POTENTIAL at break-even +- a few %, not a realised gain.
+- CORRECTED A3 PRICING (price/price_a3exact2.py): the 6 Q-delivery registers per block need two middle levels
+  (cell -> mid -> A3-perp node (rank 7/8) -> section).  Break-even then R ~ 712 (mid rank 5) .. ~756 (mid rank 3,
+  Q-node 8); ideal accounting R = 696 -> only +0.85..+3.4%.  A fully consistent all-A3 design is impossible
+  (T lines need 165 PTT triangles but P lines offer only 110 triangle slots) -> >= ~55 T lines on TT*-tops
+  (~+1 register each) -> realistic estimate exceeds break-even.  => A3 architecture: break-even at best, loses
+  realistically (not proven).
+- FRAME-TOP shape with cheap differentiators (price/price_frame.py), I11, R = 770 (330 sections x (2 pieces + 1)):
+  -3.5..-5.6% with two-level Q-deliveries (needed: triple parts 25-30 lines); +0.6% only if Q were plain empties
+  (impossible).  Frame tops lose; A3-parity tops are the better Lorentzian shape (ideal +0.85..3.4%).
