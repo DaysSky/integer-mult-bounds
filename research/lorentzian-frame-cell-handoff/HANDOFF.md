@@ -676,6 +676,24 @@ content.
 - Rank-3 hubs inside L(5): kappa3(L(5)) ~ 4-5 using mixed A3s (the T triples through a K2 + K3 edge set).
 - A hub-aligned design would mirror E8's quad partition on this coordinate hierarchy.
 
+**Assessment (end of session 3).**
+- **Not proven worse, not shown better.**  The rank-8 class keeps a counting potential of +13.5% (R = 440, every
+  layer zero-waste).
+- **Proven:**
+  - exhaustive cover lists;
+  - no 3-covers, and no disjoint 4-covers;
+  - no rank-7 perp-section 4-covers;
+  - >= 260 nodes in any design;
+  - triangle tops cost >= 1 extra register per node;
+  - the T rank-capacity lemma;
+  - the per-design middle bounds R >= 1,001-1,133.
+- **Heuristic:** every concrete design family failed by >= ~200 registers, against a margin of ~145-190.  That
+  covers greedy, flex, shareable and identical-parts designs, and the M11 triangle design.
+- **The wall is hub alignment.**  At every frame the arriving span must equal the needed span, with copies free.  It
+  first bites at the rank-7 stops: closure sharing of rank-7 parts, kappa5.
+- **New structure:** the M11 / S(4,5,11) triangle design gives every T line a perfectly shared 4-cover.  Any further
+  attempt should use M11 symmetry.  Next candidates: node types with 4 usable T users, (6,42,0,4) and (5,37,1,4).
+
 ## 4. Next goals (priority order)
 
 Updated in session 3 (rank-8 item 0); the rest dates from session 2.  Every class examined is at or below
