@@ -4,7 +4,8 @@ in-chain parts on F (in-chain users read combinations of the node's registers). 
 the last middle stop, each with content supported in a closed set of rank <= RHO.  m = min #registers whose
 (rank <= RHO)-supported contents span a space containing S:
   m = dim S if the good vectors of S (support rank <= RHO) span S; otherwise dim S + 1 <= m <= dim S + (dim S - g).
-Registers at the node = max(m, k); extra = max(m, k) - k.  R = 440 + sum of extras (sum k = 660).
+Registers at the node = k + (m - d), d = dim span(delivered parts) (= max(m, k) when delivered parts are
+independent); extra = m - d.  R = 440 + sum of extras (sum k = 660).
 usage: lr8nodecost.py det.json RHO [AUTO]  (AUTO = input rank used at rank-7 nodes, chain ...,AUTO,7 -> node)"""
 import sys, json, collections, pickle
 from lgeo import *
@@ -76,7 +77,10 @@ for F, us in users.items():
     good = [v for v in vecs if v and srank(v) <= rho]
     g = len(gf2_basis(good))
     mlo = s if g == s else s + 1; mhi = s if g == s else 2 * s - g
-    lo += max(mlo, k) - k; hi += max(mhi, k) - k
+    d = len(Bd)                       # dim span of delivered contents
+    # registers = k + (m - d): the final contents span the m arriving dimensions; delivered registers cover d of
+    # them, dead registers the rest (copies of an assembled vector are free empties)
+    lo += mlo - d; hi += mhi - d
     hist[(k, len(ic), s, g)] += 1
 print('sections', len(users), '| unhosted in-chain (not in delivered span)', unhost)
 print('RHO=%d  extra registers: %d .. %d  ->  R = %d .. %d' % (RHO, lo, hi, 440 + lo, 440 + hi))

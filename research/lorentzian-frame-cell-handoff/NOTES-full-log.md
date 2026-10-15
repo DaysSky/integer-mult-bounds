@@ -1467,3 +1467,32 @@
   L(7) (56 lines, rank 7, positive definite): rank-k closed sets 56 / 1,050 / 8,120 / 26,463 / 37,163 for k = 1..5,
   max lines 1 / 3 / 6 / 12 / 20 (D4 inside); kappa5(L7) <= 4, kappa4 <= 8, kappa3 <= 11 (CP-SAT feasible).
   P-A3 node design needs a 2-(11,4,lambda) style block family (each P line uses 2 A3 nodes with disjoint D-pairs).
+- PROVEN (exhaustive, llp/lr8exactcov.py on the full rebuilt lists): no 4-cover of R(t) by rank-3-frame perps is
+  DISJOINT; minimum total overlap sum|perp & R(t)| - |R(t)| = 33 for both P (2,800 covers) and T (840 covers).
+  => unlike E8's exact frame triples, users of a node cannot all take the whole perp; overlaps must be resolved.
+- Hub cover numbers (exact CP-SAT where OPTIMAL; llp/lclosed.py): L(5) (20 lines): kappa2 8, kappa3 4, kappa4 3;
+  L(3) (4 lines): kappa2 2; A3 (6 lines): kappa2 3; L(7) (56 lines): kappa5 <= 4, kappa4 <= 6, kappa3 <= 10,
+  kappa2 <= 20 (FEASIBLE, weak lower bounds).
+- Coordinate structure of the main all-rank-7 T cover (T(012), D = {3..10} split {3,4} | {5,6,8} | {7,9,10}):
+  nodes L(012) (perp A7(D), 28), {P56,P58,P68,T012} (perp 43 = A2(012) + A4({3,4,7,9,10}) + T(x,pairs)),
+  {P79,P710,P910,T012} (43), {P34,T012,T568,T7910} (perp 36 = A2(012) + A2(568) + A2(7 9 10) + T(x,568,7910)).
+  Node {P56,P58,P68,T012}-perp splits into 4 rank-5 pieces {T(0,E)}+A4(E), {T(1,E)}, {T(2,E)}, A2(012): #pieces =
+  #users -> node-level zero waste is possible for such coordinate nodes.
+- IDENTICAL-PARTS design test (llp/lr8identical.py: every used node carries one part W_F taken by all its users,
+  the W_F of each line's 4 nodes partition R(t); Z11, pool 60 covers per rep) running.
+- CORRECTION of numbers above: lr8det_f0.json was overwritten once by a FAITH=2 run (R 616, midlb 385).  Regenerated
+  FAITH=1 version (R 583): midlb 429 -> R >= 1012.  Both rigorous for their tops.
+- REGISTER FORMULA AT A FRAME (copies are free): arriving non-empty contents span m dims (+ empty registers); gates
+  are invertible, so the final contents span the same m dims; delivered registers span d = dim span(delivered
+  contents); dead registers carry the rest -> registers = k + (m - d) (= max(k, m) only for independent delivered
+  parts).  lr8nodecost.py fixed accordingly (no change on existing designs: their delivered parts are independent).
+- IDENTICAL PARTS + COPIES (llp/lr8identical.py): a node can serve all its users the SAME part W_F: one register is
+  assembled from m_F pieces, the other delivered users get copies (empties 0 -> 8 -> 10 -> 11, cheap chain).  Cost
+  per node m_F - 1 (+1 if no delivered user).  A Z11 identical-parts design exists in the 60-cover pool (CP-SAT
+  feasible in 50 s) but the feasibility-only model returned 880 single-user nodes (trivial).  Re-run maximising
+  sharing (minimise used node orbits) running.  Pricing (price/price_copies.py; N nodes, m_F = 2, copies cheap):
+  (cells,3,5) N=147 +14.4%, N=220 +5.2%, N=260 +0.8%; (3,5,7) N=220 +3.4%.  => break-even ~N 270 nodes IF the
+  pieces themselves are free (the lower levels repeat the same assembly problem: each distinct rank-5 piece
+  needs kappa3(piece) - 1 ~ 3 leftovers at its hub unless pieces are shared/aligned).
+- PARTS NEED NOT PARTITION R(t): only the target's final sum matters (exact F2 semantics), so delivered contents may
+  contain lines that cancel against the target's other contributions (overlap lines).  Not yet exploited.

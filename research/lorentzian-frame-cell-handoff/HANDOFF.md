@@ -543,8 +543,9 @@ content.
   - At M the contents come from rank-<=5 stops, so M needs >= kappa5(W_M) >= 2 registers.
   - A rider for M can only come from another used node F' with F' inside pm(M).
 - **Results:**
-  - `lr8det_f0` (R = 583 top): 385 forced rank-7 closures hold a single register, and NONE has a possible rider.
-    Middle waste >= 385, so R >= 968.
+  - `lr8det_f0` (R = 583 top): 429 forced rank-7 closures hold a single register, and NONE has a possible rider.
+    Middle waste >= 429, so R >= 1,012.
+  - The `FAITH=2` variant of the same covers (R = 616): waste >= 385, so R >= 1,001.
   - `lr8det_f21` (R = 572 top): waste >= 561, so R >= 1,133.
   - Both are far beyond break-even.
 - **Observed for f0 (heuristic):** delivered parts average 28.3 lines (rank 5/6/7/8 = 99/44/451/66).  kappa3 of the
