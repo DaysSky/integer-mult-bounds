@@ -1625,3 +1625,9 @@
     reached in 25 s (138 hyperplane nodes);
   - faithful costs (waste = m - d: c=0 -> 1-hp, c=1 -> 2-hp, c>=2 -> 2) running.  Note c=1 nodes cost >= 1 and
     c=2 nodes >= 2 unless all three parts are identical, so the faithful optimum is >= ~110-165.
+- Faithful triangle CP-SAT (lttri_cpsat3): T-part node waste 121 at 33 s (its own floor 110: 55 nodes with three
+  in-chain users at cost 2).  Exact floors: T-part >= 83 (only if two in-chain users per node with IDENTICAL parts
+  everywhere), P-part >= 55 in the combined M11 design (each P line's in-chain node is single-user, k = 0).
+  => M11 triangle family: top waste >= 138 even optimistically (realistic ~121 + 55 = 176), before ANY middle cost
+  (triangle hub kappa5 >= 3 per node).  Break-even X: (cells,3,5) 145, (cells,3,7) 160, (nocell,3,7) 190.
+  VERDICT (heuristic, top-level floors rigorous): at best break-even, no gain from this family.

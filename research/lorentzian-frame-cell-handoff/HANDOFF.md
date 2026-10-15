@@ -672,6 +672,12 @@ content.
     class (three A2(B_i) + P(E) nodes and {P(E), T(B1), T(B2), T(B3)}, which shares the triangle hub M_n).
     - Exact layer node waste is 297 (R = 737), with middle bound >= 110 (55 riders).
     - Total >= 407, well over the margin.  The P side has no sharing.
+  - **Exact CP-SAT (`lttri_cpsat2.py` / `lttri_cpsat3.py`):**
+    - The lower-cost model reaches the in-chain floor 83.
+    - Faithful costs (waste = m - d) reach 121, against that model's floor of 110.
+    - With the P lines' in-chain floor of 55 (single-user P nodes), the M11 family's top waste is >= 138
+      optimistically and ~176 realistically, before any middle cost.
+    - **Verdict (heuristic; the floors are rigorous):** break-even at best.
   - **Middle of a triangle node:**
     - Its good vectors, the pairwise sums, all lie in the hub M_n = A2(A) + A2(B) + A2(C) + 27 transversals
       (36 lines, rank 7).
