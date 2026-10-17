@@ -31,6 +31,12 @@ y = []
 for i, j in pairs:
     v = m.NewBoolVar(''); m.AddImplication(v, x[i]); m.AddImplication(v, x[j]); y.append(v)
 m.Maximize(sum(y))
+if len(sys.argv) > 2 and sys.argv[2] == 'hint':
+    pg = pickle.load(open('pg23_partition.pkl', 'rb'))
+    fset = {tuple(sorted(f)): i for i, f in enumerate(frames)}
+    pgT = set(fset[tuple(sorted(f))] for f in pg[39:])
+    for (k, p), var in a.items(): m.AddHint(var, 1 if p == (k + 4) % 13 else 0)
+    for i in TT: m.AddHint(x[i], 1 if i in pgT else 0)
 s = cp_model.CpSolver(); s.parameters.num_workers = 4; s.parameters.max_time_in_seconds = int(sys.argv[1])
 class CB(cp_model.CpSolverSolutionCallback):
     def on_solution_callback(self): print('  incumbent', self.ObjectiveValue(), 'bound', self.BestObjectiveBound(), flush=True)

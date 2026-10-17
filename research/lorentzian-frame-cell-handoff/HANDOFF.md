@@ -3348,7 +3348,18 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
     pairs, but sum m_ab = 80).  Among practical I_{n,1}, complete star blocks plus Pasch pairs never tile.
   - Near-full sharing: the minimum number of point pairs with odd leftover count is between 7 (bound) and 10
     (found; apexes [12,7,1,1,1,7,12,11,7,7,1,2,11]; `minodd.py`).  Each unpaired Pasch frame fixes the parity of 12
-    pairs, so only a few frames need to stay unpaired.  Max-pairs solve: see below.
+    pairs, so only a few frames need to stay unpaired; 208 = 8 x 26 then forces >= 2 unpaired frames, so at most
+    25 pairs.
+  - Max-pairs CP-SAT (`maxpairs.py`, free apexes, hinted by PG(2,3); 1,500 s, not optimal): 17 complete Pasch
+    pairs + 18 unpaired TTTT frames.  Evaluated with `eval13.py` against PG(2,3):
+
+    | partition | half sharing | half + Q load / line | demand F2 rank | odd (demand, frame) pairs |
+    |---|---|---|---|---|
+    | PG(2,3), offset 4 | 1.40 | 58.0 | 219 | 21,930 |
+    | 17 Pasch pairs | 1.90 | 43.1 | 202 | 21,402 |
+
+  - So sharing lowers load by about a quarter but leaves misalignment unchanged (cf. I_{11,1}: sharing does not
+    buy alignment).  An R420-type cell/quad middle stays excluded on every I_{13,1} frame top.
 
 ## 4. Next goals (priority order)
 
