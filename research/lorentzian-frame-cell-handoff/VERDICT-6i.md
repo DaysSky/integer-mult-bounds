@@ -43,8 +43,9 @@ Can a bit word on a Lorentzian line system beat P111-tuned (c = 0.00173342703958
    - Coordinate-flat decoders containing C_11 cost >= 122 (proof in HANDOFF).
    - Z11-cyclic section decoders at cost 109 do not exist (exhaustive).
    - Each decoder unit is worth about 1.1-1.2%, so no reachable decoder change closes the gap.
-   - **Proven (computer-assisted): every I_{11,1} decoder costs >= 101** (clique + minrank-11 hitting LP over all
-     56,498 flat orbits, certified in exact arithmetic).  Decoder changes are worth at most 9 units, about 10.5%.
+   - **Proven (computer-assisted): every I_{11,1} decoder costs >= 102** (clique + minrank-11 hitting LP over all
+     56,498 flat orbits, certified 101.43 after the first column-generation round; earlier rounds gave 99.67, 100.65).
+     Decoder changes are worth at most 8 units, about 9%.
    - Sparse decoder rows (the only decoder-side lever on load): rank-12 decoders whose row space misses C_11
      exist (SAT), but every one found is B0 plus one small piece.  They cost 112-118 and save at most 5.9% of the
      row weight, about 40-190 entries per unit of decoder cost, against about 260-350 entries per unit needed.
@@ -69,14 +70,14 @@ Can a bit word on a Lorentzian line system beat P111-tuned (c = 0.00173342703958
 ## What would change the picture
 
 - An architecture strictly more efficient than R420 per incidence, which would be a large E8 improvement first.
-- ~~A decoder for I_{11,1} well below 110 (about 95 or less)~~: ruled out; every decoder costs >= 101 (proven), so the
-  decoder can add at most about 10.5%.
+- ~~A decoder for I_{11,1} well below 110 (about 95 or less)~~: ruled out; every decoder costs >= 102 (proven), so the
+  decoder can add at most about 9%.
 - An assembly scheme for misaligned demands at E8's register cost per incidence.
 - Alternatively, an all-word lower bound that closes the question rigorously; none reaches break-even yet (the
   proven floor is 426 frame-0 helpers against a break-even of roughly 720-900).
 
 ## Open next questions
 
-1. Close the decoder gap 100-110: is B0 (110) optimal?  The clique LP caps near 104.8; minrank-11 families could go further.
+1. Close the decoder gap 102-110: is B0 (110) optimal?  The clique LP caps near 104.8; minrank-11 families could go further.
 2. Minimum misalignment of an I_{11,1} good-frame partition with 4 punctures (annealing reached 7,149).
 3. A rigorous lower bound on assembly registers in terms of the per-line distinct demand load.

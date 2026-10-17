@@ -20,7 +20,7 @@ A0 = np.vstack([Ac, csz])
 r0 = linprog(-csz * cq, A_ub=A0, b_ub=b, bounds=[(0, None)] * len(okeys), method='highs')
 W = set(i for i in range(nF) if (b - A0 @ r0.x)[i] < SL)
 extra = {}; guided = set()
-for fn in sorted(glob.glob(D + 'mr11_*.pkl')):
+for fn in sorted(f for f in glob.glob(D + 'mr11_*.pkl') if 'counts' not in f):
     for Y, Q in pickle.load(open(fn, 'rb')):
         k = flats.canon(Y); extra.setdefault(k, Y)
         if 'mr11_cg_' in fn: guided.add(k)

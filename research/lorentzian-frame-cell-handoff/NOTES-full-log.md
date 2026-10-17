@@ -1952,3 +1952,4 @@
 - Partner triples (partners3.py): all triples of partners inside s-perp have 3 orthogonal pairs, both I_{11,1} (252 P / 840 T) and E8(M) (315).
 - Cell-graph SA (cellgraph.py): from blkpartA's 3.14 odd components per target down to 1.04-1.3, only at mean degree 6-8.
 - Repository snapshot (user request, 2026-10-17): scratch scripts/logs not previously mirrored were archived in scratch-archive/ (same relative paths as the scratchpad); large pickles/npz and downloaded material were not committed.
+- declp4 finished: rounds 100.990 / 101.430 / 101.544 certified (union-bound slack flats 0 for the pool), so every I_{11,1} decoder >= 102.  A glob bug (mr11_counts.pkl read as a family file) stopped the first cgloop run; fixed (declp4.py skips 'counts'), rerun in progress.  frcover3.py (minimum-weight good-frame partition exact cover, frames of weight <= 90) running.
