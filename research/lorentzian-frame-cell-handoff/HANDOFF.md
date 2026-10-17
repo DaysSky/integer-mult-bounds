@@ -3222,6 +3222,35 @@ throughout: E1, c* = 0.001734473240795253742474 (`research/e8-bit-p111-e1`).
   branches (1,1,2,7) and a middle with pieces (2,3,6): at cst 110 the break-even is R ~ 840; R = 1,100 / 1,320 /
   1,760 / 2,200 price at -16.7% / -26.1% / -39.7% / -49.1%; at cst 121 the same R give -27.4% / -35.6% / -47.4% /
   -55.6%.  The best word (R = 3,656, cst 121, heavier stops) is -71.6%.
+- **Session 7b: the exit-rank lever on bit words (new analysis; `code/s7/exitmix.py`, `code/s7/e8a/`).**
+  - The complex side lets a helper end in a rank-(h-1) subspace U (#1030/#1090, `research/complex-rank7-end-pair`),
+    which drops its residual width by one.  Bit-side transcription (format-level, needs its own lemma like E1's):
+    helper h may end at U if (X1) no z-gate ever reads h (targets may, D cancels its dirt); (X2) an early cleanup
+    h += sum of the inverse-row registers of h restores it, every such register sitting in a frame inside U at that
+    moment and climbing to U for the gate; C then reverses every z-gate except those writing h.  Proof sketch: by
+    (X1) no other register's evolution involves h, so skipping h's reversals leaves C = U^{-1} on all other
+    registers, and the cleanup sets h to its dirt.
+  - Size of the prize (exact pricer, `exitmix.py`): on P111-tuned's shape, letting the needer-type helpers (chains
+    ending t-perp -> full) end at t-perp gives +5.3% (25% of them), +7.7% (50%), +11.6% (all), because width-7
+    residuals tile the 666 rank-7 idle slots per replica that width-8 helpers cannot use.  R420 with every helper
+    exiting: +15.8%.
+  - As built: **0 candidates** (`exitcensus.py`).  E1: 429 of 439 helpers are read by z-gates; the 10 others have
+    inverse rows spanning rank 8.  R420: all 420 are read by z-gates.
+  - E1's 9 retained-total helpers are the nearest miss: no z-reader, 3 writes, inverse row of 5 registers at the
+    scatter (one spans rank 7).  But each total reads the source of its d-line at the line frame and a shared D6
+    helper (o1, later read at another target's perp); re-reading either inside p-perp drags it into p-perp and
+    breaks its later chain.  Routing those contributions through registers that end at p-perp needs one extra
+    width-8 copy per total, a net loss.
+  - Adding fresh exiting needers instead of converting existing helpers loses (-0.8% to -9% for 37-150 of them,
+    `exitmix.py` inline): the lever pays only by converting registers, and R420/P111 registers are fully
+    multi-role.  Like the entrance lever, it needs a ground-up design; no candidate design is known.
+- **Delivery count for the apex-D8 class of I_{11,1} words (counting, not a bound over all words).**  With B0, T(abc)
+  needs the three D8 totals D8(a;bc), D8(b;ac), D8(c;ab) and P(bc) needs the nine D8(p;bc).  A D8 register can be
+  read in-chain at its rank-8 frame by chains passing it (one rank-8 frame per chain) and then consumed into one
+  reader's perp.  The cheapest assignment lets each P target absorb its nine D8 registers at its perp and gives each
+  T target three in-chain reads (target chain plus 2 needers): 495 D8 hubs + 330 needers = 825 registers before
+  any D8 is assembled, against a total frontier budget of about 840 (cst 110, moderate stops).  So this class
+  cannot reach the frontier.
 - **Verdict after session 7.**  No change to the best word (blkA4, -71.6%).  The z-group lever, the last
   Lorentzian-specific lever left by 6i, is closed for I_{11,1} (totals feeders) and its E8 stepping stone (B) is
   closed in pure form (4 groups).  What remains is lever A, a middle strictly more efficient than R420 per
