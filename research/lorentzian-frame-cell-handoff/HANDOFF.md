@@ -3373,7 +3373,7 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
     18 single frames): `word13_mp_v1.json.gz`, **gcheck PASS, R = 7,367 (20.2v), c = 0.000441391, -74.5%**.
     Pieces per top fall from 11.9 to 8.0; sharing is the only lever that moved R.
   - Pairing knob on the same partition: `PAIR=1` gives **R = 7,314 (gcheck PASS, c = 0.000443254, -74.4%; best I_{13,1}
-    word)**, `PAIR=2` gives 7,359.  A warm-started max-Pasch-pair search (3,300 s) stayed at 17 pairs.
+    word)**, `PAIR=2` gives 7,359.  A warm-started max-Pasch-pair search (3,300 s limit) had not passed 17 pairs at last check.
 - **Content per register: why I_{13,1} needs ~3x R420's middle efficiency (counting from exact data).**
   - Distinct demand content (halves + Q-parts, line incidences): E8 R420 120 x 8 + 10 x 12 = 1,080, i.e. 9 per line,
     carried by R + v = 540 registers (2.0 per register).  R420 itself: 360 registers are read by targets (all
