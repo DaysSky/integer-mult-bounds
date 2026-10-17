@@ -3297,6 +3297,38 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
   allowance.  So a flat-sum middle on this top is still 1.0-1.4x over; R420 itself has dead = 1.5v because its
   D4 butterflies emit 12 distinct corrections (shared o1 compromises + private Q-deliveries).  An I_{13,1} middle
   needs the same compromise/correction structure, with dead <= ~3v (c_t = 2) or <= ~2v (c_t = 3).
+- **Per-line pool cover (`poolcov.py`, `wcover.py`, CP-SAT exact on samples).**  A collector picks x_u up at a
+  rank-2 pool <u,w> only if <u,w> lies in its demand frame, i.e. w in S_E.  This is weaker than the cell-sum cover
+  of 6h (6-7 per line), which needed w in E itself.
+  - With line partners w the minimum is exactly 4 on all 16 sampled lines (E8 R420: 3).
+  - With arbitrary vectors w of the line space it is 2 (P(01)) or 3 (P(26), T(012), T(235)), with groups of up to
+    76 of 86 demands.
+  - So the bottom level is E8-like.  A collector, however, passes one rank-2 pool, so this only says that x_u can
+    reach every demand; it does not feed 23-47-line parts.
+- **Demand structure (`drank.py`).**  F2 rank of the 611 PG demands is 219 of 364 (0.60; E8 0.32, I_{11,1} 0.50).
+  The 780 distinct sign halves (16/30/64 lines) fill 1,092 slots, so sharing is 1.4 per half (E8: 3, the maximum).
+  E-sets of rank 11 are all 2-coverable by proper subflats of their section (`ecover.py`); Q-parts need 3.
+- **Width-12 (exit) prize for I_{13,1} (exact `exitmix.py`; `i13exit.py`, `i13exit.log`).**  Idle slots are
+  multiples of a = h - 1 = 12, so width-12 residuals tile them exactly.  With half the helpers consumed collectors:
+
+  | collectors / dead | width 13 | collectors exit at t-perp (width 12) |
+  |---|---|---|
+  | (11,1,1) / (11,2) | 4.72v | 5.76v |
+  | (10,1,1,1) / (10,3) | 4.41v | 5.38v |
+  | (2,9,1,1) / (8,5) | 4.20v | 5.13v |
+  | (4,7,1,1) / (2,9,2) | 3.99v | 4.84v |
+
+  - About +1v of allowance: with it, the 4.5-6v flat-sum estimates above would reach the frontier.
+  - **Why it is not available (argument, from the exit lemma of 3h/7b).**  The cleanup of an exiting helper must
+    read its whole inverse row inside U = t-perp.  The inverse row of a collector that picked anything up from a
+    shared pool contains that pool register, which can then be dragged into one target perp only.
+    - So only collectors fed exclusively by registers dead afterwards (or owned by the same target) can exit.
+    - Converting a consumed collector costs one extra pure-merger register per consumed demand (+1v for the frame
+      top), against about +0.4v of allowance when ~20% of helpers exit.  Net loss, as for P111 in 7b.
+    - Line copies cleaned by their own source: at most one per source.
+    - Entrance (z-group) width 12 stays closed by the totals-feeder lemma.
+  - Open: a gate pattern whose inverse rows are target-local by construction, e.g. pools whose registers all die
+    into one target perp after their last pickup.
 
 ## 4. Next goals (priority order)
 
