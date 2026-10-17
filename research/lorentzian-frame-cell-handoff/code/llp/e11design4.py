@@ -9,7 +9,7 @@ section's exclusive-part signature for that user.   usage: e11design4.py timelim
 import sys, json, itertools, collections, time, pickle
 from lgeo import *
 from ortools.sat.python import cp_model
-TL = float(sys.argv[1]); MODEL = sys.argv[2]; SYM = int(sys.argv[3])
+TL = float(sys.argv[1]); MODEL = sys.argv[2]; SYM = int(sys.argv[3]); TYPES = set(sys.argv[4].split(',')) if len(sys.argv) > 4 else None
 t0 = time.time()
 def log(*a): print('[%5.0fs]' % (time.time() - t0), *a, flush=True)
 
@@ -71,6 +71,18 @@ for s in range(V):
             c += cost(p, S[p], E)
         key = sum(1 << 0 for _ in ()) or tuple(sorted(pl))
         opts[s].append((tuple(sorted(pl)), pl, c))
+def ptype(p):
+    L = bits(p); ks = ''.join(sorted(KIND[x] for x in L))
+    if len(L) == 3: return ks
+    a_, b_ = L
+    if ks == 'PT':
+        P_ = a_ if KIND[a_] == 'P' else b_; T_ = b_ if P_ == a_ else a_
+        return 'PTi' if set(SUPP[P_]) <= set(SUPP[T_]) else 'PTd'
+    if ks == 'TT': return 'TT' if G[a_][b_] == 0 else 'TTs'
+    return ks
+if TYPES:
+    for s_ in range(V):
+        opts[s_] = [o for o in opts[s_] if '+'.join(sorted(ptype(p) for p in o[1])) in TYPES]
 log('options per line', collections.Counter(len(v) for v in opts.values()))
 M = cp_model.CpModel()
 xs = {s: [M.NewBoolVar('') for _ in opts[s]] for s in range(V)}
@@ -98,6 +110,6 @@ log('status', sv.StatusName(st), 'obj', sv.ObjectiveValue() / 100 if st in (cp_m
     'bound', sv.BestObjectiveBound() / 100)
 if st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
     sol = {s: [hex(p) for p in opts[s][k][1]] for s in range(V) for k in range(len(opts[s])) if sv.Value(xs[s][k])}
-    json.dump(sol, open('e11design4_%s%d.json' % (MODEL, SYM), 'w'))
+    json.dump(sol, open('e11design4_%s%d%s.json' % (MODEL, SYM, '_typed' if TYPES else ''), 'w'))
     tot = sum(opts[s][k][2] for s in range(V) for k in range(len(opts[s])) if sv.Value(xs[s][k]))
     log('estimated registers', round(tot, 1), '-> R ~', round(tot - 220, 1))

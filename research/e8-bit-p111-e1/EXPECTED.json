@@ -1,0 +1,68 @@
+{
+ "word": {
+  "file": "data/bitE8mut-p111-e1.json.gz",
+  "file_sha256": "24b4aed65da2fea3a50ab9f21f72ecc5b7f7451c471ed3d12a63b8758dba924a",
+  "content_sha256": "cb2bdfd8d38da756d098f0adb9eff65b1ec10d4fd6dc3a47ddf6b9ccd39fee94",
+  "v": 111,
+  "R": 439,
+  "gates": {
+   "D": 111,
+   "A": 2076,
+   "B": 712,
+   "C": 2575
+  },
+  "entrance_helpers": {
+   "470": 186
+  },
+  "local_paid_profile": {
+   "1": 1321,
+   "2": 1344,
+   "3": 78,
+   "4": 44,
+   "5": 102,
+   "6": 12,
+   "7": 18
+  }
+ },
+ "nine": {
+  "pipeline": "PR #510 (PR #463 nine-stage template, 32 replicas, PR #442 hosting, PR #493 outer assembly), parameterised by P111's code/adapt9p.py; E1 isometry validator (code/adapt_e1.py); --no-banks with emit --host-all; discovered hosting selection (data/selection9-e1.json)",
+  "bit_lower": "867236620397626871237/500000000000000000000000",
+  "bit_lower_decimal": "0.001734473240795253742474",
+  "bit_profile": {
+   "1": 380512,
+   "2": 400960,
+   "3": 22464,
+   "4": 26816,
+   "5": 29376,
+   "6": 17536,
+   "7": 26432,
+   "22": 32,
+   "42": 320
+  },
+  "kappa": {
+   "pr548": "49718254847979/31250000000000000",
+   "pr544": "397677800014309/250000000000000000",
+   "pr535": "793733736881443/500000000000000000",
+   "pr531": "1517760977820331/1000000000000000000"
+  }
+ },
+ "baseline": {
+  "pr589_p111_tuned_nine_bit_lower": "1733427039589844234749/1000000000000000000000000"
+ },
+ "eleven": {
+  "pipeline": "PR #493 (PR #445 geometry, PR #472 emitter, audit and invoice, PR #442 hosting), parameterised by PR #545's code/adapt.py; E1 isometry validator and file (code/adapt_e1.py); mixed-width nominator code/host11_e1.py; frozen selection data/hosting11-e1.json",
+  "bit_lower": "856028994631537810869/500000000000000000000000",
+  "bit_lower_decimal": "0.001712057989263075621738",
+  "bit_profile": {
+   "1": 116280,
+   "2": 121820,
+   "3": 6864,
+   "4": 7417,
+   "5": 8976,
+   "6": 4576,
+   "7": 8656,
+   "36": 1,
+   "56": 2610
+  }
+ }
+}

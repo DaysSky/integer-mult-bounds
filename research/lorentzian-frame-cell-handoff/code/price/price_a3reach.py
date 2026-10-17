@@ -28,6 +28,7 @@ def hist(m1, R):
 def pct(m1, R):
     c = price(hist(m1, R), 220, 11, R)[0]
     return float((c / P111t - 1) * 100) if c else None
-for m1 in (3, 4, 5, 6):
-    be = next((R - 1 for R in range(696, 900, 2) if pct(m1, R) < 0), None)
-    print('first mid rank', m1, 'R=696 %+.2f%%' % pct(m1, 696), 'break-even ~', be, flush=True)
+if __name__ == "__main__":
+  for m1 in (3, 4, 5, 6):
+      be = next((R - 1 for R in range(696, 900, 2) if pct(m1, R) < 0), None)
+      print('first mid rank', m1, 'R=696 %+.2f%%' % pct(m1, 696), 'break-even ~', be, flush=True)

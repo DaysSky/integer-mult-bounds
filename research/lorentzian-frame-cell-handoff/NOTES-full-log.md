@@ -1775,3 +1775,180 @@
 - Accounting in this modification family: releasers keep exactly 1 triangle node, s <= r, zero-cost retained nodes
   Z <= s/2 <= r/2, so the triangle lower bound drops from 220 to >= 220 - 1.5 r while 3r non-triangle sections are
   created (each removed node lowers the bound by <= 1.5 and adds 3 new sections of unknown cost).
+- lrankcap.py 6 with KINDS=P: hit its 4200 s timeout with NO output (log empty).  P rank-capacity lemma still unproven.
+- lttri_leavek.py MAXREL=1, k=3, target (0,1,2): three replacement frames can cover Need (78) plus >= 19 of the 25
+  release candidates (FEASIBLE, bound 25, 300 s; not proven optimal) for all 4 choices of kept node.  So release
+  capacity is not the bottleneck for leave-3 targets; the cost is the near-total replacement (r >= 147, or >= 110 if
+  one releaser per node suffices -- RELA2 probe pending).
+
+## tau-rider loophole CLOSED (lttri_tau_riders.py, lttri_tau_riders_all.py) -- uncommitted per user
+- Any good basis of S = <p_A,p_B,p_C> contains tau = p_A+p_B+p_C (pairwise sums span 2 dims; parts have rank 8).
+  tau has rank >= 5 (P(E) + 6 all-forced transversals, rank 5), so it is assembled from >= 2 inputs at some stop M
+  containing supp(tau); without a register sharing that stop it costs >= 1 extra.
+- Co-user registers cannot share: pairwise sums close at the hub M_n, which lacks P(E), and P(E) is in tau.
+- A register of another node F' shares M only if F' is inside pm(M), which is inside pm(supp tau); F' != F needs a line l outside F
+  with supp(tau) inside M_l = F-perp n l-perp.  Locally feasible iff P(E) in M_l and no all-forced transversal outside M_l.
+- All 220 nodes: exactly 3 such l (transversal T lines inside the node perp), |M_l| = 16, rank 7, kappa5(M_l) = 2;
+  pm(M_l) = {T(A),T(B),T(C),T(l)} (4 independent lines), so the candidate rider frames are the 9 frames
+  {two of T(A),T(B),T(C)} + T(l).  NONE is a design frame (they contain two intersecting T lines).
+- A target holding such a frame must replace a triangle section; leave-1 forces the old frame back and leave-2 admits
+  only the original pair (exhaustive), so it must leave >= 3 of its 4 triangle nodes.
+- => PROVEN: in the M11 triangle design and in every modification where each target leaves <= 2 triangle nodes,
+  every node pays >= 1 extra register at ANY RHO (RHO=5: no rank-5 basis even with releases (impossible);
+  RHO=7: tau's stop has no rider).  T-part >= 220, R >= 660 > break-even (~585-630).  Only escape: targets leaving
+  3 of 4 triangle nodes (then the design is mostly non-triangle).
+
+## Session 6f (2026-10-16): bit frontier beaten and packaged (research/e8-bit-p111-e1)
+- E1: P111-tuned with helper 248 (reg 470) at entrance rank 2 (frame 186 = span(root 33, root 77)).
+  - Mechanism: one inserted pure-dirt read `444 += 470` before 470's only write; the dirt cancels in 444, and 470
+    leaves D.
+  - Official PR #510 nine-stage chain: c = 0.001734473240795253742474 (+0.0604%).
+  - Eleven stages (PR #493 via #545): c11 = 0.001712057989263075621738 (+0.0646%).
+  - verify.sh passes end to end in 129 s; MANIFEST.sha256 is included.
+  - Chain adaptations, all listed: an isometry validator accepting dyadic route factors (<= 77); --no-banks with
+    emit --host-all; a mixed-width eleven-stage nominator; local_audit edits dropping the all-zero-entrance asserts.
+- Exact closures on P111-tuned/E1, all 0 conversions: #434 time-0 donors; any-time dual-set injection
+  (g += S_h(p)); rescheduled A (DAG over-approximation); raised entrance frames; frame-merge cascades in both
+  directions; tuner on E1; exit for 470.  Details are in HANDOFF.md.
+- Lead (format-level): a charged 7+1 residual split, with a minimal one-coordinate repair modelled mass-consistently,
+  would be worth up to about +7.9% in the MILP.  It needs a proven split primitive (format-limits C.8).
+- Observation, not pursued (user rule: no helper deletion): after PR #589's hoist, helper 470 is removable outright.
+  444 can read x77 directly at frame 186 at A[1993], so R would drop to 438.
+
+## Session 6g (2026-10-16): line-count ceiling for root-like systems
+- Theorem (exact check code/inertia/inertia_bound.py, 4 s).  A root-like system (norm 2, products 0/+-1) in signature
+  (p, q) has v <= positive index of Phi = <,> - (1/4)<T.,T.> on Sym^3, because Phi(u^3, w^3) = <u,w>^3 - <u,w> = 6 delta.
+  Lorentzian closed form: C(h+1,3) + (h-1 | 0 | 1) for h < 10 | = 10 | > 10, giving 128, 165, 221, 287, 365 at
+  h = 9..13.  I_{10,1} attains 165; I_{n,1} (n >= 11) sits one line below.  E8 is tight for the Euclidean form (120).
+- Every break-even line count in the 6c grid (h totals at rank h-1, R420-quality middle) is above the ceiling, so no
+  root-like Lorentzian unit reaches the tie line.
+- Exact B0 decoder costs (matroid greedy over all codewords): I_{10,1} 99 (x 0.600), I_{11,1} 110 (0.500), I_{12,1}
+  143 (0.500, c = 13), 298-system 155 (0.520).
+- Searches: CP-SAT h = 11 (y <= 2: best 220, bound 230; y <= 3: 220); other h = 10 lattices <= 120; h = 11
+  mixed-norm odd-or-zero pool (17,358 lines): 220, always root-like; E8 + twins at rank 9 fails (about +2.67
+  residual^2 per twin).
+- A random-start LM with a faithfulness penalty fails even on E8 at rank 8.  Use equality-only LM with a control.
+
+## Session 6h (2026-10-16/17): I_{13,1} alignment, lever/decoder break-even tables, h = 9 closures
+- I_{13,1} partitions:
+  - PG(2,3) partition: 559 / 4,095 compatible pairs, frame-mate fraction 0.23.  The exact per-line cover has
+    lower bound 6 on all 24 finished Z13 orbits (E8: 3).
+  - E8 calibration: a random disjoint pair of good frames is compatible 13.4% of the time (I13: 14-19%).
+  - Rigidity: freeing <= 8 frames almost never admits another exact cover (2 alternatives in 2 of 920 samples).
+  - Z13:Z3-invariant partitions: 13,151; Z13-invariant: > 10^6.  Best scored: greedy cover 6.18, compat <= 1,001,
+    frame-mate fraction <= 0.356.
+  - Block-closed partitions (PG(2,3) PPTT blocks + Pasch-pair blocks): infeasible for every Z13 apex offset;
+    free apexes UNKNOWN after 1,200 s.
+  - Load: 79 demand-incidences per line vs E8 R420's 25.
+- Per-line ILP over all partitions:
+  - E8 control is exactly 3 in both models.
+  - I13 T line in the flat model: 3 (OPTIMAL).  The flat model is right only for full-section tops, whose
+    sections hold about 138 lines.
+- Lever and decoder break-even (generic chains, `scratchpad/lor6/levbe.py`, `levbe2.py`, `levneed.py`, `cstbe2.py`):
+  - At f = 0.25, e = 4: E8 4.10v; I11 3.69v; I13 3.62v; h9 with 127 lines 3.91v.
+  - At R = 3.5v the lines needed are: h = 9: 132 / 124 / 117 for f = 0 / 0.25 / 0.5; h = 11: 238 / 216 / 201;
+    h = 13: 411 / 358 / 324.
+  - I11 at cst 100 allows 3.62v at f = 0, and cst <= 90 reaches the hosting wall.
+- h = 9:
+  - Exact vector-level class maxima with a timelike line: B2 = 107, B1 <= 111.  So > 111 lines needs a frame-free
+    system (<= 119).
+  - The 119 singular points of O^-(8,2) attain the frame-free bound but are NOT root-like realisable.  Proof: the
+    20 points of l^perp minus l (5 cosets of 4, ovoid quotient) cannot sit in R^{5,1}.  LM residual^2 18.7 agrees.
+  - Twin multisets reach 117-119 combinatorially (ILP); their realisability is being tested.
+- Decoder: non-symmetric lazy-cut ILP over 15,246 structured flats (dfam/declazy.py) is running.
+- Session 6h, later results:
+  - Decoder minrank equals B0's rank for I_{10..13,1} (exact SAT): I10 rank 10 INFEASIBLE in 10 s; I12 rank 12
+    INFEASIBLE in 238 s; I13 rank 12 INFEASIBLE in 8 s.  Controls are FEASIBLE.
+  - All 11 symmetric 165-line h = 10 systems have B0 cost 99.
+  - E8's orthogonality pattern has no non-null realisation in R^{7,1} (proof: 15 timelike lines forced, pairwise
+    non-orthogonal, but E8's non-orthogonal clique number is 8).
+  - h = 8 Lorentzian systems containing a 7-frame have <= 57 lines (exact).  Frame-free local screens exclude every
+    sampled 85-99-line multiset (h = 8) and every sampled 117-118-line multiset (h = 9).
+  - R420's own word converts 0 of 420 helpers to entrance ranks.  A lever-native design is needed even for E8.
+  - Near-top hubs raise the I11/I13 break-even R to 18-20v at 90% hubs.  The binding constraint becomes <= 300-450
+    frame-0 carriers, back to the session-6g injection/aggregation count.
+
+## Session 6i (2026-10-17) — price identity, z-groups, frame-0 branch floor, decoder probes
+- Price identity: with every residual hosted, deficit = T (8v - 9 cst) independent of R (exact algebra on pricer.py).
+  Ideal one-stop R = 0 words: I11 c = 0.0039 (+125%), E8 0.0041; helpers cost only through D.
+- z-groups: targets perp non-null z stand at span(z) as first B frame and cancel group dirt there; group helpers
+  start at span(z) (width h - 1), no in-chain/fan-in limits inside a group; contagion: anything meeting a group
+  helper is confined to targets perp z.  I11 needs >= 3 groups (proof: two normals force a constant one).
+  Timelike z: every frame containing z is nondegenerate.  Toy word zdemo (4 timelike groups, R = 26,958) PASSES
+  gcheck_z (gcheck + E1 relaxation + mixed-width mass identity).  code/zgroup/.
+- Frame-0 branch floor: branches (x_s alone at a one-line frame) other than the source's own chain must come from
+  registers at span(s) -> frame-0 helpers (line-entrance helpers need readers through span(s)).  426 (I11), 706
+  (I13) frame-0 helpers in any word.
+- Budgets (exact pricer, frame-0 at floor, rest entrance 1): I11 R <= 743-896; I13 R <= 1,205-1,449; non-branch
+  middle 1.4-2.1v.  At R = 1,000 I11: all-e1 -5..+2%, 440 f0 + e1 -6..-12%.
+- I10 decoder is cst 99 (not 90): all-e1 break-even 465-548 (2.8-3.3v) vs floor ~1.9v; no better than I11.
+- Decoders: C_11 + <xi> serving all / P / T / stars / random 20-160 targets: solution space = C_11 (no extension).
+  sdec.c (exact W per target) accepts no move away from B0.  Z11 CP-SAT rank 12: rows <= 116 UNKNOWN (600 s);
+  rows <= 130 OPTIMAL in 7 s (control).  Minimisation runs launched (z11_k12_min.log, z11_k13_min.log).
+- h = 9: 119-quadric zero pattern in R^{8,1} margin 0.05: residual^2 376/455/384 (3 seeds); E8 control 8.5e-29
+  at seed 1.  Non-root-like screen 05b: 3 multisets, residual^2 0.003-0.008 (inconclusive).  Q^-(7,2) has a
+  plane spread (17 planes, CP-SAT OPTIMAL).
+- Punctured aligned 168-line I11 (52 punctures): clique 10, rank-10 decoder INFEASIBLE (SAT 2 s), B0|L cost 110
+  (one rank-9 codeword -> 109).  Pricer: R = 3.5v needs cst <= ~80 even with z-groups -> closed.
+- Codeword support ranks: C_11, C_12, C_13 have every codeword at support rank >= h - 1 (only the n coordinate
+  totals at h - 1) -> minrank-size decompositions cost n(h - 1).  dpool annealer (13,277 low-rank supports):
+  from B0 stuck at 118 with K = 12; random rank-9 sets serve <= 4 of 220 targets.
+- Decoder sensitivity (R420 structure + z-groups): ~1.1-1.2% per cst unit; I11 cst 95 would allow R ~1,020-1,040.
+- E-set F2 rank: E8 R420 skeleton 38/120 (E 16 lines, 24 per line); I11 good partitions 107-108 of 212-216
+  (E 21-38 lines, 32-51 per line).  Atoms are single lines in both.
+- Odd-or-zero extensions of I11 with |coords| <= 3: only the 11 timelike D10 normals (each costs a decoder unit).
+- T_h (14-16) under the z-group floor model: no room (middle <= 0.1v).  I14: middle <= 1.27-1.67v.
+- Relative efficiency eta = c / c_ideal: E8 best ~0.38-0.40 (R420 0.404, P111-tuned 0.380, ideal 0.004561 at cst 63); I11 needs
+  0.444, I13 0.448; z-groups multiply eta by ~1.12 -> Lorentzian needs E8-best eta to tie.
+
+### Session 6i, continued: I_{13,1} E-set ranks, 10-frames, target taps
+- `erank13.py` (PG(2,3) partition): good frames give perp counts 0/2/4 only.  PPTT within-pair E-sets: 32 lines,
+  rank 10, split 16+16 at rank 6+6 (E8-like).  The other PPTT E-sets (60, 80 lines) and all TTTT E-sets (46 lines)
+  have full section rank 11.
+- `tenenum.py`: I_{11,1} has exactly 10,395 orthogonal 10-frames, all D10 frames (apex + perfect matching), all
+  with 5 P lines, so there is no partition.  `tenframe.py`: 25 classes of 8-10 lines at rank 4-6 (B_pq, C_pqr, A_q),
+  shared by 5-6 frame members; a refinement of the apex D8 decomposition (2e), with load 31.5 per line under a
+  33-frame target cover.
+- Target taps (one target reading another, legal under H5 if the reads cancel on y) fail on content-in-frame: a
+  target's x-content after the scatter always contains its own line.
+- `bankprice.py` (bank-overflow pricer, controls exact): word_blkA4 R = 3,656 prices at c = 0.000492650689 (-71.6%).
+- `coverline.py` / `tencover.py`: per-line cell cover E8 R420 = 3 (all lines, optimal); I_{11,1} 10-frame top 11-12.
+- Half sharing (`halfglobal.py`, `halfanat.py`): every I_{11,1} half occurs in 2 (Pasch pair) or 3 (star-D4 block)
+  good frames.  Sharing partitions (`sharepart3.py`): 492 distinct halves vs 648.  Misalignment (`misalign_n.py`):
+  E8 R420 0; I_{11,1} ~7,700 (annealing 7,696 -> 7,190 after 17,000 steps); I_{13,1} PG(2,3) 23,348.
+- Rank-7 block groups (`unitspan.py`, `leverbp.py`): delivery cheap, assembly ~2.5x E8 per line.
+- Rectangle tops (`rectcover.py`, `rectpert.py`): no exact F2 cover (rank 5,004 / 26,070).
+- Decoders (`code/dec108/`): C_11-containment reformulation; coordinate flats >= 122 (proof); Z11-cyclic sections
+  + z3-perp at 109: none (exhaustive); codeword pair covers (cwpair2): cheapest 10/13/20/none by orbit; partial
+  proof cost >= 110 for 12 pieces with at most one coset piece; max nondegenerate frame line counts by rank
+  (maxlines): 4,10,20,35,56,84,70,165 at ranks 3-10.
+- Apex families (`code/apexd5/`): I_{11,1} k = 5, 7 infeasible, k = 4, 6 all 210, k = 8 all 45 (D8 route);
+  I_{13,1} k = 4, 5, 7, 8, 9 infeasible, k = 10 all 66, k = 6 only all 924 found.  Counting bound for apex
+  families: load + deliveries >= 25.2 (I_{11,1}), 28.3 (I_{13,1}) vs E8 R420 16.
+- E8 lever calibration (`code/price/e8block.py`): group helpers pay only by replacing frame-0 registers.
+- Summary written to VERDICT-6i.md.
+- Mixed-size apex families (`code/apexd5/fammix.py 10 900`, CP-SAT, objective load + deliveries): best found = the
+  uniform D8 family (2,610 per apex = 126 + 4.5 per line), solver bound 0 (heuristic).
+- misalign_sa second run (60,000 steps, T0 = 2, from the 7,190 state): best 7,149.
+- Rank-12 I_{11,1} decoders (`code/dec12/`, CaDiCaL): row spaces not containing C_11 exist (kernel witness, 17 s);
+  dim(S cap C_11) down to 6.  Five exact examples cost 112-118 (11 rank-10 pieces + one small piece: an
+  orthogonal set or a rank-5..7 set) and save 243-1,535 row entries (<= 5.9%), 42-192 per unit of decoder cost.
+  At ~260 entries per unit (model exchange rate) the sparse-row lever loses.  Exact bounds (>= 11 rows saving >= 45,
+  >= 30 rows saving >= 10, dim(S cap C_11) <= 5) running.
+- Stage count on the verified word (code/price/kscan.py, blkA4): K = 3..12 gives -71.9% .. -74.3%; K = 4 (-71.6%) is best.
+- O^-(8,2) nonsingular 136-point configuration at h = 9 (`code/ominus/`): B0 rank 9, |t-perp| 63, minrank 9 (rank 8
+  UNSAT), break-even 3.69-4.41 v at cost 72 (P111-level).  Not realisable: residual^2 439-477 in (8,1)/(9,0)/(7,2)
+  over 16 seeds, 240 at margin 0.01 (norms collapse); E8 control 1.9e-29.  Frame + support-4 part is not E8's graph.
+- dec12s 12 30 10: SAT (5,525 s), rank-one change 30 x 10, cost 114, saving 300 (75 per unit).
+- THEOREM (computer-assisted, `code/declp/`): every I_{11,1} decoder costs >= 100.  Clique-hitting LP: for each
+  pairwise non-orthogonal clique Q at least |Q| pieces meet Q; weights on the 17 S11 orbits of maximal cliques
+  (sizes 10, 9), constraints on all 56,498 flat orbits (ranks 1-10, exact) + full frame; certified value
+  5,847,985/58,672 = 99.6725.  Method ceiling ~104.8 (t-perp frames).
+- Break-even vs decoder cost (bebank): cst 110: 617-756 / 721-896; cst 105: 692-843 / 805-996; cst 100: 766-927 / 890-1,097 (all frame-0 / floor + entrance-1).
+- declp3 (cliques + 12 minrank-11 orbits, exact on 877 near-tight flats, union bounds elsewhere): certified 100.647393 => every decoder >= 101.
+- blkA4 D10-frame retention (code/d10ret): worth -71.6% -> -67.4% if free, but every total's 68-82 operands lie outside its D10 frame (rebuild reproduces R = 3,656, gcheck PASS); not a cheap retrofit.
+- declp4 round 1 (iterated certified LP, code/declp/declp4.py + colgen.py): certified 101.429859 => every I_{11,1} decoder >= 102 (rounds 2+ running at commit time).
+- Good-frame spectrum (code/declp/frcover2.py): 1,926,540 orthogonal 4-sets; weights 0 (20,790), 90 (277,200), 104 (381,150), 110 (762,300), 116 (485,100); good frames = weight-0 frames, all 220 lines covered; E8 control 9,450 of 122,850 weight-0 and an exact weight-0 cover exists (CP-SAT, 15 s).  I_{11,1} has no partition into good frames (TTTT/PPTT contain an even number of P lines, 55 is odd).
+- Partner triples (partners3.py): all triples of partners inside s-perp have 3 orthogonal pairs, both I_{11,1} (252 P / 840 T) and E8(M) (315).
+- Cell-graph SA (cellgraph.py): from blkpartA's 3.14 odd components per target down to 1.04-1.3, only at mean degree 6-8.
+- Repository snapshot (user request, 2026-10-17): scratch scripts/logs not previously mirrored were archived in scratch-archive/ (same relative paths as the scratchpad); large pickles/npz and downloaded material were not committed.

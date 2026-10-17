@@ -1,5 +1,27 @@
 # Lorentzian I_{11,1} bit words: status (session 2026-10-15)
 
+**Update 2026-10-16, session 6f.**  The bit frontier is beaten on E8 itself, not by a new line system: research/e8-bit-p111-e1
+(one entrance-rank-2 helper on P111-tuned) gives c = 0.001734473240795253742474 (+0.0604%) on the official nine-stage chain.  No
+new line system result changed this session.
+
+**Update 2026-10-16, session 6d (new line systems; HANDOFF.md "Session 6d").**  Root-like lines in R^{8,1}: at most 127
+(exact: Lagrangian count + orthogonal-frame classes), below the 130+ that h = 9 needs, so h = 9 is closed for root-like units.
+Decoder value is the deficit term 8v - 9 cst (+2.8% per cst unit on P111).  Every full-E8 decoder found costs exactly 72
+(conjecture: cost >= 72 - #punctures).  Double-star decoders realise x = 54/102 (deficit value 330 > 321), but in the bitE8
+format the saving needs per-total cuts at punctured-line frames.  On P111 a single such piece nets at most ~+0.26% after
+block splits, with 49 phase-B frame conflicts.  No new line system gives a drastic gain under the current format.
+
+**Update 2026-10-16 (sessions 6-6c; details in HANDOFF.md sections 3f and "Session 6c").**  Best verified word
+R = 3,656 (gcheck PASS, `code/lbuild/word_blkA4.json.gz`).  The pricer's hosting wall for v = 220, h = 11 is R = 880, and break-even against
+P111-tuned is ~650-840 depending on stops per register.  Other Lorentzian units (I_{n,1}, whole-lattice I_{10,1}
+and I_{11,1} searches, h = 9 near the LP bound) do not reach the decoder cost per line that a word with an
+R420-quality middle would need (estimate, #620 helper model).  On the block partition, a cell-hub middle does not
+shrink the demand content, and an idealised varying-part hub middle already needs ~970 registers (greedy, no
+content building).  Hub-sharing builders measured R = 4,129-4,717.  Aligned good-frame partitions need exactly 52
+punctures (CP-SAT optimal), so an R420 port only exists at v <= 168, where the decoder cost kills the price.  Verdict unchanged: not proven worse, no
+competitive construction, and every measured route points away from break-even.  The sections below are the
+2026-10-15 snapshot.
+
 Scope: bit supplier, bitE8-style format with closed or general nondegenerate frames, monotone frame chains.
 "Frame-cell sources": every source has 3 branch registers first-mixing at the cells {s,f} of a chosen good
 4-frame (the only 3-covers of R(s) by plane sections are good frames and PPP triples), plus extra branches.
@@ -64,3 +86,6 @@ frame N ⊋ C.  A target whose every route for a line passes through C must meet
 frames or read C in-chain (one rank-2 read per target).  E8, R420 D4 partition: every cell needs a 3rd register
 under any top with 2 deliveries (R >= 405; 420 under Z15) and R >= 390 under any top -- R420 is optimal in its class.
 Files: scratchpad/cellb (E8), scratchpad/lcell (I_{11,1}), scratchpad/price (pricing), hf/NOTES.md (log).
+
+## Session 6g update
+Proven: root-like Lorentzian systems have at most C(h+1,3)+1 lines (h >= 11; 165 at h = 10, attained by I_{10,1}).  Every break-even line count in the model is above this ceiling, so a Lorentzian frontier would need a decoder cheaper than h(h-1), a system that is not root-like (none found; the best mixed-norm searches return the root-like I_{n,1}), or a middle better than R420 at about 2x E8's load.  Exact decoder costs: I_{11,1} x = 0.500 (optimal B0), I_{12,1} 0.500, the 298 system 0.520.

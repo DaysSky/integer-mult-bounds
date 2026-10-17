@@ -1,4 +1,4 @@
-"""(env RELA2=1: A2(other) lines are releasable memberships too.)  (env OBJ=users: minimise 100*#releasing users + #releases.)  MIN-RELEASE probe: the minimum number of coverage-forced (multiplicity-1) transversal memberships that must be
+"""(env ONEUSER=u: feasibility with only user u releasing.)  (env RELA2=1: A2(other) lines are releasable memberships too.)  (env OBJ=users: minimise 100*#releasing users + #releases.)  MIN-RELEASE probe: the minimum number of coverage-forced (multiplicity-1) transversal memberships that must be
 released (covered elsewhere, as in a mixed design) for the node to admit a rank-5 basis.  Released = forced line set to 0.
 RELAX may still contain pe / a2.  Original header of lttri_rho5_relax.py follows.
   env RELAX (comma list) frees, per user:
@@ -77,15 +77,20 @@ for ni in map(int, sys.argv[1:]):
                         if Q >> s & 1 or isinstance(v, int): continue
                         M.AddImplication(c, v.Not())
             if dead: continue
-            if os.environ.get('OBJ') == 'users':   # minimise #users with >= 1 release, then #releases
+            if os.environ.get('ONEUSER'):   # feasibility: only user ONEUSER may release (A2 too if RELA2); others fully forced
+                ou = int(os.environ['ONEUSER'])
+                for w in range(3):
+                    if w != ou:
+                        for v in relu[w]: M.Add(v == 1)
+            elif os.environ.get('OBJ') == 'users':   # minimise #users with >= 1 release, then #releases
                 ru = [M.NewBoolVar('') for _ in range(3)]
                 for u in range(3):
                     for v in relu[u]: M.AddImplication(v.Not(), ru[u])
                 M.Minimize(100 * sum(ru) + len(rel) - sum(rel))
-            else: M.Minimize(len(rel) - sum(rel))
+            elif not os.environ.get('ONEUSER'): M.Minimize(len(rel) - sum(rel))
             sv = cp_model.CpSolver(); sv.parameters.max_time_in_seconds = float(os.environ.get("TL", "60")); sv.parameters.num_workers = 4
             st = sv.Solve(M)
             if st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-                feasible.append((dl, p, int(sv.ObjectiveValue()), int(sv.BestObjectiveBound()), 'OPT' if st == cp_model.OPTIMAL else 'FEAS', len(rel)))
+                feasible.append((dl, p, 'SAT') if os.environ.get('ONEUSER') else (dl, p, int(sv.ObjectiveValue()), int(sv.BestObjectiveBound()), 'OPT' if st == cp_model.OPTIMAL else 'FEAS', len(rel)))
             else: feasible.append((dl, p, sv.StatusName(st)))
     print('node', ni, '| maximal rank-5 subsets', len(mx), '| (delta, pivot, min released, bound, status, #forced):', feasible if feasible else 'NONE', '| RELAX', sorted(RELAX), flush=True)
