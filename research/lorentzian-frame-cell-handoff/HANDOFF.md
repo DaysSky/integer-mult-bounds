@@ -3256,6 +3256,48 @@ throughout: E1, c* = 0.001734473240795253742474 (`research/e8-bit-p111-e1`).
   closed in pure form (4 groups).  What remains is lever A, a middle strictly more efficient than R420 per
   incidence, which would first be an E8 result.
 
+## 3i. Session 7c (2026-10-17) — I_{13,1} re-priced with lean shapes; register identity; hub/2-cover census
+
+Scripts: `code/s7/i13budget.py`, `i13tot.py`, `i13tot2.py` (pricing, logs beside them) and `code/s7/i13n/` (geometry,
+PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
+
+- **Frontier allowance for I_{13,1} at cst 156 is larger than the R420-shape numbers suggested (exact `mix.py`
+  pricer, best-fit hosting, all helpers one shape, no fixed branch helpers).**  Max helpers / v keeping c >= E1:
+
+  | sources / targets | (11,1,1) | (10,1,1,1) | (2,9,1,1) | (4,7,1,1) | (1,1,9,1,1) | (2,3,8) | (11,2) dead |
+  |---|---|---|---|---|---|---|---|
+  | (12) / (12) | 4.72 | 4.30 | 4.10 | 3.90 | 3.96 | 4.12 | 4.92 |
+  | (12) / (11,1) | 4.62 | 4.21 | 4.02 | 3.82 | 3.87 | — | 4.82 |
+  | (12) / (10,1,1) | 4.52 | 4.12 | 3.93 | 3.73 | 3.79 | — | 4.71 |
+
+  So an I_{13,1} word with lean stops may have R ~ 1,400-1,680 (3.8-4.6v), against the 1,165 (3.2v) obtained in 6h
+  with R420's own per-role chains.  (Collector shapes end ...,1,1: last climb to t-perp, then to full.)
+- **Register identity used for design (exact bookkeeping).**  Every z-register ends consumed at a target top or dead,
+  so R + v = sum_t c_t + dead.  At a pool (frame) the arriving x-contents keep their rank under the invertible
+  gates; a pool whose only useful output is one vector N(F) kills (arrivals - 1) registers.  With B0 every target's
+  demand is its full perp, so every reader of a frame F wants all of F's lines once: pools built from flat sums are
+  rank-1 pools, and each formed flat costs (inputs - 1) dead registers.  Fresh helpers that only copy N(F) out of a
+  pool cost registers but no dead.
+- **t-perp has no 2-cover by sections (exhaustive for T(012), P(01); `secs.py`).**  Sections X-perp (X an A2 or a
+  cell containing t) have 90-166 lines; the best 2-union has 167 of 183 (T) / 212 of 231 (P) lines; every 3-cover
+  is by three cell sections (4,005 for T(012), 495 for P(01)).  Hence c_t >= 2 for frame-type tops, and R >= v + dead.
+- **PG(2,3) frame top, demand census (`part13.py`).**  91 good frames (39 PPTT + 52 TTTT), 637 demands (611
+  distinct), sizes Q 42/56, E-sets 32/46/60/80, load 79.1 per line (E8 R420: 25).
+- **Hub census (`hubs1.py`, `hubs1.log`).**  All 176,354 distinct pairwise intersections (>= 6 lines) of the 611
+  demand frames, with users = demands whose frame contains the hub:
+  - large hubs (20-50 lines) serve 2-5 demands (the two that define them, rarely more);
+  - the best users/size ratios are 6-line rank-3 hubs with 42-45 users delivering about 3.3 lines each.
+  - A butterfly hub only avoids waste when it serves at least as many demands as it carries lines; no large hub
+    comes close, so the PG(2,3) demands cannot be fed by a few big shared hubs.
+- **2-covers of demand frames are rare (`cover2.py`; hyperplanes S cap u-perp, u a line of S).**  Only the 118-line
+  sections have them (28 each, best 69 + 115 lines with 66 shared); the 90/138-line sections and both Q types have
+  none.  So most formed flats need >= 3 inputs, i.e. >= 2 dead each.
+- **Estimate (counting, not a bound).**  Frame top: c_t = 2, so R = v + dead.  About 640 demand pools at >= 2 dead,
+  plus their sub-flats, put dead at roughly 1,300-2,000 and R ~ 1,650-2,350 (4.5-6.5v), against the 3.8-4.6v
+  allowance.  So a flat-sum middle on this top is still 1.0-1.4x over; R420 itself has dead = 1.5v because its
+  D4 butterflies emit 12 distinct corrections (shared o1 compromises + private Q-deliveries).  An I_{13,1} middle
+  needs the same compromise/correction structure, with dead <= ~3v (c_t = 2) or <= ~2v (c_t = 3).
+
 ## 4. Next goals (priority order)
 
 **Session 7 update (details in 3h).**  Items 6i-B (E8 z-group lever) and the z-group half of 6i-A are closed:
