@@ -3369,6 +3369,17 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
     Roles: 4,921 line copies, 3,370 carriers, 361 empties, 13 totals.
   - Price (`bankprice.py`): c = 0.000382970, **-77.9% vs P111-tuned** (best I_{11,1} word: -71.6%).  This is the I_{13,1}
     baseline; the frontier allowance is 3.8-4.6v, so the generic piece middle is ~5-6x too large.
+  - Same builder on the 17-Pasch-pair partition (`maxpairs_blocks.pkl`: 13 star blocks, 17 two-frame Pasch blocks,
+    18 single frames): `word13_mp_v1.json.gz`, **gcheck PASS, R = 7,367 (20.2v), c = 0.000441391, -74.5%**.
+    Pieces per top fall from 11.9 to 8.0; sharing is the only lever that moved R.
+- **Content per register: why I_{13,1} needs ~3x R420's middle efficiency (counting from exact data).**
+  - Distinct demand content (halves + Q-parts, line incidences): E8 R420 120 x 8 + 10 x 12 = 1,080, i.e. 9 per line,
+    carried by R + v = 540 registers (2.0 per register).  R420 itself: 360 registers are read by targets (all
+    sources and 240 helpers) and 180 never are (1.5v pure middle).
+  - I_{13,1}: 43.1 per line on the 17-pair partition, about 36 with the 25-pair maximum.  At the frontier allowance
+    (R + v <= ~5.6v) that is >= 6.4 per register, about 3.2x R420.
+  - So an I_{13,1} frontier word needs a middle about three times more efficient per unit of distinct content than
+    the best E8 middle; such a middle would first make E8 words leap past the frontier (lever A).
 
 ## 4. Next goals (priority order)
 
