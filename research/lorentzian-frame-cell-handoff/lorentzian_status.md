@@ -1,5 +1,14 @@
 # Lorentzian I_{11,1} bit words: status (session 2026-10-15)
 
+**Update 2026-10-17, session 7c (HANDOFF.md section 3i): I_{13,1}.**  (1) With lean stops the I_{13,1} frontier
+allows 3.8-4.6v helpers at cst 156, not 3.2v.  (2) Register identity R + v = consumed + dead: frame tops need >= 2
+consumed per target (no target perp has a 2-cover by sections).  So R = v + dead, and dead must stay <= ~3v.
+(3) PG(2,3) frame top: load 79 per line, demand rank 0.60, half sharing 1.4, misalignment 21,930.  Large hubs serve
+only 2-5 demands; the per-line pool cover is 4 (line partners) or 2-3 (arbitrary vectors).  (4) Width-12 exit would
+add ~+1v of allowance, but cleanup inverse rows cannot be target-local when pools are shared.  (5) Proven: no
+I_{13,1} partition into complete star-D4 blocks and complete Pasch pairs exists (parity lemma plus CP-SAT), so
+E8-style half sharing is impossible; I_{16,1} fails the same count.  No word built; frontier not reached.
+
 **Update 2026-10-17, session 7 (HANDOFF.md section 3h).**  The z-group lever is closed.  (1) Totals-feeder lemma
 (proven): every word contaminates >= v distinct registers before the scatter; frame-0 middles absorb this, but a
 pure z-group word pays about v extra frame-0 registers, so I_{11,1} with 3 groups carries 3v frame-0 registers and
