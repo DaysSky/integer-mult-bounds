@@ -3360,6 +3360,15 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
 
   - So sharing lowers load by about a quarter but leaves misalignment unchanged (cf. I_{11,1}: sharing does not
     buy alignment).  An R420-type cell/quad middle stays excluded on every I_{13,1} frame top.
+- **First verified I_{13,1} word (`code/s7/i13w/`).**  The I_{11,1} block-top builder (`build_blk_pairs.py` + `lw.py`)
+  ported with n from env `LWN` (copies only; the I_{11,1} code is unchanged).  One I_{13,1} change: block layer frames
+  that are degenerate in I_{13,1} (a rank-9, 64-line layer) are skipped and those sections use their plain E-set.
+  - Build: `LWN=13 PCHAIN=1 QMERGE=1 QALL=1 PIECES=paar HOP=0 MP=1 python3 build13.py pg23_blocks.pkl OUT` on the
+    PG(2,3) partition (13 star blocks + 52 single TTTT frames), about 4.5 min.
+  - `word13_pg_v1.json.gz`: **gcheck PASS**, R = 8,665 (23.8v), 13 totals at the full frame (cst 169), 5,597 frames.
+    Roles: 4,921 line copies, 3,370 carriers, 361 empties, 13 totals.
+  - Price (`bankprice.py`): c = 0.000382970, **-77.9% vs P111-tuned** (best I_{11,1} word: -71.6%).  This is the I_{13,1}
+    baseline; the frontier allowance is 3.8-4.6v, so the generic piece middle is ~5-6x too large.
 
 ## 4. Next goals (priority order)
 
