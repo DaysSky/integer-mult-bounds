@@ -3202,6 +3202,13 @@ throughout: E1, c* = 0.001734473240795253742474 (`research/e8-bit-p111-e1`).
   495 decoder totals of the 55 E8 copies that E8 words only retain at the full frame from dead registers.  Within
   one apex p the 45 totals are the "all-but-two" coordinate sums of D10(p) over coordinate frames span(eps_W);
   every route found to them hits the D8-transfer obstruction already recorded in 3g.
+- **Rank-10 totals as virtual targets (observation, not built).**  B0's total tot_i = N(D10(i)) is exactly the
+  "demand" of the timelike normal z_i = (2 at i, 1 elsewhere; 4) of D10(i): the lines perp z_i.  So a frame-0 word
+  can retain tot_i at its rank-10 frame z_i-perp by treating z_i as an 11th-kind pseudo-target, as P111 does for its
+  punctured lines (#545/#589: the total reads at p-perp what the removed target would read).  The cost is about 11
+  extra target demands (5% of the middle load) that must be complete by the scatter, plus phase-A carriers where the
+  middle runs in phase B (P111 needed 10).  It recovers cst 110 against blkA4's 121: by `f0grid.log` about 1v of
+  extra middle helpers at the frontier.  It does not close the factor-2 middle gap.
 - **New infrastructure (`code/s7/zw/`).**  `space.py`: exact subspaces (RREF over Q, Gram form, perps,
   nondegeneracy, line masks) for arbitrary, non-line frame vectors.  `zword.py`: a word builder with z-groups
   (group helpers start at span(z_g); group-D reads inserted at the head of B) that emits bitGen/1+mut for
