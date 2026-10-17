@@ -3374,6 +3374,9 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
     Pieces per top fall from 11.9 to 8.0; sharing is the only lever that moved R.
   - Pairing knob on the same partition: `PAIR=1` gives **R = 7,314 (gcheck PASS, c = 0.000443254, -74.4%; best I_{13,1}
     word)**, `PAIR=2` gives 7,359.  A warm-started max-Pasch-pair search (3,300 s limit) had not passed 17 pairs at last check.
+  - Seeding the 576 distinct E-set halves as Paar pieces (`SEEDH=1`, 308 applied) halves the piece count (4,233 to
+    1,594) and line copies (4,011 to 2,392), but carriers (2,934 to 4,315) and empties (356 to 1,099) rise: R = 7,819.
+    A shared half still needs one carrier per using demand, so sharing at the piece level does not pay in this builder.
 - **Content per register: why I_{13,1} needs ~3x R420's middle efficiency (counting from exact data).**
   - Distinct demand content (halves + Q-parts, line incidences): E8 R420 120 x 8 + 10 x 12 = 1,080, i.e. 9 per line,
     carried by R + v = 540 registers (2.0 per register).  R420 itself: 360 registers are read by targets (all

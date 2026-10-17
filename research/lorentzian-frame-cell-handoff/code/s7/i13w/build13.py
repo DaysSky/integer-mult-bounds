@@ -255,6 +255,21 @@ if os.environ.get('PIECES') == 'paar':
         if os.environ.get('SEEDQ') == '1':
             for f in FR: seeds.add(QF[f])
         seeds = sorted(seeds, key=lambda B: -pc(B))
+    elif os.environ.get('SEEDH') == '1':           # E-set sign halves (shared by Pasch pairs / star blocks) as pieces
+        seeds = set()
+        for (t, a, b, c) in FR:
+            fr4 = (t, a, b, c)
+            for i in range(4):
+                for j in range(i + 1, 4):
+                    x, y = fr4[i], fr4[j]; k, l = [z for z in fr4 if z not in (x, y)]
+                    Exy = E[(x, y)]
+                    Ep = sum(1 << u for u in bits(Exy) if g.G[u, k] == g.G[u, l]); Em = Exy & ~Ep
+                    for hh in (Ep, Em):
+                        if hh: seeds.add(hh)
+        if os.environ.get('SEEDQ') == '1':
+            for f in FR: seeds.add(QF[f])
+        seeds = sorted(seeds, key=lambda B: -pc(B))
+        log('SEEDH: half seeds', len(seeds))
     elif os.environ.get('SEEDW') == '1':
         seeds = set()
         for A3 in blocks:
