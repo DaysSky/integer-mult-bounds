@@ -3213,6 +3213,15 @@ throughout: E1, c* = 0.001734473240795253742474 (`research/e8-bit-p111-e1`).
   nondegeneracy, line masks) for arbitrary, non-line frame vectors.  `zword.py`: a word builder with z-groups
   (group helpers start at span(z_g); group-D reads inserted at the head of B) that emits bitGen/1+mut for
   `zgroup/gcheck_z.py`.  Not yet used for a full word.
+- **Knock-on: the h = 9 window closes too.**  The 6h/6i requirement "h = 9 needs 117-119 lines" was computed
+  with the entrance-lever / z-group model (3.5v at 25-50% entrance helpers).  Without the lever the h = 9
+  requirement is the frame-0 one recorded in 6d (about 130 lines), above the proven frame-free ceiling of 119 (and
+  framed h = 9 systems have <= 111, P111's own count at h = 8).  So no h = 9 system can tie P111 unless a middle
+  better than R420 exists.  (Inference from the recorded numbers, not a new computation.)
+- **Price of progress (`mix.py`, inline).**  Frame-0 I_{11,1} words with sources (1,2,7), targets (2,8), 2v
+  branches (1,1,2,7) and a middle with pieces (2,3,6): at cst 110 the break-even is R ~ 840; R = 1,100 / 1,320 /
+  1,760 / 2,200 price at -16.7% / -26.1% / -39.7% / -49.1%; at cst 121 the same R give -27.4% / -35.6% / -47.4% /
+  -55.6%.  The best word (R = 3,656, cst 121, heavier stops) is -71.6%.
 - **Verdict after session 7.**  No change to the best word (blkA4, -71.6%).  The z-group lever, the last
   Lorentzian-specific lever left by 6i, is closed for I_{11,1} (totals feeders) and its E8 stepping stone (B) is
   closed in pure form (4 groups).  What remains is lever A, a middle strictly more efficient than R420 per
