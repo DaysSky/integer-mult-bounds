@@ -3329,6 +3329,26 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
     - Entrance (z-group) width 12 stays closed by the totals-feeder lemma.
   - Open: a gate pattern whose inverse rows are target-local by construction, e.g. pools whose registers all die
     into one target perp after their last pickup.
+- **Half sharing over all good frames of I_{13,1} (exact enumeration; `halfshare.py`).**  70,785 good frames
+  (19,305 PPTT, 51,480 TTTT) give 386,100 distinct halves.  Each half lies in exactly 3 frames (77,220: the 3 PPTT
+  frames of a complete star-D4 block) or exactly 2 (308,880: the 2 TTTT frames of a Pasch pair, i.e. the 8
+  transversals of a perfect matching of a 6-set).  As in I_{11,1}, E8-style sharing needs a partition into complete
+  star blocks and complete Pasch pairs.
+  - Complete blocks holding all 78 P lines force their 4-sets to form a 2-(13,4,1) design, i.e. PG(2,3) (unique, so
+    fixing L_k = k + {0,1,3,9} is WLOG); only the 13 apexes p_k (not on L_k) are free.
+- **No fully shared partition exists (proven; `paschpair.py`, `paschcyc.py`, `apexpar.py`).**
+  - Parity lemma: a Pasch pair on matching {aa', bb', cc'} contains each of its 12 cross point pairs in exactly 2 of
+    its 8 triples.  The T lines left by the blocks contain the point pair {a,b} 10 - 3 m_ab times, with
+    m_ab = #{k : p_k = a, b in L_k} + #{k : p_k = b, a in L_k}.  A Pasch-pair tiling needs every m_ab even.
+  - CP-SAT over all apex assignments: INFEASIBLE.  (When each point is the apex of exactly one block, this is
+    Baer's theorem: the relation would be a polarity of PG(2,3) without absolute points.)
+  - Direct tilings for the original PG apexes and for the three valid cyclic offsets c = 4, 10, 12: INFEASIBLE
+    (also Z13-invariant: INFEASIBLE).
+  - The same parity count rules out I_{16,1} (2-(16,4,1) = AG(2,4); 13 - 3 m_ab even needs m_ab odd on all 120
+    pairs, but sum m_ab = 80).  Among practical I_{n,1}, complete star blocks plus Pasch pairs never tile.
+  - Near-full sharing: the minimum number of point pairs with odd leftover count is between 7 (bound) and 10
+    (found; apexes [12,7,1,1,1,7,12,11,7,7,1,2,11]; `minodd.py`).  Each unpaired Pasch frame fixes the parity of 12
+    pairs, so only a few frames need to stay unpaired.  Max-pairs solve: see below.
 
 ## 4. Next goals (priority order)
 
