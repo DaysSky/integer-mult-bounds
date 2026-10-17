@@ -1,5 +1,14 @@
 # Lorentzian I_{11,1} bit words: status (session 2026-10-15)
 
+**Update 2026-10-17, session 7 (HANDOFF.md section 3h).**  The z-group lever is closed.  (1) Totals-feeder lemma
+(proven): every word contaminates >= v distinct registers before the scatter; frame-0 middles absorb this, but a
+pure z-group word pays about v extra frame-0 registers, so I_{11,1} with 3 groups carries 3v frame-0 registers and
+at most ~1.0v group helpers at the frontier, no more than a frame-0 word.  (2) E8 has no cover by 3 hyperplanes
+(exhaustive over all 77,488 line-spanned hyperplanes), so z-grouped E8 needs 4 groups and >= 345 entries; an
+R420-quality middle then prices at -12%.  (3) Exact frontier budget: 1.95 per line for I_{11,1} helpers and stops
+against 1.80 for P111, for twice the demand.  Best word unchanged (blkA4, -71.6%); only a middle strictly better
+than R420 per incidence remains, and it would first be an E8 result.
+
 **Update 2026-10-16, session 6f.**  The bit frontier is beaten on E8 itself, not by a new line system: research/e8-bit-p111-e1
 (one entrance-rank-2 helper on P111-tuned) gives c = 0.001734473240795253742474 (+0.0604%) on the official nine-stage chain.  No
 new line system result changed this session.

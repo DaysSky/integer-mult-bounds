@@ -80,6 +80,17 @@ architectural potential improvement suffices.
     - A Lorentzian frontier therefore needs an architecture strictly more efficient than R420, which would first
       of all be a large E8 improvement.  Every Lorentzian-specific lever examined (z-groups, rank-7 block groups,
       sharing partitions, rectangle tops, cheaper decoders) is closed or falls short.
+- **Session 7 corrections** (details in 3h):
+  - *Totals-feeder lemma (proven):* in any word >= v distinct registers are contaminated (frame holding their line
+    plus another line) before the scatter.  Frame-0 middles absorb this for free; a pure z-group word must spend
+    about v extra frame-0 registers on it.  With 3 groups that is 3v frame-0 registers for I_{11,1}, leaving
+    <= 1.0v group helpers at the frontier: no more middle room than a frame-0 word.  The 6i "z-groups bring an
+    R420-quality middle up to a tie" is withdrawn.
+  - *E8 has no 3-hyperplane cover (exhaustive):* z-grouped E8 needs 4 groups and >= 345 frame-0 entries; an
+    R420-quality middle then prices at -12% even with free totals.  The E8 stepping stone (6i item B) is closed in
+    pure form.
+  - *Exact budget:* I_{11,1} has 1.95 per line for helpers and stops at the frontier, P111 1.80, for half the
+    demand.  So the middle must be about 2x more efficient per incidence than P111's, at 1.4x the cost per helper.
 - Not proven worse: no all-word bound reaches break-even.
 - Not shown better: no competitive word exists.
 - A complete, independently verified Lorentzian frame-cell word exists (R = 11,494), but it is about 20x the cell
@@ -3130,7 +3141,82 @@ their L(S9) part must be split over frames that also contain some T(ab.) lines.
 - **Status.**  Nothing in this block changes the verdict: the best verified word stays word_blkA4 (R = 3,656,
   -71.6%), no Lorentzian frontier is known, and the middle (registers per cell below 3) remains the only lever.
 
+## 3h. Session 7 (2026-10-17) — z-groups re-priced: totals feeders and the E8 cover number close the lever
+
+Scripts and logs: `code/s7/` (run from that directory; the pricers import `code/price/pricer.py`).  Frontier used
+throughout: E1, c* = 0.001734473240795253742474 (`research/e8-bit-p111-e1`).
+
+- **Exact linear budget at the frontier (exact algebra on `pricer.py`; `qbudget.py`, `marg.py`).**
+  - F(q) is increasing, so c >= c* iff sum_r z_r cost(r) <= m W - mass, with cost(r) = r((m/r)^{c*} - 1).
+    When every residual is hosted, m W - mass = T (8 v - 9 cst) (the 6i price identity).  In units of T, local
+    children count x 9 and idle remainders x 1.  So "reaching the frontier" is one linear inequality.
+  - Budgets: I_{11,1} at cst 110: 770; one-stop sources and targets plus the idle slots of a helper-free word
+    cost 341.1, leaving **1.949 per line** for helpers and extra stops.  P111 (v 111, cst 63): 1.795 per line.
+    E8 (cst 72): 1.503 per line.  So I_{11,1} has slightly *more* helper budget per line than P111, for twice the
+    demand per line (118.5 against ~57).
+  - Helper costs (average per helper, I_{11,1}, exact hosting): frame-0 one-stop 0.22-0.30; entrance-1 one-stop
+    0.00-0.21 (free while the rank-10 idle slots last); entrance-1 (2,8) 0.08-0.28; frame-0 with 7 pieces 0.54-0.64.
+    A frame-0 helper costs about 1.4x an E8 one (mass 11 against 8).
+- **z-group allowance with uneven stops (exact pricer with banks; `grid2.py`, `grid3.py`, logs).**  The 6i table
+  (1.4-2.1v group helpers) used even splits.  With uneven pieces (one large piece per register) and 2v frame-0
+  entries, break-even allows up to 2.0-3.5v entrance-1 group helpers at cst 110 and 1.0-2.9v at cst 121
+  (`grid3.log`).  But see the next two items: both assumptions fail.
+- **Totals-feeder lemma (new, format-level, proven).**  In any word, for each line u let R1(u) be the first
+  register that holds x_u-dependent content at a frame containing u and some other line (it exists because every
+  line lies in some retained total, whose frame has rank >= 10, and both operands of a gate climb to the gate
+  frame).  A register is "clean for u" just before it becomes R1(u), and history only grows, so **u -> R1(u) is
+  injective: >= v distinct registers are contaminated before the scatter.**
+  - In a frame-0 word these are the cell/branch merges the middle does anyway, so the totals cost nothing extra
+    (R420, P111, blkA4 form their totals from dead registers).
+  - In a *pure* z-group word (every target grouped) group helpers are untouchable in phase A, and the frame-0
+    entries must stay clean for phase B.  So the totals need dedicated feeders: about v consumed frame-0
+    registers (a balanced feeder tree can at best let half of them double as mildly contaminated entries, and
+    only when the contamination misses their group readers).  Block copies do not help: a copy taken at a phase-A
+    block frame B can carry only one vector, and the totals restricted to B have the label rank of B (rank 2
+    for every cell, 5 for a D4 apex block of 12 lines).
+  - Priced (`grid3.py`, inline runs): I_{11,1} with 3 groups needs 3v frame-0 registers (2v entries + v
+    feeders, or sources as feeders and 3v entries).  At cst 121, entries (1,1,9), targets (1,2,7) the group
+    helpers allowed are <= 1.0v at the most favourable stops; at R420-like stops (entries (1,1,2,7)) the word is
+    already -1.4% with zero group helpers.
+  - Frame-0 world for comparison (`f0grid.log`, totals from spent registers): 2v branches plus a frame-0 middle of
+    0.3-2.1v.  So **z-groups give I_{11,1} no more middle room than frame-0 helpers**; the 6i statement "z-groups
+    bring an R420-quality I_{11,1} middle up to a tie" (-3.3% to +0.3%) is withdrawn: that model charged neither
+    the feeders nor the cross-group entries beyond 2v.
+- **E8 needs 4 z-groups (exact, exhaustive; `e8cover.py`, `e8cov4.py`, `e8cov6.py`).**
+  - All 77,488 line-spanned hyperplanes of E8 were enumerated (types by line count: 63 (E7) 120, 42 (D7) 1,080,
+    37 (E6+A1) 3,360, 28 (A7) 8,640, 23 (D5+A2) 30,240, 22 (A6+A1) 34,048; A4+A3 and A4+A2+A1 sections have <= 16
+    lines and cannot complete a 3-cover).  A 3-cover needs a set of >= 40 lines, i.e. an E7 or a D7 section; with
+    one representative of each (W(E8) is transitive on roots and on norm-4 vectors) no pair of further hyperplanes
+    covers the rest.  **No 3 hyperplanes cover the 120 lines; 4 do** (63 + 63 + 42 + 37).
+  - Cheapest target-to-group assignment for that 4-cover (CP-SAT optimal, `e8grp.py`): sum_s |groups(s)| = 465,
+    i.e. **345 frame-0 entries** (2.9v), against R420's 240 carriers.
+  - Priced: sources (1,2,2,1,1), 345 entries (1,1,2,2,1,1), 180 group empties (2,2,2,1), targets (1,2,4), free
+    totals: **-12.2%**; with 40/120 totals copies -15.2% / -21.3%.  The 6i lever "B. z-grouped R420, +3-6%" is
+    therefore closed in its pure form; R420 with all 180 empties grouped *and* only 240 carriers (+1.9%) is not
+    realisable, because 3 groups do not exist.
+- **Structural identity (exact): I_{11,1} demands are E8 decoder totals.**  For a 9-set M = [11] - {i,j} the
+  lines on M form the E8 copy E8(M) (degenerate span: radical w_M = sum_M e_x + 3f, null).  Its 9 #370-type decoder
+  totals are D_p(M) = K_p(M - p) (p in M), the D8 apex blocks.  Then
+  R(T(p,i,j)) = D_p(M_ij) + D_i(M_pj) + D_j(M_pi) + {P(pi), P(pj), P(ij)} and
+  R(P(i,j)) = sum_{p in M_ij} D_p(M_ij) + {T(i,j,k)}.  So an I_{11,1} word must compute, at rank-8 frames, all
+  495 decoder totals of the 55 E8 copies that E8 words only retain at the full frame from dead registers.  Within
+  one apex p the 45 totals are the "all-but-two" coordinate sums of D10(p) over coordinate frames span(eps_W);
+  every route found to them hits the D8-transfer obstruction already recorded in 3g.
+- **New infrastructure (`code/s7/zw/`).**  `space.py`: exact subspaces (RREF over Q, Gram form, perps,
+  nondegeneracy, line masks) for arbitrary, non-line frame vectors.  `zword.py`: a word builder with z-groups
+  (group helpers start at span(z_g); group-D reads inserted at the head of B) that emits bitGen/1+mut for
+  `zgroup/gcheck_z.py`.  Not yet used for a full word.
+- **Verdict after session 7.**  No change to the best word (blkA4, -71.6%).  The z-group lever, the last
+  Lorentzian-specific lever left by 6i, is closed for I_{11,1} (totals feeders) and its E8 stepping stone (B) is
+  closed in pure form (4 groups).  What remains is lever A, a middle strictly more efficient than R420 per
+  incidence, which would first be an E8 result.
+
 ## 4. Next goals (priority order)
+
+**Session 7 update (details in 3h).**  Items 6i-B (E8 z-group lever) and the z-group half of 6i-A are closed:
+pure z-group words pay ~v totals feeders (proven lemma) plus cross-group entries (E8: 4 groups, 345 entries).
+The only open lever is a middle strictly more efficient than R420 per incidence; any such middle should be
+demonstrated on E8 first, where it would move the frontier itself.
 
 **Session 6i, final assessment (details at the end of 3g).**
 - The binding quantity is assembly, not delivery.
