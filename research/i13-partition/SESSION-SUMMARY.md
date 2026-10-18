@@ -2304,3 +2304,25 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 - **§760 THE B-SRCS CONFIRMED**: 336 distinct (the 111 sources + the 225 wires!!) — the sources-as-B-srcs at frames like [127, 111, [3]] ✓.
 - **§762 THE TRIM SPEC (the +8.06% build!!)**: the 45-over-bound removal is the **cell-surgery** (the nat108b/c law (the >3-cells (the 16-exclusive-targets/2-sides rule!!))) — the generator-level re-routing (the shared-side delivery!!), not the register-deletion; the target hist {1: 951, 2: 1339, 3: 69, 4: 45, 5: 103, 6: 12, 7: 18} at R=389 (the nat109 map (+8.06%!!)).
 - **§764 THE gcheck FORMAT-CONTRACT (the full read!!)**: gates [F, d, srcs] | frames = the raw line-vector lists (rref'd by gcheck) | form {num, den} | the C = the literal reversal of A+B's z-dests | the D first (the H2: the pure-self-bit reads at frame 0!!) | the ret-frames = the copy-ranks (the cst!!).
+
+## nat118-131 arc · 2026-10-20 · the corrected R-map; the merge/shape closures; the trim paths
+
+THE CORRECTED MASS-TRUE R-MAP (F-inspected, the pricer audit found the count/mass trim bug
+that had broken the earlier low-R rows): 444 −0.86% | 434 +0.65% (published ✓) | 420 +2.84%
+| 400 +6.15% | 389 +8.06% ✓ | 370 +11.52% | 350 +15.42% | 330 +19.60% | 310 +24.10% |
+290 +28.94% — ~+1.55-1.9%/10R. The pricer's fixed-point q-loop multiplicity found (spurious
+roots beyond the artifact bound); the F-inspection is the verification standard.
+
+THE CLOSURES: the merge-emitter (nat125, backward single-pass, gcheck-PASSING) reaches only
+13 gates — the r434's hist IS the merge-optimum of its grammar (the tuner's fixed point);
+the content-based big-jump (nat128) the same — the DAG's mutual pinning is total. The shape
+law stands: all-at-7 = +46.4% at R=434 (verified real), but the frame-moves cannot reach it.
+
+THE STRUCTURE (nat131): the 225 B-wires are 13-26-line contents read by only 1-2 targets
+each (the private dying deliveries); all sharing is in the A-DAG (200 intermediates + the
+sources' 5-frame ladders). The per-target greedy covers 3-10 wires vs the ~2.5-4 floor.
+
+THE TRIM PATHS: (A) the >3-cells re-routing (nat120's v=111 cell-census, running) → the
+R=389 word (+8.06%); (B) the B-basis recomposition (the leaner pool toward R=330-290,
++15-29%). The pipeline (nat118) is calibrated end-to-end: params → build → tune → adapter →
+gcheck → price (reproduces the published word exactly).
