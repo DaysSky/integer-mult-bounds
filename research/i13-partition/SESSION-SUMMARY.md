@@ -40,6 +40,22 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   legality simulation, and the exact pricer at the TRUE histogram — the difference between
   'prices above the frontier in every measured band' and 'a frontier word' (the pricer-trap
   lessons of this session apply in full).
+- **REFINEMENT SWEEP (shape-optimized; ii19_refine.py).**  The shape grid matters enormously:
+  best shapes are CONCENTRATED (src [9], tgt [9], mid [9]) at E8-grade cst 72, not the
+  spread [1,8] shapes of the budget scan.  Best c per scenario: probe c_t 10.3 / dead 300
+  -> 0.0026009 (+49.1%); free corrections / dead 300 -> 0.0028100 (+61.1%); free corrections /
+  dead 150 -> 0.0029071 (+66.7%); c_t 8.5 + free corr / dead 300 -> 0.0032933 (+88.8%).
+  CAVEAT (honest): the dead 150-300 bands may be optimistic — the design's distinct-flat
+  content (2,100+ flats x ~35 lines ~ 73k slots) at the E8 16.7:1 ratio prices mids ~4,400;
+  ii19_trueprice.py prices the honest content//17 and content//8 bands from the true ledger,
+  and ii19_assembly.py measures the true hierarchical middle.  The verdict may tighten from
+  the sweep's +49-89%.
+- **PARTITION CENSUS (ii19_partuse.py).**  Partition re-found and SAVED (15 flats, zero
+  leftover; ii19_partition.pkl).  Free-piece value is SMALL: users mostly 4 (the 60-line
+  flats; exceptions: 31-line flat 10 users, 45-line flat 6, 47-line flat 5); only 64/361
+  targets served by any partition flat; free coverage 6.0% of demand slots.  The free-bulk-
+  pieces hope does not materialize — the partition's perps are too thin.  Its value is the
+  skeleton/disjoint-flat-structure proof, not free demand coverage.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
