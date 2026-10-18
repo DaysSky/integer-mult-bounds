@@ -81,7 +81,7 @@ def jumps(ch):
     return [b - a for a, b in zip(ch, ch[1:])]
 
 log('TH | pool carriers R_struct demand R_hon slack | unplaced conflicts | LM | coarse-slack | fine-slack')
-for TH in (7, 8, 10, 12, 16, 24, 100):
+for TH in (4, 5, 6, 7, 8, 10, 12, 16, 24):
     covered = [set() for _ in range(V)]; assigned = [[] for _ in range(V)]
     pool = []; pool_users = []
     while True:
@@ -165,8 +165,23 @@ for TH in (7, 8, 10, 12, 16, 24, 100):
     src_slots = {}
     for (s, p), slot in src_assign.items():
         src_slots.setdefault(s, set()).add(slot)
+    # THE (c)-CORRECTION (the gcheck re-read SS1589!!): the gate rule — ALL the operands
+    # (the dest AND the srcs!!) climb to the gate's frame, and EVERY climb is priced
+    # (the hist!!)!!  THE TAIL-BUILDS' SOURCE-CLIMBS: the carriers' leftover lines must
+    # climb to the tail's span (dim 5-8!!) BEFORE FULL (a source at FULL (dim 9!!)
+    # cannot feed a dim-8 build: the ⊆ rule!!) — THE SOURCES' CHAINS MUST INCLUDE THE
+    # TAIL-SPAN FRAMES (the SS1551 (b)-model MISSED them!!).  The sources' total mass
+    # is FIXED (8 each — the identity!!): the DISTRIBUTION coarsens (the LM rises!!)
+    # -> the honest price is LOWER than every SS1572/SS1575 number!!
+    tail_span_of = {}
+    for t in range(V):
+        if leftovers[t]:
+            sp_t = span_rank(leftovers[t])
+            for s in leftovers[t]:
+                tail_span_of.setdefault(s, set()).add(sp_t)
     for s in range(V):
-        for j in jumps([1] + sorted(src_slots.get(s, set())) + [H]):
+        ch = [1] + sorted(src_slots.get(s, set()) | tail_span_of.get(s, set())) + [H]
+        for j in jumps(ch):
             hist[j] += 1
     tgt_dims = {}
     for (t, p), s in tgt_slot.items():

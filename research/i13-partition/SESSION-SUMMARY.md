@@ -850,6 +850,44 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   question (the gcheck rules!!) + the nesting failure (the SS1515 build blocker!!) +
   the bit-side-only payoff.
 
+## THE (c)-CORRECTED SWEEP — THE GCHECK GATE RULE APPLIED; THE CROSSINGS SURVIVE AT TH >= 8 (ii19_121sweep.py; SS1589-SS1594)
+
+- **THE GCHECK RE-READ (SS1589!!) — THE DECISIVE RULES**: `run()`: **ALL the operands
+  (the dest AND the srcs!!) climb to the gate's frame** (`for r in [d] + srcs: climb(r,
+  F)`!!); `climb()`: the operand's current frame MUST be a SUBSPACE of the gate's frame
+  (`sub(cur[r], F)`!!) and EVERY climb is priced (the hist!!).  **THE SS1583 'SRC-WORK
+  UNPRICED' WAS WRONG: the src-READS (the val ^= XORs!!) are free but the src-CLIMBS
+  ARE the mass — the pricer prices them via the register-visit profile!!**  THE
+  SCATTER: free-form (no climbs!!); the C-phase: the literal reverse of the A+B
+  z-gates; the final climbs to the final frames ✓.
+- **THE ALL-TAIL: ILLEGAL (the sanity restored!!)**: (a) a source at FULL (dim 9!!)
+  CANNOT feed a dim-8 tail-build (FULL is NOT a subspace of the t-perp: the ⊆ rule!!)
+  — the sources must pass the tail-spans BEFORE FULL; (b) one frame per dim per chain
+  — a source read by ~64 tails would need ~64 different dim-8 frames: IMPOSSIBLE.
+  **THE SS1575 '+67.70%' IS AN ILLEGAL DESIGN'S ARTIFACT** ✓ (the R=434 frontier's
+  sanity restored!!).
+- **THE (b)-MODEL'S BUG + THE (c)-CORRECTION (SS1591!!)**: the tail-builds'
+  source-climbs were MISSING from ALL the hist models (the SS1551 (b)-model!!): the
+  carriers' leftover lines must climb to the tail's span (dim 5-8!!) BEFORE FULL —
+  THE SOURCES' CHAINS MUST INCLUDE THE TAIL-SPAN FRAMES.  The sources' total mass is
+  FIXED (8 each — the identity!!); the DISTRIBUTION coarsens (the LM rises!!).
+- **THE CORRECTED SWEEP (SS1594!!)**: TH=4 (the committed design!!): **-2.45%/-3.40%
+  — BELOW (the marginal bracket KILLED!!)**; TH=5: -0.01%/-1.68% (BELOW!!); TH=6:
+  +1.53%/-0.65% (straddles!); TH=7: +2.89%/+0.57%; **TH=8: +4.89%/+2.32%; TH=10:
+  +9.74%/+6.67%; TH=12: +11.99%/+8.88%; TH=16: +17.46%/+14.96%; TH=24:
+  +17.82%/+15.41%** — **THE CORRECTION (~-3 to -5 points!!) MOVED THE WHOLE CURVE
+  DOWN BUT THE COARSE REGION (TH >= 7-8!!) STAYS ABOVE: the fine-slack (the
+  REALISTIC piece-like slack chains!!) crossings at TH >= 8: +2.32% to +15.41%!!**
+  The feasibility stays clean (unplaced 0, conflicts 0 at every TH!!).
+- **THE STANDING (after the correction!!)**: (1) THE NESTING: the (c)-model ASSUMES
+  the sources' chains can pass the tail-spans (the flag!!) — UNVERIFIED: the SS1515
+  finding (121/121 target chains FAIL!!) + the sources' multi-tail-span requirement:
+  the JOINT FLAG STRUCTURE is the build blocker (the nesting-aware redesign: the
+  slots must be NESTED SUBSPACES, not independent bins!!); (2) THE PAYOFF: bit-side
+  only (the selected κ is COMPLEX-bound!!); (3) THE CONTEXT: the session is ~1595
+  turns deep — the nesting redesign + the build are the fresh session's natural work
+  (the handoff: THIS summary!!).
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
