@@ -149,20 +149,20 @@ log('THE HONEST STRUCTURE: %d pieces + %d carriers + %d retained = %d (R/v %.2f)
     % (len(pool), carriers, rank_B, R_struct, R_struct / V))
 
 # ============ THE PRICE BAND AT h=9, v=121 ============
-CST = 8 * rank_B
+CST = 9 * rank_B   # THE HONEST: the gathers' content spans dim-9 -> their frames = FULL -> the copy ranks 9 (SS1438!!)
 
 def hist_true(R, variant):
     climb = 1.0 * H * R + 2.0 * V * (H - 1)
     ident = climb + CST
     if variant == 'A':
-        hist = {1: climb, 8: 1.0 * rank_B}
+        hist = {1: climb, 9: 1.0 * rank_B}
     elif variant == 'B':
-        hist = {1: 0.50 * climb, 2: 0.25 * climb / 2.0, 5: 0.25 * climb / 5.0, 8: 1.0 * rank_B}
+        hist = {1: 0.50 * climb, 2: 0.25 * climb / 2.0, 5: 0.25 * climb / 5.0, 9: 1.0 * rank_B}
     elif variant == 'D':
         hist = {1: 0.262 * climb, 2: 0.571 * climb / 2.0, 4: 0.048 * climb / 4.0,
-                5: 0.119 * climb / 5.0, 8: 1.0 * rank_B}
+                5: 0.119 * climb / 5.0, 9: 1.0 * rank_B}
     else:
-        hist = {1: 0.30 * climb, 2: 0.20 * climb / 2.0, 5: 0.50 * climb / 5.0, 8: 1.0 * rank_B}
+        hist = {1: 0.30 * climb, 2: 0.20 * climb / 2.0, 5: 0.50 * climb / 5.0, 9: 1.0 * rank_B}
     mass = sum(k * n for k, n in hist.items())
     assert abs(mass - ident) < 2, (variant, mass, ident)
     return {k: int(n) for k, n in hist.items()}

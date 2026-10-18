@@ -538,11 +538,97 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   per-target B-reads: the XOR = perp(t) (64 lines for the roots / 120 for the special!!):
   ~4-5 registers (the sources + the running sums!!); (3) THE GATHERS: MY VERIFIED
   FACTORIZATION (SS1423: the 9 basis rows + the W!!) built hierarchically at FULL
-  (CST = 9 x 9 = 81!!); (4) THE R: the R420-analog ~3.5-4 x 121 = ~425-485?!? THE PRICE
-  BAND AT THE R420-STYLE R (the SS1406 trend: at h=9 the BIGGER R prices BETTER — the
-  window!!!): THE MEASUREMENT (the next stage!!).
+  (CST = 9 x 9 = 81!!); (4) THE R420-ANALOG R (~425-485): MEASURED AT THE HONEST CST=81
+  (SS1468): **-23% to -35% — the 'bigger R prices better' trend was WRONG: the
+  R420-transplant economics DO NOT CROSS**; the best band point: C at R=300: -7.97% —
+  THE 121-LINE MODEL BAND IS BELOW THE FRONTIER AT EVERY HONEST POINT.
 
-## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET) CROSSES (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
+## THE USER'S CHALLENGE (SS1469) + THE E8-DEPENDENCE AUDIT — 'are you sure R420 is the ground truth?'
+
+- **THE ANSWER: NO.**  The R420's proper role: THE FORMAT-MECHANICS REFERENCE (the
+  gate/chain/frame patterns, confirmed against gcheck!!).  It is NOT a design template:
+  its D4 flag (the 180 cells, the 70 12-frames, the 180 30-frames!!) is E8-SPECIFIC
+  GEOMETRY, and the 'design revolution / transplant' framing was OVERCONFIDENT — the
+  honest-CST measurement (SS1468) shows the R420-analog R values DO NOT CROSS anyway.
+- **THE E8-DEPENDENCE AUDIT:** (1) THE PRICE MODEL (mix.price/pprice): calibrated ONLY on
+  E8 h=8 words — NO h=9 CONTROL EXISTS in the published word set: the h=9 band is an
+  UNVERIFIED EXTRAPOLATION; (2) THE HYPERSENSITIVITY: the model near its root: ±0.3% mass
+  -> ±25-35 points in c (DEMONSTRATED: the CST 72->81 (9 mass units!!) moved the best
+  point +13.42% -> -7.97% (-21 points!!); the BASIS CHOICE (the pivot basis: all 9 gathers
+  dim-9 -> cst 81; a smart basis: 8 dim-8 rows + 1 dim-9 -> cst ~73, plausible but
+  UNMEASURED) swings the band ±20 points AGAIN) -> THE MODEL BAND IS NOT A VERDICT;
+  (3) THE D VARIANT (the R420's climb proportions): an E8 SHAPE PRIOR, not a measurement;
+  (4) THE D4-FLAG TRANSPLANT: E8-optimized (and now measured dead); (5) THE SYSTEM ITSELF:
+  the 121-line = the E8 roots + the special — E8-based BY CONSTRUCTION (the h=9-valid II19
+  subset): this dependence is GEOMETRIC/NECESSARY, not 'unnecessary'.
+- **WHAT'S SOLID (the system-native, no-E8-prior measurements):** the h=9 legality (the PD
+  span!!); the perp-pattern decoder rank 9 (THIS system's!!); the piece economy (156
+  pieces, mean 2.9 lines, 16.5 users — the sharing is GENUINELY in this system's
+  geometry!!); the slot packings (SS1419!!).  THE ONLY HONEST GATE: THE BUILD + the TRUE
+  histogram + the TRUE price.  THE SESSION PATTERN (the Bayesian prior): every honesty
+  layer this session has only ever moved the number DOWN (+33% -> h=10 -> -11%; +13.42% ->
+  CST=81 -> -7.97%).
+
+## THE PRICE MODEL AUDIT COMPLETE + THE SMART BASIS: THE CROSSING RETURNS AT THE MEASURED CST=73 (ii19_121band2.py, ii19_121basis.py; SS1483-SS1508)
+
+- **THE DIRECTION (SS1483!!): the user chose 'Audit the price model first'.**
+- **THE PRICER READ (pricer.py, SS1488!!): THE WINDOW IS PIPELINE-DERIVED AND FULLY
+  PARAMETRIC IN h — NOT E8-FITTED**: m = 1 + L(h-1) with L = 2K+1 = 9 (K=4, T=32: THE
+  PIPELINE'S REPLICA/STAGE CONSTANTS — the #463/#510 template's 'nine-stage bit
+  price'!!), a = h-1 (the idle-slot capacities!!), w = h (the residual width!!), W = 2KvT,
+  the root: sum z_r (r/(mW)) (m/r)^q + 32 m (sum z) m^q / (1e16 W) = 1 with prof = the
+  local hist x T x L (T=32 x L=9: THE x288!!); the hosting: nres = 9R vs cap = 38v (THE
+  WALL AT R = 511 for v=121: the 'NO ROOT' at R=520 explained!!); THE h=9 HOSTING
+  PENALTY: the residual leftovers rank {3,5,7} at h=9 vs {2,4,6} at h=8.
+- **THE HYPERSENSITIVITY: STRUCTURAL (THE 288x AMPLIFICATION!!)**: the ±9 local mass
+  moves the c by ±26-29% (the observed CST 72->81 swing = -21 points: QUANTITATIVELY
+  CONFIRMED!!) -> THE MODEL BAND AT THE ±10% CROSSING SCALE IS MEANINGLESS WITHOUT THE
+  EXACT ACCOUNTING (the cst, the basis, the hist's mass-exactness!!).
+- **THE SS1406/SS1468 BAND'S INT-TRUNCATION ARTIFACT (SS1492!!)**: the int() truncation
+  lost ~4.4 mass -> the c INFLATED ~+11-14 points!!  THE HONEST HISTS: THE MASS-EXACT
+  (the largest remainder with the r<=rem constraint!!) — gcheck's own assert demands
+  mass == the identity EXACTLY.
+- **THE HONEST BAND (ii19_121band2.py, SS1492!!)**: THE CONTROL: the R420 true hist: the
+  model EXACT (ratio 1.000000000!!).  AT THE PIVOT BASIS (cst=81: all 9 gathers'
+  contents span dim-9 -> the frames FORCED to FULL!!): DEAD (-16% to -41%!!).  AT THE
+  SMART BASIS (the modeled cst=73): THE BAND STRADDLES THE FRONTIER (C: +2.77%/+3.66%,
+  D: +5.20%!!).
+- **THE SMART BASIS CONSTRUCTED + THE CST MEASURED (ii19_121basis.py, SS1500/SS1508!!)**:
+  the parity map phi (the column-120 bit: the special in the support!!) on the 9-dim row
+  space: THE KERNEL (the 'even' combinations B[0]^B[k]: the specials cancel!!): dim 8:
+  every kernel row's support contains NO special line -> its span <= dim 8 (GUARANTEED by
+  the parity!!).  THE GREEDY (THE SS1496 BUG FIXED: append only rank-increasing
+  candidates (the first 9 B-rows are DEPENDENT (the D4-ish line ordering!!)!!)): k =
+  [1,2,4,6,8,10,12,56]; the even rows: supports 56-64 lines, SPANS DIM 8 (the E8-span!!)
+  + the odd row B[0]: 65 lines, SPAN DIM 9 (the special: FORCED!!) -> **THE MEASURED CST
+  = 8x8 + 9 = 73 EXACTLY (the prediction confirmed!!)**.
+- **THE W-COORDS-FRAME BUG (the SS1500 'FAIL'!!)**: the solve's coords were relative to
+  the REDUCED pivot rows, NOT the original basis -> the verification XORed the wrong
+  rows (the §1423 script verified against the reduced rows (consistent!!); the SS1494
+  script mixed the frames!!).  THE FIX (SS1502!!): the augmented reduction (the T-matrix
+  snapshots: rw_k = Σ_j T[k][j]·basis[j]!!) -> W_orig = W_red x T: the coordinates over
+  MY gathers (the even rows + the odd row: THE ONES THE BUILD'S SCATTER NEEDS!!).  **THE
+  RE-RUN (SS1508!!): THE W-VERIFICATION PASSES: B[t] = Σ W[t,k]·u_k over the even/odd
+  gathers for all 121 targets!!**  The W-weights: {1: 1, 2: 8, 3: 6, 4: 6, 5: 50, 6:
+  36, 7: 6, 8: 7, 9: 1} (the mean 5.2).  THE PRINT-LABEL BUG FIXED (SS1506: '(span dim,
+  support size)' — span_dim returns (rank, len)!!).
+- **THE PRICE AT THE MEASURED CST=73 (the mass-exact hists!!)**: R=286: **C +2.77%** (c
+  = 0.001792760!!) | R=300: C +0.69% | R=325: C -2.75% | R=350: C -6.00%; A/B/D below
+  everywhere — **THE CROSSING RETURNS AT THE HONEST ACCOUNTING: the first h=9-valid
+  configuration above the frontier (the mass-exact hists + the MEASURED cst!!)**.
+- **THE HONEST CAVEATS (the standing rules!!)**: (1) the A/B/C/D variants are SHAPE
+  PRIORS (the C: {1: 0.30, 2: 0.20, 5: 0.50}!!): the TRUE word's hist decides ±several
+  points (the ±26-point sensitivity!!); (2) R=286 = the 156 pieces + the 121 tails + the
+  9 gathers (the SS1419/SS1423 design: the chains/packings verified feasible at the slot
+  level!!); (3) THE BUILD (the gates -> gcheck -> the TRUE hist -> the TRUE price)
+  REMAINS THE ONLY GATE — the +2.77% is a MODEL-BAND number at the honest accounting,
+  NOT a word; (4) the basis is NOT span-minimized (a min-Σ-span basis could give cst < 73:
+  UNEXPLORED!!); (5) the special's 120-line demand rides the root-pieces (SS1423!!) but
+  its chain packing is unverified in detail.
+- **THE USER'S SS1503-1504 DIRECTIVE**: stop after finishing + committing; provide the
+  audit prompt for a fresh agent.
+
+## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
   the identity-word template (e8_identity_word.py) + gcheck.py exposed that the 2-class lines
@@ -567,11 +653,17 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 - **THE PIECE ECONOMY (the consistent family!!):** pool 156 pieces (mean 2.9 lines — THE
   CELLS!! — mean 16.5 users, max 63: THE E8-GRADE SHARING!!!), 121 tail carriers, leftover
   1,128 lines.  THE STRUCTURE: 156 + 121 + 9 = 286 (R/v 2.36).
-- **THE PRICE BAND AT h=9 (v=121, CST=72):** R=286: A -13.42% | B +8.32% | C +5.74% |
-  **D +10.19%!!!**  R=300: A -15.26% | B +8.78% | C +18.26% | **D +13.42%!!!**  THE D
-  VARIANT = THE CALIBRATED FAMILY (the R420's own climb proportions; the model exact at the
-  control: ratio 1.000000000!!): **THE CROSSING AT THE HONEST h: ALIVE — the first h=9-valid
-  II19-family word above the frontier (at the model level).**
+- **THE PRICE BAND — RETRACTED AT THE HONEST CST=81 (SS1468!!):** the SS1406 band
+  (+10.19%/+13.42% at CST=72) WAS AN ARTIFACT OF THE WRONG CST: the gathers' contents (the
+  ~65-line basis rows) span dim-9 -> their build frames are FORCED to FULL -> the copy
+  ranks 9 -> CST = 81 (not 72!!).  AT THE HONEST CST=81 THE WHOLE BAND IS BELOW: R=286:
+  D -14.86%; R=300: C -7.97% (the best!!) / D -11.13%; R=350: D -29.91%; the R420-analog
+  R 440-480: -23% to -35% (THE TRANSPLANT ECONOMICS DO NOT CROSS!!); R=520: NO ROOTS.
+  THE CROSSING CLAIM IS RETRACTED.  THE MODEL FRAGILITY EXPOSED: 9 mass units (the CST)
+  moved the best point by -21 points (the ±0.3%-mass -> ±25-35-point sensitivity!!); the
+  BASIS CHOICE (the pivot basis: all 9 gathers dim-9 -> cst 81; a smart basis: 8 dim-8
+  rows + 1 dim-9 -> cst ~73, plausible but UNMEASURED) swings the band ±20 points AGAIN:
+  THE MODEL BAND IS NOT A VERDICT — only a build's TRUE histogram + TRUE price is.
 - **THE REMAINING GATES (the 100%-verification list!!):** (1) the arrival law: the demand-
   reads ~2,800 vs 9R -> the honest R ~310-325 (the utilization ~96%: TIGHT!!); (2) the chain
   slots: the target-side packing (~23 reads per target into the 8 chain slots!!), the
