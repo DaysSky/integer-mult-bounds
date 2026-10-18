@@ -47,7 +47,7 @@ def sample_flat(rank, maxsize):
         m = Z[pick[0]]
         for p in pick[1:]: m = m & Z[p]
         flat = np.ones(n, dtype=bool)
-        for kk in [x for x in range(n) if m[x]]: flat = flat & Z[x]
+        for kk in [x for x in range(n) if m[x]]: flat = flat & Z[kk]
         if flat.sum() and flat.sum() <= maxsize:
             return sum(1 << k for k in range(n) if flat[k])
     return None
@@ -72,10 +72,8 @@ for trial in range(20):
     if best_overall is None or left < best_overall[0]:
         best_overall = (left, chosen)
     if left == 0: break
-log('best partition trial: %d flats, %d/%d lines covered, leftover %d' %
-    (len(best_overall[1]), bin(sum(best_overall[1])).count('1') if False else
-     bin(int(np.bitwise_or.reduce([np.uint64(c) for c in best_overall[1]]))).count('1') if best_overall[1] else 0,
-     n, best_overall[0]))
+log('best partition trial: %d flats, leftover %d lines' %
+    (len(best_overall[1]), best_overall[0]))
 sizes = sorted(bin(c).count('1') for c in best_overall[1])
 log('flat sizes: %s' % sizes)
 log('leftover %d lines = %.1f%% of system' % (best_overall[0], 100 * best_overall[0] / n))
