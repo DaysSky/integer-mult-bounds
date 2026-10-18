@@ -1496,3 +1496,56 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   sampled vocabulary vs the true ~10^5-10^6 population!!)** — THE NEXT SCREEN: the I11's
   hosting-wall check (the refined pricer at the v=220, the h=9!!) + the B0 rank + the
   wall/c verdicts at the R band
+
+## THE I11's SCREEN — THE COIN-FLIP RESOLVES NEGATIVE (i11_wall.py; SS1842) + THE II19's WALL-BAND RE-OPENED (the SS1845 directive!!)
+
+- **THE I11's SCREEN (i11_wall.py; SS1842!!)**: the system (the Geom(11)!!): the V=220, the
+  perp sizes {114: 165, 128: 55}; **THE GF(2) RANK OF B0: 210 (of the 220!!)** — the
+  near-full rank: THE DECODER FATAL (the precedents: the II19-0: 241; the level-2: 531;
+  the E8: 9!!); **THE PRICE BAND (the h=12 (not the 9 of the SS1833 record!!), the
+  m=100!!)**: the R <= 800: NO ROOT; the R >= 900: THE HOSTING WALL (the cap = 38v =
+  8,360 -> the R <= 928!!) — **THE ENTIRE R RANGE UNPRICEABLE AT THE NAIVE MODELS!!**;
+  the c_t arithmetic: the hosting needs the c_t <= 5.22; the crossing the <= 7.22; the
+  measured 8-10 — **BUT MOOT: the decoder rank + the unpriceable window close the
+  system!!** — **THE I11's COIN-FLIP (the SS755-767!) RESOLVES NEGATIVE BY MEASUREMENT**
+- **THE LORENTZIAN DECODER SIGNATURE (the program-level insight!!)**: the Lorentzian
+  perp-pattern decoders have NEAR-FULL GF(2) ranks (the I11: 210/220; the II19-0:
+  241/361; the level-2: 531/929!!) EXCEPT the E8-embedded (the 121-line: the 9!!) —
+  **THE HYPERBOLIC EXTENSION DESTROYS THE GF(2) STRUCTURE THAT KEEPS THE E8's DECODER
+  CHEAP**
+- **THE USER'S REDIRECT (SS1845!!)**: 'keep going for II19 there is still potential' —
+  **THE WALL-BAND RE-OPENING**: the SS1112 decoder scan priced at the R ~4,657 — 3x OVER
+  the hosting wall (the R <= 4.22 x 361 = 1,524!!) — **THE WALL-BAND R 600-1,524 (the
+  mass/v ~60-67!!) NEVER PRICED FOR THE FULL-II19 AT THE REFINED PRICER!!** — the II19's
+  ceiling 2.21x (the highest of any viable system!!); the read-side IF: the c_t <= 5.22
+  (the measured 9.5-10.3: the 2x gap!) — **THE SCAN (ii19_wallprice.py): the price at
+  the wall-band: 'IF the E8-grade covers exist, the price is X' — X decides the
+  vocabulary hunt!!**
+
+## THE II19's WALL-BAND SCAN — THE RE-OPENED QUESTION MEASURED AND CLOSED: NO BAND CROSSES (ii19_wallprice.py; SS1853, SS1857)
+
+- **THE CONSTRUCTION VERIFIED**: the 361 lines (the 3 root-classes + the special ✓); the
+  norms {2.0: 361} ✓; **THE GF(2) RANK OF B0: 241 ✓✓✓ — THE SS1112 NUMBER CONFIRMED BY MY
+  OWN MACHINERY!!**
+- **THE D-VARIANT BUG CAUGHT AND FIXED (the session's honesty pattern!!)**: the SS1853
+  run's D masses were 2.19x INFLATED (the MASS fractions put into the hist's COUNT
+  slots!); the fix (the counts = the mass/d + the remainder to the 1s!): the SS1857's D
+  masses correct (the 10,739 = the naive's ✓)
+- **THE WALL-BAND PRICES (the R 400-1,524 x the naive/D x the decoder r=1/10!!)**: **THE
+  BEST: the D-variant at the R=400 with the r=1 decoder (the PHYSICALLY UNREALIZABLE
+  best case!!): c = 0.001436290 (the -17.66%!!)** — the D is ~9 points better than the
+  naive at every R (the SS1317's precedent confirmed!); the naive at the R=400: the
+  -26.73%; both declining with the R (the -49.37% at the R=1400!)
+- **THE REALISTIC DECODER (r=10)**: NO ROOT AT EVERY BAND (the +2,410 mass pushes over
+  the window's no-root boundary!); **THE WALL EDGE (R=1,524): NO ROOT FOR ALL MODELS**
+- **THE c_t REALITY CHECK**: the R=400's identity: the c_t = (400 + 361)/361 = 2.1 —
+  **PHYSICALLY UNREALIZABLE** (the measured covers: the weight-2 impossible (the SS801:
+  0/11 at the weight <= 3!!)); the realistic c_t 9.5-10.3 -> the R ~3,069 — 2x OVER THE
+  WALL — unhostable!
+- **THE DECISIVE CLOSURE**: even IF the E8-grade covers (the c_t <= 5.22) existed, the
+  R = 1,444-1,524 prices land at the -48% to NO-ROOT — **THE FRONTIER QUESTION IS
+  CLOSED INDEPENDENT OF THE COVERS!!**
+- **THE VERDICT (the SS1845 'there is still potential' question!!)**: **THE WALL-BAND
+  WAS THE ONE UNPRICED REGION — AND IT PRICES BELOW AT EVERY CONFIGURATION**: the best
+  case -17.66% (the unrealizable!), the realistic NO-ROOT/unhostable — **THE II19
+  CLOSED AT THE WALL-BAND: NO BAND CROSSES THE FRONTIER**
