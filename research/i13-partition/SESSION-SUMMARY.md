@@ -26,12 +26,18 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **Arrival-count floor (new, session-end): the PG-top architecture cannot reach ANY frontier.**
-  Counting gate-events: the 610 demands need 15,411 line-arrivals at 618 distinct piece frames; each
-  register supplies at most 13 arrivals (one per dimension); so middle registers >= 15,411/13 = 1,186,
-  R >= 2v + 1,186 = 1,914 = 5.26v, and kappa at that R (best shapes) = 0.0013889 = **-20.4% vs the
-  new frontier**.  This is a hard counting floor for ANY feeding scheme on the PG top — it closes the
-  architecture as a frontier candidate (the model kappas above assumed arrivals were free).
+- **EFFICIENCY FRAMEWORK (session-final; shared_decomp.py).**  Target reads are FREE (k users cost one
+  build), so the binding resource is ASSEMBLY ARRIVALS: capacity = h x R; every piece's content line
+  must arrive at a gate once.  E8 R420 runs at 89% of this bound (incidence 3,000 vs capacity 8 x 420 =
+  3,360) — frontier words are TIGHT against arrival capacity.  I13 break-even (R = 1,312 at the best
+  shapes): capacity 17,056, needs efficiency >= 4.13 slots/line.  Measured: pairwise sections 2.0
+  (all 35,178 have EXACTLY 2 users — no sharing economy at pair level; greedy gives 69,942, dead),
+  PG top 2.44, maxpairs halves+Q 3.92 (**17,967 vs 17,056: a 5.4% gap**), Q-parts 4.0.  The needed
+  structure is precisely characterized: pieces of efficiency > 4.13 (rank-6/7 rooms with 10+ users,
+  better Q mixes, apex D10 parts).  THE SHARPEST OPEN QUESTION: can any I13 demand decomposition beat
+  17,056?  The 5% gap is the smallest miss in the project's history; candidates: 3-way halves where
+  geometry allows, TTTT-vs-PPTT Q mixes, apex D10 parts for P targets (famn.py 12 decomposition),
+  GF(2) cancellation covers.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
