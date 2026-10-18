@@ -25,3 +25,15 @@ at most 47 dups" assumption is below that bound.
 ## Open next questions
 - This is E8, not the Lorentzian II19 target. Which II19 system to build (the 361-line h=10 system, or the
   240-line 2-class at h=10) is undecided.
+
+## The copy bound at cst=72 (nat108b/c)
+
+With the 9-gather W-solve scatter the B-phase must deliver all of perp(t) (63 lines) to every target.
+- `../ii19_nat108b_covers.py`: the 8,821 line-spanned hyperplanes of a line's perp; two cover at most 52 of
+  the 63 lines; the only covering triples are the 315 D4 4-frame triples (sections of size 30, root normals).
+  So a line with 3 pure copies has them at the 3 cells of a D4 4-frame.
+- `../ii19_nat108c_cellsides.py`: in all 1,200 cells checked, the 16 targets reachable only through the cell
+  have common perp equal to the cell and need 2 sides. Two copies of the cell sum need a third register, so
+  every cell holds at least 3 registers: 540 registers, R >= 420 (less a handful from targets reading at cells).
+- At R420 shapes: R=420 -4.6%, 405 -2.6%, 360 +3.6%, 345 +5.9%, 274 +18.2%. The +17-42% class needs
+  R ~ 174-274, below the bound.
