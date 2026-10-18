@@ -1712,3 +1712,42 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   81** ✓✓✓ THE SCAN's HONEST DECODER MASS (the SS1872-1874 dr=9 bands!!)
 - **THE NEXT**: THE 2b-ii (the construction + MY OWN replay + the special's arithmetic
   iteration!!) -> THE GCHECK -> THE TRUE HIST -> THE TRUE c!!
+
+## THE 121-LINE WORD: BUILT, GCHECK-PASSING — THE FIRST II19-FAMILY WORD EVER; THE
+## HOSTING-WALL VERDICT (ii19_ext4.py, ii19_ext_word.json; SS1976-SS1985)
+
+- **THE WORD EXISTS AND PASSES GCHECK (SS1985!!)**: v=121, h=9, R=541, rho 4.47, the frames
+  674, the gates {D 121, A 2185, B 957, C 2782}, the moves 3,392 — **'status': 'PASS'** —
+  the format's own checker verifies EVERYTHING (the climb legality, the content-frame
+  invariants, the H4, the mass identity, the finals, the retained frames, the scatter)!
+- **THE TRUE HIST (the FIRST for any II19-family word!!)**: {1: 1289, 2: 1709, 3: 91,
+  4: 60, 6: 120, 7: 120, 8: 9, 9: 4} | THE CST 83 | the rank_mass 6,888 = the identity ✓!
+- **THE HOSTING WALL: THE HONEST PRICE VERDICT**: the cap 4,356 vs the nres 4,869 —
+  **the pricer REFUSES: 'error': 'hosting wall'** — the R 541 exceeds the wall's R <= 484
+  (the 4,356/9!) by the 57 registers (the 111.8% of the cap!)
+- **THE MECHANISM (the completeness's price!!)**: the R 541 = the 420 (the R420's
+  transplanted core ✓) + the 121 (the special's completeness channel: the odd-gather (1)
+  + THE 120 PER-TARGET CARRIERS!); the wall's margin (the 484 - 420 = the 64) < the 121
+  cost -> **THE OVER BY THE 57**; THE CARRIERS ARE FORCED (the {120}-span NOT-SUBSET the
+  E8-span: the content-frame check; the source's one-climb limit: the same-dim
+  perp-jumps ILLEGAL!) -> **the +1 carrier per root-target IS THE FLOOR for this
+  architecture!**
+- **THE COMPLETENESS HOLDS**: the junk(t) >= perp_121(t) for all 121 targets (the
+  scatter's B_121[t]-totals + the carriers' reads!) — the orthogonal-incidence sum IS
+  realized: the word is a GENUINE MULTIPLICATION (the SS1150 lesson applied: NOT a
+  flow-only artifact!)
+- **THE BUILD ARC (SS1943-SS1985, THE 6-FIX ITERATION!!)**: the fix-1 (the roots' rows +
+  the row-0: the v_0-cancel!); the fix-2 (the odd's build: THE ROW-0's rets — NOT all 9:
+  the x-part = the v_0 ^ e_120!); the fix-4 (the special's row: [the odd] + the row-0!);
+  the fix-5a/5b (the D-gates' +ODD + the 120 carriers' A/B/D gates!); the fix-6 (the
+  ORDERING: the carriers' builds BEFORE the odd's — the SP's chain legal!); the fix-7
+  (the ret_frames' TRUTH: the 2 row-0 rets at the FULL -> the CST 83!) -> **the finals'
+  fails 0 (SS1976: my own replay!) -> THE GCHECK 'PASS' (SS1985: the format's own
+  checker!!)**
+- **THE STRUCTURAL VERDICT (the STRONGEST possible negative!!)**: the 121-line is CLOSED
+  BY THE HOSTING WALL AT THE BUILT-WORD LEVEL — not a model band, not a projection: **A
+  GCHECK-PASSING WORD whose R exceeds the pipeline's hosting capacity by the 57
+  registers!** The E8's mechanism transplants STRUCTURALLY (every legality passes!) but
+  the special line's per-target completeness channel (the 121 registers) costs more
+  than the R420's transplant margin (the 64) — **the first system closed by a VERIFIED
+  WORD's economics rather than a model's projection!**
