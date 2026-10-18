@@ -505,3 +505,41 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   THE FRONTIER (E8 R434, c = 0.0017444) STANDS UNBEATEN.  Live programs: the low-rank
   sparse-decoder search (c <= 25); the pipeline-requirements read (the #463/#510
   template).
+
+## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET) CROSSES (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
+
+- **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
+  the identity-word template (e8_identity_word.py) + gcheck.py exposed that the 2-class lines
+  (α,0,0)+(α,1,0) span a 9-dim space with a DEGENERATE form (the radical: the level direction
+  (0,1,0)); gcheck line 71 forces the sources+helpers to end at a dim-h FULL frame, and every
+  frame must be NONDEGENERATE (the exact Gram determinant!!) -> FULL = the 10-dim ambient ->
+  h = 10, NOT 9!!!  THE ENTIRE SS1354/SS1374 CROSSING (+33% at h=9!!) WAS COMPUTED AT THE
+  WRONG h.  THE HONEST h=10 BAND: -11.36% at best (D, R=280): THE 2-CLASS CROSSING IS DEAD.
+  (The B/C variants' h=9-tuned constants were also fixed: clean mass-fraction models.)
+- **THE DEMAND/DECODER CONSISTENCY (the SS1402 lesson):** the word's B determines BOTH the
+  junks (the B-rows off the diagonal) AND the retained count (the GF(2) rank!!).  The
+  min-index cancellation junks (33/57 lines) give the junk-pattern B the GF(2) rank 114 ->
+  the decoder would need 114 retained (CST 912!!) -> NO ROOTS: DEAD.  THE CONSISTENT FAMILY:
+  THE PERP-PATTERN DECODER (B[t] = {t} ∪ perp(t): THE R420'S OWN FAMILY!!).
+- **THE 121-LINE SYSTEM (the UNIQUE h=9-valid II19 subset!!):** the 120 E8 roots + the
+  special (0,1,1): the span dim 9 with the form x·x' + 2aa': POSITIVE-DEFINITE -> EVERY
+  SUBSPACE NONDEGENERATE (the frame-friendly system!!) -> h=9 LEGAL (m=73: the
+  P111-analogous window!!).  THE PERP-PATTERN DECODER: THE GF(2) RANK 9 EXACTLY (the E8's
+  own!!).  The demands: 64 (the roots: 63+special) + 120 (the special: all roots).  THE
+  SPECIAL RIDES FREE: 118 of its 120 demand lines covered by the pieces (every root-piece
+  ⊆ the special's junk -> the special is a user of every piece!!).
+- **THE PIECE ECONOMY (the consistent family!!):** pool 156 pieces (mean 2.9 lines — THE
+  CELLS!! — mean 16.5 users, max 63: THE E8-GRADE SHARING!!!), 121 tail carriers, leftover
+  1,128 lines.  THE STRUCTURE: 156 + 121 + 9 = 286 (R/v 2.36).
+- **THE PRICE BAND AT h=9 (v=121, CST=72):** R=286: A -13.42% | B +8.32% | C +5.74% |
+  **D +10.19%!!!**  R=300: A -15.26% | B +8.78% | C +18.26% | **D +13.42%!!!**  THE D
+  VARIANT = THE CALIBRATED FAMILY (the R420's own climb proportions; the model exact at the
+  control: ratio 1.000000000!!): **THE CROSSING AT THE HONEST h: ALIVE — the first h=9-valid
+  II19-family word above the frontier (at the model level).**
+- **THE REMAINING GATES (the 100%-verification list!!):** (1) the arrival law: the demand-
+  reads ~2,800 vs 9R -> the honest R ~310-325 (the utilization ~96%: TIGHT!!); (2) the chain
+  slots: the target-side packing (~23 reads per target into the 8 chain slots!!), the
+  source-side (~8.5 reads: the pieces ~3.7 + the gathers ~4.8!!), and the gather-builds
+  (the U/W factorization: the 9 basis-row gathers at the dim-8 frames — the sources' dim-8
+  slot collision: the build's decisive design question!!); (3) THE BUILD -> gcheck -> THE
+  TRUE histogram -> THE TRUE price.
