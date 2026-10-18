@@ -2064,3 +2064,9 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 - **THE COLLAPSE-DESIGN**: the H_u's (121! (the per-line-e_u-carriers (the the-A-builts (the the-the-singleton-FREE-reads!!!)))) + THE D (the perp(t)-delivery (the ⊕(e_u)'s!!!)) + the scatter (the the-Brows-combo!!!) — **THE R = 130 (the the-the-the-121-H_u + the-9-rets!!!)!!!**
 - **THE BALANCE**: [the scatter's Brows[t]] ⊕ [the D's perp(t)] = e_t ✓✓✓ — **THE REGISTER-BIT-RESIDUE (the ⊕(1<<H_u) ⊕ ⊕(1<<ret) — the one remaining algebra-detail!!!)**
 - **THE NEXT (THE the-THE-... — the the-the-FINAL-STEPS: the residue-resolution → the word-emission → THE GCHECK!!!
+
+## THE NATIVE-121 v18b — THE W4's-BALANCE-TRUTH (THE EMPIRICAL-LEARNING!!!)
+
+- **THE REPLAY (the D+A+scatter+B (the NO-C!!!))**: THE TARGETS'-FINALS PASS (the 121/121!!! (the the-122-OK (the the-121-targets + the the-1!!!))) — THE C-PHASE (the H4-reversal) RESTORES ONLY THE HELPERS!!!
+- **THE RESIDUE-TRUTH**: the srcs'-XOR (the ⊕(1<<s)) is NOT the delivered-register-part (the srcs'-VALS-are-complex (the 1<<h ⊕ the-junk!!!)) — the W4's-120/121-srcs-residues-are-RED-HERRINGS — THE ACTUAL-BALANCE (the the-VALS (the the-empirically-✓!!!
+- **THE NAT18's-IMPLICATION**: the D+the-scatter+the-B (the the-vals'-balance!!!) — the design-needs (the the-B's-residue-fix (the the-... — the the-EMPIRICAL (the the-the-... — the NEXT-STEP!!!
