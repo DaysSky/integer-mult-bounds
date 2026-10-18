@@ -44,7 +44,11 @@ solver.parameters.num_search_workers = 8
 st = solver.Solve(m)
 log('status', solver.StatusName(st), 'objective', solver.ObjectiveValue() if st in (cp_model.OPTIMAL, cp_model.FEASIBLE) else '-', 'bound', solver.BestObjectiveBound())
 if st in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-    chosen = {E: cvs[int(solver.Value(y[(E, j)]))] for E, cvs in demand_covers.items() for j in range(len(cvs)) if solver.Value(y[(E, j)])}
+    chosen = {}
+    for E, cvs in demand_covers.items():
+        for j in range(len(cvs)):
+            if solver.Value(y[(E, j)]):
+                chosen[E] = list(cvs[j]); break
     used_p = sorted(pid for pid in range(len(piece_of)) if solver.Value(used[pid]))
     log('used pieces', len(used_p), 'non-leaf', sum(1 for p in used_p if not leaf[p]))
     # user histogram

@@ -4,6 +4,32 @@ Scratch research by DaysSky with assistance from Claude.  Not reviewed, not a wo
 **Sign convention (verified against README): kappa = c is the exponent saving in T(n) = O(n (log n)^{1-kappa});
 HIGHER c IS BETTER.  P111-tuned c = 0.001733427039589844; E1 (frontier) c = 0.001734473240795253742474.**
 
+## CORRECTIONS (post-verification, 2026-10-18; the body below predates these)
+
+1. **"573 proven optimal" is over-menu-optimal only.**  Menus were capped at 200 covers/demand, so
+   the model's true optimum could be lower (a no-piece all-leaf assignment exists and costs 0 in-model;
+   the model's cost function does not charge leaf fills, which are NOT free — see 3).  Treat 573 as the
+   optimum of the capped menus model, not an architecture truth.
+2. **The saved `chosen` in deadmin_primal.pkl was wrong** (index bug `cvs[int(Value)]`); fixed in
+   `deadmin_primal.py` and regenerated.  Corrected design: 619 used pieces (46 leaf), 618 distinct
+   frames — the frame-sharing diagnosis (pieces don't share frames) still holds.
+3. **Feeding-layer numbers recomputed on the corrected covers:** 618 frames, content sizes min 1 /
+   median 30 / max 44, sum 16,029; merge-ins needed 15,411; piece frames per line 43-188 (median 76).
+   The "~2,500 mid registers" figure is an ESTIMATE (divide by ~6 frames served per mid), not a bound;
+   and it ignores that a no-piece assignment shifts all cost to leaf delivery, whose register cost the
+   model does not charge.  Either way no free lunch: assembly+feeding is the binding layer.
+4. **Register identity:** HANDOFF's identity is R + v = sum c_t + dead, i.e. R = v + dead with
+   c_t = 2 (not R = 2v + dead as written here earlier); this file's R tables are off by v.
+5. **Attribution:** the +13.6% block-group price rows are session 6i and are for I_{11,1}, not 6h /
+   I_{13,1}.  The "+5.9% at 1,100+660" I13 numbers used I11's 450-mover count and ignore §3h feeders;
+   an I13 blueprint needs ~886 movers, so those rows do not bound the I13 blueprint.
+6. **halves_assembly v1 result (0 pieces) was a model artifact** (whole-flat filter empty); v2 with
+   content pieces returned OPTIMAL 0 non-leaf pieces with 363 leaf pieces: the trivial all-leaf
+   optimum — the model does not charge delivery, so it cannot answer the budget question.  The
+   blueprint-level ledger (see SESSION-SUMMARY corrections): 576 half-regs + 241-6,754 pair-mids +
+   91 Q + 728 branches + ~886 movers + feeders ~ R 3,200-3,700 = 8.8-10.2v vs the ~1,400 break-even
+   budget: **the maxpairs blueprint does not reach the frontier** (kappa ~ -70% at ~10v).
+
 ## Architecture
 
 PG(2,3) frame top of I_{13,1} (91 good frames, 610 distinct demands; sessions 6h/7c) with a shared-piece

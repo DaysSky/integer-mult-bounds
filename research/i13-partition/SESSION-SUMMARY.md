@@ -3,6 +3,33 @@
 Prepared by DaysSky with assistance from Claude.  Everything here is scratch research; labels:
 **proven** (exact/exhaustive computation), **modeled** (pricer/ILP within a stated model), **estimate**.
 
+## CORRECTIONS (post-verification; supersede numbers below where they conflict)
+
+- "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
+  model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
+  registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
+- The saved `chosen` was regenerated after an index-bug fix (deadmin_primal.py); corrected design:
+  619 used pieces (46 leaf), 618 distinct frames (frame-sharing diagnosis still holds).  Feeding
+  recomputation: content sizes sum 16,029, merge-ins 15,411, frames/line 43-188 (median 76).  The
+  "~2,500 mids" is an ESTIMATE, not a bound (and shifts if leaf delivery is charged instead).
+- The +13.6% block-group rows are session 6i and I_{11,1}; the I13 "+5.9%" rows used I11's 450 movers
+  and ignore §3h feeders (I13 needs ~886 movers) — they do not bound the I13 blueprint.
+- halves_assembly v1 (0 pieces) was a model artifact; v2 (content pieces) returned OPTIMAL 0 non-leaf
+  / 363 leaf pieces = the trivial all-leaf optimum (any half = 1 line + leaf fill of the rest, charged
+  0).  **The halves-assembly-budget question is NOT answered by this model**: the cost lives in leaf
+  DELIVERY (pushing ~16k line-slots into 576 half-rooms), which the set cover does not charge.  The
+  blueprint-level computation that does answer it: per-target reading-chain registers (halves_struct.py
+  min_private: 6 halves/target on 3-dim chains 9/10 -> 11 -> 12) + the mover count for the reading
+  frames.  That is the next session's first task.
+- **Blueprint ledger (session-end, honest):** 576 half-registers (each half's closure lies inside ALL
+  its readers' t-perps — delivery free, 2-6 readers), pair-mid feeding 241 (greedy shared-pair) to
+  6,754 (no sharing), Q 91, branches 728, movers ~886 (I13, not I11's 450), §3h feeders on top:
+  **total R ~ 3,200-3,700 = 8.8-10.2v**, and break-even needs R <= ~1,400 (3.9v).  kappa at ~10v is
+  ~0.00040-0.00046 (-70%).  **The maxpairs half blueprint does not reach the frontier either** —
+  the half layer alone (576 + 241 + 91 + 728 = 1,636) is over the whole-word budget before movers.
+- The bug diagnosis in the old halves paragraph below is wrong (v1 required whole flats inside the
+  half, which are almost never subsets of the half's content — not "candidate filter" issue).
+
 ## Sign convention (verified; do not repeat this session's error)
 
 **kappa = c is the exponent saving in T(n) = O(n (log n)^{1-kappa}).  HIGHER c IS BETTER.**
