@@ -29,7 +29,7 @@ for label, sct in [('corrections counted', ct_total), ('corrections free (in-cha
                          ('mids=content/8 (pessimistic)', content // 8),
                          ('mids=600 (flat)', 600)]:
         R = R_id + dead
-        H = R - 2 * v
+        H = R - 3 * v
         if H < 0:
             print('%s / %s: R=%d below 2v skip' % (label, dlabel, R)); continue
         bbest = None

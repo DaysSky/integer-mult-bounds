@@ -22,7 +22,7 @@ scen = [
 ]
 for label, sct, dead in scen:
     R = sct - v + dead
-    H = R - 2 * v
+    H = R - 3 * v
     if H < 0:
         print('%s: R=%d below 2v, skip' % (label, R)); continue
     bbest = None
