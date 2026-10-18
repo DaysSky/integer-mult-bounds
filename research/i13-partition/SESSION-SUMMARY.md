@@ -26,17 +26,19 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **FRAME-TOTAL PIECES (session-final discovery, UNCALIBRATED).**  The efficiency analysis surfaced the
-  high-efficiency direction: a piece = total of a rank-4 flat M (4 lines) serves every target in
-  perp(M) — a rank-8 room with 42-56 lines.  Efficiency ~44-56 slots/line vs the 4.13 needed.  If
-  viable, incidence collapses far below 17,056.  BUT viability hinges on (a) the copy/fan-out cost
-  (48 users need 47 climbing copies = helper registers, or the 6i mover structure) and (b) the 7c
-  TOTALS-FEEDER LEMMA ("totals of groups at rank >= 4 need feeders") — this exact structure.  Do NOT
-  derive format semantics from memory (three sign/cost errors this session came from that).
-  NEXT SESSION TASK 1: extract R420/R434's actual write/copy/read/register statistics from the
-  verified packages (e8-bit-carrier-skeleton, e8-bit-p111-r434), build the capacity model from
-  OBSERVED numbers, then recompute the 5.4% gap and the frame-total cost.  TASK 2: re-read the
-  totals-feeder lemma's exact statement before pricing frame-totals.
+- **THE TWO-SIDED FRONTIER CONDITION + FLAT-TOTAL DESIGN (session-final).**  Working both identities
+  (register identity R >= sum c_t - v + dead with c_t = 70,356/s; arrival capacity R >= 70,356/(13u)):
+  any frontier I13 demand structure needs pieces with s >= ~42 lines AND u >= 4.13 users.  Measured:
+  sections s=90-166 u=2 (dead); halves u=2-6 s=16-30 (c_t explodes — this retroactively breaks the
+  maxpairs 5.4%-gap pricing: c_t = 7 forces R >= 2,184 = 6v); Q-parts s=42-56 u=4 (3% short).
+  **Candidate satisfying both: room-totals of rank-4 flats' perps** (rooms 42-56 lines, users = the
+  flat's own 8-12 lines, D4-type flats): at c_t = 4, u = 9: R = 1,092 + dead, arrivals 7,938 = 46%
+  of capacity — closes with room for feeders/movers.  CRUX (next computation): for each target t an
+  odd-cover design — a 4-6-subfamily of rank-4 flats M containing t with XOR of perp(M)-totals =
+  R(t); parity over #(flats in section(t,ell)).  Also needed: rank-4 flat line counts in I13
+  (D4-type 8-12 lines? — the killed n13nodes.py census would answer; rerun its size-4 stage).
+  Totals-feeder lemma read exactly: frame-0 words form totals from dead registers at no extra cost
+  (R420/P111/blkA4 do) — it does NOT obstruct this structure; only pure z-group words.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
