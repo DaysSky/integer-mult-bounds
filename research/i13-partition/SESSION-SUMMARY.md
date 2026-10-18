@@ -1604,3 +1604,22 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   ceiling exists — **the blocker is the mass profile (the 1,936 sources+targets + the
   9R middle + the 81 decoder), not the window!!** — the crossing needs ~6-17 mass
   BELOW the honest floor (the cst 81 -> ~65-75: BELOW the proven 73-floor!!)
+
+## THE K/T SCAN — THE AUDIT's ITEM #11 CLOSED: THE K=4 IS THE ANCHOR; NO K/T HELPS (ii19_kt.py; SS1879)
+
+- **THE R420 CONTROL**: the published c reproduces at the K=4 (all T: the -0.00%!!);
+  the K=5: the -0.82%; the K=6: the -2.90% (the WORSE!); **THE K=2/K=3: NO ROOT (the
+  window too small: the m = 1+L(h-1)!!)**; **THE T IS IRRELEVANT** (the T=16/32/64 give
+  the IDENTICAL c's at every K — the T: the W-only!!)
+- **THE 121-LINE (the D + the dr=9)**: the K=4: the -34.90/-38.13/-39.64% (the R
+  380/420/440!); the K=5: the -34.17/-37.29/-38.78% (the marginal +0.7-0.9 points BUT
+  the K=5 breaks the R420's calibration!); the K=6: the ~the K=4; **THE K=2/K=3: NO
+  ROOT**
+- **THE VERDICT**: the K=4/T=32 is the calibrated AND near-optimal convention — **NO
+  K/T CONFIGURATION PRICES THE 121-LINE ABOVE THE FRONTIER** (the best: the K=5's
+  -34.17% — still 34 points below!) — **THE AUDIT's ITEM #11: CLOSED!!**
+- **THE AUDIT's REMAINING (the #8/#14!!)**: the climb shapes + the true c — both
+  blocked by the build — **THE ONE UNTRIED PATH: THE R420-EXTENSION BUILD (the R420's
+  published word (the gcheck-PASSING!) re-based to the h=9 (the +1 final climb per
+  register: the nested chains 0->...->8->9 LEGAL!) + the special's extension -> the
+  gcheck -> THE TRUE HIST -> THE TRUE c!!) — THE BUILD ANSWERS THE #8/#14 BOTH!!**
