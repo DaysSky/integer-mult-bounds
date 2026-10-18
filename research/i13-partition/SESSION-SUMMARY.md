@@ -15,14 +15,17 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   193.3), plus (b) each non-source register's own content arriving somewhere: T >= 70,356 + (R - v).
   Visit cap: T <= 13 R (one frame per dimension, gcheck climb rule).  => 13R >= 70,356 + R - 364
   => **R >= 5,833 = 16.0v for ANY I_{13,1} word**; kappa at that R (best histogram shapes) =
-  0.0005923 = **-66.0% vs the new frontier**.  Formalization gaps a proof must close: (i) the
-  13-visits cap is the gcheck climb rule (format theorem — already stated in halves_struct.py);
-  (ii) 'every register's content must arrive somewhere' excludes... nothing: sources hold single
-  lines (v of them), every other register is written by a gate, i.e. its content arrives by transfer;
-  (iii) the transfer-count T is over (register, visit) pairs with multiplicity = |content| — the
-  identity T >= sum_t |R(t)| + (R - v) needs the check that each target's perp sum is assembled from
-  transfers exactly (no free reuse).  If (i)-(iii) hold, the Lorentzian question for I_{13,1} is
-  CLOSED rigorously: kappa <= 0.00059 < 0.00174.
+  0.0005923 = **-66.0% vs the new frontier**.
+- **THE BOUND IS BROKEN — E8 control fails it (post-session check).**  Applied to E8 the same
+  argument gives R >= (120 x 63 - 120)/(8 - 1) = 1,063 > R420 = 420, contradicting the verified word.
+  The flawed step is (iii): "T >= sum_t |R(t)|" counts each target's need separately, but one built
+  sub-sum (a shared quad total, read by 12 targets) discharges many targets at once — E8's true
+  demand incidence is 9/line, not |R(t)| = 63/line.  What survives: (i) the visit cap T <= hR and
+  (ii) the assembly-tree facts are fine; the per-architecture closures below stand unchanged (the
+  PG-top and half blueprints genuinely pay their MEASURED incidence counts 28,808 / 13,508 — those
+  come from the demand structures themselves, not from the flawed step).  A real all-word closure
+  needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
+  incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
 - **Arrival-count floor (new, session-end): the PG-top architecture cannot reach ANY frontier.**
   Counting gate-events: the 610 demands need 15,411 line-arrivals at 618 distinct piece frames; each
   register supplies at most 13 arrivals (one per dimension); so middle registers >= 15,411/13 = 1,186,
