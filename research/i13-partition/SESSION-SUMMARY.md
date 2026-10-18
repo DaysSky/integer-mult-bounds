@@ -1580,3 +1580,101 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   (the chains' +1 final climb: the h=8 -> 9!!); (c) THE SPECIAL'S EXTENSION (the 121st
   source/target + the junks: the special's = the 120 roots, the roots' = the +special!!);
   (d) THE GCHECK -> THE TRUE HIST -> THE TRUE c!!
+
+## THE STAGE 2a — THE FORMAT-DUMP: THE COMPLETE SEMANTICS (ii19_ext2.py; SS1926)
+
+- **THE FORM: '<x,y>/2'** — THE HALVED CONVENTION (the R420's representatives: the
+  norm-4-in-x.y = the norm-2-in-the-halved — THE ROOTS!!) — THE SS1914 NORM FLAG RESOLVED;
+  the ⊥-STRUCTURE UNAFFECTED (the halving preserves the orthogonality!) -> THE STAGE-1's
+  DIMS STAND!!
+- **THE FRAMES' ORDER (the 672!!)**: the empty(0) + THE FULL(1!!) + the 120 singletons
+  (2-121!) + the 180 2-frames (122-301) + the 70 12-frames (302-371) + the 180 30-frames
+  (372-551) + the 120 63-perps (552-671) ✓✓
+- **THE START/FINAL (the len 660 = the 120 sources + the 420 helpers + the 120
+  targets!!)**: the starts [2, 3, 4, ...] = the sources' singletons ✓; the finals
+  [1, 1, 1, ...] = THE FULL (the frame index 1!!) ✓✓ (THE GCHECK LINE 71!)
+- **THE GATES (the [frame, dest, srcs] triples!!)**: the A (2064 = the 1695 helper-builds +
+  the 360 source-reads + the 9 gathers — THE SS1736 NUMBERS ✓); the B (837 = the 240
+  target-dests + the 597 z-dests!); the C (2661 = the reverse-unbuilds AT THE FULL!); the D
+  (120 = the scatter-dirt AT THE EMPTY FRAME (the frame 0!!) — THE SS1269's 'no frame
+  constraint at the scatter' ✓!)
+- **THE RET/SCATTER**: the ret [603, 568, 597, 583, 569, 604, 616, 596, 598] (the 9!); the
+  scatter: the 120 per-target lists ([0, 1], [0, 2], [0, 3], [0, 1, 2, 3], ...) = the
+  RET-INDICES ✓
+- **THE STAGE 2's RE-BASE MAP (the design!!)**: THE GATES UNCHANGED (the frames' indices
+  the same: the re-based lists IN-PLACE!!); the dims' shifts: the perp-frames 7 -> 8 (THE
+  TARGETS' LAST CLIMBS +120!!) + the FULL 8 -> 9 (THE SOURCES'/HELPERS' LAST CLIMBS +540!!)
+  — THE TRUE HIST = THE R420's + THE ~660 EXTRA MASS + THE SPECIAL'S EXTENSION!!
+- **THE SPECIAL'S EXTENSION (the design!!)**: the +2 frames (the {120}-singleton + THE
+  SPECIAL'S PERP (the 120 roots: the dim 8!!)); the +2 registers (the source 120 + the
+  target 120!); the target's junk-delivery: THE W-ROW (THE SS1292's W-VERIFICATION: THE 121
+  TARGETS VERIFIED!!) — the 9 gathers' reads (the E8-economical!) vs the 120 direct reads
+  (+111 mass!) — THE W's RECOVERY (the on-disk check!): NEXT!!
+
+## THE W-MACHINERY RECOVERED (ii19_121basis.py read; SS1932) — THE EXTENSION'S DECODER DESIGN
+
+- **THE SS1292 SYSTEM (the 10-dim encoding!!)**: the 120 roots (the 8-dim + [0, 0]!) + the
+  special [0]*8 + [1, 1] (THE (0,1,1)!!); the FORM[8,9] = FORM[9,8] = 1 (the x.x' + ab' +
+  ba'!); the PERP masks; the B0 = PERP | self ✓
+- **THE PARITY MAP PHI (the special-bit!!)**: the kernel (the dim 8): THE EVEN ROWS
+  (B[0]^B[k]: THE SPECIALS CANCEL!) — the basis = the 8 even + the 1 odd (B[0]: the
+  special-bit = 1!!) ✓; the greedy's RANK-INCREASING-ONLY (the SS1496 fix!!)
+- **THE MEASURED CST = 73** (the 8 even rows' spans: the 8 each (THE SUM 64!) + the 1 odd:
+  THE SPAN DIM 9 (the special in the support -> the +1 dim!) = 73 ✓✓ THE SS1308 PROVEN
+  FLOOR!)
+- **THE W-MATRIX (the SS1500 coords-frame fix!!)**: the augmented reduction -> the T-matrix
+  -> W_orig = W_red x T — the coords over MY gathers ✓; **THE W-VERIFICATION: B[t] =
+  SUM W[t,k].u_k FOR ALL 121 TARGETS: PASS!!**
+- **THE EXTENSION'S DECODER DESIGN (the build's plan!!)**: (1) THE 8 EVEN PATTERNS: the
+  pure-E8 (the no-special-bit!) -> IN THE R420's u_k-SPAN (the 9-dim E8 B0-space!) -> the
+  even-totals = THE XORs OF THE R420's RET-TOTALS (the linearity!!) ✓ — NO new registers!;
+  (2) THE 1 ODD PATTERN (B[0]: the 65-line: THE +SPECIAL!): NOT in the R420's span -> **THE
+  +1 NEW REGISTER (THE ODD-GATHER: THE R 420 -> 421!!)** — the A-phase build (the reads of
+  the R420's rets + the special's source!); (3) THE SCATTER'S W-ROWS: the SS1292's W (the
+  121 x 9!) -> the expansion (the even-components -> the R420-ret-combinations; the odd ->
+  the new register!); (4) THE ROOTS' +x_special (the junk: the 64-pattern!!): the delivery
+  via the special's carrier (the {120}-singleton-frame register: SUBSET-EQ EVERY ROOT's
+  64-PERP ✓✓!) + the B-cancel; (5) THE SPECIAL'S TARGET: the junk = the 120 roots: the
+  reads at the frames SUBSET-EQ the 120-roots-frame (ALL THE R420-FRAMES SUBSET-EQ THE
+  E8-SPAN ✓✓!)
+- **THE NEXT**: THE GCHECK's RE-READ (the flow's exact semantics: the D-dirt / the
+  B-cancel / the scatter!!) — the build's ground truth!!; THEN THE 2b (the design + the
+  val-simulation!) -> THE 2c (THE WORD + THE GCHECK!!)
+
+## THE GCHECK's COMPLETE SEMANTICS — THE BUILD'S FULL SPEC (tword/gcheck.py read; SS1937)
+
+- **THE WORD FORMAT (the gcheck's input!!)**: the form = {'num': the matrix, 'den': the int}
+  (THE FRACTION MATRIX!!); the lines = the h-dim vectors; **THE FRAMES = THE RREF BASES (the
+  vector lists!), NOT the line-index lists!!** (the R420's line-lists: the DESIGN reference;
+  the gcheck's: the bases!!); **'ret_frames' REQUIRED** (the R420 lacks it!!); the gates =
+  the [F, dest, srcs] triples
+- **THE REGISTER LAYOUT (nreg = 2v + R!!)**: the sources 0..v-1 (the start: the {s}-
+  singleton frames! the val: the {s}!); the targets v..2v-1 (the start: THE FRAME 0! the
+  val: the {v+t}!); the helpers 2v..2v+R-1 (the start: THE FRAME 0! the val: THE OWN DIRT!)
+- **THE FINAL CHECKS**: the sources'/helpers' finals at THE DIM-h FULL; the targets' finals
+  at THE DIM-(h-1) t-PERPS (the span PERP the target's line!!)
+- **THE CLIMB**: THE SAME-FRAME RE-READS FREE (`if cur[r] == F: return`!!); the nested +
+  the strictly-increasing dims; the hist += the delta
+- **THE CONTENT-FRAME INVARIANT**: every gate's dest's content SUBSET-EQ the gate's frame;
+  the target-dests: the srcs' contents SUBSET-EQ the frame
+- **THE PHASES (THE ORDER!!)**: the D (the frame-0, the targets receive the helpers'
+  dirt!) -> the A (the builds: NO targets!) -> **THE SCATTER** (the rets at their
+  ret_frames! the targets at the frame 0! the targets XOR the scatter[t]-selected rets!
+  **THE CST = THE SUM OF copy_ranks (THE RETS' FRAMES' DIMS!!)**) -> the B (the
+  target-reads + the z-builds!) -> **THE C (THE H4 LITERAL REVERSE: the reversed (A+B)'s
+  z-gates AT THE FULL FRAMES!!)**
+- **THE SEMANTICS (the final values!!)**: the source s = THE {s}; the target t = THE
+  {v+t} ^ {t} (THE y_t + x_t!!); the helper = THE OWN DIRT (the initial!)
+- **THE MASS IDENTITY**: mass = h*R + cst + 2v(h-1) ✓; the price via the --price flag (the
+  pricer + the P111 comparison)
+- **THE 121-LINE'S CST 73 CONFIRMED AT THE CODE LEVEL!!!**: the 8 even rets at the dim-8
+  frames (the copy rank 8 each!) + the 1 odd ret at the dim-9 (the FULL-span!): the copy
+  ranks {8: 8, 9: 1} -> 73 ✓✓✓ — THE SS1308's PROVEN FLOOR IS THE GCHECK's OWN ACCOUNTING!!
+- **THE EXTENSION'S DESIGN (the concrete!!)**: (1) THE ROOTS' TARGETS: THE R420's
+  ARITHMETIC UNCHANGED (the same dirt/scatter/reads -> the x_t!); (2) THE SPECIAL'S TARGET:
+  the final = the y_special + x_special: the scatter = THE ODD-GATHER's value (the
+  B[0]-total: the 65-pattern incl. the x_special!) + the B-reads = THE ROOT-0's JUNK-CANCEL
+  z-registers (the E8-internal frames SUBSET-EQ the special's 120-roots perp ✓✓!) XORing
+  to the ({0} UNION the 63)-pattern; (3) THE SPECIAL'S SOURCE: the {120}-singleton start
+  -> the FULL climb (the mass 8!); (4) the form: the diag(1^8, 2) (the den 1!); the frames:
+  the Stage-1's line-sets -> THE BASES (the rref!)
