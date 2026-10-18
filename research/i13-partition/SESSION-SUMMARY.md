@@ -1401,3 +1401,36 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   the 121-line's HOSTING WALL: the R <= 484 (= 4v!!); **THE ROOM-UNION'S SIZE DECIDES (THE
   CENSUS v3: ii19_121d4c.py — the union + the sharing + the carriers' needs + the R estimate
   vs the wall!!)**
+
+## THE CENSUS v3 — THE ROOM-UNION VERDICT: THE ROOM-FIRST DESIGN INFEASIBLE AT THE WALL (ii19_121d4c.py; SS1793)
+
+- **THE UNION: 378 distinct rooms** (from 731 slots) — **THE SHARING WEAK: the
+  users-per-room {1: 142, 2: 207, 3: 9, 4: 3, 6: 6, 7: 1, 8: 4, 9: 4, 12: 1, 13: 1} — THE
+  MEAN 1.9 USERS** — NOT the E8's '70 quads x 6 targets' grade (the mean 6!!): the 142 rooms
+  used ONCE + the 207 used TWICE — **THE I13 PAIR-SPECIFIC SIGNATURE, not the E8's
+  shared-grade!!**
+- **THE CARRIERS: the per-source room-appearances: THE MAX 105; the sum 4,536** — the
+  duplication needs catastrophic (the 1-per-room-slot model: the 4,536 carriers!!)
+- **THE R ESTIMATES: BOTH OVER THE WALL**: the duplication model: 4,536 + 378 + 130 =
+  **5,044 vs THE WALL 484 (10.4x OVER!!)**; the R420-style minimal (2 per source):
+  240 + 378 + 130 = **748 vs 484 (1.5x OVER!!)** — **THE ROOM-FIRST DESIGN IS INFEASIBLE
+  AT THE HOSTING WALL**
+- **THE STRUCTURAL CONCLUSION**: the E8's room economy (the 70 x 6: the demand-frame
+  alignment!!) DOES NOT TRANSPLANT: the 121-line's perps need DIFFERENT rooms per target
+  (the 6-room packings barely overlap: the mean 1.9!!) — **the same structural finding as
+  the SS466-SS473 synthesis ('E8 wins by frame sharing; the I13 demands sit ~1 per frame
+  regardless of partition'), now MEASURED at the room level for the 121-line!!**
+- **THE 121-LINE PROGRAM'S COMPLETE VERDICT (measured at every layer!!)**: the
+  pieces-economy (the SS1685: R 339, the arrival law OK!) FAILS the rooms (the SS1702
+  chain walls!); the rooms-economy (the 3150!) FAILS the R (the v3!!) — **NO DESIGN WITH
+  BOTH THE R <= 484 AND THE LEGAL ROOMS** — the system closes as a rigorous negative at
+  the realizability layer
+- **THE ASSETS (banked!!)**: the verification machinery (the R420 control: the ratio
+  1.0!!), the R420's complete recipe (the flag, the free singleton-reads, the incremental
+  sums, the [2, 7] reads, **THE FREE SAME-FRAME RE-READS**!!), the census (the 3150
+  rooms, the special's structure, the 6-room packings) — all committed
+- **THE REMAINING PATHS**: (1) THE E8 LEVER A (the frontier system's own open lever: a
+  middle strictly more efficient than R420 per incidence — demonstrated on E8 first,
+  where it moves the frontier itself!!); (2) the fresh-system search (the priority D: the
+  census screen as the reusable methodology!!); (3) the handoff (the complete record
+  committed!!)
