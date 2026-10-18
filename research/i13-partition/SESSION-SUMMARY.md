@@ -26,18 +26,14 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **3-SECTION FAMILY (I8-I11), session-final: the exact-cover screen kills it everywhere.**  Census:
-  I8 (v=84, |R|=41-43, secs 18-20, span-miss 1) and I9 (v=120, |R|=63, secs 30 uniform, span-miss 1)
-  fail size arithmetic (c_t = 4-6 -> identity over budget); I9 pair-hash: 0/120 weight-<=3 covers.
-  I10 (v=165, |R|=87-92, secs 42-47, span-miss 0-1): pair-hash 0/165 at weight <=3 (pair-XOR max 80
-  < 86 kills weight-2; weight-3 mass-centered but exact vectors absent); 4-frame partition grammar
-  probe: Q=9, E=13x3, leftover 44/87-92 (half the demand uncarried — dead).  I11 killed early per
-  instruction; its overlap structure (15-25) predicts the same.  UNIFIED FAILURE MODE: sections
-  through t share t's perp core (overlap 13-30), so XORs are mass-centered but exact covers
-  essentially never exist — the I_{n,1} systems have NO closed XOR calculus analogous to E8's
-  D6/quad identities, at any weight that fits the identity budget.  The complete negative (I8-I13,
-  every family, every combination rule) is systematic: no piece grammar in the Lorentzian range
-  closes the demand algebra at viable c_t.
+- **NEW-FRONTIER REPRICING (session-final; i11_shape_scan.py).**  The R434 package (+0.57% over E1)
+  re-priced the entire I11 grid2 shape family off the table: with mix.price and the verbatim 6g-7c
+  conventions (cstp=[10]*11, grid2's src/tgt/br/gp options, 640 combos), ZERO shapes reach the new
+  frontier at ANY H (58s of real price calls; not an interface bug — earlier empty results were,
+  this one is not).  The recorded 'I11 break-even 840-900 vs E1' is now 'no break-even vs NEWF' for
+  this family.  Consequence: the 3-section architecture (projected R = 924-1,060) is dead by shape
+  vs the new frontier; any I11 revival needs a fundamentally richer shape family (unscanned) or an
+  architecture with R under the peak of the best unscanned shapes.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
