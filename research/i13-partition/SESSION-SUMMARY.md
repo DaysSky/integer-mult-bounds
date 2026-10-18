@@ -2009,3 +2009,12 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 - **THE PAIRS'-CO-OCCURRENCE-GOLD (THE MEASURED!!!)**: the pairs-in-pieces: 3,535 distinct (the co-occ-peaks {36: 493, 30: 583, 28: 184, 34: 153} (the mean 21.4!!)) — the best-partner-co-occs **{36: 107}** — most sources have ONE partner co-occurring in ~36 pieces!!! — THE CELLS {u, w} (the shared-sums (the ~36-piece-service-potential!!!))
 - **THE CELLS'-OWN-CHAIN (THE REMAINING-CORE!!)**: the cell {u, w} (the ~36-reads?! — the SAME-wall-at-the-cell-level?! — THE LADDER-DEEPENING (the cells -> the super-cells -> the pieces (THE R420's-430-structure (the dim-2 (180!!) -> dim-4 (70!!) -> dim-6 (180!!) -> the perps!!!)))
 - **THE HONEST-R-SCOPE**: the pieces (360) + the cells + the ladder (the ~660-raw?! (the vs-the-word4's-472!!) — THE R-SHAVE (the pieces'-SHARING (the 2-splits (~240!!) + the shared-D6-analogs (THE NEXT (the ~2-4h (THE BUILD!!!
+
+## THE NATIVE-121 v13/13b — THE D6-LATTICE BREAKTHROUGH (THE FULL SET-COVER ACHIEVED!!!) (ii19_nat13.py, ii19_nat13b.py)
+
+- **THE D6-ANALOGS (THE CONFIRMED!!)**: the pair-commons: 7,140-pairs (the {30: 3,780, 36: 3,360}-line common-perps!) -> the DISTINCT-sets: 4,900 — **THE SPAN-DIMS: {6: 4900} (ALL DIM-6 (THE E8-D6-EQUIVALENTS!!!))** — the multiplicities {1: 3,780, 3: 1,120} (the quad-sharing!)
+- **THE PER-TARGET STRUCTURE (THE UNIFORM!!)**: the DISTINCT-D6s {91: 120} (each target: 91 D6s inside its perp!) — **the top-3-D6-coverage 0.952 (the MIN 0.952 = the UNIFORM!!!)**
+- **THE GLOBAL-D6s' USERS: {2: 3780, 3: 1120} (THE CARRIER-SCALE (THE 2-3-users-per-D6!!!))**
+- **THE SET-COVER (THE GREEDY!!!)**: 286-chosen -> **the tails {0: 120} (THE FULL COVERAGE!!!!!!)** — the per-target {4: 112, 5: 2} + 5-outliers {7, 15, 26, 40, 60, 87} (the fixable-priority!) — the users'-scale ✓✓✓
+- **THE REMAINING-WALL (THE u-memberships ~77.5!!)**: the D6-builds'-~33-srcs -> the sources'-ladder (THE CELLS-LEVEL-BELOW (the D2-cells (the u's-~1-3-memberships?! — THE LADDER (THE R420's-OWN [1, 1, 2]-STRUCTURE (THE ~2-4h (THE NEXT-CORE!!!))))
+- **THE R-ESTIMATE**: the 286-D6s + the cells (~120-180?) + the specials (~42) + the gathers (9) (the ~460-520?! (THE WORD4-CLASS (THE ~-23%?! — the R-SHAVE?! (the top-3-coverage?! (the ~360-shave?! (the ~2-splits?! (THE NEXT!!!)))
