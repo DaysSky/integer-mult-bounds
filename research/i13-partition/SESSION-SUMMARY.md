@@ -2018,3 +2018,13 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 - **THE SET-COVER (THE GREEDY!!!)**: 286-chosen -> **the tails {0: 120} (THE FULL COVERAGE!!!!!!)** — the per-target {4: 112, 5: 2} + 5-outliers {7, 15, 26, 40, 60, 87} (the fixable-priority!) — the users'-scale ✓✓✓
 - **THE REMAINING-WALL (THE u-memberships ~77.5!!)**: the D6-builds'-~33-srcs -> the sources'-ladder (THE CELLS-LEVEL-BELOW (the D2-cells (the u's-~1-3-memberships?! — THE LADDER (THE R420's-OWN [1, 1, 2]-STRUCTURE (THE ~2-4h (THE NEXT-CORE!!!))))
 - **THE R-ESTIMATE**: the 286-D6s + the cells (~120-180?) + the specials (~42) + the gathers (9) (the ~460-520?! (THE WORD4-CLASS (THE ~-23%?! — the R-SHAVE?! (the top-3-coverage?! (the ~360-shave?! (the ~2-splits?! (THE NEXT!!!)))
+
+## THE NATIVE-121 v13c — THE PAIRS'-CELL-POTENTIAL (THE MEAN-45.9!!!) (ii19_nat13c.py)
+
+- **THE PAIRS-IN-CHOSEN-D6s**: 7,140 distinct (the co-occ-spread {3..72} (the mean 20.7!!))
+- **THE BEST-PARTNER-CO-OCCS (THE CELLS'-POTENTIAL!!!)**: the mean **45.9** — most sources have ONE partner serving ~45-72 of the 286-chosen-D6-builds!!!
+- **THE NAT14's-CORE (THE FINAL-STEP (THE PRECISE!!!))**:
+  (a) THE GCHECK's-FREE-READ-RULE-RE-READ (the §511's-discovery: "the register read at the SAME frame: FREE (no climb, the CUR-STAYS!!!))" — THE SOURCES'-SINGLETON-FREE-READS?! — the R420's-own [1, 1, 2]-chains (the 2-FREE-singleton-reads + 1-cell-read!!!)
+  (b) THE CELLS-LADDER: the cells {u, w} (the ~45-D6-service (the pairs'-gold!!!)) + the D6-builds reading the CELLS (the sources'-~78-wall -> the ~1-3-cell-memberships!!!)
+  (c) THE GATES -> THE REPLAY -> THE TRUE-HIST -> THE TRUE-PRICE -> **THE GCHECK -> THE WORD!!!**
+- **THE R-ESTIMATE (THE CONVERGED!!)**: the 286-D6s + the ~60-120-cells + the ~42-specials + the 9-gathers = **the ~400-460 (THE WORD4-CLASS (the ~-23%-model?! — the R-SHAVE (the sharing (the ~2-4h (THE NEXT!!!))))**
