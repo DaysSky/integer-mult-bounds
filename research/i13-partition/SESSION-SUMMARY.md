@@ -269,6 +269,46 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 3. Resume the cover enumerators for the 4-section class overlap census.
 4. Do NOT build on the +1.06% / +24% / +28% histogram numbers — all three lacked a layer.
 
+## THE E8 SPARSE-DECODER ARC (phases 1-3; e8_rowspace.py, e8_enrich.py, e8_sparse_word.py)
+
+- **PHASE 1 — the rank-9 space PROVEN rigid (100% exhaustive):** all 512 codewords of B0's
+  row space: weights {0: 1, 56: 255, 64: 255, 120: 1}; every target's ONLY legal codeword
+  is its own full perp (weight 64).  No sparse decoder at rank 9 — proven, not assumed.
+  (RAM note: the first run had a broken basis reduction — 48 pseudo-basis vectors, a 2^48
+  enumeration, a 22 GB explosion, killed; the dict-pivot elimination is the fix, plus an
+  abort guard.  The macOS ru_maxrss is in bytes — the old 'rss MB' labels were KB.)
+- **PHASE 2 — THE SPARSE DECODERS EXIST (the HANDOFF's lever realized):** the cancellation
+  construction r'_t = r_t XOR ind(perp(t) & perp(x_t)): rows legal BY CONSTRUCTION (the XOR
+  only removes bits from the full perp).  Every orthogonal pair's common perp is EXACTLY
+  30 lines (a striking uniformity: 7,560 pairs, one size).  Greedy partner curve:
+  k=1: rows 34, rank 113 | k=2: rows 30, rank 33 | k=3+: rows 4, rank 57 (saturated).
+  The k=2 candidate: demands 30 lines/target (vs B0's 63) at rank 33 (vs B0's 9).
+- **PHASE 3 — THE ECONOMICS (three walls, all measured):**
+  (a) THE SHARING LOSS: the uncoordinated greedy randomizes the junks — 120 distinct sets,
+  pairwise overlaps mean 9.2 (the I13 pair-specific signature): the E8's shared middle
+  calculus is destroyed; the honest middle stays ~120-160, not the linear-scaled ~90.
+  (b) THE CST PENALTY: the retained 33 registers (cst ~200 est.) vs B0's 9 (cst 72): at
+  R-parity the decoder-side cost exceeds the load savings.
+  (c) THE PRICE REGIME: the frozen-shape family reproduces the R420's published c EXACTLY
+  (0.001653826988146798944268, ratio 1.0000 — the perfect control) and prices the R434
+  parameters at 0.0016257 (the R434's own hist differs: the 7.3% calibration).  But the
+  ENTIRE k=2 grid (R 323-403, mass/v 36.8-43.4) returns NO ROOT: the root's existence is
+  R-driven, not mass-driven — the model roots only at R/v >= ~3.5 (the published words:
+  R420 = 3.50v, R434 = 3.62v, P111 = 3.95v).  The lighter sparse words (R/v 2.7-3.4) fall
+  in the IDENTITY-WORD CLASS: the model's refusal band.
+- **THE VERDICT:** within the regime, the k=2 word prices BELOW the frontier (the cst +
+  the sharing penalties); outside the regime, unpriceable (the hub's template question —
+  the same open question as the identity word: whether the pipeline could ever use the
+  lighter words).  THE FRONTIER (E8 R434, c = 0.0017444) STANDS UNBEATEN.
+- **THE LIVE REFINEMENTS:** the frame-aligned cancellation (the coordinated partner choice
+  preserving the E8 sharing — the R420's own x(t) 4-frame partners); the exact minimal-cst
+  factorization of the k=2 decoder; the regime question itself.
+- **THE SESSION-LEVEL DISCOVERY:** THE FORMAT'S VALIDITY LIVES IN THE PIPELINE/MODEL LAYER
+  (the R/v ~ 3.5 regime), NOT THE CHECKER LAYER (the identity word passes gcheck!!).  The
+  checker hierarchy: gcheck (flow) < xcheck (flow + the delivery decomposition) < the price
+  model's regime (the pipeline's asymptotic requirements — the hub's #463/#510 template:
+  THE OPEN FORMAT-THEORY QUESTION).  A gcheck PASS is necessary, not sufficient.
+
 ## The E8 sparse-decoder hunt + THE IDENTITY-WORD DISCOVERY (2026-10-18, later session)
 
 - **THE E8 SPARSE-DECODER HUNT (e8_sparse_decoder.py):** B0 = (J+G) mod 2 verified (rank 9
