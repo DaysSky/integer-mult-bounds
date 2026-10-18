@@ -817,6 +817,39 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   the build blocker; (3) THE PAYOFF: bit-side only (the selected κ is
   COMPLEX-bound!!).
 
+## THE PRICER'S INTERNALS READ — THE SRC-WORK QUESTION SETTLED; THE ALL-TAIL'S LEGALITY RE-OPENED (pricer.py; SS1582)
+
+- **THE PRICER'S CONFIRMED SCOPE (the code read!!)**: `price(local, v, h, R)`: the
+  profile = the local hist x T x L (the 288 replicas!!) + the rem (the hosting
+  leftovers!!) x T (the 32!!); the root: F(q) = Σ_r z_r (r/(mW)) (m/r)^q + 32m·tot·
+  m^q/(1e16·W) − 1; m = 1 + L(h−1) = 73 (at h=9!!); W = 2KvT; the hosting: nres =
+  R·L ≤ cap (Σ 2v·(c//w): the R ≤ 4v wall!!).  **THE MODEL'S ONLY WORD-LEVEL INPUT:
+  THE REGISTER-VISIT PROFILE (the local hist!!) — THE GATE SRC-READS ARE ABSENT FROM
+  THE MODEL (CONFIRMED BY THE CODE!!)**.  The controls (the `__main__`!!): the P111
+  {1: 1321, 2: 1342, 3: 80, 4: 47, 5: 102, 6: 10, 7: 18} at R=439 + the R420 {1:
+  1320, 2: 1440, 4: 60, 5: 120, 8: 9} at R=420: THE EXACT PUBLISHED REPRODUCTION ✓✓.
+- **THE IMPLICATION**: the model IS the format's own cost model (the exact
+  reproduction!!) — the c is determined by the register-visit profile ALONE: the
+  src-reads are NOT an independent cost in the model.  THE COARSE DESIGNS' PRICES
+  (+1.09% to +20.06% at TH=5-24!!) ARE THE MODEL'S TRUE VERDICTS on the register-mass —
+  the src-proportionality caveat (the published words' ~1:1 src/mass ratio vs the
+  coarse designs' ~1.3-1.7x!!) remains the extrapolation-domain question.
+- **THE ALL-TAIL'S LEGALITY RE-OPENED (the decisive structural question!!)**: IF the
+  read rule is 'the src's frame ⊆ the dest's frame' (the merge-in direction: the E8's
+  cells: the sources at {s} (dim 1!!) ⊆ the cell's dim-2 frame ✓; the (b)-model's
+  read-slot logic (s > sp!!) ✓✓), THEN the all-tail's A-gates are LEGAL (the sources
+  at {s} (dim 1!!) ⊆ the tail's dim-8 span!!) — and the +67.70% would be a REAL model
+  verdict on a LEGAL design!!! — **THE SANITY CHECK: the published E8 frontier
+  (R=434!!) would be crushed by the all-tail E8 (R=129!!) — IMPOSSIBLE — SOMETHING
+  MUST BLOCK IT**: the climb rule's exact form (the ⊆ vs the ⊇ direction!!), the
+  sources' mandatory climbs (the mass identity's 2v(h−1)!!), the scatter's free-form
+  exception (SS1126!!), or the C-phase's reverse: **THE GCHECK RE-READ (the
+  climb/gate rules!!) IS THE DECISIVE NEXT STEP.**
+- **THE STANDING**: the coarse direction's model crossings (+1.09% to +20.06%!!) +
+  the pricer's confirmed scope (the srcs unpriced!!) + the all-tail's legality
+  question (the gcheck rules!!) + the nesting failure (the SS1515 build blocker!!) +
+  the bit-side-only payoff.
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
