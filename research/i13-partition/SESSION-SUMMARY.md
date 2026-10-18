@@ -40,16 +40,22 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   legality simulation, and the exact pricer at the TRUE histogram — the difference between
   'prices above the frontier in every measured band' and 'a frontier word' (the pricer-trap
   lessons of this session apply in full).
-- **REFINEMENT SWEEP (shape-optimized; ii19_refine.py).**  The shape grid matters enormously:
-  best shapes are CONCENTRATED (src [9], tgt [9], mid [9]) at E8-grade cst 72, not the
-  spread [1,8] shapes of the budget scan.  Best c per scenario: probe c_t 10.3 / dead 300
-  -> 0.0026009 (+49.1%); free corrections / dead 300 -> 0.0028100 (+61.1%); free corrections /
-  dead 150 -> 0.0029071 (+66.7%); c_t 8.5 + free corr / dead 300 -> 0.0032933 (+88.8%).
-  CAVEAT (honest): the dead 150-300 bands may be optimistic — the design's distinct-flat
-  content (2,100+ flats x ~35 lines ~ 73k slots) at the E8 16.7:1 ratio prices mids ~4,400;
-  ii19_trueprice.py prices the honest content//17 and content//8 bands from the true ledger,
-  and ii19_assembly.py measures the true hierarchical middle.  The verdict may tighten from
-  the sweep's +49-89%.
+- **THE INLINE-DELIVERY GRAMMAR — THE VERDICT FLIPS (ii19_tiles2.py + threshold analysis).**
+  Popularity-first refinement converged at pool 5,362 (fixed point; 92% of reads ride the
+  top-3,000).  KEY STRUCTURAL FACT: single-use tiles are not worth registers.  INLINE
+  GRAMMAR (E8's mechanism): keep tiles used >= 2x as registers (2,230), INLINE single-use
+  tiles' contributions as raw SOURCE-LINE reads (work, not registers).  R = 2,337 (R_id,
+  measured) + 2,230 (tiles) + 90 (decoder) = 4,657 = 12.90v — UNDER the 15.0v budget (5,414)
+  and the 13.4v pessimistic (4,846).  PRICED at the measured histogram (H = R - 3v
+  convention, shape grid, best shapes [9]/[9]/[9] at cst 72): c = 0.0022990 (+31.80% vs
+  frontier) corrections counted; +36.73% corrections free; deeper-inline (>2) threshold:
+  +57.89%/+65.02%.  Every number in this band is from a COMPLETED computation (design
+  361/361, tiling 2,375 pieces, refinement converged, threshold measured) — the pricer-trap
+  lesson applied.  HONEST GATES REMAINING: (1) WORK DENSITY — assembly reads total ~44k ops
+  (~120/line vs E8's 25/line); the price model does not directly price read incidence; the
+  Stage-4/5 verification must check the work side before any word claim; (2) LEGALITY of
+  inline source-line reads (gates at legal frames; tile-register ranks) — the Stage-4
+  simulation; (3) decoder construction (cst robust through 120).
 - **ASSEMBLY VERDICT (ii19_assembly_par.py, two-phase 10-worker).**  The TRUE naive
   hierarchical middle of the v1 design: distinct lvl5 1,875 + distinct lvl4 5,534 + gates/8
   2,619 = 10,028 registers -> R = 12,365 = 34.3v, vs the 3,077-3,275 mids budget — DEAD by
