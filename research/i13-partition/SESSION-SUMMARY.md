@@ -1157,6 +1157,34 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   ILLEGAL structure (the rooms' source-collisions!!!) — the model crossings stand
   ONLY on the unresolved source-chain structure.
 
+## THE PARTITION-STRUCTURED PIECE ECONOMY — THE FEASIBILITY SCAN: THE E8-GRADE ECONOMY EXISTS (ii19_121pieces.py; SS1682-SS1685)
+
+- **THE SCAN (SS1685!!)**: **THE PARTITION: 30 DISJOINT 4-FRAMES, 120/120 COVERED (the
+  E8's D4 partition's exact analog!!!)**; the piece candidates: 330 (the users {13: 30
+  (the quads!!), 14: 120 (the triples!!), 31: 180 (the pairs!!)}); **THE GREEDY ECONOMY
+  (TH_SAVE=4): 210 PIECES (180 pairs + 30 quads!!); THE USERS-PER-PIECE {13: 30, 16:
+  120, 18: 60} — THE E8-GRADE SHARING (the E8's cells: the ~12 users!!!)**; **THE
+  COVERAGE: THE LEFTOVERS {0: 1, 2: 120}: EVERY ROOT TARGET HAS ONLY 2 LINES UNCOVERED
+  (the special: 0!!!)** — the pieces cover ~62/64 lines per target!!!; **THE SOURCES'
+  CHAINS LEGAL BY CONSTRUCTION (the partition: the ONE 4-frame per source!!! ✓✓✓ THE
+  SS1679 WALL AVOIDED)**.
+- **THE R + THE ARRIVAL**: the pieces 210 + the tails 120 + the gathers 9 = R_struct
+  339; **THE DEMAND 3,510 = 29/line (vs the E8's 25/line!!) — THE ARRIVAL LAW BINDING:
+  9R >= 3,510 -> R_hon 390 (the slack 51!!)**; **THE PRICE AT R_hon 390: the coarse
+  +2.77% / the fine -1.22% — THE BRACKET STRADDLES THE FRONTIER**.
+- **THE KNOWN FIRST-CUT LIMITATION (the SS1682's honest flag!!)**: the
+  reads-at-the-build: the target reads its ~21 pieces at the ~15-20 DIFFERENT 4-frames:
+  THE ONE dim-4 SLOT COLLIDES — **THE READ-ROOMS NEEDED (the pieces' climb-frames: the
+  co-read groups' shared frames: the E8's quads!!!)** — the pieces' contents (the ~2-4
+  lines!!) make the read-rooms' contents the PIECES' UNIONS (the ~6-12 lines: NOT the
+  full perps!!!) — THE SS1679 WALL AVOIDED BY CONSTRUCTION ✓✓✓.
+- **THE REMAINING GATES**: (a) THE READ-ROOMS (the co-read clustering (the ~4-6-target
+  groups: the E8's '6 targets per quad'!!!) + the dim-diversity (the SS1655-SS1661's
+  lessons!!!) + the honest (c)-hist (the pieces' chains [0, 4, the read-dims, 9]!!!) +
+  the re-price!!); (b) the demand/coverage trade-off (the TH_SAVE sweep: the coarser
+  pieces: the fewer users: the lower demand!!!); (c) the payoff: bit-side only (the
+  complex-bound κ!!).
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
