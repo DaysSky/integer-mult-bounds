@@ -1034,6 +1034,73 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   IS THE FIRST THAT BREAKS THE REALIZABILITY OUTRIGHT (not just the price!!): the
   naive designs DO NOT EXIST as legal words.**
 
+## THE ROOM-FIRST DESIGN — THE CLUSTER CENSUS: +15.27% AT THE STRUCTURAL R = 271; THE CHAIN-BUDGET COLLISION (ii19_121cluster.py; SS1645-SS1649)
+
+- **THE CENSUS (SS1649!!)**: the pair common-perps: {31: 3,780 (the ip = +-1 root
+  pairs!!), 37: 3,360 (the orthogonal root pairs!!), 63: 120 (the special's pairs!!)}
+  — ALL >= 12 (7,260/7,260!!); the greedy clusters: 141 groups (the sizes {6: 58,
+  8: 16, 12: 10, 13: 8, ...} — **THE ~6-TARGET GROUPS: THE E8'S '70 quads x 6
+  targets' ANALOG!!!**); the rooms: the dims {4: 8, 5: 128, 6: 4, 7: 1}, the
+  contents {12: 8, 13: 128, 21: 4, 37: 1} (**the ~13-line dim-5 rooms: THE E8'S
+  12-FRAMES ANALOG!!!**), the room-reads 967; the coverage: the mean tail 35.7 (the
+  zero-tail 0; **the special's tail 102: the poor coverage (the 8 rooms x 13 lines:
+  the ~18 unique!!)**); **THE R: 141 rooms + 121 tails + 9 gathers = 271; the demand
+  1,088 (45% of 9R: the arrival law FINE!!); THE PRICE: +15.27% (the coarse AND the
+  fine: the slack-0!!!) — THE CROSSING AT THE STRUCTURAL R WITH THE PERP-SAFETY BY
+  CONSTRUCTION (the rooms' contents ⊆ the common perps!!!)**.
+- **THE HONEST COLLISION (the chain budget!!)**: the rooms' dims are FIXED by the
+  groups' common perps (the frames ⊆ the common perps: THE RAISING IMPOSSIBLE — the
+  fillers would leave the common perp!!!); the targets' ~8 rooms are ~all at dim-5
+  (the 128/141 dim-5 rooms!!): **THE TARGET'S CHAIN HAS ONE dim-5 SLOT — THE ~7 DIM-5
+  ROOMS CANNOT SHARE IT** (the frames differ; the shared frame would need ⊆ EVERY
+  user's perp: the contents fail the cross-users' perps!!!) — THE CHAIN-BUDGET
+  COLLISION (the same class as the SS1515/SS1636 walls, but NOW THE CONTENTS ARE
+  PERP-SAFE BY CONSTRUCTION: the question is the DIMS!!!).
+- **THE IDENTIFIED FIX — THE DIM-DIVERSITY CLUSTERING**: the per-target rooms at
+  the DISTINCT dims 2-8 (the cap 7!!): the un-grown pairs give the dim-7 rooms (the
+  37-line contents: the BIG coverage!!), the grown groups the dim-5s — the target's
+  ~7 rooms spanning the ~7 dims; the honest cost: the low-dim rooms' small contents
+  (the dim-2-3 common perps: the ~2-5 lines!!) -> the bigger tails — THE
+  MEASUREMENT (ii19_121cluster2.py!!!).
+- **THE OTHER HONEST FLAGS**: (a) the special's delivery: the heavy tail 102 (the
+  (c)-corrected mass counted ✓!!); (b) the threshold 12: the sensitivity
+  unmeasured; (c) the payoff: bit-side only (the complex-bound κ!!); (d) the
+  nesting: the rooms' frames' cumulative nesting along the targets' chains:
+  unverified (the dim-diversity design's layer!!!).
+
+## THE DIM-TARGETED CLUSTERING v4 — +26.31% AT R=229; THE NESTING GATE => THE GROUP-NESTING (THE FLAG!!) INSIGHT (ii19_121cluster3/4.py; SS1657-SS1661)
+
+- **THE v3 (SS1657!!)**: the dim-aware stopping: 63 groups BUT the CP-PRESERVERS (the
+  c's orthogonal to the WHOLE current common perp: the ⊥-complement's lines!!) stall
+  the growth: THE DIM STUCK AT 7 -> 7,197 rejects -> the 112 targets with ONE room
+  (the degenerate +36.81%: the SS1575 artifact class!!).
+- **THE v4 (SS1661!!)**: THE DIM-TARGETED GROWTH (the c's must MOVE the dim (d2 !=
+  d: the cp-preservers SKIPPED!!!) + land on a dim FRESH for ALL!!!) + THE FAST PATH
+  (d = 9 - span_rank(grp): the ⊥-complement!!! verified vs SS1649/SS1657!!):
+  **100 groups: the 60 dim-7 pair-rooms (the 37-line contents!!) + the 40 dim-6
+  triple-rooms (the 21-line!!); THE PER-TARGET DIM-DIVERSITY {2: 120}: EVERY target
+  has 2 rooms at the DISTINCT dims {6, 7} — THE CHAIN-SLOTS SOLVED BY
+  CONSTRUCTION!!!**; the coverage: the mean tail 22.7 (the zero-tail 1!!); **THE R:
+  100 + 120 + 9 = 229; the demand 360 (36% of 9R!!); THE PRICE: +26.31% (the coarse
+  AND the fine: the slack-0!!) — THE BEST STRUCTURAL CROSSING YET: the perp-safety BY
+  CONSTRUCTION (the contents ⊆ the common perps!!!) + the distinct chain-slots +
+  the arrival 36%!!!**
+- **THE NESTING GATE (the new wall, found in the analysis!!)**: the target's chain
+  frames must NEST (F6 ⊂ F7 ⊂ the t-perp!!): the F7 = the dim-7 room's content's span
+  (FORCED: the dim-7 content ⊆ F7 with the dims equal!!); the F6 = the dim-6
+  content's span; the nesting ⇔ **span(dim-6 content) ⊆ span(dim-7 content) ⇔
+  span(the dim-7 group) ⊆ span(the dim-6 group)** (the ⊥-duality!!!) — GENERICALLY
+  FALSE (the c3 ∉ span([t, c1, c2])!!!): **THE v4's 2-ROOM CHAINS ARE ILLEGAL
+  AS-IS**.
+- **THE GROUP-NESTING INSIGHT (THE E8'S FLAG ANALOG!!!)**: the fix: **THE ROOMS'
+  GROUPS NESTED along each target's chain: the pair [t, c1] ⊂ the triple [t, c1,
+  c2] ⊂ the quad ... (the dims 7, 6, 5, ...!!)**: the contents nest (the dim-7 ⊇
+  the dim-6!!): the frames nest ✓✓ LEGAL; the coverage: the XOR-unions (the dim-7 ⊕
+  the dim-6 = the dim-7 − the dim-6 (the ⊆!!): the ~37 for t; the c1's: its own pair
+  ⊕ this triple (the NEW ~9!!!): THE ROOMS USEFUL FOR THE OTHER USERS ✓✓✓ —
+  **THE FLAG STRUCTURE = THE E8'S D4 WAY (the cells ⊂ the quads!!!)** — the v5: the
+  nested-group clustering (the shared flags!!!).
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
