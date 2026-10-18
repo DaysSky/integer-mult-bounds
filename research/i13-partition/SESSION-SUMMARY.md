@@ -953,6 +953,58 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   DESIGN (the next gate: the composites' sharing + the R impact!!) + the bit-side-only
   payoff.
 
+## THE COMPOSITE RECURSION — THE TRUE REQUIREMENT: THE JOINT ROOM-FLAG DESIGN (SS1616-SS1619)
+
+- **THE COMPOSITE APPROACH RECURSES**: the co-read pieces merged into the composites
+  (the single (t, d)-registers: the composite ⊥ its user -> the single-composite
+  room SAFE!!) — BUT the composite's BUILD: the srcs (the pieces!!) climb to the
+  composite's frame: the pieces' chains through the MULTIPLE composites at the same
+  dim hit THE SAME TRANSITIVE MERGE AT THE SRC-SIDE (the piece p src of c1 (t1's
+  co-read) and c2 (t2's co-read): the room {p, c1, c2}: c1's content ⊥ t2 NOT
+  guaranteed!!!) — THE RECURSION NEVER ENDS AT THE NAIVE LEVEL.
+- **THE E8'S ACTUAL SOLUTION — THE FULL JOINT FLAG (the D4 structure!!!)**: the
+  R420's rooms (the 12-frames!!) are the NESTED flags (the 4-frames ⊂ the
+  12-frames ⊂ ...!!) whose co-read sets ARE the D4 structures: the co-read unions ⊥
+  the rooms' targets BY CONSTRUCTION (the D4!!!) — THE 121-LINE WORD NEEDS THE SAME:
+  the piece economy WITH the room constraints (the co-read sets' unions ⊆ the common
+  perps!!!) — THE ROOM-SAFE REDESIGN.
+- **THE NEXT MEASUREMENT (the push!!)**: the room-aware RE-SLOT (the pieces -> the
+  dims with the per-dim components' perp-safety!!!) + the composites' fallback (the
+  room-unsafe pieces -> the per-target merges: the R cost!!) + the (c)-hist + the
+  price: DO THE CROSSINGS SURVIVE THE ROOM-SAFE REDESIGN?!
+
+## THE ROOM-SAFE RE-SLOT — THE CATASTROPHE AT ALL THREE CROSSING THs (ii19_121safe.py; SS1624-SS1628)
+
+- **THE COMPLETE 3-TH VERDICT (SS1628!!)**: TH=8: **unsafe 89/108 (82%!!)**, the
+  fallback 1,945 reads, R_str 2,183, NO-ROOT; TH=16: **unsafe 47/54 (87%!!)**, the
+  fallback 1,512, R 1,696, NO-ROOT; TH=24: **unsafe 45/52 (87%!!)**, the fallback
+  1,481, R 1,663, NO-ROOT.  THE NO-ROOT IS THE HOSTING WALL (the nres = 9R ~ 15,000
+  >> the cap 4,356: THE R >> 4v = 484!!!) — the room-safe designs (my greedy's!!)
+  are WAY beyond the wall.  (The KeyError crash at SS1624 — tgt_dims[t] not
+  initialized for the no-read targets!! — fixed with setdefault at SS1626!!).
+- **THE HONEST CAVEAT — MY GREEDY OVERSHOOTS**: the big-user-pieces-first ordering
+  creates the components early; the later pieces (the overlapping-but-different user
+  sets!!) fail the transitive perp-checks -> the 82-87% rejects.  THE NAIVE SLOTS
+  (SS1615!!) had only 9 failing rooms (the giants: the ~165-item transitive
+  components at the heavy dims 6-8!!) — THE TRUE OPTIMUM IS BETWEEN: the
+  constraint-satisfaction (the pieces -> the dims with the per-dim perp-safety,
+  minimizing the composites!!) — the repair (the local search: the giant rooms'
+  pieces moved to the other dims!!) is the bounded attempt.
+- **THE STRUCTURAL INSIGHT (the deeper!!)**: THE ROOM-SAFETY (the transitive
+  perp-safety!!) IS NOT FREE FOR THE JUNK-INTERSECTION PIECES: the E8's D4 luck
+  (the co-read sets ARE the D4 structures: perp-safe BY CONSTRUCTION!!!) does NOT
+  transplant — the 121-line economy's co-reads create the giant transitive merges —
+  THE ROOM-SAFE ECONOMY (the pieces CHOSEN with the co-read perp-safety!!) is the
+  deeper redesign.
+- **THE STANDING (after the room-safety layer!!)**: the model crossings (TH >= 8:
+  the fine-slack +2.32% to +15.41%!!) are computed on the hist models ASSUMING the
+  room-nesting — THE ROOM-SAFETY LAYER SHOWS THE NAIVE DESIGNS NOT REALIZABLE and
+  the naive fixes catastrophic (my greedy!!!) — the remaining paths: (a) THE REPAIR
+  (the local search: the giant rooms' pieces re-dimensioned!!) — the bounded
+  attempt; (b) THE ROOM-SAFE ECONOMY — the substantial redesign (the pieces chosen
+  so the co-read unions stay perp-safe BY CONSTRUCTION, the E8's D4 way!!); (c) the
+  handoff (the fresh session with THIS record!!!).
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
