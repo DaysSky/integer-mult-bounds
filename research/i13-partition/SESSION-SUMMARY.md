@@ -776,6 +776,47 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   caveats (the scope questions, the bit-side-only payoff!!) make the honest
   expectation: BELOW.
 
+## THE THRESHOLD SWEEP — THE COARSE DIRECTION CROSSES ROBUSTLY AT THE MODEL LEVEL; THE ALL-TAIL EXTREME EXPOSES THE PRICER'S SRC-WORK BLIND SPOT (ii19_121sweep.py; SS1572-SS1575)
+
+- **THE SWEEP (SS1572!!)**: the piece economy's THRESHOLD (the greedy's stopping:
+  saving >= TH — MY ARBITRARY SS1423-ERA CHOICE OF 4!!) IS THE UNEXPLORED DESIGN
+  DIMENSION:  TH=6: R_hon 284, LM 14,325: **coarse-slack +4.47% / fine-slack
+  +2.16%**;  TH=5: R_hon 290, LM 14,765: **+2.86% / +1.09%**;  TH=4 (the committed
+  design!!): 299: +0.17%/-0.82% (the marginal bracket!!);  TH=3: 307: -2.47%/
+  -2.54%;  TH=2: 322: -5.09%.  THE CONTROL PASSES EXACTLY (the TH=4 row = the SS1556
+  numbers!!).  THE MECHANICS: the coarser pool shrinks R (286->268->256!!) AND
+  coarsens the hist (the LM 15,498->14,765->14,325!!): BOTH push the price UP.
+  **THE FINE-SLACK BRACKET (the realistic piece-like slack chains!!) IS ABOVE AT
+  TH=5/6: +1.09%/+2.16% — THE MODEL-BAND CROSSING IS NO LONGER MARGINAL!!**
+- **THE EXTENSION (SS1575!!)**: TH=7: 278: **+5.91%/+3.46%**; TH=8: 269:
+  **+7.97%/+5.25%**; TH=10: 246: **+13.64%/+10.35%**; TH=12: 235: **+16.14%/
+  +12.80%**; TH=16: 208: **+22.22%/+19.51%**; TH=24: 205: **+22.68%/+20.06%**;
+  **TH=100 (THE ALL-TAIL LIMIT!!): R=130 (0 pieces: each target served by ONE
+  register: its full-perp tail!!): +67.70% (!!)**.  The feasibility stays clean
+  (unplaced 0, conflicts 0) through TH=24.
+- **THE ALL-TAIL ABSURDITY — THE PRICER'S BLIND SPOT EXPOSED (the decisive honesty
+  finding!!)**: the all-tail's '+67.70%' CANNOT BE TRUSTED: its A-phase reads ~121 x
+  64 = 7,744 SOURCES (each tail's build = the full perp(t)!!) — the src-work ~2.4x
+  the entire register-mass (3,179!!) — **THE PRICER'S MASS MODEL (the register
+  chains ONLY!!) DOES NOT PRICE THE GATE SRC-READS**.  THE PIECES' TRUE PURPOSE (the
+  greedy's saving k x u - (k+u) = THE SRC-READ SAVING: the u users read ONE register
+  instead of k sources each!!) — NOT the register count (the all-tail has FEWER
+  registers!!) — **THE SRC-WORK IS THE UNMODELED COST COMPONENT**, and the published
+  words' piece structure (the R420!!) exists precisely to keep it proportional
+  (~1:1 the srcs/mass at the published designs; the all-tail's ratio ~3.1: WAY OUT
+  OF THE MODEL'S DOMAIN!!).
+- **THE HONEST CROSSING CLAIM**: the model band (the pricer's domain!!): +1.09%
+  (TH=5, fine!!) to +22.68% (TH=24!!) — ROBUST AT THE COARSE THRESHOLDS — but the
+  src-work question (does the pipeline's true cost make the coarse direction's
+  prices real??) is THE UNRESOLVED HONESTY GATE: the total-work view (the climbs +
+  the srcs!!) puts the true optimum in the TH ~10-24 region (the total ~10,300 vs
+  the TH=4's ~11,200 and the all-tail's ~13,100!!).
+- **THE REMAINING GATES (updated!!)**: (1) THE SRC-WORK'S ROLE in the pipeline's
+  cost model (the pricer's internals: the idle_slots/nres/the work definition!!)
+  — THE DECISIVE READ; (2) THE NESTING (121/121 target chains FAIL: SS1515!!) —
+  the build blocker; (3) THE PAYOFF: bit-side only (the selected κ is
+  COMPLEX-bound!!).
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
