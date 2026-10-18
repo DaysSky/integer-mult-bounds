@@ -5,6 +5,30 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
 
 ## CORRECTIONS (post-verification; supersede numbers below where they conflict)
 
+- **Frontier moved (parallel session, research/e8-bit-p111-r434): the new best c is 0.0017443859508
+  (+0.57% over E1, R = 434).**  Re-priced against the NEW frontier: the dead-573 model design's kappa
+  (0.0017529) is +0.49% ABOVE it; kappa crosses the new frontier at dead = 584 (R = 1,312 = 3.60v).
+  All "break-even ~685/935/705" numbers below refer to the OLD frontier and shift accordingly (~+11
+  registers of allowance each).
+- **ALL-WORD LOWER BOUND (skeleton, session-end; allword_lb.py).**  Counting argument over any word:
+  total line-slot transfers T must cover (a) the system constant sum_t |R(t)| = 70,356 (mean perp
+  193.3), plus (b) each non-source register's own content arriving somewhere: T >= 70,356 + (R - v).
+  Visit cap: T <= 13 R (one frame per dimension, gcheck climb rule).  => 13R >= 70,356 + R - 364
+  => **R >= 5,833 = 16.0v for ANY I_{13,1} word**; kappa at that R (best histogram shapes) =
+  0.0005923 = **-66.0% vs the new frontier**.  Formalization gaps a proof must close: (i) the
+  13-visits cap is the gcheck climb rule (format theorem — already stated in halves_struct.py);
+  (ii) 'every register's content must arrive somewhere' excludes... nothing: sources hold single
+  lines (v of them), every other register is written by a gate, i.e. its content arrives by transfer;
+  (iii) the transfer-count T is over (register, visit) pairs with multiplicity = |content| — the
+  identity T >= sum_t |R(t)| + (R - v) needs the check that each target's perp sum is assembled from
+  transfers exactly (no free reuse).  If (i)-(iii) hold, the Lorentzian question for I_{13,1} is
+  CLOSED rigorously: kappa <= 0.00059 < 0.00174.
+- **Arrival-count floor (new, session-end): the PG-top architecture cannot reach ANY frontier.**
+  Counting gate-events: the 610 demands need 15,411 line-arrivals at 618 distinct piece frames; each
+  register supplies at most 13 arrivals (one per dimension); so middle registers >= 15,411/13 = 1,186,
+  R >= 2v + 1,186 = 1,914 = 5.26v, and kappa at that R (best shapes) = 0.0013889 = **-20.4% vs the
+  new frontier**.  This is a hard counting floor for ANY feeding scheme on the PG top — it closes the
+  architecture as a frontier candidate (the model kappas above assumed arrivals were free).
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
