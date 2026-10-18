@@ -1550,76 +1550,33 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   case -17.66% (the unrealizable!), the realistic NO-ROOT/unhostable — **THE II19
   CLOSED AT THE WALL-BAND: NO BAND CROSSES THE FRONTIER**
 
-## THE SS1867 AUDIT — 'look at every single path from start to end result and find stuff that you havent tuned explicitly for lorentzian' — THE SYSTEMATIC AUDIT + THE R420-EXTENSION HYPOTHESIS
+## THE R420-EXTENSION BUILD — STAGE 1: THE RE-BASE VERIFIED PERFECTLY (ii19_ext.py; SS1914)
 
-- **THE EVERY-PATH AUDIT (the start -> the end result!!)**: (1) the lines ✓ the Lorentzian;
-  (2) the form ✓; (3) the h ✓ (the span dims: the 121: 9; the II19: 10!); (4) the demands
-  ✓ (the B0 rows: the completeness-forced (SS1150!)!); (5) the decoder ✓ (the asymmetric
-  re-examined (SS1123-1125!) -> the completeness -> the B0 -> the rank-forced (241!)!);
-  (6) the covers ✓ (the stall-tail: 9.5-10.3!); (7) the middle ✓ (the rooms: the
-  closed!); **(8) THE CLIMB SHAPES: NEVER MEASURED — the naive/D MODELS ONLY (the E8's
-  proportions!)**; (9) the gates ~the format's; (10) the scatter ✓; **(11) THE PRICER's
-  K=4/T=32: THE E8-CALIBRATED PIPELINE CONSTANTS — NEVER RE-EXAMINED for the
-  Lorentzian!!**; (12) the window m ~the pipeline's; (13) the wall ~the pipeline's (the
-  #463/#510!); **(14) THE c: THE MODELS ONLY — THE TRUE c NEVER COMPUTED for any
-  Lorentzian word!!**
-- **THE FINDING (the never-tried architecture!!)**: EVERY session Lorentzian architecture
-  (the pieces/rooms: the I13-derived covers!!) used the E8's NUMBERS as the models (the
-  D-variant!!) — **BUT THE E8's ACTUAL MECHANISM (the SS1752 discovery: the carriers
-  (the 1-line!) -> the incremental sums -> THE FREE SAME-FRAME RE-READS!!) WAS NEVER
-  APPLIED TO A LORENTZIAN DESIGN!!**
-- **THE R420-EXTENSION HYPOTHESIS (the breakthrough candidate!!)**: the 121-line system
-  (the unique h=9: the 120 E8 roots + the special (0,1,1)!) — **THE R420's OWN WORD IS
-  THE 120-ROOT-PART's WORD ALREADY!!** — the roots' demands: the perp(root) = the 63
-  roots + THE SPECIAL (the 64!) — the R420's machinery (the cells/rooms/carriers/sums!)
-  covers the 63-root part DIRECTLY; **the special's extension: the special's own demand
-  (the 120 roots: the special ⊥ ALL!) + the roots' +1 (the special!)** — the R: the
-  ~420 + the special's cost (the small!) -> the R ~440-450 -> the wall 511 ✓ FITS!! —
-  the window: the m=73 (the P111-analogous: the 1.66!!) -> **THE PRICE: THE UNMEASURED
-  — THE FIRST MEASUREMENT NEXT!!**
-
-## THE R420-EXTENSION SCAN — THE WINDOW's POTENTIAL REVEALED BUT THE HONEST DECODER KILLS IT (ii19_121ext.py; SS1872)
-
-- **THE SYSTEM VERIFIED**: the 121 lines (the 120 roots + the special!!); the norms
-  {2.0: 121} ✓; the Gram rank 9 ✓ (the h=9!); **THE GF(2) RANK OF B0: 9 ✓✓✓ — THE CHEAP
-  DECODER (the E8 block!!)**; the perps {64: 120, 120: 1} ✓
-- **THE CONTROL PASSES PERFECTLY**: the R420's true hist -> the published c (the
-  18-digit match: 0.001653826988146798928 vs ...944268!!)
-- **THE PRICE SCAN (the R 380-511 x the naive/D/R420-profile x the decoder copy
-  ranks!!)**: **THE dr=1 BANDS (the ILLEGAL free decoder: the mass 9!): +84.42% to
-  +142.05% (!!!) — THE WINDOW's POTENTIAL: the 121-line's m=73 window is CAPABLE of
-  +100%-class prices!!**; **THE dr=9 BANDS (THE HONEST decoder: the 9 retained x the
-  climb-to-FULL delta 9 = the mass 81, the R420's own {8: 9} convention!!): -34.80% to
-  -50.28% — BELOW THE FRONTIER AT EVERY R!!**; the wall edge (R=511): NO ROOT for all
-- **THE DECISIVE STRUCTURE: THE DECODER's 72-MASS DIFFERENCE (the dr 1 vs 9) SWINGS THE
-  PRICE BY ~150-176 POINTS!!** (the dr=1 +141.66% vs the dr=9 -34.90% at the R=380 D!)
-  — the known mass sensitivity (~2.45 points/mass!) concentrated in the decoder's
-  climb-to-FULL cost!!
-- **THE HONEST VERDICT**: the retained registers climb 0 -> FULL (the delta h each:
-  the R420's own {8: 9} convention!) -> the cst = rank x h = 81 FORCED -> **THE
-  R420-EXTENSION PRICES BELOW THE FRONTIER BY ~35-50% AT THE HONEST ACCOUNTING — THE
-  HYPOTHESIS's ANSWER: NO CROSSING**
-- **THE ASSET (the window's potential!!)**: the 121-line's window (the m=73, the
-  v=121: the P111-analogous!) CAN price at +100%-class — the dr=1 artifact proves the
-  ceiling exists — **the blocker is the mass profile (the 1,936 sources+targets + the
-  9R middle + the 81 decoder), not the window!!** — the crossing needs ~6-17 mass
-  BELOW the honest floor (the cst 81 -> ~65-75: BELOW the proven 73-floor!!)
-
-## THE K/T SCAN — THE AUDIT's ITEM #11 CLOSED: THE K=4 IS THE ANCHOR; NO K/T HELPS (ii19_kt.py; SS1879)
-
-- **THE R420 CONTROL**: the published c reproduces at the K=4 (all T: the -0.00%!!);
-  the K=5: the -0.82%; the K=6: the -2.90% (the WORSE!); **THE K=2/K=3: NO ROOT (the
-  window too small: the m = 1+L(h-1)!!)**; **THE T IS IRRELEVANT** (the T=16/32/64 give
-  the IDENTICAL c's at every K — the T: the W-only!!)
-- **THE 121-LINE (the D + the dr=9)**: the K=4: the -34.90/-38.13/-39.64% (the R
-  380/420/440!); the K=5: the -34.17/-37.29/-38.78% (the marginal +0.7-0.9 points BUT
-  the K=5 breaks the R420's calibration!); the K=6: the ~the K=4; **THE K=2/K=3: NO
-  ROOT**
-- **THE VERDICT**: the K=4/T=32 is the calibrated AND near-optimal convention — **NO
-  K/T CONFIGURATION PRICES THE 121-LINE ABOVE THE FRONTIER** (the best: the K=5's
-  -34.17% — still 34 points below!) — **THE AUDIT's ITEM #11: CLOSED!!**
-- **THE AUDIT's REMAINING (the #8/#14!!)**: the climb shapes + the true c — both
-  blocked by the build — **THE ONE UNTRIED PATH: THE R420-EXTENSION BUILD (the R420's
-  published word (the gcheck-PASSING!) re-based to the h=9 (the +1 final climb per
-  register: the nested chains 0->...->8->9 LEGAL!) + the special's extension -> the
-  gcheck -> THE TRUE HIST -> THE TRUE c!!) — THE BUILD ANSWERS THE #8/#14 BOTH!!**
+- **THE ONE UNTRIED PATH (the commit 61d634e4!!)**: the R420's published word (the
+  gcheck-PASSING design!) re-based to the h=9 (the +1 final climb per register: the nested
+  chains 0->...->8->9 LEGAL!) + the special's extension -> the gcheck -> THE TRUE HIST ->
+  THE TRUE c!! — THE BUILD ANSWERS THE AUDIT's #8/#14 BOTH (the climb shapes + the true c!!)!
+  THE MILESTONE EITHER WAY: the FIRST gcheck-PASSING II19-family word (the real, constructed!)
+- **THE LOAD (SS1914!!)**: the R420's word: the keys ['A','B','C','D','R','coords','final',
+  'form','format','frames','h','lines','ret','scatter','start','v']; the 672 frames (the
+  line-counts {0:1, 1:120, 2:180, 12:70, 30:180, 63:120, 120:1} — THE SS1261 ANATOMY
+  CONFIRMED!!); the 120 lines (the sample [2,0,0,0,0,0,0,0] — THE NORM-4 REPRESENTATIVES!!)
+- **THE 121-LINE SYSTEM**: the R420's own lines (+0 -> the 9-dim) + THE SPECIAL
+  (0,...,0,1): **THE SPECIAL ⊥ ALL 120 ROOTS (0 FAILS!!)** ✓✓; the norms {2: 1, 4: 120} —
+  THE CONVENTION FLAG: the R420's representatives are norm-4 (the doubled/halved-form
+  convention!) vs the special at norm-2 — HARMLESS for the flow (the gcheck checks the
+  ⊥-structure + the frames' spans, NOT the norms!!); the rref with the EXACT Fractions
+  (the SS1716 lesson applied PRE-RUN: the float cancellation would have created the false
+  pivots!!)
+- **THE RE-BASE (the frames' map!!)**: the SAME line-lists for the 551 frames; THE FULL
+  (the 120 -> 121: THE +SPECIAL!!) + THE 120 PERPS (the 63 -> 64: THE +SPECIAL — the
+  special ∈ perp(t) for every root t!!) ✓✓
+- **THE VERIFICATION (the spans over the 121-line form!!)**: **THE RE-BASED DIMS
+  {0: 1, 1: 120, 2: 180, 4: 70, 6: 180, 8: 120, 9: 1} — THE EXPECTED EXACTLY!!** (the
+  perps: the 63-line's dim-7 -> the 64-line's dim-8 ✓✓; the FULL: the dim-9 ✓; the
+  full-frame dim check: 9 ✓; the perps' dims {8: 120} ✓!!)
+- **THE STAGE 2 (the next!)**: (a) the format-dump (the 'form' field's convention + the
+  'coords' + the 'start'/'final' — the Stage 2's exact semantics!!); (b) THE GATES' RE-BASE
+  (the chains' +1 final climb: the h=8 -> 9!!); (c) THE SPECIAL'S EXTENSION (the 121st
+  source/target + the junks: the special's = the 120 roots, the roots' = the +special!!);
+  (d) THE GCHECK -> THE TRUE HIST -> THE TRUE c!!
