@@ -1127,6 +1127,36 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   disjoint-partition; (4) **THE TAILS' SOURCE-CHAINS (the SS1671!!!): THE WALL FOR
   EVERY VERSION** — the recursive room-first is the identified path.
 
+## THE TAIL-ROOMS + THE FULL COLLISION CENSUS — THE ROOMS' SOURCES COLLIDE TOO; THE PARTITION INSIGHT (ii19_121tailrooms.py; SS1676-SS1679)
+
+- **THE TAIL-ROOMS' GREEDY (SS1679!!)**: the pairs' shared leftover-lines: only 19
+  tail-rooms formed (from the 6,497 candidates!!): THE GLOBAL CONSUMPTION STARVES the
+  later pairs (the fresh-shared < 3!!!) — the residuals: the mean 25.2 (barely down
+  from the 27.1!!!): the first cut INEFFECTIVE.
+- **THE FULL COLLISION CENSUS (THE DECISIVE FINDING — the SS1676 fix: the ROOMS'
+  sources INCLUDED!!!)**: the (source, dim) slots 313; the frames-per-slot histogram
+  {1: 180, 2: 12, 33: 1, 34: 3, ..., 42: 14, ..., 52: 2, 59: 1}: **THE ROOMS'
+  SOURCES COLLIDE MASSIVELY: the ~33-59 DISTINCT FRAMES PER SLOT (the ~30-50 room
+  memberships per source line, ALL AT DIM-7!!!)** — **THE ROOMS' BUILDS ARE ILLEGAL
+  AS-IS (the SS1589's (b) wall AT THE ROOM LEVEL!!!)** — the rooms' contents (the
+  ~37-line FULL common perps!!) give each source ~30-50 rooms.
+- **THE DEEPEST INSIGHT OF THE ARC (THE E8'S RESOLUTION DERIVED!!!)**: HOW DOES THE
+  E8 AVOID THIS?! — **THE D4 PARTITION = THE SOURCES' FRAME PARTITION**: the 120
+  roots partitioned into the 30 DISJOINT 4-frames; each source's cells ALL LIVE
+  INSIDE ITS ONE 4-FRAME (the partition's disjointness!!!) — the sources' climbs:
+  THE ONE dim-4 FRAME PER SOURCE ✓✓✓ NO COLLISION — **THE PIECES MUST BE
+  PARTITION-STRUCTURED (the sources' ONE frame per dim!!!), NOT THE FULL PERPS!!!**
+- **THE FULL E8-STYLE REDESIGN (the identified path!!)**: (1) THE PARTITION: the 121
+  lines -> the ~30 4-frames (the E8's D4 partition of the 120 roots + the special's
+  singleton!!); (2) THE PIECES: the INSIDE-the-frames subsets (the ~2-4-line cells
+  with the ~12-30 users!!!); (3) THE READ-ROOMS: the co-read groups' shared frames
+  (the perp-safe BY CONSTRUCTION ✓✓); (4) THE TAILS: the small leftovers — **the
+  substantial remaining work** — the feasibility scan first (the partition + the
+  pieces' users + the coverage + the R!!!).
+- **THE PRICE NOTE**: the SS1679's +30.52% at R=211 (the (c)-model!!) — ON THE
+  ILLEGAL structure (the rooms' source-collisions!!!) — the model crossings stand
+  ONLY on the unresolved source-chain structure.
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
