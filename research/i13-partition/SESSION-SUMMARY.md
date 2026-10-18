@@ -26,19 +26,18 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **COMPLETE SHARING-ECONOMY CENSUS (session-final; closes the piece-based program).**  E-pair
-  XOR test: ALL 144 tested E(t,e) XOR E(t,e') pieces have exactly 1 user (rank-11-12 spans, perp =
-  t alone) — combining pair-content destroys sharing.  Combined with the day's census, the full
-  measured landscape: rooms u=4-12 (span 151-168/231 — cannot deliver), sections u=2 (spanning),
-  E-sets u=2, E-XORs u=1, 3-sections u=4 (spanning; algebra mismatched: sec3-XORs cancel the
-  reader's own E-sets and deliver the mates'), halves u=2-6 (c_t explosion), corrections u=1.
-  FOUR-PART OBSTRUCTION: (1) the only u>4.13 family cannot span; (2) spanning families can't be
-  built from it (transversality); (3) combining pair-content is private (u=1); (4) every spanning
-  family has u <= 4, so load floors at 70,356/4 = 17,589 > capacity 17,056 even with perfect
-  tiling — and the perfect-tiling best case prices at R ~ 1,353-1,500 vs break-even 1,312
-  (-3% to -14%).  VERDICT (earned, unlike the two retracted attempts): I13 piece-based words
-  are closed by the complete census.  Remaining Lorentzian paths: E8 lever A with the census-
-  calibrated block-local anatomy, or new systems (HANDOFF priority D).
+- **3-SECTION FAMILY (I8-I11), session-final: the exact-cover screen kills it everywhere.**  Census:
+  I8 (v=84, |R|=41-43, secs 18-20, span-miss 1) and I9 (v=120, |R|=63, secs 30 uniform, span-miss 1)
+  fail size arithmetic (c_t = 4-6 -> identity over budget); I9 pair-hash: 0/120 weight-<=3 covers.
+  I10 (v=165, |R|=87-92, secs 42-47, span-miss 0-1): pair-hash 0/165 at weight <=3 (pair-XOR max 80
+  < 86 kills weight-2; weight-3 mass-centered but exact vectors absent); 4-frame partition grammar
+  probe: Q=9, E=13x3, leftover 44/87-92 (half the demand uncarried — dead).  I11 killed early per
+  instruction; its overlap structure (15-25) predicts the same.  UNIFIED FAILURE MODE: sections
+  through t share t's perp core (overlap 13-30), so XORs are mass-centered but exact covers
+  essentially never exist — the I_{n,1} systems have NO closed XOR calculus analogous to E8's
+  D6/quad identities, at any weight that fits the identity budget.  The complete negative (I8-I13,
+  every family, every combination rule) is systematic: no piece grammar in the Lorentzian range
+  closes the demand algebra at viable c_t.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
