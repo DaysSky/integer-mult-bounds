@@ -309,6 +309,42 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   model's regime (the pipeline's asymptotic requirements — the hub's #463/#510 template:
   THE OPEN FORMAT-THEORY QUESTION).  A gcheck PASS is necessary, not sufficient.
 
+## THE II19 FRONTIER PUSH — h=10 LADDER CLOSED; THE 2-CLASS (h=9) CROSSING DISCOVERED (ii19_crossing.py, ii19_2class_crossing.py)
+
+- **(a) THE h=10 LADDER: CLOSED (measured, mass-exact).**  The SS1215 "-8 to -11%" figure was
+  the 51-mass-light artifact — the control in ii19_crossing.py exposes it: the mass-exact
+  reconstruction of the SAME hist prices the class word at 0.000971703 (-44.3%), consistent
+  with SS1217's own mass-exact correction (-42.35%).  The full R-ladder (810-1350, mass-exact,
+  delta-1 and delta-2 extension variants): MONOTONE (smaller R -> better c), flooring at
+  -25.5% (R=810, counting-bound-violating) / -27.7% (R=860, the counting bound: demands
+  >= 13 at c=28).  NO CROSSING at h=10: the window (m=82, 2v(h-1)=6,498, width-10 hosting)
+  is the measured wall.  The window-penalty law STANDS at h=10.
+- **(b) THE 2-CLASS SUBSET (level-0 + level-1a: 240 lines, h=9, m=73, the rank-18
+  class-blocked decoder, the E8-pattern 63-line demands) — never priced with this
+  machinery.**  The HANDOFF's "h=9 closes" verdict covered only the small framed systems
+  (<= 111 lines); this is a 240-line system — different territory.  The window at h=9:
+  m=73, the window mass 16/line (vs h=10's 18, h=8's 14).  THE CROSSING CURVE (mass-exact,
+  the transplant family): R=858 (the full E8-transplant x2): -21.15%; R=600: -3.01%;
+  R=572 (the counting bound, demands ~13): -0.53%; R=560: +0.58%!!!  THE CROSSING IS AT
+  R ~ 566 — AT THE COUNTING BOUND'S EDGE.  THE CONTROL: the E8 R420 true-hist reproduces
+  the published c to 15 digits (0.001653826988147) — the pricing machinery is exact.
+- **(c) THE HONEST FLAGS (the artifact discipline):**  (i) the shallow-end hist model (the
+  transplant family x2 scaled) DISTORTS at mid << 180 — the mass-exact closure goes NEGATIVE
+  (the rank-1 count collapses from 3,382 to 1,296 at R=560): the model's parts assume the
+  full E8 word structure which does not exist in the shallow word.  The +0.58% number is
+  model-shape-dependent — THE TRUE WORD'S HISTOGRAM DECIDES (the same artifact class
+  retracted five times this session).  (ii) The counting bound at c=18: demands >= 13:
+  the +0.58% point (demands ~11) violates it marginally; the first legal point prices
+  -0.53% — a hair below the frontier.
+- **(d) THE DECISIVE NEXT STEP: THE TRUE WORD BUILD.**  The 2-class system (240 lines,
+  h=9) + the class-blocked decoder (rank 18, the verified machinery) + the cancellation
+  demands (the E8 arc's construction: rows legal BY CONSTRUCTION) + the shallow middle
+  (the shared covers for the ~13-line demands) + the branches + the retained -> gcheck ->
+  THE EXACT HISTOGRAM -> THE TRUE PRICE.  THE FIRST II19-FAMILY WORD IN THE
+  FRONTIER-PARITY ZONE: the model says the legal floor is -0.5% +- the shape's truth
+  (the +-30%-in-c shape sensitivity measured all session): the build decides whether
+  II19 beats the frontier.
+
 ## The E8 sparse-decoder hunt + THE IDENTITY-WORD DISCOVERY (2026-10-18, later session)
 
 - **THE E8 SPARSE-DECODER HUNT (e8_sparse_decoder.py):** B0 = (J+G) mod 2 verified (rank 9
