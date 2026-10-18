@@ -1376,3 +1376,28 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   (the U/W factorization: the 9 basis-row gathers at the dim-8 frames — the sources' dim-8
   slot collision: the build's decisive design question!!); (3) THE BUILD -> gcheck -> THE
   TRUE histogram -> THE TRUE price.
+
+## THE 121-LINE'S D4 CENSUS v1 + v2 — THE 3150 ROOMS; THE PARTITION-ROOMS DO NOT COVER (ii19_121d4.py, ii19_121d4b.py; SS1772, SS1778)
+
+- **THE v1 (SS1772!!)**: the 122,850 orthogonal quadruples -> **THE 3150 DISTINCT SPANS, ALL
+  12-LINE** (the D4 sub-lattices!!!) — the per-root rooms: 315 each; **THE SPECIAL (120): IN
+  NO ROOM** (the hyperbolic extension: orthogonal to all roots, in no roots' span!!); the
+  perp-covers: every root-target: the **315 rooms inside perp(t)** (the 63 roots covered!!)
+  + **THE REMAINDER: THE SPECIAL (the 1 line!!)**; the packing: the **6 rooms** (the 5 full +
+  1 partial (the 3 new lines!)) + the special; the special-target: the 11 rooms, the remainder
+  0; **THE WALL: the ~338 dim-4 frames per target** — the one-per-dim wall unless the unions
+  (the 976,500 dim-6 (the 21/22-line!!)!!)
+- **THE v2 (SS1778!!)**: THE DISJOINT-PARTITION ROOMS (the SS1685's 30 4-frames' spans!!) —
+  **THE ROOMS COLLAPSE**: the 30 frames -> the ~10-15 DISTINCT D4 rooms (the rooms 0, 1, 2:
+  THE SAME line-set!!!); the per-root room-counts {2: 96, 3: 16, 15: 8}; **THE PER-TARGET
+  COVERS COLLAPSED: the partition-rooms DO NOT COVER THE PERPS** (the inside-rooms {2: 96,
+  3: 16, 15: 8, 30: 1}; the packing: 1 room for 112 targets with **THE 52-LINE
+  REMAINDERS!!!**) — **THE SS1685-PARTITION APPROACH IS DEAD FOR THE COVERS!!**; the
+  special's (5)-check: the False = the t=120 self-case artifact (the special IS in every
+  root-target's perp ✓✓✓ — the free same-frame re-reads at the special's span (the dim-1!!) ✓)
+- **THE DESIGN'S REAL STRUCTURE**: the 3150-room economy: the per-target 6-room packings +
+  the rooms' union (the sharing!) + the carriers' duplication needs — **THE R-WINDOW
+  QUESTION (the decisive!!)**: the R420's own R/v = 3.5 (the 240 carriers + the 180 sums!!);
+  the 121-line's HOSTING WALL: the R <= 484 (= 4v!!); **THE ROOM-UNION'S SIZE DECIDES (THE
+  CENSUS v3: ii19_121d4c.py — the union + the sharing + the carriers' needs + the R estimate
+  vs the wall!!)**
