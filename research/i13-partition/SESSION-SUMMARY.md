@@ -26,15 +26,20 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **NEW-FRONTIER REPRICING — CORRECTED (i11_shape_scan.py + ceiling_scan.py).**  The first scan
-  ('I11 closed by shape, 0 viable') was WRONG: I added an ok(hi) guard that grid2 does not have;
-  the kappa curve DECLINES with H (peak 0.0022-0.0026 at H=0 — an unrealizable no-middle histogram),
-  so ok(20v) is false for viable shapes and my guard killed them all.  Grid2-verbatim binary search
-  finds the crossing-down point = the shape budget.  From the 6i tables the crossing was H ~
-  1.4-2.1v vs E1; vs NEWF slightly tighter.  The 3-section architecture needs H ~ 360-460
-  (1.6-2.1v): a genuine coin-flip at the boundary — I11 is NOT closed by shape.  The corrected
-  scan (guard removed) measures the exact budget per shape.  LESSON (third instance): the pricer
-  prices histograms, not realizability — the H=0 peak is the same trap as the dead=0 sanity check.
+- **II19 BREAKTHROUGH TRACK (session-closing; the strongest result of the program).**
+  II19 = E8 (+) U levels 0-1: 361 lines, h = 10, ceiling 1.84x E8.  Measured gates: span OK
+  (all classes), covers OK (c_t 4-12; level-1 targets close at weight 4 exactly), partition
+  FOUND (15 disjoint flats, ZERO leftover: sizes [31,45,46,46,47,50,51,60x8] — the R420-style
+  zero-waste assembly skeleton), budget 15.0v at cst 90 (13.4v at cst 120 — decoder-robust),
+  level-2 escalation closed (v=929 stalls: demand outgrows coverability).  PROJECTION-BAND
+  PRICING (mix.price, cst 90, best shapes): c_t 8/dead 100 -> R 7.3v, kappa +69.2%; probe-
+  measured c_t 10.3/dead 300 -> 10.1v, +34.1%; worst case c_t 12/dead 600 -> 12.7v, +13.3%.
+  EVERY band clears the frontier 0.0017444.  HONEST GATES REMAINING: the coordinated design's
+  true Sigma c_t (running at session close), the assembler's true middle count (partition
+  bounds it low), decoder design (cst robustness proven, construction open), gate/frame
+  legality simulation, and the exact pricer at the TRUE histogram — the difference between
+  'prices above the frontier in every measured band' and 'a frontier word' (the pricer-trap
+  lessons of this session apply in full).
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
