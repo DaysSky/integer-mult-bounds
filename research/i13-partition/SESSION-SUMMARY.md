@@ -732,6 +732,50 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   unmeasured sources/helpers) and THE BUILD (the definitive word — the auditor's
   expectation: BELOW; the nesting must be fixed first).
 
+## THE DESIGN-GROUNDED HISTOGRAM + THE HONEST-R BRACKET: THE CROSSING IS NOW A ±1% MARGINAL QUESTION (ii19_121designhist.py, ii19_121designhist2.py, ii19_121honest299.py; SS1547-SS1556)
+
+- **THE LOG-MOMENT DISCOVERY (SS1547!!)**: at q ~ 0.0018 the price model is effectively
+  a TWO-PARAMETER model: (the mass, LM = Σ mass_r·ln(m/r))!!!  The C variant (+2.77%!!)
+  and the coarse-tail design hist (+2.77%!!) AGREE because their LMs agree (15,254 vs
+  15,253!!) — the shape beyond the (mass, LM) pair DOES NOT MATTER (to the 1e-5
+  level!!).  THE SS1547 R=299 COLUMN (+347%/+308%!!) WAS MY BUG: the INCONSISTENT
+  PAIRING (the R=286-structured hist 117 mass light for R=299!!) — DROPPED; the
+  consistent pairing ONLY!!
+- **THE TRUE DESIGN SHAPE EXTRACTED (SS1547!!)**: the pieces' jumps {1: 379, 2: 181,
+  3: 61, 4: 67, 5: 30, 6: 8, 7: 2}; the core (the pieces + the sources + the targets +
+  the gathers + the copies): {1: 1532, 2: 341, 3: 95, 4: 100, 5: 64, 6: 18, 7: 3,
+  8: 16, 9: 2} (the mass 3,494; the LM 12,595!!).  THE TAILS' BRACKET: the coarse
+  (0->8->9): +2.77%!!; the fine (the target-like): -6.23%!!.
+- **THE (b)-MODEL (THE DESIGN-GROUNDED TAILS!!) (SS1551!!)**: the tails' chains from
+  the pkl's OWN data: 0 -> THE SPAN OF leftovers[t] ({2: 1, 4: 7, 5: 8, 6: 17, 7: 79,
+  8: 9}!!) -> THE READ SLOT tgt_slot[(t, -1)] ({4: 3, 5: 9, 6: 18, 7: 81, 8: 10}!!) IF
+  s > span (the tail at the span ALREADY satisfies the read: the src's frame ⊇ the
+  gate's!!) -> 9!!  THE (b)-HIST: {1: 1548, 2: 425, 3: 113, 4: 116, 5: 76, 6: 35,
+  7: 82, 8: 25, 9: 2}: the mass 4,583 EXACT (the identity OK!!); the LM 15,498
+  (between the brackets: the coarse 15,254 / the fine 17,098!!).
+- **THE PRICE: THE (b)-MODEL AT THE DESIGN'S R=286: c = 0.001770409 (+1.49%!!) — THE
+  DESIGN-GROUNDED MODEL HIST CROSSES AT THE DESIGN'S OWN R!!**  (BUT R=286 VIOLATES
+  THE ARRIVAL HEURISTIC: 2,690 > 9x286 = 2,574!!)
+- **THE HONEST-R BRACKET (SS1556!!)**: the (b)-hist + the +13 slack registers (the
+  consistent pairing: the mass 4,700 EXACT!!): THE COARSE-13 ({8, 1}: the
+  optimistic!!): **c = 0.001747410 (+0.17%!!)** | THE FINE-13 (the piece-like: the
+  pessimistic!!): **c = 0.001730020 (-0.82%!!)** — **THE BRACKET AT THE HONEST R=299
+  STRADDLES THE FRONTIER: THE CROSSING IS NOW A ±1% MARGINAL QUESTION, DECIDED BY THE
+  +13 SLACK REGISTERS' CHAINS (UN-DESIGNED!!).**
+- **THE OPEN ITEMS (THE HONEST STATE!!)**: (1) the +13 slack registers: UN-DESIGNED
+  (the R=299 redesign: the pool reshaped?!); (2) THE ARRIVAL-LAW SCOPE: the audit's
+  question (the gathers' 521 reads + the A-src-reads ~1,470+ vs the sources' capacity
+  9x121 = 1,089?!): UNRESOLVED — if the A-reads are capped too, R rises further and
+  the price falls; (3) THE NESTING: 121/121 target chains FAIL (SS1515!!): NO WORD
+  EXISTS; (4) THE PAYOFF: BIT-side only (the selected κ = 0.001672660197076918 is
+  COMPLEX-bound!!).
+- **THE VERDICT**: the design-grounded model band: +1.49% at R=286 (the infeasible
+  R!!) -> +0.17%/-0.82% at R=299 (the un-designed slack!!) -> the marginal ±1%
+  question.  THE ONLY SETTLEMENT: THE BUILD (the nesting fix + the R=299 redesign +
+  the true word -> gcheck -> the TRUE hist -> the TRUE price!!) — and the deeper
+  caveats (the scope questions, the bit-side-only payoff!!) make the honest
+  expectation: BELOW.
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
