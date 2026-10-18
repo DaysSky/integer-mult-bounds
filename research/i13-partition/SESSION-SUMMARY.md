@@ -2057,3 +2057,10 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 - **THE CELL-LEVEL (THE MEASURED!!!)**: the 360 A-gates at the 180-cell-frames — **THE 1-SRC-1-DEST-EACH!!!** — the junk-carriers (the helpers 243..661!) accumulate their sources ONE-AT-A-TIME through the ladder: the singleton-read (THE FREE!!!) -> the cell-read (the 1-climb!) -> the 12-frame (THE OTHER-HELPERS!!!) -> the 30-frame!!!
 - **THE MECHANISM (THE CRYSTAL-CLEAR!!!)**: the sources feed the carriers' ACCUMULATIONS directly (~2-4-srcs-each!); the carriers read the OTHER-carrying-helpers at the higher levels (the SHARED-SUMS!!!) — the sharing happens at the CARRIER-LEVEL (the cells-PRIVATE (1-src!!!))!!!
 - **THE OUR-121's-EQUIVALENT (THE NAT16's-BUILD-SEQUENCE (THE FINAL!!!))**: the D6-pieces (286!) as the junk-carriers — the D6's-BUILD?! — the ~33-srcs?! — the the-... — the the-... — the LADDER-LEVELS?! — the the-... — the CAREFUL (THE ~1-2h (THE FRESH-MIND (THE NEXT-SESSION!!!)))
+
+## THE NATIVE-121 v17 — THE D-CHANNEL-DISCOVERY (THE COLLAPSE-DESIGN (R = 130!!!))
+
+- **THE H2-RULE (THE gcheck.py (the the-§667 (the the-CONCRETE!!!)))**: the D-gates: [0-frame, the-TARGET-dest, the-HELPER-srcs (s >= 2v!!!)] — **NO CLIMB-CHECKS!!! NO CONTENT-CHECKS!!!** — THE D = THE FREE-DELIVERY-CHANNEL!!!
+- **THE COLLAPSE-DESIGN**: the H_u's (121! (the per-line-e_u-carriers (the the-A-builts (the the-the-singleton-FREE-reads!!!)))) + THE D (the perp(t)-delivery (the ⊕(e_u)'s!!!)) + the scatter (the the-Brows-combo!!!) — **THE R = 130 (the the-the-the-121-H_u + the-9-rets!!!)!!!**
+- **THE BALANCE**: [the scatter's Brows[t]] ⊕ [the D's perp(t)] = e_t ✓✓✓ — **THE REGISTER-BIT-RESIDUE (the ⊕(1<<H_u) ⊕ ⊕(1<<ret) — the one remaining algebra-detail!!!)**
+- **THE NEXT (THE the-THE-... — the the-the-FINAL-STEPS: the residue-resolution → the word-emission → THE GCHECK!!!
