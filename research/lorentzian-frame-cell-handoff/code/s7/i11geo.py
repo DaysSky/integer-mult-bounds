@@ -1,7 +1,7 @@
 """I_{11,1} lines in the 11-dim line-coordinate basis (as lw.py): exact Space."""
 import sys, itertools
 sys.path.insert(0, __import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), 'zw'))
-sys.path.insert(0, '/home/user/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/lword')
+sys.path.insert(0, '/Users/dayssky/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/lword')
 import numpy as np
 from geom import Geom
 from space import Space

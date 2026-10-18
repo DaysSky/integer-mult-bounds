@@ -1,6 +1,6 @@
 """I_{13,1} geometry: lines, perps, closures, A2s, cells, sections."""
 import sys, itertools
-sys.path.insert(0, '/home/user/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/lword')
+sys.path.insert(0, '/Users/dayssky/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/lword')
 from geom import Geom
 import numpy as np
 g = Geom(13); V = g.V; G = g.G; HYP = g.HYP; FULL = g.FULL

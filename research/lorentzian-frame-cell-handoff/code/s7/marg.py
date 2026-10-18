@@ -1,6 +1,6 @@
 """Marginal cost (in units of the exact linear budget at q* = E1) of helpers of given entrance/pieces, I11 and E8."""
 import sys, bisect
-sys.path.insert(0, '/home/user/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/price')
+sys.path.insert(0, '/Users/dayssky/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/price')
 from pricer import idle_slots
 from qbudget import cost, QSTAR
 K, T = 4, 32; L = 9

@@ -1,7 +1,7 @@
 """Exact nine-stage price for a register mix with best-fit mixed-width hosting (bankprice model; banks if needed).
 groups: list of (count, start_rank, [pieces]) for helpers; sources/targets given as piece lists."""
 import sys, bisect, math
-sys.path.insert(0, '/home/user/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/price')
+sys.path.insert(0, '/Users/dayssky/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/price')
 from pricer import idle_slots, root
 from mpmath import mp, mpf
 E1 = mpf('0.001734473240795253742474'); P111 = mpf('0.001733427039589844')

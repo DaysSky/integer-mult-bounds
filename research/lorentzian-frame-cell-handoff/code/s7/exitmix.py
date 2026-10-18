@@ -1,6 +1,6 @@
 """Exact price with per-helper widths = end rank - start rank (exit/entrance), bank-aware best-fit hosting."""
 import sys, bisect, math
-sys.path.insert(0, '/home/user/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/price')
+sys.path.insert(0, '/Users/dayssky/integer-mult-bounds/research/lorentzian-frame-cell-handoff/code/price')
 from pricer import idle_slots, root
 from mpmath import mpf
 E1 = mpf('0.001734473240795253742474')
