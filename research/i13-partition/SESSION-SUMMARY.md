@@ -50,12 +50,20 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   ii19_trueprice.py prices the honest content//17 and content//8 bands from the true ledger,
   and ii19_assembly.py measures the true hierarchical middle.  The verdict may tighten from
   the sweep's +49-89%.
-- **PARTITION CENSUS (ii19_partuse.py).**  Partition re-found and SAVED (15 flats, zero
-  leftover; ii19_partition.pkl).  Free-piece value is SMALL: users mostly 4 (the 60-line
-  flats; exceptions: 31-line flat 10 users, 45-line flat 6, 47-line flat 5); only 64/361
-  targets served by any partition flat; free coverage 6.0% of demand slots.  The free-bulk-
-  pieces hope does not materialize — the partition's perps are too thin.  Its value is the
-  skeleton/disjoint-flat-structure proof, not free demand coverage.
+- **ASSEMBLY VERDICT (ii19_assembly_par.py, two-phase 10-worker).**  The TRUE naive
+  hierarchical middle of the v1 design: distinct lvl5 1,875 + distinct lvl4 5,534 + gates/8
+  2,619 = 10,028 registers -> R = 12,365 = 34.3v, vs the 3,077-3,275 mids budget — DEAD by
+  2.3x.  lvl4 reuse {1: 5506, 2: 28}: sub-flat sharing does NOT materialize; intermediates
+  are as pair-specific as the pieces.  THIS SUPERSEDES the trueprice's optimistic content//17
+  band (4,136 mids -> +1.79% with free corrections): the measured naive middle is 10,028 and
+  v1 prices ~-45% vs the frontier.  HONEST CAVEAT: the assembler's random sparse sampling
+  undercounts achievable sharing — a deliberately coordinated assembly is open, but the
+  burden of proof is on it.  THE E8 CONTRAST (the fix identified): E8's pieces are small
+  XORs of SHARED CARRIERS (quads = 2 cells; carriers are the branch registers) — middle
+  nearly free by GRAMMAR.  A v3 grammar: smaller pieces (rank 4-5) built from 2-3 shared
+  carrier totals (rank 2-3 flats) — projected carriers 500-800 + gates ~ 700-1,000 middle
+  registers, UNDER the 3,077 budget.  v2 (running) attacks content at the piece level;
+  its ledger informs whether v3's carrier grammar is the move.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
