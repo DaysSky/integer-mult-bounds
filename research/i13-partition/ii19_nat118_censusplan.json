@@ -1,0 +1,22 @@
+{
+ "tag": "censusplan",
+ "params": "/Users/dayssky/integer-mult-bounds/research/e8-bit-p111-r434/data/params.json",
+ "tuned": "/tmp/r434-censusplan-tuned.json.gz",
+ "gcheck": {
+  "status": "PASS",
+  "h": 8,
+  "v": 111,
+  "R": 434,
+  "rho": 3.90990990990991,
+  "totals": 9,
+  "cst": 63,
+  "x": 0.5675675675675675,
+  "frames": 636,
+  "moves": 2888,
+  "local_histogram": "{1: 1311, 2: 1339, 3: 69, 4: 45, 5: 103, 6: 12, 7: 18}",
+  "rank_mass": 5089,
+  "gates": "{'D': 111, 'A': 2108, 'B': 918, 'C': 2591}",
+  "bit_c_nine_stage": "0.001744385950814795279853",
+  "vs_P111_percent": 0.6539401068489024
+ }
+}
