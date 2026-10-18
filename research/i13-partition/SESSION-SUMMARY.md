@@ -1678,3 +1678,37 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   to the ({0} UNION the 63)-pattern; (3) THE SPECIAL'S SOURCE: the {120}-singleton start
   -> the FULL climb (the mass 8!); (4) the form: the diag(1^8, 2) (the den 1!); the frames:
   the Stage-1's line-sets -> THE BASES (the rref!)
+
+## THE STAGE 2b-i — THE REPLAY PERFECT: THE R420's ARITHMETIC FULLY EXTRACTED (ii19_ext3.py; SS1949)
+
+- **THE REPLAY VALIDATED END-TO-END**: the final-value fails 0 ✓✓✓; THE HIST EXACTLY THE
+  PUBLISHED {1: 1320, 2: 1440, 4: 60, 5: 120, 8: 9} ✓✓✓; the mass 5,112 = the identity
+  ✓✓✓; THE CST 72 (the 9 rets at the dim-8 FULL!) ✓ — THE SAME MACHINERY THAT WILL BUILD
+  THE EXTENSION!!
+- **THE ARITHMETIC VERIFIED**: the [dirt ^ scatter ^ reads] = x_t for ALL 120/120 ✓✓✓
+- **THE STRUCTURE (the decisive extraction!!)**: (1) THE DIRT = THE D-SRCs' VALUES (the
+  dirt sizes 121-204 = THE SRCs-PER-GATE 121-204 (the identical histograms!!): at the
+  D-time the helpers hold their OWN DIRT (the single bits!): each target receives ~121-204
+  HELPER-INDICATOR BITS — the transitive indicator-parity dirt!!); (2) **THE [reads ^
+  dirt] = THE SCATTER-MINUS-x_t EXACTLY** (the IDENTICAL size histograms {184..251}!!!):
+  the reads' XOR cancels EXACTLY the junk the scatter delivered (minus the x_t!) — the
+  arithmetic's clean decomposition!!; (3) THE RETS AT THE DIM-8 FULL at the scatter (the
+  {8: 9}!) ✓
+- **THE SCATTER'S VALUES**: the sizes 185-252 = the B[t]-x-parts (the ~64) + THE RETS'
+  ACCUMULATED DIRT (the ~121-188 helper-bits!) — THE DIRT FLOWS THROUGH THE RETS — the
+  transitive mechanism measured!!
+- **THE CRITICAL FRAME-LEGALITY DISCOVERY (the design's constraint!!)**: THE SPECIAL'S
+  TARGET'S CHAIN SUBSET-EQ THE 120-ROOTS-SPAN (the E8 8-dim!): the special's target can
+  ONLY read the registers at THE E8-INTERNAL FRAMES — **THE x_special (the {120}-span-
+  containing registers!) can NEVER be read via the B-gates!!!** (the {120}-span NOT-
+  SUBSET the E8-span: the nesting forbids!!) — **THE ONLY CHANNELS: THE D-GATES (the
+  frame-0!) and THE SCATTER (the frame-0!)**
+- **THE DESIGN CONSEQUENCES**: (1) THE ODD-GATHER'S A-BUILD AT THE FULL: [FULL, odd,
+  [the rets..., THE SOURCE 120!]] (the odd's val = own-dirt ^ rets'-dirt ^ the-64-pattern-x
+  ^ x_special ✓); (2) THE SPECIAL'S SCATTER-ROW = [the odd] (the frame-0 channel!!); (3)
+  THE SPECIAL'S READS: the cancel of the (64-pattern + the dirt!) — THE E8-INTERNAL
+  FRAMES ONLY!; (4) **THE RETS' RE-TARGETING (the change #1!!)**: the rets' last A-gates:
+  the FULL -> THE 120-ROOTS FRAME (the dim-8!): the copy ranks 8 -> **THE CST = 9x8 + 9 =
+  81** ✓✓✓ THE SCAN's HONEST DECODER MASS (the SS1872-1874 dr=9 bands!!)
+- **THE NEXT**: THE 2b-ii (the construction + MY OWN replay + the special's arithmetic
+  iteration!!) -> THE GCHECK -> THE TRUE HIST -> THE TRUE c!!
