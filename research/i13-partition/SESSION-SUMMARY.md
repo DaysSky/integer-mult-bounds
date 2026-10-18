@@ -703,6 +703,35 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   below). AND THE REFRAMING: the whole chase was BIT-side — the selected κ
   (0.001672660197076918, complex-bound) would not move even from a genuine crossing.
 
+## THE SPAN SEARCH (THE SS1515 AUDIT'S MISSED ITEM 5): THE LAST REOPENING LEVER CLOSED — THE CST FLOOR IS 73, PROVEN EXHAUSTIVELY (ii19_121span.py; SS1531-SS1536)
+
+- **THE DIRECTION (SS1531!!): the user: 'keep pushing for frontier' -> the span-minimizing
+  basis search (the audit's missed item 5: the ONE unsearched reopening lever!!).**
+- **THE EXHAUSTIVE MEASUREMENT**: the parity kernel's ALL 255 NONZERO ROWS: **the span-dim
+  histogram: {8: 255} — EVERY KERNEL ROW SPANS EXACTLY DIM 8; THE LOW-SPAN ROWS (dim <=
+  7): ZERO!!**  The support sizes: min 56, mean 60.2, max 64 (the kernel's minimum
+  distance ~56: the code is SPREAD OUT — the earlier session's ~30-line 'cancellation
+  rows' were a DIFFERENT code (the masked rows!), NOT the perp-pattern kernel!!).
+- **THE MIN-Σ-SPAN BASIS (the weighted matroid greedy!!)**: the spans [8,8,8,8,8,8,8,8] ->
+  Σ = 64 -> **THE HONEST CST FLOOR = 64 + 9 = 73 (the odd row: FORCED!!) — EXACTLY the
+  SS1500 greedy's basis: NO LOWER-CST BASIS EXISTS (the floor PROVEN by the exhaustive
+  enumeration!!)**.  The W-verification on the alternate min-basis: PASS ✓ (the
+  W-weights: {1: 1, 2: 8, 3: 2, 4: 10, 5: 50, 6: 36, 7: 11, 8: 2, 9: 1}: the mean 5.2).
+- **THE PRICE AT THE PROVEN FLOOR (cst=73) OVER THE HONEST R GRID (>= 299!!)**: R=299:
+  A -17.51% | B -7.21% | D -5.60% (the best!!) | R=310: A -18.87% | B -8.68% | D -7.09%
+  | R=325: A -20.65% | B -10.61% | D -9.06% | R=350: A -23.45% | B -13.67% | D -12.13%
+  (C dropped per the audit: contradicted by the design's own chains!!).
+- **THE VERDICT: THE 121-LINE CROSSING IS CLOSED ON THE NUMBERS AT THE MODEL LEVEL**: the
+  cst lever (the last reopening hope) is PROVEN at its floor (73: all 255 kernel rows
+  measured!!), and at the floor over the honest R the band is **-5.60% to -23.45%: ALL
+  BELOW THE FRONTIER** — and the unresolved extras (the gathers' 521 reads (R >= 357?),
+  the build's nesting failure (85% unassigned!!)) would only make it WORSE.  THE
+  100%-PROOF STANDARD (the user's SS1228!!) IS SATISFIED FOR THE CST LEVER: the floor is
+  measured, not assumed.  THE REMAINING STEPS: the design-derived hist (the audit's
+  missed item 2: the confirmation — the shape between the A-like targets and the
+  unmeasured sources/helpers) and THE BUILD (the definitive word — the auditor's
+  expectation: BELOW; the nesting must be fixed first).
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
