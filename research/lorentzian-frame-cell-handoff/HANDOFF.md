@@ -3373,7 +3373,7 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
     18 single frames): `word13_mp_v1.json.gz`, **gcheck PASS, R = 7,367 (20.2v), c = 0.000441391, -74.5%**.
     Pieces per top fall from 11.9 to 8.0; sharing is the only lever that moved R.
   - Pairing knob on the same partition: `PAIR=1` gives **R = 7,314 (gcheck PASS, c = 0.000443254, -74.4%; best I_{13,1}
-    word)**, `PAIR=2` gives 7,359.  A warm-started max-Pasch-pair search (3,300 s limit) had not passed 17 pairs at last check.
+    word)**, `PAIR=2` gives 7,359.  A warm-started max-Pasch-pair search (3,300 s limit) ended FEASIBLE at 17 pairs (not proven optimal).
   - Seeding the 576 distinct E-set halves as Paar pieces (`SEEDH=1`, 308 applied) halves the piece count (4,233 to
     1,594) and line copies (4,011 to 2,392), but carriers (2,934 to 4,315) and empties (356 to 1,099) rise: R = 7,819.
     A shared half still needs one carrier per using demand, so sharing at the piece level does not pay in this builder.
@@ -3385,6 +3385,45 @@ PG(2,3) partition and demands, hub and 2-cover census; logs beside them).
     (R + v <= ~5.6v) that is >= 6.4 per register, about 3.2x R420.
   - So an I_{13,1} frontier word needs a middle about three times more efficient per unit of distinct content than
     the best E8 middle; such a middle would first make E8 words leap past the frontier (lever A).
+
+## 3j. Session 8 (2026-10-18) — lever A on E8: P111's helper bill 439 -> 434
+
+- **E1-style entrance conversions are exhausted on P111-tuned/E1.** The exact census (`scratchpad/e8a/entcensus*.py`)
+  checks pre-read slots and simulates the dirt of one column exactly. It finds only helper 470, which rediscovers E1's
+  own conversion. On the R = 434 word below it finds none. Helpers are first written at line frames, where readers
+  cannot pre-read.
+- **Marginal prices on P111-tuned** (`code/price/pricer.py`, which reproduces 0.00173342703959):
+  - merging stops (1,2) -> 3 gives +0.0093%;
+  - merging two rank-1 stops into rank 2 gives +0.0068%;
+  - removing one carrier-shaped helper gives +0.135% (+0.074% over E1).
+  So the lever is the helper count.
+- **The extra carriers are block-local and were never optimised.** P111's bill is 240 carriers + 180 empties + 9 totals
+  + 10 extra carriers. Extras and junk wires depend only on, per block B: the six free-keeper lines (2^6), the thirds
+  assignment (6!), the receivers of comp(B)'s totals (3^k) and the punctures. P111 drew the first two from
+  `plan_thirds(seed 552)`, and `research/p111-receiver-census` exhausted only the receivers.
+  - Exhaustive block census under gen_p3's own accounting gives **8** extras for P111's puncture set (R = 437).
+  - Over all 17,478 affinely independent puncture sets the minimum is 8, attained only by P111's set; the next is 13.
+- **Cell-sum helpers.** In the optimal plans the missing lines come in cells: in block 0 both totals need exactly
+  x49 + x63. A helper reading the cell's empty at the cell frame holds x_a + x_b, climbs to D4(B) and doubles as a junk
+  direction. With block cost max(|E|, junk), the exact per-block minima are 1, 1, 1, 2, i.e. **5 extras, R = 434**.
+  Block 1 needs a junk direction regardless (10 outputs over 9 inputs).
+- **Package `research/e8-bit-p111-r434`.**
+  - Generator: `gen_p4.py` (gen_p3 plus cell-sum helpers and an explicit keeper plan); fed P111's plan it rebuilds
+    P111 byte for byte.
+  - Census: `census.py`, calibrated 30/30 against both generators.
+  - Checks passed: P111's `xcheck_p.py` unchanged (656 columns, H1-H5, 9/9 + 4/4 controls) and the official cohort
+    checkers (legality, rank mass 5,089; five-, nine- and eleven-stage columns).
+  - Nine-stage chain, untuned base word: c = 0.00174372140015403013744, +0.533% over E1. The exact window-aware
+    MILP of `e8-bit-p111-e1/code/price_e1.py` gives the same c.
+  - Final package word: the best block-1 plan of a sampled profile scan, then PR #589's tuner (one transport).
+    Official chains:
+    - nine stages: **c = 0.001744385950814795279853, +0.5715% over E1 (+0.632% over P111-tuned)**;
+    - eleven stages: c = 0.001721409334720288323589, +0.546% over E1.
+    124,992 of 124,992 residuals are hosted whole, with 0 banks, and κ is unchanged (complex-bound).
+- **Ruled out on the way.** Splitting o1/o2 at the D6s for the totals sends their needs out of the supplying block.
+  Under P111's punctures the quads keep full input rank, so no quad wire is redundant.
+- **Lorentzian consequence.** This is a gain in the punctured unit, not in the middle, so lever A for I_{n,1} is
+  unchanged. The frontier the Lorentzian words must beat rises by the package's margin.
 
 ## 4. Next goals (priority order)
 

@@ -1,0 +1,213 @@
+{
+ "word": {
+  "file": "data/bitE8mut-p111-r434.json.gz",
+  "file_sha256": "9ab387db3b47917b37ffcf92ac67111435dbf31172928e95ca6c9d71a7adda20",
+  "base_file": "data/bitE8mut-p111-r434-base.json.gz",
+  "base_file_sha256": "149519e6e39ee64b36061baad9e2cb1b8edcaa7ece051447c51a74d59910ffab",
+  "content_sha256": "f0bcc752db43ead3e7a869df77626f57adf20d892b84c572ff6bbc4231f4999d",
+  "v": 111,
+  "R": 434,
+  "punctured": [
+   10,
+   15,
+   51,
+   53,
+   56,
+   66,
+   72,
+   89,
+   111
+  ],
+  "gates": {
+   "D": 111,
+   "A": 2108,
+   "B": 918,
+   "C": 2591
+  },
+  "stats": {
+   "cell_sum_helpers": 4,
+   "extra_carriers": 1,
+   "junk_wires": 0,
+   "rcv_flips": 11
+  },
+  "local_histogram": {
+   "1": 1311,
+   "2": 1339,
+   "3": 69,
+   "4": 45,
+   "5": 103,
+   "6": 12,
+   "7": 18
+  },
+  "legality": {
+   "records": 26854,
+   "common_frame_ADDs": 23948,
+   "rank_mass": 5089
+  },
+  "five_stage_columns": 878,
+  "five_stage_payload_bits": 93,
+  "nine_stage_columns": 1322,
+  "nine_stage_payload_bits": 93,
+  "eleven_stage_columns": 1544,
+  "eleven_stage_payload_bits": 93
+ },
+ "interface": {
+  "hypotheses": {
+   "H1_no_target_feeds_z": true,
+   "H2_D_frame0_targets_from_helpers": true,
+   "H3_A_z_only_scatter_targets_B_split": true,
+   "H4_C_literal_reverse_at_full": true,
+   "H5_V_identity": true
+  },
+  "conclusion": {
+   "U_block_form": true,
+   "J_identity": true,
+   "K_equals_D": true,
+   "C_is_U_inverse": true
+  },
+  "interleaving": {
+   "z_gates_A": 2108,
+   "source_writes_A": 0,
+   "z_gates_B": 483,
+   "source_writes_B": 470,
+   "helper_writes_B": 13,
+   "sources_rewritten_B": 108,
+   "B_z_write_frame_dims": {
+    "4": 372,
+    "6": 111
+   },
+   "B_z_operand_kinds": {
+    "helper<-helper": 3,
+    "helper<-source": 10,
+    "source<-helper": 108,
+    "source<-source": 362
+   },
+   "B_z_operand_kinds_by_dim": {
+    "dim4:helper<-source": 10,
+    "dim4:source<-source": 362,
+    "dim6:helper<-helper": 3,
+    "dim6:source<-helper": 108
+   },
+   "B_z_writes_after_a_target_read_of_the_same_register": 440,
+   "B_target_reads_of_registers_rewritten_earlier_in_B": 111,
+   "target_reads_of_targets": 0,
+   "cleanup_gates": 2591
+  }
+ },
+ "nine": {
+  "bit_lower": "1744385950814795279853/1000000000000000000000000",
+  "bit_lower_decimal": "0.001744385950814795279853",
+  "bit_profile": {
+   "1": 377568,
+   "2": 399264,
+   "3": 19872,
+   "4": 27168,
+   "5": 29664,
+   "6": 17664,
+   "7": 26496,
+   "42": 576
+  },
+  "bit": {
+   "live": 28416,
+   "physical": 28425,
+   "maxchild": 42,
+   "rank_mass": 1808352,
+   "hosted_residuals": 124992,
+   "bank_assignments": 0,
+   "prefix_bits": 177,
+   "charged_prefix_bits": 192,
+   "coefficient_bits": 177,
+   "two_level_coefficient_bits": 393,
+   "charged_two_level_coefficient_bits": 512,
+   "row_coefficient": 18355,
+   "halving_depth": 2
+  },
+  "kappa": {
+   "pr548": {
+    "kappa": "49718254847979/31250000000000000",
+    "kappa_decimal": "0.001590984155135328",
+    "complex_lower": "796759709641153381751/500000000000000000000000",
+    "binding_component": "complex"
+   },
+   "pr544": {
+    "kappa": "397677800014309/250000000000000000",
+    "kappa_decimal": "0.001590711200057236",
+    "complex_lower": "31864911873350496687/20000000000000000000000",
+    "binding_component": "complex"
+   },
+   "pr535": {
+    "kappa": "793733736881443/500000000000000000",
+    "kappa_decimal": "0.001587467473762886",
+    "complex_lower": "1589991533606044174031/1000000000000000000000000",
+    "binding_component": "complex"
+   },
+   "pr531": {
+    "kappa": "1517760977820331/1000000000000000000",
+    "kappa_decimal": "0.001517760977820331",
+    "complex_lower": "304013615566499291631/200000000000000000000000",
+    "binding_component": "complex"
+   }
+  }
+ },
+ "eleven": {
+  "bit_lower": "1721409334720288323589/1000000000000000000000000",
+  "bit_lower_decimal": "0.001721409334720288323589",
+  "bit_profile": {
+   "1": 115368,
+   "2": 121384,
+   "3": 6072,
+   "4": 7512,
+   "5": 9064,
+   "6": 4608,
+   "7": 8688,
+   "48": 1,
+   "56": 2662
+  },
+  "bit": {
+   "live": 8880,
+   "physical": 8889,
+   "maxchild": 56,
+   "rank_mass": 689304,
+   "hosted_residuals": 38192,
+   "prefix_bits": 4995,
+   "charged_prefix_bits": 5056,
+   "coefficient_bits": 4995,
+   "three_level_coefficient_bits": 15037,
+   "charged_three_level_coefficient_bits": 15040,
+   "row_coefficient": 19431,
+   "halving_depth": 3
+  },
+  "kappa": {
+   "pr548": {
+    "kappa": "49718254847979/31250000000000000",
+    "kappa_decimal": "0.001590984155135328",
+    "complex_lower": "796759709641153381751/500000000000000000000000",
+    "binding_component": "complex"
+   },
+   "pr544": {
+    "kappa": "397677800014309/250000000000000000",
+    "kappa_decimal": "0.001590711200057236",
+    "complex_lower": "31864911873350496687/20000000000000000000000",
+    "binding_component": "complex"
+   },
+   "pr535": {
+    "kappa": "793733736881443/500000000000000000",
+    "kappa_decimal": "0.001587467473762886",
+    "complex_lower": "1589991533606044174031/1000000000000000000000000",
+    "binding_component": "complex"
+   },
+   "pr531": {
+    "kappa": "1517760977820331/1000000000000000000",
+    "kappa_decimal": "0.001517760977820331",
+    "complex_lower": "304013615566499291631/200000000000000000000000",
+    "binding_component": "complex"
+   }
+  }
+ },
+ "baselines": {
+  "e1_nine": "867236620397626871237/500000000000000000000000",
+  "e1_eleven": "856028994631537810869/500000000000000000000000",
+  "p111_tuned_nine": "1733427039589844234749/1000000000000000000000000",
+  "p111_tuned_eleven": "855475950388791987811/500000000000000000000000"
+ }
+}

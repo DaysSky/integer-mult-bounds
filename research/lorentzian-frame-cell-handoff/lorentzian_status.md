@@ -1,5 +1,14 @@
 # Lorentzian I_{11,1} bit words: status (session 2026-10-15)
 
+**Update 2026-10-18, session 8 (HANDOFF.md section 3j): lever A on E8 moves the bit frontier itself.**  P111's helper
+bill 429 + 10 extra carriers is block-local.  An exhaustive keeper-plan census (freeline x thirds x receivers per
+block, exact, calibrated against full builds) gives 8 extra carriers for P111's puncture set.  Over all 17,478
+affinely independent puncture sets the minimum is 8, attained only by P111's set.  Cell-sum helpers (one helper holding
+x_a + x_b of a cell, read from the cell's empty) bring it to 5, which is the exact per-block minimum: R = 434 (package
+research/e8-bit-p111-r434).  After the tuner, the official nine-stage chain gives c = 0.001744385950814795279853,
++0.5715% over E1.  The Lorentzian target therefore moves up.  The gain is in the punctured unit, not in the
+middle, and gives no Lorentzian word.
+
 **Update 2026-10-17, session 7c (HANDOFF.md section 3i): I_{13,1}.**  (1) With lean stops the I_{13,1} frontier
 allows 3.8-4.6v helpers at cst 156, not 3.2v.  (2) Register identity R + v = consumed + dead: frame tops need >= 2
 consumed per target (no target perp has a 2-cover by sections).  So R = v + dead, and dead must stay <= ~3v.
