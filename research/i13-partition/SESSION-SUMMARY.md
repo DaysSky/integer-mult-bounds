@@ -26,17 +26,19 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **SUBSPACE-EXCLUSION OBSTRUCTION (session-final, decisive for the piece-based program).**  GF(2)
-  span test: R(t) is NOT in the span of the rooms (12-user pieces) available to t — and neither are
-  ANY of the {t,e}-sections (60/60 tested, mean 111 lines; span basis 168-dim).  The demand algebra's
-  spanning carriers (sections, E-sets) are ALL 2-user families; the only high-user family (rooms,
-  u = 12) lives in a proper subspace that excludes R(t).  Consequence: every piece-based design must
-  use 2-user carriers for the algebra, whose incidence (24-46k) exceeds the 17,056 arrival capacity
-  by 1.4-2.7x.  The three constraints (span, identity budget, arrival capacity) are now mutually
-  unsatisfiable for I13 — a complete obstruction for piece-based words, sharper than the parity
-  lemmas (a subspace exclusion, not a design failure).  Remaining Lorentzian paths: lever A on E8
-  first (a middle more efficient than R420 per incidence), or a new system with different geometry
-  (HANDOFF priority D).
+- **SUBSPACE-EXCLUSION — CORRECTED (min_sections.py).**  The committed claim "piece-based program
+  closed" OVERSTATES.  Proven: rooms-only vocabulary spans only a 151-168-dim subspace (residual
+  97-183 lines of R(t) uncovered; 1 section reduces it substantially, then the naive greedy stalls:
+  P residual 97 after 1 section, T residual 65).  NOT proven: that rooms+sections+E-sets cannot
+  sparsely represent R(t) — the mixed CP-SAT hit UNKNOWN at 60s (search space hard, not refuted).
+  The correct statement: rooms alone cannot span; mixed vocabularies have an open minimum-weight
+  representation question; section-heavy mixes die on incidence (24-46k vs 17,056 capacity) but a
+  room-heavy mix with k sections/target is NOT excluded by anything computed so far.  OPEN: proper
+  GF(2) rank of [rooms + sections + R(t)] and the minimum-weight representation of R(t); if a
+  representation with ~2-3 sections and 3-5 rooms per target exists, the incidence is rooms(~3-6k) +
+  sections(2-3 x 111 x 364/2 ~ 40-54k)... still over capacity UNLESS the sections in representations
+  are SHARED (same section used by both its users' representations: 2 users, so 20-27k floor) —
+  marginal-to-dead.  The honest verdict: PARTIALLY closed; the strong closure claim is retracted.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
