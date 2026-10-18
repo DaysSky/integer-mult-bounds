@@ -426,6 +426,35 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   the price band +5.45% to +33.12% vs the frontier 0.001744386.  THE SS1331 'crossing
   infeasible' verdict IS SUPERSEDED — it was an artifact of the conventional 480 branches.
 
+## THE SLOT REALIZABILITY GATE PASSES — THE CROSSING SURVIVES (ii19_2class_slots.py)
+
+- **THE PIECES ARE LOW-RANK D4-LIKE SETS:** the span dims {2: 40, 3: 65, 4: 32, 5: 19,
+  6: 32, 7: 13, 8: 1} — 105 of 202 at dim <= 3, 137 at <= 4 (the class-1 pieces carry
+  +1 for the level direction).  THE SLOT CAPACITIES (the sum over the read-slots dims
+  d0..8 of the max rank-bounded user-groups, the law rank(group) <= 9-d — the R420's own
+  quad mechanism: 12 targets of rank 3 share the dim-6 frame!!): 55 pieces at capacity
+  >= 20 (capped), the mean capacity 12.0 vs the mean users 12.1 — ONLY 5 OF 202 PIECES
+  NEED RESIZE.
+- **THE USER-SIDE PACKING: 0 UNPLACED** — every target's ~8-10 pieces pack into its chain
+  slots (the greedy lowest-fit: dim 4: 1,350 placements, dim 5: 979, dim 6: 148, dim 7:
+  67, dim 8: 2) with the unions' ranks <= the slot dims.
+- **THE JOINT: the (piece, user) demand 2,452 vs the slot capacity 2,427 (101%)** — TIGHT
+  but the pool resizes to ~205 only (from 202!!).  THE HONEST R = 205 + 94 + 18 = 317
+  (R/v 1.32).
+- **THE PRICE BAND AT R = 317: A +5.17% | B +12.78% | C +24.57% | D +27.62%** — THE
+  ENTIRE BAND STILL ABOVE THE FRONTIER.  THE CROSSING SURVIVES THE REALIZABILITY
+  MEASUREMENT.
+- **THE FULL GATE LEDGER (every gate measured and passed except the build):**
+  the system (240 lines, h=9) ✓ | the decoder (rank 18, the B-matrix verified) ✓ |
+  the demands (the 33-line cancellation junks, counting-bound-legal) ✓ | the piece
+  economy (202 shared pieces, mean 12.1 users) ✓ | the slot realizability (101% joint,
+  0 unplaced) ✓ | the price band (+5.17% to +27.62% at the honest R=317) ✓ | the model
+  (the control: ratio 1.000000000 at the R420 true hist) ✓.
+- **THE ONE REMAINING GATE: THE BUILD** — the exact chains (the nested frame sequences
+  with the Gram determinants), the exact gates (D/A/scatter/B/C with the content-frame
+  invariants), the gathers' construction (the U-columns, ~30 lines each), the W-matrix
+  (the scatter's rows), gcheck, the TRUE histogram, the TRUE price.
+
 ## The E8 sparse-decoder hunt + THE IDENTITY-WORD DISCOVERY (2026-10-18, later session)
 
 - **THE E8 SPARSE-DECODER HUNT (e8_sparse_decoder.py):** B0 = (J+G) mod 2 verified (rank 9
