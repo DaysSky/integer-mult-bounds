@@ -88,6 +88,40 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   exploiting the level structure — each class decodes at width 9) could exist for II19 is
   a format-redefinition question, not a word in the existing format.  The frontier stands
   at E8 R434 (+0.57%), unbeaten.
+- **THE II19-NATIVE DECODER (user directive: "push II19, nothing E8-dependent") — THE
+  RANK OBSTRUCTION DISSOLVES; THE HONEST WINDOW-PENALTY LAW CLOSES II19.**
+  (a) THE TRUE DECODER DEFINITION (HANDOFF 1068, gcheck.py): B = U W^T with B_tt = 1 and
+  B_ts = 0 ONLY on non-orthogonal pairs — asymmetric labels, FREE on orthogonal pairs.
+  The "decoder rank obstruction" (rank(M) = 241) tested the WRONG convention (the
+  symmetric full-pattern U U^T = M = J + G — only the naive B0).  THE CLASS-BLOCKED
+  DECODER (ii19_classdecoder.py): B = the within-class symmetric blocks (3 x the
+  root-lattice pattern) + the special singleton — VERIFIED VALID (diagonal all 1, zero
+  support violations, rank 28 = 3x9+1 exactly).  The word: 3 disjoint root-lattice-class
+  subwords + glue: branches 722, middle 3x194, retained 28 (cst 235), junk = the
+  within-class perp (mean 62.8, the special line trivially 0).
+  (b) THE MASKED-DEMAND FREEDOM: rows need not be the full perp (HANDOFF: "not
+  necessarily all of R(t)"); the counting bound rows >= v/c - 1 ~ 12 gives f >= 0.19.
+  (c) THE MODEL-BIAS DISCOVERY (a fifth artifact class): the mix.price model prices the
+  P111 structure at 1.185x and the R420 at 1.313-1.570x their published TRUE c's —
+  the model is OPTIMISTIC (compressed [7]/[9]-shapes price better than true fine climb
+  structures; small-r mass is heavier in the root equation).  ALL the session's
+  model-priced bands are optimistic by ~1.2-1.6x.  HONEST PRICES: true-word histograms
+  via pricer.price only (the controls reproduce the published c's exactly).
+  (d) THE HONEST CLASS-WORD PRICES (mass-exact identity hists, E8-proportioned shapes,
+  hyper-sensitive: +-0.3% mass -> +-35% c): f=1.0: 0.000981 (-43.75%); f=0.5: 0.001112
+  (-36.23%); f=0.25: 0.001192 (-31.65%); f=0.19 (the counting bound, mass/v = 42.5 BELOW
+  the R434's 43.5): 0.001213 (-30.45%).  The mask gains only ~13 points of the 44-point
+  gap — the penalty is STRUCTURAL.
+  (e) THE WINDOW-PENALTY LAW (the coherent close): verified true c's fall steeply with h:
+  h=8 (E8 R434): 0.0017444; h=10 (the II19 class word, estimated): ~0.0010-0.0012;
+  h=11 (word_blkA4, verified): 0.0004927; h=13 (word13, verified): 0.0004433.  The fixed
+  2v(h-1) mass (18/line at h=10 vs 14 at h=8), the m = 1+L(h-1) window (82 vs 64), and the
+  width-10 hosting children (rank-8 leftovers vs the E8's rank-1) are the mechanism.
+  THE CEILING MODEL (v/(h+4)^2, II19's "2.21x potential") IS NOT REALIZABLE — the I11's
+  verified word (ceiling 0.98x, true c -71.6%) already showed the gap.  VERDICT: II19's
+  class word is a REAL, VALID word family priced -30 to -45% vs the frontier; the frontier
+  lives at h=8 (E8 R434), unbeaten.  Future: the true build (gcheck-exact) pins the exact
+  c (+-few points, cannot close -30%); frontier work remains E8-internal.
 - **ASSEMBLY VERDICT (ii19_assembly_par.py, two-phase 10-worker).**  The TRUE naive
   hierarchical middle of the v1 design: distinct lvl5 1,875 + distinct lvl4 5,534 + gates/8
   2,619 = 10,028 registers -> R = 12,365 = 34.3v, vs the 3,077-3,275 mids budget — DEAD by
@@ -234,3 +268,54 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
    the true two-layer optimum of the PG top; compare against the 6h blueprint's sharing.
 3. Resume the cover enumerators for the 4-section class overlap census.
 4. Do NOT build on the +1.06% / +24% / +28% histogram numbers — all three lacked a layer.
+
+## The E8 sparse-decoder hunt + THE IDENTITY-WORD DISCOVERY (2026-10-18, later session)
+
+- **THE E8 SPARSE-DECODER HUNT (e8_sparse_decoder.py):** B0 = (J+G) mod 2 verified (rank 9
+  exactly, rows uniform 63).  The masked-demand freedom (HANDOFF 1444: "target t reads
+  c_t = row t — NOT NECESSARILY ALL of R(t)") applied to the FRONTIER SYSTEM (E8, h = 8,
+  no window penalty): a sparse decoder (rows ~12-25, above the counting bound v/c − 1)
+  would shrink the demands from ~63 to ~12-25 lines/target -> the middle shrinks -> R ~
+  320-375 -> mass/v ~ 36-40 vs R434's 43.5 -> c potentially +4-10%.
+  MEASURED: RANDOM masks (300 trials per f in 0.2-0.6): rank min 117 at EVERY f — the B0
+  rigidity is total (any random sparsification = a random matrix).  PREFIX masks (40
+  shuffles per f): rank 75-107 — structure matters (75 vs 117 at f = 0.5!) but still too
+  heavy: the honest word economics at rank 75 (cst ~ 6c ~ 450): mass/v ~ 43.9-45.1: NO
+  win.  The frozen-shape calibration: the R434 parameters price 0.0016257 vs the true
+  0.0017444 (the projection family UNDER-prices by ~7.3% — the true word's actual
+  histogram prices better than the frozen-shape approximation).
+  THE LOW-RANK SPARSE DECODER (c <= 25, rows 12-25): NOT FOUND in the masked families.
+  The asymmetric (U != W), geometric/Weyl-structured, and row-space constructions remain
+  UNEXPLORED — the concrete search target.
+- **THE IDENTITY-WORD DISCOVERY (e8_identity_word.py + gcheck + xcheck_e1.py read) —
+  THE CHECKER-SCOPE COUNTEREXAMPLE.**
+  Built the trivial word: B = I (each target receives its own line's value via ONE
+  retained register; NO phase-B reads; R = v = 120 helpers; the D-phase pre-reads cancel
+  the scattered dirt by doubling).  **GCHECK PASSES IT**: status PASS, hist {1: 240,
+  7: 360}, rank_mass 2760 = 8x120 + 120 + 2x120x7, gates D/A/B/C = 120/120/0/120.
+  THE PRICE MODEL REFUSES IT: 'no root' (the implied root ~0.38 lies far outside the
+  modeled bracket [0, 0.05]).
+  (a) THE CONCLUSION DECOMPOSITION IS FLOW-LEVEL (xcheck_e1.py lines 346-366):
+  U_block_form (z-registers hold no y-bits), J_identity (the targets' x-parts = x_t:
+  THE DELIVERY), K_equals_D (the dirt cancels via the D-phase), C_is_U_inverse (the
+  helpers restored).  NO products-coverage check exists in EITHER checker — the
+  identity word passes all of these too (manual trace).
+  (b) RETRACTION (the honest correction): the "completeness forces B = B0" derivation —
+  that the junk must cover the perps because the products form at the reads — was
+  WRONG.  The multiplication's products are extracted by the OUTER PIPELINE via the
+  norm-polarization (Q(x+y) − Q(x) − Q(y) = 2<x,y>: the FULL double sum: no per-pair
+  coverage needed inside the word).  THE SPARSE-DECODER FREEDOM IS RESTORED at the flow
+  level; the II19 class-blocked decoder (rank 28, verified) and the masked families are
+  flow-legal.
+  (c) THE CHECKER HIERARCHY: gcheck (flow + H1-H5) < xcheck (flow + the conclusion
+  decomposition) < the pipeline's requirements (the hub's #463/#510 template: what the
+  words must supply for the asymptotic model to hold — the 'whole-call correlated-helper
+  hosting and all-size realization' assumptions).  THE DECISIVE OPEN QUESTION: the
+  pipeline's word requirements.  The identity word's implied c ~ 0.38 (n (log n)^0.62!)
+  is obviously not a real complexity claim (it would break the world multiplication
+  record from a copy word) — so the pipeline's requirements MUST exclude such words;
+  WHERE and HOW they do is the open format-theory question.  A gcheck PASS is necessary,
+  not sufficient: any word claim must also name the pipeline layer.
+  THE FRONTIER (E8 R434, c = 0.0017444) STANDS UNBEATEN.  Live programs: the low-rank
+  sparse-decoder search (c <= 25); the pipeline-requirements read (the #463/#510
+  template).
