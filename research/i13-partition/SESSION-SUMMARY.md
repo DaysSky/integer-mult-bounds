@@ -2028,3 +2028,10 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   (b) THE CELLS-LADDER: the cells {u, w} (the ~45-D6-service (the pairs'-gold!!!)) + the D6-builds reading the CELLS (the sources'-~78-wall -> the ~1-3-cell-memberships!!!)
   (c) THE GATES -> THE REPLAY -> THE TRUE-HIST -> THE TRUE-PRICE -> **THE GCHECK -> THE WORD!!!**
 - **THE R-ESTIMATE (THE CONVERGED!!)**: the 286-D6s + the ~60-120-cells + the ~42-specials + the 9-gathers = **the ~400-460 (THE WORD4-CLASS (the ~-23%-model?! — the R-SHAVE (the sharing (the ~2-4h (THE NEXT!!!))))**
+
+## THE NATIVE-121 v14 — THE SOURCES'-FRAMES-TRUTH (THE WORD4's-OWN-SOLUTION!!!) (ii19_nat14.py)
+
+- **THE GCHECK's-FREE-READ-RULE (THE CONFIRMED (THE gcheck.py-LINE-77!!!))**: `climb(r, F): if cur[r] == F: return` — the sources read at their CURRENT frames: FREE (the cur UNCHANGED (the UNLIMITED!!!))
+- **THE WORD4's-SOURCES (THE MEASURED (THE {4: 120}!!!))**: every source at exactly **4 DISTINCT FRAMES** (the singleton (dim-1!) -> the cell (dim-2!) -> the mid (dim-5/6!) -> the high (dim-7/8!)) — the ~8-reads via the FREE same-frame re-reads!!!
+- **THE IMPLICATION (THE NAT15's-CORE (THE FINAL-STRUCTURING!!!))**: the ~78-piece-memberships-per-source LEGAL IFF the reads cluster at the ~4-frame ladders: the D6-builds'-srcs must be structured through the SHARED cells (the pair-sums at the shared dim-2-frames!) -> the mids -> the D6-builds (the the-R420's-OWN-LADDER-PATTERN (THE MEASURED (THE PROVEN!!!)))
+- **THE NAT15 (THE FINAL (THE ~2-4h (THE BUILD!!!)))**: the cells'-clusters (the u's-78 (the 4-FRAME-GROUPS (the SHARED-STRUCTURING!!!))) -> the gates (the THE-LADDER (the D2->D4->D6->perp (the the-R420's-OWN!!!))) -> the replay -> the TRUE-hist -> the TRUE-price -> **THE GCHECK -> THE WORD!!!**
