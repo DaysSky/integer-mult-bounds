@@ -1005,6 +1005,35 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   so the co-read unions stay perp-safe BY CONSTRUCTION, the E8's D4 way!!); (c) the
   handoff (the fresh session with THIS record!!!).
 
+## THE REPAIR SCAN — REPAIRABLE 0 AT EVERY TH; THE STRUCTURAL WALL CONFIRMED (ii19_121repair.py; SS1633-SS1636)
+
+- **THE SCAN (SS1636!!)**: for each failing (piece, dim) pair (TH=8: 234 pairs!!):
+  the alternative dims (the span + the cumulative rank + the merged perp-safety!!):
+  **REPAIRABLE 0, UNREPAIRABLE ALL** — the fallback explosion (TH=8: the fb reads
+  6,079!!): R 6,317 / TH=16: 5,265 / TH=24: 5,210 — ALL WAY BEYOND THE HOSTING WALL
+  (484!!) -> NO-ROOT everywhere.  (The SS1609 tail bug was caught AGAIN in the
+  repair script's component structures (the shared ('p', -1) nodes + the pool[-1]
+  negative indexing!!) and fixed BEFORE the run at SS1634!!)
+- **THE STRUCTURAL WALL (the mechanism!!)**: THE LIGHT DIMS (2-5!!) ARE FULL (the
+  naive cumulatives: rank(cum[d'] + piece) > d' — the capacity check fails!!) and
+  THE HEAVY DIMS (6-8!!) ARE TRANSITIVE-UNSAFE (the merged components' perp-fails!!)
+  — **THE PIECES ARE TRAPPED: NO SAFE DIMS AT ANY SLOT ASSIGNMENT!!!**
+- **THE COMPLETE VERDICT (the honest close!!)**: the naive junk-intersection
+  economies are NOT REALIZABLE under the gcheck's room-safety: the model crossings
+  (TH >= 8: the fine-slack +2.32% to +15.41%!!) stand ONLY on the unrealizable hist
+  assumptions — the fixes (the re-slot greedy (SS1628!!), the repair/composites
+  (SS1636!!)) explode the R (5,210-6,317 >> the wall 484!!).
+- **THE STRUCTURAL INSIGHT (final!!)**: THE E8'S D4 LUCK (the co-read sets ARE the D4
+  structures: perp-safe BY CONSTRUCTION!!!) DOES NOT TRANSPLANT — the room-safety
+  must be CONSTRUCTED: THE ROOM-SAFE ECONOMY (the pieces CHOSEN so the co-read
+  unions stay perp-safe BY CONSTRUCTION, the E8's D4 way!!!) — THE SUBSTANTIAL
+  REMAINING REDESIGN.
+- **THE SESSION'S HONEST PATTERN (the SS1470 observation, completed!!)**: every
+  honesty layer moved the number DOWN (the CST: +13.42% -> -7.97%!!; the h=10:
+  +33% -> -11%!!; the (c)-correction: +2.77% -> -2.45%!!) — **THE ROOM-SAFETY LAYER
+  IS THE FIRST THAT BREAKS THE REALIZABILITY OUTRIGHT (not just the price!!): the
+  naive designs DO NOT EXIST as legal words.**
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
