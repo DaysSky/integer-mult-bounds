@@ -385,6 +385,47 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   cancellation, the R420's own x(t) partners) was never piece-designed; the true shape
   (the build) sits between A and D.
 
+## THE PUSH (SS1349 DIRECTIVE): THE HONEST R COMPOSITION — THE CROSSING IS ALIVE AND MODEL-VERIFIED (ii19_2class_push.py, ii19_2class_control.py)
+
+- **THE CONVENTIONAL-BRANCH ERROR EXPOSED (the decisive correction):** the SS1331
+  'R = 480 + mid + 18' added 480 branches BY CONVENTION (the E8 cell-machinery carriers).
+  But the piece-word builds its pieces DIRECTLY FROM THE SOURCES (the A-phase: the helpers
+  read the sources — the identity-word precedent, gcheck-PASS at SS1240!!).  NO PER-LINE
+  CARRIERS ARE STRUCTURALLY NEEDED.  The honest structure: the pieces + the tail carriers
+  (the per-target leftovers) + the retained.
+- **THE THRESHOLD-TUNED POOLS (the greedy's natural knob, COOC x SAVETH):** (3,4): pool
+  192 (mean 5.6 lines, mean 12.6 users), carriers 114 -> structure 324; (2,2): pool 202
+  (mean 5.5, mean 12.1 users), carriers 94 (leftover 180 lines) -> structure 314 (R/v
+  1.31).  THE ARRIVAL LAW (the E8-precedent scope: the B-PHASE demand reads only — the
+  E8's own 3,000 = 25/line is the B-phase!!): the demand-reads 2,538-2,546 vs 9R =
+  2,826-2,916: FITS (87-90%).
+- **THE CROSSING AT THE HONEST STRUCTURES:** R=314: A +5.45% | B +13.07% | C +24.85% |
+  D +33.12% (c = 0.002322061)!!  R=324: D +28.57%.  THE ENTIRE SHAPE BAND ABOVE THE
+  FRONTIER — even the worst-case A variant!!  The whole R-ladder above from 314 to 605
+  (D: +16.38% at 430, +19.66% at 460, +9.69% at 520, +6.99% at 605), crossing below
+  only at 620.
+- **THE CONTROL (ii19_2class_control.py — the decisive honesty check, mandatory after the
+  SS1209 1.57x-bias lesson):** the refined price model (pricer.py), given the R420's
+  EXACT true hist {1: 1320, 2: 1440, 4: 60, 5: 120, 8: 9} (mass 5,112 = 8*420 + 72 +
+  2*120*7) at (v=120, h=8, R=420), reproduces the published c = 0.001653826988146799 to
+  18 digits — THE RATIO 1.000000000.  THE MODEL IS EXACT AT TRUE HISTOGRAMS (the SS1209
+  bias was the COARSE [7]-model, a different machine!!).  And the D variant's fractions
+  ARE the R420's own climb proportions (0.2619/0.5714/0.0476/0.1190 on the non-retained
+  climb mass 5,040) — the calibrated family.
+- **THE HONEST REMAINING GATES:** (1) THE SHAPE: the A/B/C/D band brackets the true
+  histogram (the build's output); even the worst (A, the all-delta-1 finest) is +5.45%.
+  (2) THE REALIZABILITY: the joint chain/slot structure — the climb rule is ONE FRAME PER
+  DIMENSION per register chain, so a piece of span ~dim 6 has read-slots only at dims 6/7/8
+  (~3 slots, ~6-7 users per piece, not the greedy's 12.6!!) and each target's read-frames
+  must nest as a flag; the pool likely resizes to ~350-450 (the price at those R's:
+  D +7.8% to +19.7% — the crossing survives the resize!!) — UNMEASURED, the decisive gate.
+  (3) THE BUILD: the full word -> gcheck -> the TRUE histogram -> the true price.
+- **THE VERDICT: THE FIRST II19-FAMILY WORD ABOVE THE FRONTIER (at the model level).**
+  The 2-class system (240 lines, h=9), the verified rank-18 class decoder, the legal
+  cancellation demands (33-line junks), the honest piece economy, the structure R ~ 314-460,
+  the price band +5.45% to +33.12% vs the frontier 0.001744386.  THE SS1331 'crossing
+  infeasible' verdict IS SUPERSEDED — it was an artifact of the conventional 480 branches.
+
 ## The E8 sparse-decoder hunt + THE IDENTITY-WORD DISCOVERY (2026-10-18, later session)
 
 - **THE E8 SPARSE-DECODER HUNT (e8_sparse_decoder.py):** B0 = (J+G) mod 2 verified (rank 9
