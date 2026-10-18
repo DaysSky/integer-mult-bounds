@@ -1101,6 +1101,32 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   **THE FLAG STRUCTURE = THE E8'S D4 WAY (the cells ⊂ the quads!!!)** — the v5: the
   nested-group clustering (the shared flags!!!).
 
+## THE TAILS' SOURCE-CHAIN GATE — THE TOTAL COLLISIONS: THE WALL FOR EVERY ROOM-FIRST VERSION (ii19_121tails.py; SS1666-SS1671)
+
+- **THE CHECK (SS1671!!)**: the v3's structure (the 63 rooms: the 60 dim-7
+  pair-rooms!!!) + the tails (the ~27-line leftovers: the spans {1: 1, 7: 118, 8:
+  2}!!!): **THE FRAME-LEVEL COLLISIONS: the (source, dim) slots 203; the
+  distinct-frames-per-slot histogram {1: 60, 2: 24, 4: 1, 6: 1, 7: 1, 9: 2, 10: 2,
+  14: 1, ..., 25: 8, 26: 8, ..., 41: 2, 42: 1}: THE COLLISION SLOTS 143/203
+  (70%!!!); THE WORST SLOT: 42 DISTINCT FRAMES; THE EXCESS READS 3,081** — the
+  sources' ONE-FRAME-PER-DIM chains CANNOT host the ~27 tails' builds (the ~dim-7
+  spans: the ~14+ distinct frames per slot!!!): **THE TAILS' SOURCE-CHAINS ARE THE
+  WALL — the SS1589's (b) class, the same as the SS1575 all-tail at the ~2.4x
+  smaller scale!!**
+- **THE VERDICT**: EVERY room-first version (the v1's +15.27%, the v3's +36.81%,
+  the v4's +26.31%!!!) stands on the tails' builds whose source-chains collide
+  TOTALLY — **THE PER-TARGET TAILS (the ~27-line leftovers at the ~dim-7 spans!!)
+  ARE ILLEGAL AS-IS** — the fixes: (a) THE RECURSIVE ROOM-FIRST (the tail-rooms:
+  the tail-groups' shared frames: the leftover co-occurrence!!!); (b) THE
+  PARTITION-STRUCTURE (the per-target disjoint rooms: the XOR-clean coverage!!!);
+  (c) the coverage improvement (the tails' shrink!!!).
+- **THE ARC'S COMPLETE WALLS (all measured!!!)**: (1) THE CHAIN-SLOTS (the v1!!!)
+  -> the dim-diversity (the v3/v4!!) ✓; (2) THE NESTING (the v4!!!) -> the
+  group-nesting (the flags: the ⊥-duality!!!) ✓ at the XOR-cost; (3) THE
+  XOR-CANCELLATION (the nested contents!!!) -> the delta-rooms/the
+  disjoint-partition; (4) **THE TAILS' SOURCE-CHAINS (the SS1671!!!): THE WALL FOR
+  EVERY VERSION** — the recursive room-first is the identified path.
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
