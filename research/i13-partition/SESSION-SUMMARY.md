@@ -51,11 +51,16 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   frontier) corrections counted; +36.73% corrections free; deeper-inline (>2) threshold:
   +57.89%/+65.02%.  Every number in this band is from a COMPLETED computation (design
   361/361, tiling 2,375 pieces, refinement converged, threshold measured) — the pricer-trap
-  lesson applied.  HONEST GATES REMAINING: (1) WORK DENSITY — assembly reads total ~44k ops
-  (~120/line vs E8's 25/line); the price model does not directly price read incidence; the
-  Stage-4/5 verification must check the work side before any word claim; (2) LEGALITY of
-  inline source-line reads (gates at legal frames; tile-register ranks) — the Stage-4
-  simulation; (3) decoder construction (cst robust through 120).
+  lesson applied.  GATE 1 (WORK DENSITY) — CLOSED FAVORABLY (computed from ii19_tiles2.pkl): total assembly
+  arrivals 42,597 (tile reads 26,552 + inline line reads 7,658 + tile-build reads 5,638 +
+  leftover singles 2,749) vs capacity h*R = 10 x 4,657 = 46,570 -> utilization 91.5%
+  (E8 R420 reference: 3,000/3,360 = 89.3%; arrivals/line 118 vs capacity/line 129 — E8:
+  25 vs 28).  The two-sided frontier condition (the framework that killed the I13 designs
+  at 192/line unshared) passes: the inline grammar is arrival-tight like a frontier word.
+  The price model is register-census-centric (pricer.py read and verified — identical
+  conventions for E8 and II19).  REMAINING GATES: (2) Stage-4 legality simulation (inline
+  source reads at legal gate frames; tile-register ranks); (3) decoder construction
+  (cst robust through 120).
 - **ASSEMBLY VERDICT (ii19_assembly_par.py, two-phase 10-worker).**  The TRUE naive
   hierarchical middle of the v1 design: distinct lvl5 1,875 + distinct lvl4 5,534 + gates/8
   2,619 = 10,028 registers -> R = 12,365 = 34.3v, vs the 3,077-3,275 mids budget — DEAD by
