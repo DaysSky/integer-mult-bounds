@@ -1185,6 +1185,57 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   pieces: the fewer users: the lower demand!!!); (c) the payoff: bit-side only (the
   complex-bound κ!!).
 
+## THE READ-ROOMS (THE PAIRS-ONLY FIRST CUT!!) — THE COLLISIONS AT THE PIECE LEVEL; THE PRICE DROPS BELOW (ii19_121readrooms.py; SS1690-SS1695)
+
+- **THE RUN (SS1695!!)**: the read-rooms: 229 (the dims {2: 44, 3: 48, 4: 20, 5: 56,
+  6: 60, 7: 1}!!); **THE RESIDUALS: 767** (the pieces' users NOT covered: the ~23% of
+  the 3,390!!!) — the direct reads (the collision-y: the SS1682 flag!!); **THE
+  PIECE-ROOM COLLISION CENSUS: {1: 41, 2: 128, 3: 6, 4: 92, 6: 46, 8: 50, 9: 4} —
+  ONLY 41/367 SLOTS LEGAL (the ONE room!!!): THE ~89% COLLIDING (the 2-9 rooms per
+  (piece, dim) slot!!!)** — THE SS1679-CLASS WALL AT THE PIECE-READ LEVEL; **THE
+  PRICE: the coarse -4.41% / the fine -7.87% (BELOW THE FRONTIER!!)** — the hist's
+  finer jumps (the pieces' [0, 4, the read-dims, 9]: the ~3-4 small climbs!!) moved
+  the LM UP (15,805 vs the 14,362!!) -> the price DOWN (THE SS1547 TWO-PARAMETER
+  MODEL: THE LOWER LM: THE HIGHER PRICE — the SS1572/SS1575 sweeps confirm!!!).
+- **THE FIX IDENTIFIED — THE PER-PIECE PER-DIM ROOM-MERGING**: the piece's rooms at
+  the same dim: THE MERGED (the ONE frame per dim!!!): the merged group = the union
+  of the room-groups; the pieces ⊥ the unions BY CONSTRUCTION (the co-read!!!) ✓✓✓
+  LEGAL BY CONSTRUCTION — the honest costs: (a) the merged rooms' co-read = the ∩
+  (the fewer pieces per room!!!) -> the residuals grow?!; (b) THE TARGET-LEVEL
+  COLLISIONS (the target's ~21 rooms at the same dim: the DIFFERENT unions!!!) — the
+  census needed too!!! — THE MEASUREMENT (the next script!!).
+- **THE REMAINING GATES**: (a) the merged rooms' legality (the piece-level ✓ by
+  construction + the target-level: the census!!!); (b) the 767 direct reads; (c) the
+  demand 3,510 (the arrival-bound R_hon 390!!!); (d) the payoff: bit-side only (the
+  complex-bound κ!!).
+
+## THE MERGED ROOMS — THE PIECE-LEVEL IMPROVED ~5x (11% -> 53% LEGAL!!); THE TARGET-LEVEL WALL (ii19_121merge.py; SS1698-SS1702)
+
+- **THE RUN (SS1702!!)**: the merged rooms: 258 (the group sizes {2: 24, 4: 71, 6: 5,
+  8: 66, 12: 38, 16: 50, 18: 4} — the pairs' unions ✓!!); the dims {2: 96, 3: 22, 4:
+  61, 5: 75, 6: 2, 7: 2}; **THE PIECE-LEVEL CENSUS: {1: 288, 2: 114, 3: 55, 4: 30,
+  ..., 14: 1} — THE LEGAL SLOTS 288/545 (53%!!) — UP FROM THE SS1695's 41/367
+  (11%!!!): THE PER-PIECE PER-DIM MERGING IMPROVED THE PIECE-LEVEL LEGALITY ~5x**
+  (the co-read pieces' memberships (the q's in the pids!!!) still create the ~47%
+  colliding slots: the 2-14 rooms at the same dim!!); **THE TARGET-LEVEL CENSUS:
+  {1: 116, 2: 77, 3: 58, ..., 11: 58, ..., 18: 4} — THE TARGET'S DISTINCT
+  ROOM-FRAMES PER DIM: THE ~400/516 SLOTS COLLIDING (the 2-18 FRAMES AT THE SAME
+  DIM!!!): THE SS1679-CLASS WALL AT THE TARGET LEVEL**; **THE PRICE: the coarse
+  -2.41% / the fine -6.03% (BELOW!!) — the LM 15,383 (the hist similar to the
+  SS1695's: the shape-sensitivity confirmed (the SS1547 two-parameter model!!!))**.
+- **THE VERDICT**: the per-piece per-dim merging improved the piece-level legality
+  (the 11% -> the 53%!!) BUT the target-level collisions are the wall (the ~74% of
+  the slots!!!) — the pieces' read-rooms need **THE JOINT COORDINATION: THE ONE
+  FRAME PER (piece, dim) AND PER (target, dim)!!!** — the SS1374-style slot design
+  (the E8's D4 flag: the JOINT structure!!!) — the substantial remaining work (the
+  CP-SAT/the joint greedy: the hours!!!).
+- **THE HONEST STATE OF THE ARC**: the partition-structured piece economy (THE
+  E8-GRADE ✓✓✓: the 210 pieces, the 13-18 users, the ~2-line tails, THE SOURCES'
+  CHAINS LEGAL BY CONSTRUCTION (the partition!!!) — THE SS1679 WALL AVOIDED!!) +
+  the read-rooms' layer (the piece-level ~47% + the target-level ~74% colliding!!!)
+  — the joint coordination is the identified path; the price straddles at the
+  arrival-bound R_hon 390 (the model level!!!) on the unresolved read-structure.
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
