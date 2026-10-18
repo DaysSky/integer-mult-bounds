@@ -1236,6 +1236,47 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   — the joint coordination is the identified path; the price straddles at the
   arrival-bound R_hon 390 (the model level!!!) on the unresolved read-structure.
 
+## THE R420's ACTUAL JOINT STRUCTURE — MEASURED (r420_rooms.py; SS1734-SS1736): THE REDESIGN'S GROUND TRUTH!!!
+
+- **THE FRAMES' ENCODING**: THE FLAT LINE-INDEX LISTS (the SS1446 confirmed!!): {empty: 1,
+  len-1: 120 (the singletons!), len-2: 180 (THE CELLS!), len-12: 70 (THE D4 ROOMS!), len-30:
+  180, len-63: 120 (THE PERPS!), len-120: 1 (FULL!)} — **THE TRUE DIMS: {0: 1, 1: 120, 2:
+  180, 4: 70, 6: 180, 7: 120, 8: 1}** — the cells dim 2; the 12-line rooms dim 4 (!!!); the
+  30-line frames dim 6 (!!!); the perps dim 7; FULL dim 8 — **THE FLAG: 0-1-2-4-6-7-8!!!**
+- **THE SOURCES' CHAINS: [1, 1, 2]** — every source: 3 A-gates: **2 READS AT ITS OWN
+  SINGLETON (THE NO-CLIMB — FREE!!!)** + 1 read at its dim-2 CELL (the ONE climb 1->2!!)
+  — the sources' chains: {s} -> the cell -> ... -> FULL ✓ NESTED!!!
+- **THE A-GATES (2,064!!)**: {'0 srcs, 1 helper-src': 1,695 (!!!), '1 srcs, 0 helper-srcs':
+  360, '0 srcs, 23-46 helper-srcs': 9} — **THE INCREMENTAL RUNNING SUMS (the 1,695
+  helper-from-helper gates at the INCREASING frames!!) + the 360 source-reads (the 3 per
+  source: the 2 singleton + the 1 cell!!) + THE 9 BIG GATES (the gathers at FULL!!)**
+- **THE B-GATES (837!!)**: the 240 target-dest (the targets' reads!) + the 597 z-dest
+  (**THE B-PHASE BUILDS TOO!!!**) — the per-target {2: 120}: **THE TARGETS READ ONLY 2
+  GATES: the dims [2, 7] (THE CELL + THE PERP!!!)** — the targets' chains: 0 -> the cell
+  (2!) -> the perp (7!) -> the final ✓✓ NESTED!!!
+- **THE PIECES' READ-ROOMS: THE COLLISIONS ZERO!!!** — the helpers read in B: 240: the
+  per-helper {1: 120, 2: 120} — **THE PIECES READ AT MOST TWICE: the dims [6, 7] (the
+  INCREASING!!)** — **THE E8's ACTUAL ECONOMY: THE BIG RUNNING-SUM PIECES (the 1-2
+  reads!!) AT THE SHARED BIG FRAMES (the dim-6 30-frames + the dim-7 perps!!) — NOT THE
+  13-18-USER SMALL PIECES!!!**
+- **THE D-GATES: 120 (one per target!!) — THE SRCS-COUNT ~121-149 (!!!)** — **THE
+  TRANSITIVE INDICATOR-PARITY DIRT (the running sums LEAK the indicators; the D
+  pre-reads the FULL transitive parity set!!! — the SS1733 analysis CONFIRMED!!)**
+- **THE SCATTER**: the ret: 9 (the gathers!); the per-target lists of 2-8 (the W ✓); THE
+  FORMAT: NO ret_frames (the old format!!) — my build: the current gcheck's format (the
+  vector bases + ret_frames: the identity-word precedent!!)
+- **THE FIRST-CUT REJECT (SS1732!!)**: 'climb not nested (reg 0)' — the sources' chains
+  (the pieces-at-their-spans: the ~2-7 per source!!) — THE PREDICTED WALL ✓ the gcheck's
+  feedback ✓
+- **THE REDESIGN'S RECIPE (the E8's way!!)**: (a) THE CARRIERS: the sources read 1-2x at
+  their OWN singletons (FREE!!!) into the first-level carriers; (b) THE INCREMENTAL TREE:
+  the helper-from-helper running sums at the INCREASING flag-frames (the cells (2!) ->
+  the rooms (4!) -> the big frames (6!) -> the perps (h-1!!) -> FULL (h!!)); (c) THE
+  TARGETS: the ~2-4 reads each (at the cell-level + the perp-level frames!!); (d) THE
+  TRANSITIVE DIRT: the D-srcs = the indicator-parity set of the read-vals (the
+  SIMULATION!!!); (e) THE PIECES READ 1-2x (the big contents!!) — NOT the 13-18x small
+  pieces — **MY SS1685 ECONOMY IS NOT THE E8's STRUCTURE: THE COMPLETE REDESIGN**
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
