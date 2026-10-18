@@ -1434,3 +1434,65 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   where it moves the frontier itself!!); (2) the fresh-system search (the priority D: the
   census screen as the reusable methodology!!); (3) the handoff (the complete record
   committed!!)
+
+## THE DIRECTION (SS1799): 'keep pushing lorentzian' — THE 121-LINE CLOSED; THE LEVEL-2 SCREEN NEXT
+
+- **THE USER'S DIRECTIVE (SS1799!!)**: 'keep pushing lorentzian' — the Lorentzian
+  program continues (NOT the E8 lever A, NOT the handoff!!)
+- **THE MEASURED STATE**: every examined system closed by measurement: the I-family
+  (I8-I13: the exact-covers, the census screens, the arithmetic!!); the II19 level-0
+  (the decoder rank 241: the width fatal!!); the 2-class (the h=10 degeneracy!!); the
+  121-line (the room-union: the R 748-5,044 vs the wall 484!!)
+- **THE REMAINING LORENTZIAN OPENING (the biggest headroom!!)**: THE II19 LEVEL-2
+  (v=929, the ceiling 4.74x!!): the probe stalled at 80-85 residual (the escalation
+  closed at SS946-960!!) BUT THE STALL-TAIL ARCHITECTURE (the level-0's validated
+  design: the bulk greedy at c_t ~9.5 + the tail closures!!) WAS NEVER APPLIED to the
+  level-2 — the screen: (a) the construction re-read (ii19_l2_probe.py — LOCATED at
+  SS1806-SS1807!!), (b) THE DECODER RANK (the B0's GF(2) rank for the 929 lines — the
+  level-0's 241 was fatal; the level-2's: UNMEASURED — THE FIRST CHECK!!), (c) the
+  c_t/budget arithmetic (the ceiling 4.74x: the R/v allowance!!), (d) the stall-tail
+  probe (the tail closures!!)
+
+## THE LEVEL-2's FIRST CHECK — THE DECODER RANK 531: FATAL-ISH PENDING THE PRICE (ii19_l2rank.py; SS1814)
+
+- **THE SYSTEM (the SS1810 construction!!)**: the 929 lines (the norms ALL 2!!): the
+  classes {(0,0): 120, (0,1): 120, (1,0): 120, (1,-1): 568, (1,1): 1}; the form x.x' +
+  a.d + b.c (the 10-dim: h=10!!) — the construction VERIFIED (the 929 = 360 + 568 + 1!!)
+- **THE PERPS**: the sizes 183-400 (the (1,-1) class: the ~183-215!!); **THE SPECIAL'S
+  PERP: 688** (⊥ to all (α,0,0) + (λ,1,-1): the a+b=0 rule!!); the demands by class:
+  {(0,0): 46,656, (0,1): 31,472, (1,0): 39,600, (1,-1): 119,016, (1,1): 688} — **THE
+  TOTAL 237,432 (the ~256 lines/target!!)**
+- **THE GF(2) RANK OF B0: 531** (of the 929!!) — vs the level-0's FATAL 241: the rank is
+  2.2x the level-0's — **BUT THE WINDOW IS 2.6x (the v/m: the 929/82 = 11.3 vs the
+  361/82 = 4.4!!) — the decoder RELATIVE to v: the 531/929 = 0.57 vs the 241/361 = 0.67
+  — THE LEVEL-2's DECODER IS RELATIVELY SMALLER!!** — the width >= 531 -> the CST ~531 x
+  the copy rank (~9-10) ~ 4,800-5,300 — **THE FATALITY IS NOW A PRICE QUESTION: does the
+  2.6x window absorb the 2.2x decoder?!** — the level-0's answer at the same accounting:
+  the width 241 -> the best case -57.61% (the NO ROOT at the realistic!!) — the level-2's:
+  **THE PRICE CHECK (ii19_l2price.py — the SS1112-style: the decoder band at the level-2's
+  window!!) — THE DECISIVE COMPUTATION**
+
+## THE LEVEL-2's PRICE CHECK — THE HOSTING WALL: R <= 3,922 vs THE IDENTITY'S R ~8,640: CLOSED (ii19_l2price.py; SS1826)
+
+- **THE CONTROL PASSES PERFECTLY**: the R420's true hist -> the published c (the ratio
+  1.000000 ✓✓✓) — the calibration validated!!
+- **THE HOSTING WALL (the pricer's own!!)**: the nres = 9R vs the cap = 38v = 35,302 ->
+  **THE LEVEL-2's CEILING: R <= 3,922 (the 4.22v!!)** — EVERY BAND (the R 4,000-20,000,
+  the decoder r=1-10, THE BEST CASE (r=1!!)) HITS THE WALL!!
+- **THE REGISTER IDENTITY'S NEED**: the R = Σc_t − v ≈ 929 x 10.3 − 929 ≈ 8,640 (the
+  probe-measured c_t ~10.3!!) — **OVER TWICE THE WALL (the 2.2x!!)** — even the E8-grade
+  c_t = 5.2 would only barely fit (the Σc_t <= 5.22v = 4,851!!); the probe's measured
+  covers: the 2x that!! **THE DECODER RANK 531 ON TOP** (vs the level-0's fatal 241!!)
+- **THE LEVEL-K ESCALATION CLOSES STRUCTURALLY**: the wall screen Σc_t <= 5.22v — the
+  measured ratios: the II19-0: 2,698 vs 1,885 (1.43x over!!); the level-2: 9,570 vs 4,851
+  (1.97x over!!) — **the ratio WORSENS with the level** (the per-target demands grow ~190
+  -> ~256 while the wall grows linearly!!) — the level-3+ strictly worse!!
+- **THE LORENTZIAN STATE after the SS1830-1831 directives ('keep finding breakthroughs
+  on lorentzian'!!)**: every measured system closed: the I8-I13, the II19-0 (the decoder
+  241), the 2-class (the h=10 degeneracy), the 121-line (the room-union), the level-2
+  (the hosting wall) — **THE ONE UNRESOLVED: THE I11's COIN-FLIP (the SS755-767: 'a
+  coin-flip, not closed'!!): the budget 1,652 (7.51v!) with the layered middle 817 <=
+  992 ✓ (the 17% margin!!) and the read-side gap c_t 8-10 vs <= 7.2 (the 1-3 gap: the
+  sampled vocabulary vs the true ~10^5-10^6 population!!)** — THE NEXT SCREEN: the I11's
+  hosting-wall check (the refined pricer at the v=220, the h=9!!) + the B0 rank + the
+  wall/c verdicts at the R band
