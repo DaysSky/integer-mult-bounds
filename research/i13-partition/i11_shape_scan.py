@@ -17,7 +17,8 @@ def maxH(src, tgt, br, gp, ge=1, hi_mult=20):
         return c is not None and c >= NEWF
     if not ok(0): return None
     lo, hi = 0, hi_mult * v
-    if not ok(hi): return None
+    # grid2-verbatim: NO ok(hi) guard -- the kappa curve declines with H, so ok(hi) is false
+    # for viable shapes; the binary search finds the crossing-down point (the shape budget).
     while hi - lo > 1:
         mid = (lo + hi) // 2
         if ok(mid): lo = mid

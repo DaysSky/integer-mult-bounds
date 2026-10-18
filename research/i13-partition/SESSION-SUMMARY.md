@@ -26,14 +26,15 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **NEW-FRONTIER REPRICING (session-final; i11_shape_scan.py).**  The R434 package (+0.57% over E1)
-  re-priced the entire I11 grid2 shape family off the table: with mix.price and the verbatim 6g-7c
-  conventions (cstp=[10]*11, grid2's src/tgt/br/gp options, 640 combos), ZERO shapes reach the new
-  frontier at ANY H (58s of real price calls; not an interface bug — earlier empty results were,
-  this one is not).  The recorded 'I11 break-even 840-900 vs E1' is now 'no break-even vs NEWF' for
-  this family.  Consequence: the 3-section architecture (projected R = 924-1,060) is dead by shape
-  vs the new frontier; any I11 revival needs a fundamentally richer shape family (unscanned) or an
-  architecture with R under the peak of the best unscanned shapes.
+- **NEW-FRONTIER REPRICING — CORRECTED (i11_shape_scan.py + ceiling_scan.py).**  The first scan
+  ('I11 closed by shape, 0 viable') was WRONG: I added an ok(hi) guard that grid2 does not have;
+  the kappa curve DECLINES with H (peak 0.0022-0.0026 at H=0 — an unrealizable no-middle histogram),
+  so ok(20v) is false for viable shapes and my guard killed them all.  Grid2-verbatim binary search
+  finds the crossing-down point = the shape budget.  From the 6i tables the crossing was H ~
+  1.4-2.1v vs E1; vs NEWF slightly tighter.  The 3-section architecture needs H ~ 360-460
+  (1.6-2.1v): a genuine coin-flip at the boundary — I11 is NOT closed by shape.  The corrected
+  scan (guard removed) measures the exact budget per shape.  LESSON (third instance): the pricer
+  prices histograms, not realizability — the H=0 peak is the same trap as the dead=0 sanity check.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
