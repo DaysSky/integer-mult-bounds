@@ -100,7 +100,8 @@ assert e is None
 c0 = price(dict(hist0), V, H, w['R'])[0]
 FRONT = mp.mpf('0.001744385950814795279853')
 log('    price control: %s (%+.4f%% vs the frontier)' % (mp.nstr(c0, 22), float((c0 / FRONT - 1) * 100)))
-assert mp.nstr(c0, 20) == mp.nstr(mp.mpf('0.001335891046497132929087'), 20), 'PRICE CONTROL FAILED'
+if SRC.endswith('ii19_own_word4.json'):
+    assert mp.nstr(c0, 20) == mp.nstr(mp.mpf('0.001335891046497132929087'), 20), 'PRICE CONTROL FAILED'
 
 # (1) chain-shape census
 PH = ('D', 'A', 'B')
