@@ -2070,3 +2070,8 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 - **THE REPLAY (the D+A+scatter+B (the NO-C!!!))**: THE TARGETS'-FINALS PASS (the 121/121!!! (the the-122-OK (the the-121-targets + the the-1!!!))) — THE C-PHASE (the H4-reversal) RESTORES ONLY THE HELPERS!!!
 - **THE RESIDUE-TRUTH**: the srcs'-XOR (the ⊕(1<<s)) is NOT the delivered-register-part (the srcs'-VALS-are-complex (the 1<<h ⊕ the-junk!!!)) — the W4's-120/121-srcs-residues-are-RED-HERRINGS — THE ACTUAL-BALANCE (the the-VALS (the the-empirically-✓!!!
 - **THE NAT18's-IMPLICATION**: the D+the-scatter+the-B (the the-vals'-balance!!!) — the design-needs (the the-B's-residue-fix (the the-... — the the-EMPIRICAL (the the-the-... — the NEXT-STEP!!!
+
+## THE NATIVE-121 v18c — THE W4's-RESIDUE-SECRET (THE EMPIRICAL!!!)
+
+- **THE W4's-D-DELIVERED-REGISTER-PARTS: ALMOST-ZERO!!!** (the t=0: the 2-bits (the t=1/2: the 1-bit!!)) — THE A-PHASE's-STRUCTURED-VALS: the helpers'-vals (the the-1<<h-parts (the the-⊕(the-~150-srcs) (the the-CANCELED-ALMOST-ENTIRELY!!!)))
+- **THE NAT18's-IMPLICATION**: THE H_u-VALS-MUST-BE-STRUCTURED-THE-SAME!!! — the the-... — the the-... — the the-the-FIX (the the-the-... — the NEXT!!!
