@@ -1277,6 +1277,37 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   SIMULATION!!!); (e) THE PIECES READ 1-2x (the big contents!!) — NOT the 13-18x small
   pieces — **MY SS1685 ECONOMY IS NOT THE E8's STRUCTURE: THE COMPLETE REDESIGN**
 
+## THE R420 CONTROL — THE PERFECT MATCH: THE COMPLETE VERIFICATION MACHINERY VALIDATED (r420_tree.py; SS1742-SS1745)
+
+- **THE VAL-SIMULATION (SS1742/SS1745!!)**: the full bitmask replay of the published R420:
+  **THE FINAL-VALUE CHECK: 0 BAD REGISTERS ✓✓✓** (the semantics: the phases
+  D/A/scatter/B/C, the climbs, the val-XORs — EXACTLY understood!!) — the hist's first
+  reconstruction missed **THE COPY CHILDREN** (the gcheck's line 114: the rets' frames'
+  dims x 9 = {8: 9}!!) — the 3.08x price artifact — **THE FIX (SS1743!!): the hist2 =
+  the climbs + the copies: {1: 1320, 2: 1440, 4: 60, 5: 120, 8: 9} — THE MASS 5112 =
+  THE IDENTITY (8x420 + 72 + 2x120x7) ✓✓✓**
+- **THE CONTROL (SS1745!!)**: **THE RECONSTRUCTED c = 0.001653826988146798944268 —
+  THE RATIO 1.0 vs THE PUBLISHED — THE DEVIATION 8.8e-21% (the mpmath precision
+  floor!!!)** — **THE COMPLETE VERIFICATION MACHINERY VALIDATED END-TO-END: the word
+  -> the replay -> the true hist -> the true price ✓✓✓ THE SAME MACHINERY THAT WILL
+  VERIFY THE 121-LINE WORD**
+- **THE R420's FULL TREE (the transplant recipe!!)**: (a) THE 540 build-dests = the 120
+  sources + the 420 helpers (**THE SOURCES ARE ACCUMULATED TOO!!!**); the 360 carriers
+  (the any-source-src!) + the 180 pure sums; (b) THE SUMS' CHAINS: the dim-2 first-gates
+  (from the carriers!) then the dim-4 single-src accumulations (599!!) + the 84 dim-6 +
+  the 9 dim-8 big finals (the 23-46 helper-srcs!!); (c) **THE TARGETS: the 2 gates: THE
+  DIM-2 DIRECT SOURCE-READ (one junk line delivered at the cell!!!) + THE DIM-7 3-SRC
+  TOP-SUM READ (the junk's bulk!)** — the read-gates {'dim 2, 1 srcs': 120, 'dim 7, 3
+  srcs': 120} ✓; (d) THE GATHERS: the flag-chains (the dim-2/4/6 incremental!) + the
+  dim-8 big finals ✓
+- **THE REDESIGN'S RECIPE (the 121-line!!)**: the flag: the singletons (1!) -> the
+  cells (2! the junk-pairs!) -> the partition 4-frames (4!) -> the big shared frames
+  (6-7!) -> the perps (8!) -> FULL (9!); the sources read 1-2x free at the singletons +
+  ~1x at the cells; the incremental tree (the dim-2 -> dim-4 -> dim-6 chains!); the
+  targets: the ~1 dim-2 direct read + the ~3 top-sum reads at the perp-level frames;
+  the gathers: the flag-chains + the big FULL finals; **THE TRANSITIVE D-DIRT (the
+  simulation's parity!!)**
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
