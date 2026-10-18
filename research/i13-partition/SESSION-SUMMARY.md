@@ -26,18 +26,17 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **EFFICIENCY FRAMEWORK (session-final; shared_decomp.py).**  Target reads are FREE (k users cost one
-  build), so the binding resource is ASSEMBLY ARRIVALS: capacity = h x R; every piece's content line
-  must arrive at a gate once.  E8 R420 runs at 89% of this bound (incidence 3,000 vs capacity 8 x 420 =
-  3,360) — frontier words are TIGHT against arrival capacity.  I13 break-even (R = 1,312 at the best
-  shapes): capacity 17,056, needs efficiency >= 4.13 slots/line.  Measured: pairwise sections 2.0
-  (all 35,178 have EXACTLY 2 users — no sharing economy at pair level; greedy gives 69,942, dead),
-  PG top 2.44, maxpairs halves+Q 3.92 (**17,967 vs 17,056: a 5.4% gap**), Q-parts 4.0.  The needed
-  structure is precisely characterized: pieces of efficiency > 4.13 (rank-6/7 rooms with 10+ users,
-  better Q mixes, apex D10 parts).  THE SHARPEST OPEN QUESTION: can any I13 demand decomposition beat
-  17,056?  The 5% gap is the smallest miss in the project's history; candidates: 3-way halves where
-  geometry allows, TTTT-vs-PPTT Q mixes, apex D10 parts for P targets (famn.py 12 decomposition),
-  GF(2) cancellation covers.
+- **FRAME-TOTAL PIECES (session-final discovery, UNCALIBRATED).**  The efficiency analysis surfaced the
+  high-efficiency direction: a piece = total of a rank-4 flat M (4 lines) serves every target in
+  perp(M) — a rank-8 room with 42-56 lines.  Efficiency ~44-56 slots/line vs the 4.13 needed.  If
+  viable, incidence collapses far below 17,056.  BUT viability hinges on (a) the copy/fan-out cost
+  (48 users need 47 climbing copies = helper registers, or the 6i mover structure) and (b) the 7c
+  TOTALS-FEEDER LEMMA ("totals of groups at rank >= 4 need feeders") — this exact structure.  Do NOT
+  derive format semantics from memory (three sign/cost errors this session came from that).
+  NEXT SESSION TASK 1: extract R420/R434's actual write/copy/read/register statistics from the
+  verified packages (e8-bit-carrier-skeleton, e8-bit-p111-r434), build the capacity model from
+  OBSERVED numbers, then recompute the 5.4% gap and the frame-total cost.  TASK 2: re-read the
+  totals-feeder lemma's exact statement before pricing frame-totals.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
