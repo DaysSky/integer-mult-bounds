@@ -506,6 +506,42 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   sparse-decoder search (c <= 25); the pipeline-requirements read (the #463/#510
   template).
 
+## THE R420 ANATOMY: THE COMPLETE GROUND TRUTH — THE 121-LINE BUILD'S DESIGN REVOLUTION (r420_anatomy*.py)
+
+- **THE FRAMES = THE LINE-INDEX SETS** (SS1446!!): the R420's 672 frames: {0: 1, 1: 120
+  (the singletons), 2: 180 (THE CELLS: dim 2!!), 12: 70 (THE D4 12-line frames: dim 4!!),
+  30: 180 (the 30-line frames: dim 6!!), 63: 120 (the perps: dim 7!!), 120: 1 (THE FULL:
+  dim 8!!)} — THE SPANS OF THE LINE-SETS (NO arbitrary fillers!!): the FLAG DESIGN.
+- **THE HELPERS = THE RUNNING SUMS** (SS1450!!): built INCREMENTALLY (1 src per A-gate!!)
+  climbing the D4 flag (the singleton -> the cell -> the 12-frame -> the 30-frame ->
+  FULL!!): the content grows WITH the frame (the content-frame invariant!!): the A-gates:
+  2064 = 240 (singleton-starts) + 360 (cell-starts) + 1215 (THE 12-FRAME BUILDS: THE
+  FRAME-SHARING ECONOMY!!!) + 240 (the 30-frames) + 9 BIG (23-46 srcs at FULL = the
+  GATHERS: the hierarchical builds from the helper-totals!!!).
+- **THE TARGETS READ ~4 REGISTERS ONLY** (SS1450/SS1458!!): 1 single-line source (at a
+  cell-frame: dim 2!) + 1 multi-line accumulated source (24-30 lines!!) + 2 helpers
+  (16-21 lines each!!) (at the perp-frame: dim 7!!): the targets' chains: 0 -> the cell ->
+  the perp (the deltas [2, 5]!!!): THE PERP-CORRECTIONS (the SS1128 memory: 'the d-single
+  (1 read) + the tops (3 needer-reads)' — CONFIRMED!!).
+- **THE SEMANTICS VERIFIED: 120/120 targets: scatter ^ B-reads == {t} EXACTLY** (SS1458!!)
+  — the scatter delivers B[t] (the 64-line sets via the W-rows: ~2-3 gathers per
+  target!!); the B-reads XOR out perp(t) leaving {t}.
+- **THE FORMAT CAVEAT**: the R420's word is in an OLDER format ('coords', no
+  'ret_frames'!!) -> MY gcheck (SS1437) requires 'ret_frames': MY FORMAT = the identity
+  template (SS1435; the SS1240 gcheck PASS!!): the D-phase = the dirt-doubling ONLY
+  ([0, t, [the B-helper-srcs + the scatter-rets!!]] — the identity word's minimal
+  structure; NOT the R420's massive 121-204-src D-gates (the other format's
+  y-mechanics!!)).
+- **THE 121-LINE TRANSPLANT DESIGN (THE NEW BUILD!!)**: (1) THE FLAG: the 121-line frames:
+  the singletons (121) + the cells + the E8-D4 structures (+ the special: orthogonal to
+  all: the +1-dim frames!!) + the perps (dim 8) + FULL (dim 9); (2) THE CORRECTIONS: the
+  per-target B-reads: the XOR = perp(t) (64 lines for the roots / 120 for the special!!):
+  ~4-5 registers (the sources + the running sums!!); (3) THE GATHERS: MY VERIFIED
+  FACTORIZATION (SS1423: the 9 basis rows + the W!!) built hierarchically at FULL
+  (CST = 9 x 9 = 81!!); (4) THE R: the R420-analog ~3.5-4 x 121 = ~425-485?!? THE PRICE
+  BAND AT THE R420-STYLE R (the SS1406 trend: at h=9 the BIGGER R prices BETTER — the
+  window!!!): THE MEASUREMENT (the next stage!!).
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET) CROSSES (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
