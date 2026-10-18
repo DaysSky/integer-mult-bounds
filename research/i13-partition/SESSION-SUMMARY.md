@@ -2075,3 +2075,10 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
 
 - **THE W4's-D-DELIVERED-REGISTER-PARTS: ALMOST-ZERO!!!** (the t=0: the 2-bits (the t=1/2: the 1-bit!!)) — THE A-PHASE's-STRUCTURED-VALS: the helpers'-vals (the the-1<<h-parts (the the-⊕(the-~150-srcs) (the the-CANCELED-ALMOST-ENTIRELY!!!)))
 - **THE NAT18's-IMPLICATION**: THE H_u-VALS-MUST-BE-STRUCTURED-THE-SAME!!! — the the-... — the the-... — the the-the-FIX (the the-the-... — the NEXT!!!
+
+## THE NATIVE-121 v18d — THE RESIDUE-FIX's-IMPLEMENTATION-SCOPE (THE FINAL-ALGEBRA!!!)
+
+- **THE FUNDAMENTAL-FACT**: the register-bits CANNOT cancel via DIFFERENT-registers (the disjoint-bits!) — the cancellation REQUIRES (a) the same-register-double-reads OR (b) THE STRUCTURED-VALS (the cross-bit-carriers (the W4's-way!!!))
+- **THE W4's-PATTERN (THE the-... — the the-A-phase's helpers (the the-vals-containing-the-cross-bits (the the-organized-⊕-cancellation (the the-almost-zero-delivered!!!)))
+- **THE NAT18's-IMPLEMENTATION (THE CONCRETE-STEPS!!!)**: (1) the H_u-vals'-structuring (the the-A-gates (the the-cross-reads!!!)); (2) the the-residue-measure (the per-target (the replay!!!)); (3) the the-B's-compensation (the the-pure-bit-carriers?!); (4) THE FULL-EMISSION + THE GCHECK!!!
+- **THE the-the-the-the-... — THE NEXT-SESSION (THE the-fresh-mind (THE the-...!!!)))
