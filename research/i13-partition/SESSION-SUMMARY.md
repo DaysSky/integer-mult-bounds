@@ -888,6 +888,71 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   turns deep — the nesting redesign + the build are the fresh session's natural work
   (the handoff: THIS summary!!).
 
+## THE NESTING-AWARE CUMULATIVE PACKING — THE SS1515 TARGET-SIDE BLOCKER SOLVED (ii19_121nest.py; SS1604)
+
+- **THE CUMULATIVE DESIGN (the user's SS1601 'no keep pushing'!!)**: F_d = span(the
+  items at the dims <= d) (+ the fillers to the dim d, chosen INSIDE F_{d+1}!!): the
+  cumulative unions are INCREASING BY CONSTRUCTION -> **THE NESTING IS AUTOMATIC!!**
+  The fillers' existence: cum[d] ⊆ F_{d+1} with rank(cum[d]) <= d -> the dim-d
+  extension inside F_{d+1} ALWAYS EXISTS ✓; the final: F_8 = the t-perp ✓; THE
+  NONDEGENERACY IS FREE (the 121-line system's span is POSITIVE-DEFINITE: every
+  subspace nondegenerate!!!).
+- **THE MEASUREMENT (SS1604!!)**: **THE CUMULATIVE PACKING IS FULLY FEASIBLE AT ALL
+  THREE CROSSING THs**: TH=8: **UNPLACED 0** (the slots {2: 121, 3: 97, 4: 87, 5: 75,
+  6: 241, 7: 1391, 8: 407}; the placed-per-target ~14-24!!); TH=16: **UNPLACED 0**
+  (the slots {2: 121, ..., 7: 886, 8: 315}; the ~12-17!!); TH=24: **UNPLACED 0** (the
+  slots {2: 121, ..., 7: 851, 8: 318}; the ~12-17!!).  **THE SS1515 '121/121 TARGET
+  CHAINS FAIL' IS SOLVED ON THE TARGET SIDE: the cumulative design nests by
+  construction!!!**
+- **THE REMAINING NESTING — THE ROOM STRUCTURE (THE E8'S OWN MECHANISM!!!)**: the
+  gcheck's gate rule (ALL the operands climb to the gate's frame!!) -> THE PIECE'S
+  READ FRAMES MUST BE SHARED BY ITS DIM-GROUPS OF USERS (one frame per dim per
+  chain!!) -> at each dim d: the reads (t, p) form the bipartite graph: the CONNECTED
+  COMPONENTS = THE ROOMS: each room needs ONE shared dim-d frame ⊇ the room's
+  pieces' union ⊆ THE COMMON PERP of the room's targets (the pieces ⊥ ALL the
+  room's targets!!) — THE ROOM FRAMES' EXISTENCE: THE NEXT DECISIVE MEASUREMENT; AND
+  the cross-dim nesting: the target's rooms R_d ⊆ R_{d+1} (the room at the dim d
+  inside EACH member's (d+1)-room: the combined-rank checks!!): the joint constraint
+  (the SS1374-style rooms + the cumulative!!).
+- **THE STANDING**: the (c)-corrected crossings (TH >= 8: the fine-slack +2.32% to
+  +15.41%!!) + THE TARGET-SIDE NESTING SOLVED (the cumulative!!!) + THE ROOM
+  STRUCTURE (the piece-side + the joint: the next gates!!) + the bit-side-only
+  payoff.
+
+## THE ROOM MEASUREMENT — THE GIANT COMPONENTS FAIL; THE SINGLE-PIECE ROOMS ALWAYS SAFE (ii19_121rooms.py; SS1611-SS1615)
+
+- **THE SCRIPT'S TWO BUGS FIXED BEFORE THE RESULT (SS1609/SS1613!!)**: (1) THE
+  TAIL-NODE BUG: the tails (pid -1!!) all shared ONE node ('p', -1) across the 121
+  targets -> ONE GIANT FALSE ROOM: fixed to the per-target ('tail', t) nodes; (2)
+  the tails' CONTENTS were missing from the rooms' perp-checks: fixed (leftovers[t]
+  included!!); (3) the print bug: dict[:14] (the slice on a dict -> KeyError!!):
+  fixed to the full sorted list (no truncation!!).
+- **THE ROOMS (the connected components of the per-dim read graphs!!)**: the naive
+  cumulative slots: TH=8: the dims {2: (10, 0), 3: (21, 0), 4: (16, 2), 5: (25, 4),
+  6: (7, 1), 7: (19, 1), 8: (26, 1)}: **TOTAL PERP-FAILS 9**; TH=16: 11; TH=24: 11.
+- **THE ROOM SIZES (pieces, targets, perp-OK!!)**: THE OVERWHELMING MAJORITY SAFE:
+  the single-piece rooms (1, k, True) for k = 1..63 (60-67 rooms of (1, 1, True) per
+  TH!!!) — **THE SINGLE-PIECE ROOMS ARE ALWAYS PERP-SAFE (p ⊥ ALL its users: p ⊆
+  each user's junk!!!)**; the failures: the multi-piece rooms (2-3, k, False) + **THE
+  GIANT COMPONENTS: (60 pieces, 80 targets, False), (75, 20, False), (165, 102,
+  False) at TH=8** (the transitive merges via the shared pieces + the co-reads!!!).
+- **THE STRUCTURAL RULE (the honest!!)**: the room's frame ⊇ the room's pieces'
+  union ⊆ THE COMMON PERP of the room's targets: the single-piece rooms: p ⊆ ∩ its
+  users' perps ✓✓ ALWAYS; the multi-piece rooms: the TRANSITIVE members (p read by
+  t1, t2; q read by t2, t3: the component {p, q, t1, t2, t3}: p ⊥ t3 NOT
+  guaranteed!!!) -> the giant components FAIL.
+- **THE E8'S SOLUTION — THE ROOM-TOTALS (the composites!!)**: the co-read pieces
+  (the same target, the same dim!!) merged into THE COMPOSITES (p ⊕ q: the single
+  registers!!!): the composite's room = a single-piece room -> ALWAYS SAFE ✓✓; the
+  composites SHARED across the targets with the same co-read sets (THE E8'S
+  ROOM-TOTAL MECHANISM: the R420's 12-frames!!!) — THE R IMPACT (the composites'
+  counts + the sharing statistics!!): THE NEXT MEASUREMENT.
+- **THE STANDING (after the rooms!!)**: the (c)-corrected crossings (TH >= 8:
+  +2.32% to +15.41%!!) + the target-side nesting SOLVED (the cumulative!!!) + THE
+  ROOMS: the single-piece safety + the giant fails + THE COMPOSITE/ROOM-TOTAL
+  DESIGN (the next gate: the composites' sharing + the R impact!!) + the bit-side-only
+  payoff.
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
