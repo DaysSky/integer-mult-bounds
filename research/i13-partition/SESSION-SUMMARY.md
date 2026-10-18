@@ -345,6 +345,46 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   (the +-30%-in-c shape sensitivity measured all session): the build decides whether
   II19 beats the frontier.
 
+## THE 2-CLASS MIDDLE ECONOMY — THE CROSSING IS INFEASIBLE (ii19_2class_true.py, ii19_2class_middle.py)
+
+- **THE DEMANDS + THE DECODER (measured):** the class-blocked 2-class decoder VERIFIED at
+  rank 18 exactly (the B construction needed the junk pattern filled — the first run's
+  rank 240 was the identity-matrix bug).  The class perps: 63 uniform.  The cancellation
+  demands (greedy and canonical, k=1/k=2): junks 33/29 lines, ALL counting-bound-legal
+  (>= 13 at c=18), ALL sharing WEAK (240/240 distinct junks, overlaps 5.5-6.6 — the I13
+  pair-specific signature; the E8 arc's lesson #1 repeated on II19).
+- **THE REFINED-HIST BAND (mass-exact BY CONSTRUCTION, no closure distortion; the control
+  reproduces the E8 R420 true-hist to 15 digits):** A (fine, all delta-1), B (E8-ish),
+  C (coarse), D (the R420's OWN climb proportions {1: 26.2%, 2: 57.1%, 4: 4.8%, 5: 11.9%}).
+  THE D VARIANT PRICES +4.97% / +5.35% / +6.79% AT R = 560/573/590 (the peak at 590!),
+  crossing back below at R = 620 (-3.64%).  THE CROSSING ZONE: R ~ 560-590, mid 31-46/class.
+- **THE PIECE ECONOMY (the decisive feasibility; the fixed greedy: the full-common growth,
+  the uncovered real_users filter, the honest R = 480 + pool + 18):** for the canonical
+  k=1 junks (33 lines, weak sharing), the greedy piece extraction gives a pool of
+  **192 pieces** (mean 5.6 lines, mean 12.6 users, max 17), 260 singles (the direct
+  source reads), the arrival saving 4,164 of 7,920 slots (53%).  THE ARRIVALS: 4,776 vs
+  the capacity 9R = 6,210 (77%, FITS).  (The first run had two bugs: the x2 R-inflation
+  (the pool is the TOTAL over both classes: 962 was wrong, 730 the fix) and the
+  covered-blindspot in the real_users filter — both fixed before the verdict.)
+- **THE HONEST VERDICT: THE CROSSING IS INFEASIBLE AT THE PIECE ECONOMY.**  The crossing
+  needs mid ~62-92 TOTAL; the measured economy gives 192: the weak-sharing wall — the
+  cancellation randomizes the junks and the middle cannot compress.  AT THE HONEST
+  R = 690: A: -22.33% | B: -15.56% | C: -3.64% | D: -5.70%.  ALL BELOW THE FRONTIER.
+  The best (C) is the least realistic shape (30% rank-5 mass vs the R420's 12%); the
+  honest D: -5.70%.
+- **THE II19 PUSH'S HONEST ENDPOINT:** the demand families: k=1 (33-line): the middle
+  192 -> R=690 -> -3.6 to -22%; the full perps (63): the transplant middle 360 ->
+  R=858 -> ~-15%; the deeper k=2 (29): ~-4 to -5%.  NO DEMAND FAMILY REACHES THE
+  CROSSING.  The 2-class window (h=9, m=73) is materially better than h=10 (the best
+  honest -3.64% vs the h=10 floor -25.5%) — THE CLOSEST ANY II19-FAMILY WORD HAS COME —
+  but measured below at every configuration.  THE FRONTIER (E8 R434, c = 0.0017444)
+  STANDS UNBEATEN.
+- THE REMAINING CAVEATS: the greedy is a crude cover design (a better design could
+  compress somewhat, but the needed ~2x compression against the measured weak sharing
+  is unlikely); the coordinated/frame-aligned demand family (the sharing-preserving
+  cancellation, the R420's own x(t) partners) was never piece-designed; the true shape
+  (the build) sits between A and D.
+
 ## The E8 sparse-decoder hunt + THE IDENTITY-WORD DISCOVERY (2026-10-18, later session)
 
 - **THE E8 SPARSE-DECODER HUNT (e8_sparse_decoder.py):** B0 = (J+G) mod 2 verified (rank 9
