@@ -61,6 +61,33 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   conventions for E8 and II19).  REMAINING GATES: (2) Stage-4 legality simulation (inline
   source reads at legal gate frames; tile-register ranks); (3) decoder construction
   (cst robust through 120).
+- **GATE 3 (DECODER) — THE KILL: THE DECODER RANK OBSTRUCTION (ii19_decoder_rank.py,
+  ii19_decoder2.py, headroom scans).**  The format's decode structure (geom.py convention):
+  GF(2) labels u_s with u_s . u_t = 1 iff (s = t or G[s,t] = 0) — U U^T = M — REQUIRES
+  width >= rank(M).  MEASURED: rank(M) = 241 for II19's full 361-line system (each level
+  class alone: rank 9, E8-grade; the cross-class twist (alpha,1,0).(beta,0,1) = alpha.beta+1
+  explodes the rank 24x beyond the natural family's ~10).  The congruence construction:
+  309 columns, W W^T = M verified; centre totals 34/309 closed (legality failing; the E8
+  level-0 control: 0/9 closed — the congruence is not the natural structure, but the
+  WIDTH BOUND is construction-independent).  THE HEADROOM SCAN (decisive): at EVERY H
+  convention (3,484 / 3,574 / 3,757), cst [1]*241 — the IMPOSSIBLE best case, every total
+  rank 1 — prices c ~ 0.0007 = -57.6% to -59.6% vs the frontier; every realistic structure
+  (rank >= 2) NO ROOT.  The width-241 decoder is fatal at any total structure and any
+  convention.  VERDICT: II19 is CLOSED by the decoder rank obstruction.
+- **RETRACTION/SUPERSESSION:** the inline-grammar band (+31.80% at R = 4,657, committed
+  f0c88b61) assumed a ~10-register decoder (cst [7]*10); the rank computation refutes that
+  assumption — the true decoder costs >= 241 registers.  The +31.8%/+36.7% bands are
+  SUPERSEDED.  The resource-gate record STANDS as measured: Sigma c_t = 2,698 (R_id 6.5v),
+  tile pool 2,230 (R = 4,657 = 12.9v under the resource budget), arrivals 91.5% (E8-grade).
+  II19 passed every gate it could pass; the decode structure is the kill — the same rigor
+  as the I13 four-part obstruction, now for the even-unimodular II family.
+- **LESSONS + OPEN QUESTIONS for future sessions:** (1) the decoder rank screen
+  (rank(M) vs the natural width) is a MINUTES computation that gates everything — run it
+  at the census stage BEFORE architecture development (the II19 arc could have been
+  screened at its start); (2) whether a NON-STANDARD decode mechanism (staged/multi-layer,
+  exploiting the level structure — each class decodes at width 9) could exist for II19 is
+  a format-redefinition question, not a word in the existing format.  The frontier stands
+  at E8 R434 (+0.57%), unbeaten.
 - **ASSEMBLY VERDICT (ii19_assembly_par.py, two-phase 10-worker).**  The TRUE naive
   hierarchical middle of the v1 design: distinct lvl5 1,875 + distinct lvl4 5,534 + gates/8
   2,619 = 10,028 registers -> R = 12,365 = 34.3v, vs the 3,077-3,275 mids budget — DEAD by
