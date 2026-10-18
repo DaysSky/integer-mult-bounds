@@ -40,10 +40,13 @@ for t in (g.P(0,1), g.T(0,1,2)):
         for l in [x for x in range(V) if room >> x & 1]: cnt[l] += 1
     odd = {l for l, c in cnt.items() if c % 2}
     log('   odd-covered lines %d; R(t) %d; odd set == R(t)? %s' % (len(odd), bin(R_t).count('1'), odd == set(x for x in range(V) if R_t >> x & 1)))
-    # CP-SAT sparse odd-cover: choose <= k rooms XORing to R(t)
+    # CP-SAT sparse odd-cover: mixed vocabulary = flat rooms + pair-sections {t,e}-perp
     for KMAX in (4, 6, 8):
         m = cp_model.CpModel()
-        cands = by_t[t]
+        cands = list(by_t[t])
+        secs = [HYP[t] & HYP[e] for e in range(V) if e != t and G[t, e] == 0]
+        cands = cands + [(0, s) for s in secs]
+        log('   mixed vocabulary: %d rooms + %d sections' % (len(by_t[t]), len(secs)))
         y = [m.NewBoolVar('') for _ in cands]
         m.Add(sum(y) <= KMAX)
         # per line: XOR parity constraint: sum of rooms containing line is odd for lines in R(t), even else

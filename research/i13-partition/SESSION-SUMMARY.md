@@ -26,14 +26,17 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **FLAT-TOTAL DESIGN: NEGATIVE (flat_design.py, session-final).**  D4-type flats confirmed throughout
-  I13 (32,175 flats: 6,435 twelve-line D4s + 25,740 eleven-line; 855-1,485 per target, mean 990) —
-  the vocabulary is rich and passes both sides of the frontier condition (rooms 42-56 lines, users
-  12).  BUT the demand algebra fails: the XOR of ALL rooms of flats containing t is exactly 0 (every
-  line even-covered), and CP-SAT proves NO odd-cover with <= 4, 6 rooms (P and T both; 8 for T).
-  So R(t) cannot be sparsely delivered by flat-total pieces; the structure degenerates like every
-  other: rich sharing vocabulary, vanishing XOR algebra.  This mirrors the partition-alignment
-  lemmas (6h/7c): I13's obstructions are parity-algebraic, not just counting.
+- **SUBSPACE-EXCLUSION OBSTRUCTION (session-final, decisive for the piece-based program).**  GF(2)
+  span test: R(t) is NOT in the span of the rooms (12-user pieces) available to t — and neither are
+  ANY of the {t,e}-sections (60/60 tested, mean 111 lines; span basis 168-dim).  The demand algebra's
+  spanning carriers (sections, E-sets) are ALL 2-user families; the only high-user family (rooms,
+  u = 12) lives in a proper subspace that excludes R(t).  Consequence: every piece-based design must
+  use 2-user carriers for the algebra, whose incidence (24-46k) exceeds the 17,056 arrival capacity
+  by 1.4-2.7x.  The three constraints (span, identity budget, arrival capacity) are now mutually
+  unsatisfiable for I13 — a complete obstruction for piece-based words, sharper than the parity
+  lemmas (a subspace exclusion, not a design failure).  Remaining Lorentzian paths: lever A on E8
+  first (a middle more efficient than R420 per incidence), or a new system with different geometry
+  (HANDOFF priority D).
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
