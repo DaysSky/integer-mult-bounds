@@ -1308,6 +1308,31 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   the gathers: the flag-chains + the big FULL finals; **THE TRANSITIVE D-DIRT (the
   simulation's parity!!)**
 
+## THE R420's CARRIERS' CHAINS — THE FREE RE-READS AT THE SAME FRAME: THE MISSING MECHANISM (r420_tree.py; SS1750-SS1752)
+
+- **THE CARRIERS' CHAINS (SS1752!!)**: the 240 helper-carriers read; the per-carrier
+  read-count {2: 60, 4: 3, 5: 25, 6: 56, 7: 53, 8: 12, 9: 8, 10: 9, 11: 12, 12: 1, 13:
+  1} — **THE CHAINS' DIMS: [2, 4, 4, 4, 4, 6, 7] etc. — THE REPEATED DIM-4 READS!!!**
+  — the read-frames dims {2: 240, 4: 634, 6: 180, 7: 156, 8: 169} — the non-increasing
+  flag: 179/240 — **THE RESOLUTION: THE RE-READS AT THE SAME FRAME ARE FREE (the
+  gcheck's `if cur[r] == F: return`!!!)** — the carrier's 4 dim-4 reads: THE SAME
+  12-FRAME (the ONE room per dim!!!) — THE R420 PASSES (the published word!!) ✓✓✓
+- **THE DECISIVE MECHANISM (the missing piece of the whole 121-line arc!!!)**: the
+  one-frame-per-dim constraint is per DISTINCT FRAME (the climbing chain!), NOT per
+  read!!! — a register read 100x at the SAME frame: FREE (no climb, no cost, no
+  collision!!!) — **THE ROOM SHARING IS THE ECONOMY (not the read-count!!!)** — the
+  SS1695/SS1702 collision analyses counted the READS, not the DISTINCT FRAMES — the
+  phantom collisions: the same-frame re-reads!!!
+- **THE R420's FINAL PICTURE**: the flag 0-1-2-4-6-7-8; the carriers (the ~240!) with
+  the ONE room per dim (the cell (2!), the 12-frame (4!), the 30-frame (6!), the perp
+  (7!)) — the ~2-13 reads at the ~4-7 DISTINCT frames (the free re-reads!!!); the
+  sums: the accumulations AT the rooms; the targets: the [2, 7] two-frame reads; the
+  gathers: the flag-chains + the FULL finals; THE TRANSITIVE D-DIRT
+- **THE 121-LINE'S RECIPE (complete!)**: THE ROOMS FIRST (the shared frames per dim:
+  the cells (2!), the partition 4-frames (4!), the dim-6 analogs, the perps (8!)),
+  then the carriers/sums AT the rooms (the free re-reads!!!), the targets' few-frame
+  reads, the transitive dirt!!!
+
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
 - **THE h=10 DISCOVERY (the SS1380-1381 '100% verified' directive's first catch!!):** reading
