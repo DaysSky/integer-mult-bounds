@@ -26,19 +26,14 @@ Prepared by DaysSky with assistance from Claude.  Everything here is scratch res
   come from the demand structures themselves, not from the flawed step).  A real all-word closure
   needs a lower bound on the SHARED-CONTENT minimum (min over all demand decompositions of total
   incidence) — that is exactly the open assembly question (6i lever A), NOT settled by this counting.
-- **THE TWO-SIDED FRONTIER CONDITION + FLAT-TOTAL DESIGN (session-final).**  Working both identities
-  (register identity R >= sum c_t - v + dead with c_t = 70,356/s; arrival capacity R >= 70,356/(13u)):
-  any frontier I13 demand structure needs pieces with s >= ~42 lines AND u >= 4.13 users.  Measured:
-  sections s=90-166 u=2 (dead); halves u=2-6 s=16-30 (c_t explodes — this retroactively breaks the
-  maxpairs 5.4%-gap pricing: c_t = 7 forces R >= 2,184 = 6v); Q-parts s=42-56 u=4 (3% short).
-  **Candidate satisfying both: room-totals of rank-4 flats' perps** (rooms 42-56 lines, users = the
-  flat's own 8-12 lines, D4-type flats): at c_t = 4, u = 9: R = 1,092 + dead, arrivals 7,938 = 46%
-  of capacity — closes with room for feeders/movers.  CRUX (next computation): for each target t an
-  odd-cover design — a 4-6-subfamily of rank-4 flats M containing t with XOR of perp(M)-totals =
-  R(t); parity over #(flats in section(t,ell)).  Also needed: rank-4 flat line counts in I13
-  (D4-type 8-12 lines? — the killed n13nodes.py census would answer; rerun its size-4 stage).
-  Totals-feeder lemma read exactly: frame-0 words form totals from dead registers at no extra cost
-  (R420/P111/blkA4 do) — it does NOT obstruct this structure; only pure z-group words.
+- **FLAT-TOTAL DESIGN: NEGATIVE (flat_design.py, session-final).**  D4-type flats confirmed throughout
+  I13 (32,175 flats: 6,435 twelve-line D4s + 25,740 eleven-line; 855-1,485 per target, mean 990) —
+  the vocabulary is rich and passes both sides of the frontier condition (rooms 42-56 lines, users
+  12).  BUT the demand algebra fails: the XOR of ALL rooms of flats containing t is exactly 0 (every
+  line even-covered), and CP-SAT proves NO odd-cover with <= 4, 6 rooms (P and T both; 8 for T).
+  So R(t) cannot be sparsely delivered by flat-total pieces; the structure degenerates like every
+  other: rich sharing vocabulary, vanishing XOR algebra.  This mirrors the partition-alignment
+  lemmas (6h/7c): I13's obstructions are parity-algebraic, not just counting.
 - "573 proven optimal" = optimum over menus capped at 200 covers/demand, with leaf fills free.  The
   model's true optimum is 0 (all-leaf); the model does not charge leaf fills, which are branch/delivery
   registers and are NOT free.  Read every "cost" in this file as capped-menu, leaf-free accounting.
