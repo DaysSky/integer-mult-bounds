@@ -479,8 +479,9 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   retained register; NO phase-B reads; R = v = 120 helpers; the D-phase pre-reads cancel
   the scattered dirt by doubling).  **GCHECK PASSES IT**: status PASS, hist {1: 240,
   7: 360}, rank_mass 2760 = 8x120 + 120 + 2x120x7, gates D/A/B/C = 120/120/0/120.
-  THE PRICE MODEL REFUSES IT: 'no root' (the implied root ~0.38 lies far outside the
-  modeled bracket [0, 0.05]).
+  THE PRICE MODEL REFUSES IT: 'no root' (THE SS1515 CORRECTION: the implied root is
+  q ~ -0.00127 (F(0) = +0.00195, F increasing in q) -> the word is worth c <= 0; the
+  earlier '~0.38' reading was WRONG).
   (a) THE CONCLUSION DECOMPOSITION IS FLOW-LEVEL (xcheck_e1.py lines 346-366):
   U_block_form (z-registers hold no y-bits), J_identity (the targets' x-parts = x_t:
   THE DELIVERY), K_equals_D (the dirt cancels via the D-phase), C_is_U_inverse (the
@@ -497,9 +498,10 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   decomposition) < the pipeline's requirements (the hub's #463/#510 template: what the
   words must supply for the asymptotic model to hold — the 'whole-call correlated-helper
   hosting and all-size realization' assumptions).  THE DECISIVE OPEN QUESTION: the
-  pipeline's word requirements.  The identity word's implied c ~ 0.38 (n (log n)^0.62!)
-  is obviously not a real complexity claim (it would break the world multiplication
-  record from a copy word) — so the pipeline's requirements MUST exclude such words;
+  pipeline's word requirements.  THE SS1515 CORRECTION: the identity word's implied c
+  is <= 0 (the root q ~ -0.00127!!), NOT ~0.38 — the pricer does NOT reward this word
+  (the 'n (log n)^0.62' reading was WRONG!!); the FLOW point stands (a copy word is not
+  a multiplication) — so the pipeline's requirements MUST still exclude such words;
   WHERE and HOW they do is the open format-theory question.  A gcheck PASS is necessary,
   not sufficient: any word claim must also name the pipeline layer.
   THE FRONTIER (E8 R434, c = 0.0017444) STANDS UNBEATEN.  Live programs: the low-rank
@@ -569,7 +571,7 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   layer this session has only ever moved the number DOWN (+33% -> h=10 -> -11%; +13.42% ->
   CST=81 -> -7.97%).
 
-## THE PRICE MODEL AUDIT COMPLETE + THE SMART BASIS: THE CROSSING RETURNS AT THE MEASURED CST=73 (ii19_121band2.py, ii19_121basis.py; SS1483-SS1508)
+## THE PRICE MODEL AUDIT + THE SMART BASIS (cst=73 MEASURED, W PASS) — **THE CROSSING CLAIM RETRACTED BY THE SS1515 AUDIT: SEE THE NEXT SECTION** (ii19_121band2.py, ii19_121basis.py; SS1483-SS1508)
 
 - **THE DIRECTION (SS1483!!): the user chose 'Audit the price model first'.**
 - **THE PRICER READ (pricer.py, SS1488!!): THE WINDOW IS PIPELINE-DERIVED AND FULLY
@@ -577,8 +579,8 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   PIPELINE'S REPLICA/STAGE CONSTANTS — the #463/#510 template's 'nine-stage bit
   price'!!), a = h-1 (the idle-slot capacities!!), w = h (the residual width!!), W = 2KvT,
   the root: sum z_r (r/(mW)) (m/r)^q + 32 m (sum z) m^q / (1e16 W) = 1 with prof = the
-  local hist x T x L (T=32 x L=9: THE x288!!); the hosting: nres = 9R vs cap = 38v (THE
-  WALL AT R = 511 for v=121: the 'NO ROOT' at R=520 explained!!); THE h=9 HOSTING
+  local hist x T x L (T=32 x L=9: THE x288!!); the hosting: nres = 9R vs cap = 36v (THE SS1515/SS1517 CORRECTION: THE WALL AT R = 484
+  for v=121 (NOT 511!!): cap = 4,356 = 36v (the pricer's own error dict!!)); THE h=9 HOSTING
   PENALTY: the residual leftovers rank {3,5,7} at h=9 vs {2,4,6} at h=8.
 - **THE HYPERSENSITIVITY: STRUCTURAL (THE 288x AMPLIFICATION!!)**: the ±9 local mass
   moves the c by ±26-29% (the observed CST 72->81 swing = -21 points: QUANTITATIVELY
@@ -592,7 +594,8 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   model EXACT (ratio 1.000000000!!).  AT THE PIVOT BASIS (cst=81: all 9 gathers'
   contents span dim-9 -> the frames FORCED to FULL!!): DEAD (-16% to -41%!!).  AT THE
   SMART BASIS (the modeled cst=73): THE BAND STRADDLES THE FRONTIER (C: +2.77%/+3.66%,
-  D: +5.20%!!).
+  D: +5.20%!!) — **THE SS1515 AUDIT: the +3.66%/+5.20% figures came from WRONG-MASS
+  (mOFF) histograms (band2's hist_exact lacked the r<=rem constraint!!): DROPPED**.
 - **THE SMART BASIS CONSTRUCTED + THE CST MEASURED (ii19_121basis.py, SS1500/SS1508!!)**:
   the parity map phi (the column-120 bit: the special in the support!!) on the 9-dim row
   space: THE KERNEL (the 'even' combinations B[0]^B[k]: the specials cancel!!): dim 8:
@@ -614,19 +617,91 @@ verdicts, now superseded by this file on the feeding-layer and sign issues).
   support size)' — span_dim returns (rank, len)!!).
 - **THE PRICE AT THE MEASURED CST=73 (the mass-exact hists!!)**: R=286: **C +2.77%** (c
   = 0.001792760!!) | R=300: C +0.69% | R=325: C -2.75% | R=350: C -6.00%; A/B/D below
-  everywhere — **THE CROSSING RETURNS AT THE HONEST ACCOUNTING: the first h=9-valid
-  configuration above the frontier (the mass-exact hists + the MEASURED cst!!)**.
+  everywhere — **RETRACTED BY THE SS1515 AUDIT: shape C contradicts the design's own target
+  chains (the jumps {1: 726, 2: 121}: NO rank-5 steps!!) and R=286 violates the arrival
+  law (2,690 reads > 9x286 = 2,574: 105% OVER!!: R_honest >= 299): NOT a crossing at
+  honest accounting (see THE SS1515 AUDIT section!!)**.
 - **THE HONEST CAVEATS (the standing rules!!)**: (1) the A/B/C/D variants are SHAPE
   PRIORS (the C: {1: 0.30, 2: 0.20, 5: 0.50}!!): the TRUE word's hist decides ±several
   points (the ±26-point sensitivity!!); (2) R=286 = the 156 pieces + the 121 tails + the
-  9 gathers (the SS1419/SS1423 design: the chains/packings verified feasible at the slot
-  level!!); (3) THE BUILD (the gates -> gcheck -> the TRUE hist -> the TRUE price)
-  REMAINS THE ONLY GATE — the +2.77% is a MODEL-BAND number at the honest accounting,
-  NOT a word; (4) the basis is NOT span-minimized (a min-Σ-span basis could give cst < 73:
+  9 gathers — **THE SS1515 AUDIT: 'VERIFIED FEASIBLE' WAS FALSE: the slots.py check
+  never tested NESTING (121/121 target chains cannot nest!!) and the build had ALREADY
+  FAILED 85% of the reads (396/2,569 assigned: ii19_121_build2.py + the committed
+  stage2a pkl!!) — a result this record OMITTED**; (3) THE BUILD remains the gate: the
+  honest shape is A-like (the design's chains!!), the honest R >= 299 (the arrival
+  law!!) — **the +2.77% is RETRACTED (SS1515!!)**; (4) the basis is NOT span-minimized (a min-Σ-span basis could give cst < 73:
   UNEXPLORED!!); (5) the special's 120-line demand rides the root-pieces (SS1423!!) but
   its chain packing is unverified in detail.
 - **THE USER'S SS1503-1504 DIRECTIVE**: stop after finishing + committing; provide the
   audit prompt for a fresh agent.
+
+## THE FRESH-AGENT AUDIT (SS1515): THE CROSSING RETRACTED — THE 121-LINE MODEL BAND DOES NOT CROSS AT ANY HONEST ACCOUNTING
+
+- **THE AUDIT (the fresh agent; the user's SS1503 request!!): the +2.77% is NOT real at
+  honest accounting.** The pricing reproduces exactly, but the configuration it prices
+  is contradicted by the session's own design and build data on THREE INDEPENDENT
+  COUNTS:
+  1. **THE SHAPE (CRITICAL!!)**: the design's own target chains (ii19_121_design.pkl!!)
+     climb 0->2->3->...->8: the jumps {1: 726, 2: 121} — 75% of the target mass at rank
+     1, NONE at rank 5!!  Shape C (half the climb mass at rank 5!!) is CONTRADICTED; the
+     design pushes toward shape A: **-15.85% at R=286**.
+  2. **THE REGISTER COUNT (HIGH!!)**: the design's own arrival law: 2,690 reads vs the
+     capacity 9x286 = 2,574 (105% OVER!!); R_honest = 299 (stored in the slots pkl but
+     the ok check IGNORED it and printed 'FEASIBLE'!!).  Shape C by R: R=299: +0.85%,
+     R=300: +0.69%, R=311: -0.84%, R=325: -2.75% — the record's own estimate (the
+     honest R ~310-325!!) already put C BELOW.  The 9 gathers' own reads (521 lines!)
+     are NOT in the 2,690; if they count: R >= 357 (C at R=350: -6.00%) — UNRESOLVED.
+  3. **THE FEASIBILITY (CRITICAL!!)**: the build FAILS: ii19_121_build2.py assigns 396
+     of 2,569 piece reads (2,173 FAILURES!!); the v1 crashes at L187.  THE NESTING: 121
+     of 121 target chains and 100 of 121 source chains CANNOT NEST (the slots.py check
+     treated each slot as an independent bin and NEVER checked that a register's
+     successive frames nest; max_group (L208) defined but NEVER CALLED!!).  **NEITHER
+     RESULT WAS IN THE RECORD — the 'verified feasible' caveat was FALSE (corrected
+     in place above!!).**
+- **THE MARGIN**: one decoder unit wide: cst 74 -> -0.20%.
+- **MY VERIFICATION RUNS (SS1517!!)**: (a) THE HOSTING WALL: THE AUDITOR RIGHT, MY
+  SS1488 NOTE WRONG: **cap = 4,356 = 36v (NOT 38v!!): the wall at R = 484/485 (h=9,
+  v=121) and R = 480/481 (h=8, v=120)** — the pricer's own error dict (cap=4356,
+  nres=4365 at R=485!!); (b) THE IDENTITY WORD: THE AUDITOR RIGHT: F(0) = +0.00195, F
+  increasing -> the root q ~ -0.00127: the word is worth c <= 0 (the '~0.38' readings
+  corrected in place!!).
+- **THE AUDIT'S OTHER FINDINGS**: (4) the mOFF citations: the 'straddles' figures came
+  from WRONG-MASS histograms (band2's hist_exact lacked the r<=rem constraint!!) —
+  DROPPED (annotated in place!!); (6) **THE FRONTIER'S PROVENANCE: 0.001744386 is the
+  BIT-side c (research/e8-bit-p111-r434/EXPECTED.json:99!!) — the selected
+  certificate's κ = 0.001672660197076918 is bound by the COMPLEX side: EVEN A GENUINE
+  BIT-SIDE CROSSING WOULD NOT MOVE THE SELECTED κ ('bit headroom only'!!)** — THE
+  ENTIRE SESSION'S FRONTIER CHASE WAS BIT-SIDE; (8) a HANDOFF formula (L1679: 'T(hv -
+  (h+1)cst)') holds only at h=8 (the pricer's deficit is T(8v - 9cst) for every h).
+- **THE PER-CLAIM VERDICTS (the audit's!!)**: A (the 121-line legality: exact rational
+  arithmetic, the Gram det 2 with all leading minors positive: PD!!): CONFIRMED ✓; B
+  (the price model: m = 73, the x288, K/T the fixed defaults; cst 73->74 = -2.97
+  points ✓; whether K/T were tuned to E8: UNVERIFIABLE; no h=9 control exists):
+  CONFIRMED ✓; C: CONFIRMED for basis.py, ERROR for band2 ✓; D (the smart basis: the
+  spans [(8,64), (8,56)x7, (9,65)]; the W PASS; THE RETAINED AT ANY FRAME DIM AT THE
+  SCATTER LEGAL (gcheck L104-114) with dim h only at the final climb (L71, L124)!!):
+  CONFIRMED ✓; E (R=286): **ERROR** ✓; F: the numbers CONFIRMED, the presentation
+  ERROR (the commit headline b69e7f85 'THE CROSSING RETURNS' OVERSTATED!!) ✓; G (the
+  earlier negatives, the h=10 band: its D hists 6 units mass-light — flattering — but
+  the negative STANDS!!): CONFIRMED ✓; H (the conventions: T(n) = O(n(log n)^{1-κ}):
+  HIGHER better ✓; both controls exact ✓; no sign errors ✓): CONFIRMED ✓.
+- **THE MISSED LIST (the audit's!!)**: (1) a gcheck-passing word (NONE exists; the
+  partial build FAILS 85%!!); (2) the shape from the design (the target side is
+  A-LIKE!!); (3) the nesting checks in slots.py (max_group unused!!); (4) the arrival
+  law in the verdict (price at R >= 299; the gathers' 521 reads unchecked!!); (5) **the
+  span-minimizing basis (a dim-7 row -> +5.75%: UNSEARCHED — THE ONE REOPENING LEVER:
+  the crossing needs Σ-span <= ~65-67 at the honest shape/R!!)**; (6) the special
+  line's 120-read chain (only 6 of 156 pieces contain line 120: unchecked!!); (7) an
+  h=9 calibration control (NONE!!); (8) **THE COMPLEX SIDE!!**.
+- **THE HONEST BOTTOM LINE (the audit's!!)**: the 121-line model band does NOT cross at
+  any honest accounting: the honest shape is A-like (-15.85% at R=286); the honest
+  R >= 299 puts C below by R ~ 311; the build fails 85% of reads. WHAT WOULD SETTLE
+  IT: a gcheck-passing word at h=9 with its exact histogram priced by pricer.py —
+  **and the auditor's expectation: such a word prices BELOW the frontier.** THE
+  SESSION PATTERN HOLDS FOR THE FOURTH TIME: every honesty layer moved the number
+  DOWN (+33% -> h=10 -> -11%; +13.42% -> CST=81 -> -7.97%; +2.77% -> THE AUDIT ->
+  below). AND THE REFRAMING: the whole chase was BIT-side — the selected κ
+  (0.001672660197076918, complex-bound) would not move even from a genuine crossing.
 
 ## THE h=10 DISCOVERY KILLS THE 2-CLASS CROSSING; THE 121-LINE SYSTEM (THE UNIQUE h=9-VALID II19 SUBSET): the CST=72 model-band crossing RETRACTED at the honest CST=81 (ii19_2class_h10.py, ii19_121.py, ii19_121v2.py)
 
