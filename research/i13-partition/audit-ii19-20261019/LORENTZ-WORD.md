@@ -136,6 +136,19 @@ word needs an E8 middle about 14% better than the r434's. Two mechanical trims w
   - Seven stages: +1.39%.
   - Each rule lifts E8 at least as much as the Lorentzian word.
 
+- **Target-side slice geometry** (`slice_cover.py`, exhaustive over normals from the E8 roots and norm-4
+  vectors). κ(E7) = 3, and the only 3-covers are D6 triples. Fixing an E6 slice (shareable by an A2's 3
+  targets) forces 4 slices in total. A shared D6-sum per orthogonal target pair saves at most 0.5 wires
+  per target, about +8%, and its feeding network faces the nested-chain bottleneck that pinned every
+  earlier design.
+- **E1-style entrance helpers** (`entrance_census.py`; mechanism of `research/e8-bit-p111-e1`, accepted by
+  the official C++ checkers).
+  - Width 8 − rank; rank-1 entrances fill the 7k slots, which `bit589-width-packing` prices at +3.2% for
+    37 helpers and +6.7% for 74.
+  - On the r434: 1 of 434 helpers converts. 225 are target-read wires, 199 have a reader that cannot make
+    the early dirt read, and 9 are totals.
+  - The lever is real, but this middle admits it once, as on P111.
+
 **Where that leaves a significant gain.** It needs a new middle with about 60 (for +10%) to 125 (for +20%)
 fewer helpers at the r434's shape (E8 lever A). The same middle lifts the E8 frontier by about the same
 amount.
