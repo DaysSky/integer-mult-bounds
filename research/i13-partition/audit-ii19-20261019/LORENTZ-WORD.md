@@ -67,18 +67,70 @@ word needs an E8 middle about 14% better than the r434's. Two mechanical trims w
   grammar". The record's nat134 A-DAG flattening (R ≈ 243) has no recorded outcome, and its
   recomposition is reported to fail.
 
+## Above the frontier under one format extension: hyperplane-ended cleanup (verified in the extension)
+
+`lorentz_r434_hpe.json.gz` (`hpe_lorentz.py`) is the r434 frontier embedded in the same II_{1,9} system.
+
+- **Construction.**
+  - Its whole helper network stays inside the hyperplane U = sp^⊥ = E8, which contains every helper's
+    content.
+  - Every helper ends at U, and the cleanup C (the literal reverse) runs at U.
+  - Only sources (U → full₉) and targets (t^⊥_E8 → t^⊥_E8 ⊕ ⟨sp⟩) step into the special direction, each
+    by one rank-1 climb.
+- **Checker.** `gcheck_hpe.py` is `gcheck.py` plus one optional key, `hyperplane_end = U`:
+  - helpers end at U and C runs at U;
+  - the mass identity becomes (h−1)R + cst + 2v(h−1);
+  - helper residuals are hosted at width h − 1.
+  - The diff is 24 lines. Without the key it reproduces gcheck exactly: r434 c = 0.0017443859508 and the
+    lifted word above, both checked.
+
+| check | result |
+|---|---|
+| `gcheck.py` (current format) | REJECT: final full frame (helpers end at U) |
+| `gcheck_hpe.py` | PASS; hist {1: 1534, 2: 1339, 3: 69, 4: 45, 5: 103, 6: 12, 7: 18, 8: 2}; mass 5328 = 8·434 + 64 + 2·112·8 |
+| nine-stage c | **0.001764387789905888286536 = +1.147% vs the frontier** |
+| seven stages (hostable now: width-8 residuals fill 8k slots) | 0.0017686125 = +1.389% |
+
+**Mechanism.**
+
+- At h = 9 the idle windows have capacities 8, 16, 32 and 48, and the helpers keep their h = 8 width 8,
+  so every residual packs exactly (`bit589-width-packing`'s width lever).
+- The idle remainder becomes 357 whole rank-48 slots per replica, with no fragments.
+- The ports pay the extra dimension: 222 rank-1 climbs, the special line, and m = 73.
+
+**What this is and is not.**
+
+- **Not a Lorentzian advantage.** Signature is price-invisible: a +2 special line gives the same word and
+  price. The ingredient is a decoupled extra dimension, so that one hyperplane holds the entire helper
+  network.
+- **Not available to E8 at h = 8 in this form.** No hyperplane contains all E8 helper contents.
+  Per-helper hyperplane ends or rank-one entrances are different extensions. `bit589-width-packing` prices
+  them at up to +17–23% for E8 if every helper converts.
+- **Proof obligation (open).**
+  - The precedent, `research/hyperplane-end-lean`, proves Lemma A with a hyperplane terminal frame for
+    complex-side helpers with a single cleanup gate, under an exact factorization (N) per (E, U) pair.
+  - This word needs the bit-side analogue for all 434 helpers, with their full literal-reverse cleanup
+    at one hyperplane.
+  - It also needs the bit-side window-timing check that `bit589-width-packing` lists as not done.
+
 ## Open next questions
 
-1. **E8 lever A at h = 8** (a middle about 14% better than r434).
+1. **Bit-side hyperplane-ended cleanup.**
+   - Relevance: decides whether `lorentz_r434_hpe` (+1.15%) is a frontier word. The same construction
+     applies to any E8 word lifted by a decoupled line.
+   - First step: state (N) for (E, U) = (0, sp^⊥) in the bit labels and check it against the
+     `hyperplane-end-lean` template.
+   - Blocker: H4 is the obstruction both here and in `bit589-width-packing`.
+2. **E8 lever A at h = 8** (a middle about 14% better than r434).
    - Relevance: transfers to this word at a roughly constant −12% offset; the only route to a frontier
      Lorentzian word in the current format.
    - First step: the record's R ≈ 350 target at the r434 shape. That means roughly one private wire per
      target, with the target's own chain carrying a 6-dim slice.
    - Blocker: a new A-DAG to feed the slices.
-2. **Format levers.**
+3. **Format levers.**
    - The cut-format double star is about +10 points on the lifted family.
    - Idle slots without a bridge split are +5.2 points; they lift E8 too.
-3. **Completeness.** Settle whether the outer pipeline needs the (root, special) pairs. If it does, a
+4. **Completeness.** Settle whether the outer pipeline needs the (root, special) pairs. If it does, a
    design with cheap special carriers under R ≤ 4v is needed.
 
 ## Reproduce
@@ -87,4 +139,5 @@ word needs an E8 middle about 14% better than the r434's. Two mechanical trims w
 python3 lift_r434.py --emit lorentz_r434_lift_best.json   # greedy placement, ~30 min; prints min/max/best
 python3 ../../lorentzian-frame-cell-handoff/code/tword/gcheck.py lorentz_r434_lift_best.json.gz --price
 python3 inline_census.py; python3 helper_inline_census.py
+python3 hpe_lorentz.py lorentz_r434_hpe.json && python3 gcheck_hpe.py lorentz_r434_hpe.json --price   # extension word
 ```
