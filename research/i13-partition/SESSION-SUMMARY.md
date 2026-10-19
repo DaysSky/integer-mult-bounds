@@ -2326,3 +2326,48 @@ THE TRIM PATHS: (A) the >3-cells re-routing (nat120's v=111 cell-census, running
 R=389 word (+8.06%); (B) the B-basis recomposition (the leaner pool toward R=330-290,
 +15-29%). The pipeline (nat118) is calibrated end-to-end: params → build → tune → adapter →
 gcheck → price (reproduces the published word exactly).
+
+## nat132-183 arc · 2026-10-20 · THE LORENTZIAN 121 PUSH: the tuner executed (−22.98% gcheck-PASS); the recomposition; the cell closures; the deeper-shell kill
+
+THE TUNER AT THE W4 (the never-run processes!!): the W4 (own8's emission) was never tuned —
+the TSF loop (51 moves) + the merge (44 backward-bounds raises) converge to the identical
+paid profile {1: 1151, 2: 1719, 3: 252, 4: 83, 5: 18, 6: 43, 7: 10, 8: 18, 9: 2} from THREE
+INDEPENDENT ARCHITECTURES (the direct TSF, the mixed max-legal, the full-raise) — gcheck PASS,
+c = 0.0013435 (−22.98%, the record Lorentzian word; saved ii19_own_word4_tuned.json.gz /
+ii19_fullraise_tuned.json.gz). The price_damped convention verified: the calibration
+reproduces the published W4 c = 0.001335891046497132929087 to 18 digits (the damped q-loop:
+q <- (q+q2)/2; the R-convention: own8's R+9 has R = rets-excluded).
+
+THE SHAPE LAW AT FIXED R (the joint structure): the shape rows at (v=121, h=9, cst=73, R=472):
+all-at-4 −8.88% | all-at-5 −2.72% | all-at-6 +2.99% (the frontier-crossing row!) | all-at-7
++8.38% | all-at-8 +13.56% — ALL UNREACHABLE: pinned by the measured incomparability censuses:
+(1) the sources' {1,1,2,4}-ladders with 6-16 consumers each (the shared frames forced);
+(2) the 491-DUP census at the span-closure frames (the one-gate builds need 491 copies vs the
+wall R<=591 — the W4's multi-gate ladders ARE the incomparability solution); (3) the 79-dup
+TPERP-reframe census; (4) gcheck line 74: the targets' finals at frames with EVERY line ⊥ t
+(the judge's own perp-pinning law). The wires' content-spans ARE their targets' perp-closures
+(dim-8 equality forced — the B-side maximal by geometry).
+
+THE RECOMPOSITION (the E8-LEVER-A at the 121): the shared-pool reuse-first solve: 242 distinct
+wires (−41 vs the W4's 283; 121/121 parity-exact; the W4's own B-family was 242 masks + 41
+duplicates!) — the R 472→431 class. The A-side recomposition FAILS (the 180 intermediates are
+already the deep-sharing optimum; the intersection-pool re-solve explodes to 525).
+
+THE CELL-ASSEMBLY CLOSURES (nat159-162): the 121's D4-cell substrate: 9,450 cells, EACH
+serving exactly 13 targets (12 roots + the special; 47× the E8's own richness); the cells'
+XOR-span is a PROPER SUBSPACE of each perp (a GF(2) parity obstruction); the disjoint packing:
+15.31 cells/target (the E7-perps' D4-closures structurally OVERLAP — no tiling); the set-greedy
+1,059-1,022 distinct (the register economy fails at the cell granularity).
+
+THE DEEPER-SHELL CENSUS (nat183, the fresh system): the 241-line (x,a)-lattice (121 norm-2 +
+the 120 (root,1)-norm-4 class): span 9, perps {63: 120, 120: 1, 127: 120} — THE DECODER RANK
+241/241 (FULL!!) — the mixed-norm cross-products destroy the GF(2) structure: the same kill
+as the 361's rank-241, now measured on a fresh system. (The first run nat181/182 was invalid
+— a root-generation bug (336 bogus lines) — caught, killed, and corrected; the E8 generation
+verified: 240 vectors = 120 lines.)
+
+THE STANDING STATE: the 121 = the unique cheap-decoder Lorentzian system; its converged
+optimum −22.98% (the h=9 penalty law: mass 51.7/line vs the h=8-class's 45.8 + the m=73);
+the program's frontier-beater remains the h=8 r434-class (+0.65% verified; the +8.06%
+R=389 route measured). The deeper shell, the I11, the 361, the 929, the 2-class: all killed
+by the measured decoder/wall/degeneracy laws.
