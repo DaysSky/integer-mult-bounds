@@ -113,6 +113,33 @@ word needs an E8 middle about 14% better than the r434's. Two mechanical trims w
     at one hyperplane.
   - It also needs the bit-side window-timing check that `bit589-width-packing` lists as not done.
 
+## Stacking levers on the extension word (measured, 2026-10-19)
+
+- **Other bases.** Under the extension the lift ≈ its h = 8 base + 1.2 points, and the bases keep their
+  order: r434 +1.15%, P111-tuned +0.47%, R420 −4.05%, R480 −7.92%. R480's local histogram was
+  recovered from its published nine-stage profile and reproduces its c exactly. So r434 is the right
+  base, and middle gains transfer about one-for-one.
+- **Value of a helper.** Each helper removed at the r434 shape is worth about +0.15%:
+
+  | R | 409 | 384 | 359 | 334 | 309 |
+  |---|---|---|---|---|---|
+  | 9 stages | +4.6% | +8.3% | +11.9% | +15.6% | +19.5% |
+  | 7 stages | | | +12.2% | | +20.7% |
+
+- **Rescheduled inlining** (`inline_resched_census.py`).
+  - Test: the target reads a wire's inputs itself in phase B at their scatter-time frames.
+  - Result: 0 / 225 wires. 180 read registers that change afterwards (the r434's running-sum
+    accumulators are read mid-accumulation), and 42 fail the flag condition.
+  - With the two earlier censuses, no mechanical trim of the r434 middle exists.
+- **Scope rules.**
+  - Idle slots without a bridge split: the extension word goes to +2.23%, r434 itself to +6.20%.
+  - Seven stages: +1.39%.
+  - Each rule lifts E8 at least as much as the Lorentzian word.
+
+**Where that leaves a significant gain.** It needs a new middle with about 60 (for +10%) to 125 (for +20%)
+fewer helpers at the r434's shape (E8 lever A). The same middle lifts the E8 frontier by about the same
+amount.
+
 ## Open next questions
 
 1. **Bit-side hyperplane-ended cleanup.**
