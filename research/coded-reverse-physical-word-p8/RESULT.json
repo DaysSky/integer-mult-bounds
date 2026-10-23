@@ -1,8 +1,0 @@
-{
-  "status": "PASS_P8_FORMAL_CONTROLLER_AND_PAIR_NOT_ADMISSIBLE_AT_0.0034",
-  "p8_raw_complex_root": 0.007926404401783658,
-  "p8_delta_at_0.0034": 1.4628141042075364,
-  "p8_admissible_at_0.0034": false,
-  "p19_word": "research/coded-reverse-word-p19; p19 delta 0.951561, guards pass",
-  "scope": "p8 formal controller and local pair verified; 0.0034 endpoint retracted; per-stage native adapter, field-map, denominator and compiler open"
-}
