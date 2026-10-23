@@ -11,6 +11,7 @@
     "research/coded-native-caller/CODE.json",
     "research/coded-native-caller/NORMALIZERS.json",
     "research/coded-native-caller/PHYSICAL.md",
+    "research/higher-moment-strictification/verify.py",
     "research/kappa-rebuild/bit/complex_controller_factor.py",
     "research/kappa-native-resume/causal-controller/sources/research/joint-query/certificate.json.gz",
     "research/query-thinned-controllers/PROOF.md",
@@ -25,19 +26,26 @@
         "-B",
         "{package}/verify.py"
       ],
-      "timeout_seconds": 600,
-      "checks": "p=19 guards/root/ledger, p=2 448x448, local S/L/R pair."
+      "timeout_seconds": 200,
+      "checks": "formal p=19 controller diagonalization and local pair, the materialized word receipt, and the new-kappa claim checker."
     },
     {
       "argv": [
         "{python}",
-        "-I",
-        "-O",
         "-B",
-        "{package}/verify.py"
+        "{package}/p19_word.py"
       ],
       "timeout_seconds": 600,
-      "checks": "same with explicit need()."
+      "checks": "the 259-gate listing replay at p=2 and p=19, the exact census (stages, the 36 retained idle calls, the closing swap, the inherited helper block) and the field-level bill."
+    },
+    {
+      "argv": [
+        "{python}",
+        "-B",
+        "{package}/p19_claim.py"
+      ],
+      "timeout_seconds": 300,
+      "checks": "code and prefix bounds, raw moment sign in two engines, charged tail ratios, compiler ranks, BIT admission, budgets and the strict outer ledger at the claimed kappa."
     }
   ]
 }

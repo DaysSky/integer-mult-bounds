@@ -47,27 +47,39 @@
     ]
   },
   "scope_status": "changed",
-  "actual_scope": "p=19 formal PR4940 coded controller (39 stages), p=19 invoice/guards/ledger, and the exact single local S/L/R pair. The 0.0034 endpoint is conditional and BIT-limited at exactly 0.0034; the per-stage native adapter, field-map tariff, denominator 13/52 and compiler remain open.",
-  "scope_change_reason": "The removed p8 package failed its delta guard at 0.0034; the p=19 formal controller is the candidate for the 0.0034 endpoint, conditional on the unresolved BIT and physical obligations.",
-  "bottleneck_link": "The complex supplier root is the binding side; the p=19 coded controller raises it from 0.00302 to 0.007579 and the BIT cap becomes the limiting endpoint.",
+  "actual_scope": "p=19 coded-reverse supplier: the materialized 223-gate word listing (main data path, including the closing swap) with exact replay at p=2 and p=19, the rank invoice and its charged tail ratios, the field-level bill (77 recodings, zero Gaussian rank), the PR4433 compiler ranks, the admitted BIT saving, the nonrecursive budgets and the strict outer ledger at kappa = 951999/280000000 = 0.0033999964.",
+  "scope_change_reason": "The p8 package was retracted and the p19 word became the candidate endpoint. Building it showed the recovered p=2 baseline compared independent random initial states, and that with a shared state the obstruction is the stage letter (only the full Gaussian commutes with the code), not the boundary orientation. Once the word was exact, the paid accounting replaced the unbuilt tariff: the rank invoice pops rank 0 and takes no code argument, so the field bill is rank-free and the endpoint is set by the admitted BIT cap.",
+  "bottleneck_link": "The complex side is no longer binding: the p=19 word prices at 0.007578535 against a frontier of 0.00302015. The endpoint is the admitted BIT saving 0.0034 less the strict-ordering slack, so the complex supplier now has slack and the BIT side is the limiting interface.",
   "budget_minutes": 60,
-  "stop_rule": "Stop after the exact local pair and the formal p=19 controller diagonalization; no full p16 replay, per-stage physical adapter, or kappa claim.",
-  "outcome": "partial",
-  "evidence": "PASS p=19 full controller diagonalization: standard outputs [(1,4),(2,4),(3,4),(4,4),(5,4),(6,4),(7,4),(8,4),(9,4),(19,2)] with denominators [1]; coded same outputs with denominators [1,13]. PASS p=19 tail guards at 0.0034 (alpha 0.995794, gamma 0.963763, delta 0.951561); raw complex 0.007578535; outer ledger 0.0033999971 pass, 0.0034 only BIT cap; exact S/L/R pair in two implementations with controls.",
+  "stop_rule": "Stop after the materialized word, the paid accounting and the claim receipt; do not touch the selected frontier, the compiler interfaces or other packages.",
+  "outcome": "completed",
+  "evidence": "PASS word: 223 gate records (19 gauge loads, 19 unloads, 19 reverse adds, 19 letters, 20 forwards, 108 bridges, 19 closing swaps), 77 recodings, replay equals the standard word on 0 of 229376 entries at p=2 and 0 of 2179072 at p=19 (dense), with the gauge invariant holding after every gate. PASS code: A = I - MM^T/4, A^-1 = I + (A - I)/13 = I - MM^T/52, A A^-1 = I exact, prefix bounds 57 and 69/13, no recursive Gaussian child. PASS invoice: rank-free code (every port map is a signed address permutation and the scalar program moves no address); the tested saving is derived on the source grid as kappa + 7*gap with gap = 1/1400000000, the raw moment sign there is positive in exact interval arithmetic and in an independent 60-digit decimal engine, positive a step below and negative above the root; at kappa the charged ratios are alpha 0.99579414, gamma 0.963763, delta 0.951561 with both decay blocks under 1/16 and power-1024 tails under 2^-32. PASS bill: 17248 monomial field maps, 68992 scalar adds, 1232 owned clears per call, zero Gaussian rank. PASS compiler: PR4433 power majorant at v=1024 gives H0 = 497275706368 and H1 = 473406216450479105 with the previous threshold rejected; the logarithmic majorant at ambient rank 153 would cap the tested saving at 0.0030566. PASS BIT: atom 0.004 > ordinary 0.0034363538 > admitted 0.0034. PASS budgets: local 4794000 + 158168 < 10^7 and raw 190835072 + field bill 18144000 = 208979072 < 10^9. PASS ledger: every predicate passes at the endpoint and at exactly 0.0034 only actual_bit_above_effective fails. CLAIM kappa 951999/280000000 = 0.0033999964, +12.58% over 60403/20000000 = 0.00302015.",
   "author": "DaysSky",
   "ai_assistance": "Prepared with DeepSeek Harness assistance; source functions and data from PR4933/PR4940 and the companion physical-pair package.",
   "open_questions": [
     {
-      "question": "Can the p=19 controller be realized stage-by-stage with the physical C and S at every thick/thin boundary?",
-      "why_it_matters": "The p=19 word is formal scalar-A; the physical C is the native code.",
-      "first_step": "Lift the p=19 operator sequence with C/S at every bridge/IDLE and the physical pair at each boundary.",
-      "blocked_by": "K vs Q/D support mismatch measured in the companion package."
+      "question": "Does the caller's fixed-tape and precision ABI admit the field-level bill?",
+      "why_it_matters": "The bill is exact (17248 maps, 68992 adds, 1232 clears per call) but its admission is a premise of this claim.",
+      "first_step": "Instantiate the caller precision budget at the bill's record count and check the layout slack.",
+      "blocked_by": "No selected caller compiler instance is supplied in this package."
     },
     {
-      "question": "What is the field-map tariff and denominator/compiler bill for the p=19 word?",
-      "why_it_matters": "The 0.0034 endpoint inherits these obligations.",
-      "first_step": "Charge the PR5036 local ledger plus the S/R/L maps and the 1/52 denominators.",
-      "blocked_by": "No field-map tariff supplied."
+      "question": "Is the logarithmic compiler majorant or the retained power majorant the applicable one?",
+      "why_it_matters": "The logarithmic form (theta 63/64, power 1000, ambient rank 153) caps the tested saving at 0.0030566, which would lower the endpoint.",
+      "first_step": "Re-derive the logarithmic eta test at ambient rank 153 for this word's ambient rank and compare with the power-majorant ranks.",
+      "blocked_by": "The ambient rank of this word has not been derived from a frame census."
+    },
+    {
+      "question": "Can a second independent implementation replay the same listing?",
+      "why_it_matters": "The word receipt is produced by one interpreter and one data representation.",
+      "first_step": "Re-express the listing over flat arrays or another language and compare all 2179072 entries.",
+      "blocked_by": "No second runtime is installed; the package declares no dependencies."
+    },
+    {
+      "question": "What do hosted CI and kernel review require for this package?",
+      "why_it_matters": "Both are external gates on any claim, and neither was run here.",
+      "first_step": "Run the registered replay at the exact publication head and request kernel review.",
+      "blocked_by": "Requires a commit and the maintainer pipeline."
     }
   ],
   "first_fixture": {
@@ -79,7 +91,7 @@
       "gamma": 0.963763,
       "delta": 0.951561
     },
-    "outer_endpoint": "0.0034 (conditional; BIT-limited at exactly 0.0034)",
+    "outer_endpoint": "kappa 951999/280000000 = 0.0033999964 (BIT-limited at the admitted 0.0034 less five grid steps)",
     "p19_full_diagonalization": {
       "std_outputs": [
         [
@@ -131,7 +143,9 @@
         13
       ],
       "diagonalized": true
-    }
+    },
+    "claimed_kappa": "951999/280000000",
+    "gate_records": 223
   },
   "bounds": {
     "p": 19,
@@ -141,12 +155,17 @@
     "modulus": 65537,
     "max_check_seconds": 600
   },
-  "success_condition": "p=19 full controller diagonalization, guards/root/ledger and local S/L/R pair pass; per-stage native adapter and field-map/denominator/compiler remain open.",
+  "success_condition": "The materialized p=19 word replays exactly, the paid accounting is exact and the strict outer ledger passes at kappa = 951999/280000000 with the stated premises.",
   "inherited_obligations": [
     "PR4929 arbitrary-input producer and 408 autonomous helper jobs",
     "PR4933 signed physical central ABI and retained native normalizers",
-    "PR4440 all-column query job, owned-stream erasure, matching and routing",
-    "Odd-denominator arithmetic, precision/tape/compiler admission remain open",
-    "p=19 controller diagonalization, full native per-stage adapter, field-map tariff, hosted CI and kernel review remain open"
+    "PR4433 compiler majorant and PR4359 outer ledger, retained with attribution",
+    "PR4440 all-column query job and the admitted ordinary BIT saving 0.0034",
+    "field-level bill admission, all-size/compiler, hosting, tape and analytic interfaces, hosted CI and kernel review"
+  ],
+  "audit_fixes": [
+    "final role swap with the -1 sign added after the gauge unload",
+    "inherited helper block (7752 units) declared instead of implied",
+    "ledger tested saving re-derived from the integer grid"
   ]
 }

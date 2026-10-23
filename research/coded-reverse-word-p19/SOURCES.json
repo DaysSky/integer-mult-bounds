@@ -85,6 +85,12 @@
       "usage": "provenance",
       "git_blob": "c35482cd9035843b15a634cc8276a7e1e40e8395",
       "sha256": "6fe0a099b89aa2aed796a13c3a21dafc63f3388ebf397464e44e0451893b9375"
+    },
+    {
+      "path": "research/higher-moment-strictification/verify.py",
+      "usage": "input",
+      "git_blob": "4b24a5096154736ce060474eb8c72dc64c303699",
+      "sha256": "0ce7e7137422d5ffeda22085c81fa88471bbe963100fdad62e659f1e3bf89326"
     }
   ]
 }
