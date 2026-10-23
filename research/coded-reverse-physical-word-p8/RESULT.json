@@ -1,0 +1,9 @@
+{
+  "status": "PASS_CODED_REVERSE_PHYSICAL_WORD_P8",
+  "word": "PR4940 coded controller at p=8, pattern IIIITTT",
+  "raw_complex_roots": {"p8": 0.007926404401783658, "p19": 0.007578535189897761},
+  "conditional_outer_endpoint": 0.0034,
+  "gain_over_00302015": "+12.5%",
+  "physical_pair": "S=Q D C^-1 Q^-1 D^-1, R=Q C Q^-1, L=D Q C^-1 Q^-1 D^-1; L(TB)R=standard",
+  "scope": "verified p=8 coded controller and physical local pair; per-stage native adapter, field-map tariff, denominator 13/52, compiler and BIT admission remain open"
+}
