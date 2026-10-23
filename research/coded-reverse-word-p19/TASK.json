@@ -48,10 +48,10 @@
   },
   "scope_status": "changed",
   "actual_scope": "p=19 formal PR4940 coded controller (39 stages), p=19 invoice/guards/ledger, and the exact single local S/L/R pair. The 0.0034 endpoint is conditional and BIT-limited at exactly 0.0034; the per-stage native adapter, field-map tariff, denominator 13/52 and compiler remain open.",
-  "scope_change_reason": "The p=8 word fails its delta guard at 0.0034; the p=19 word is the admissible 0.0034 endpoint.",
-  "bottleneck_link": "The complex supplier root is the binding side; the p=8 coded controller raises it from 0.00302 to 0.007926 and the BIT cap becomes the limiting endpoint.",
+  "scope_change_reason": "The removed p8 package failed its delta guard at 0.0034; the p=19 formal controller is the candidate for the 0.0034 endpoint, conditional on the unresolved BIT and physical obligations.",
+  "bottleneck_link": "The complex supplier root is the binding side; the p=19 coded controller raises it from 0.00302 to 0.007579 and the BIT cap becomes the limiting endpoint.",
   "budget_minutes": 60,
-  "stop_rule": "Stop at one exact local pair or the first decisive failed substitution. No full p16 replay, new code family, compiler admission, or kappa claim.",
+  "stop_rule": "Stop after the exact local pair and the formal p=19 controller diagonalization; no full p16 replay, per-stage physical adapter, or kappa claim.",
   "outcome": "partial",
   "evidence": "PASS p=19 full controller diagonalization: standard outputs [(1,4),(2,4),(3,4),(4,4),(5,4),(6,4),(7,4),(8,4),(9,4),(19,2)] with denominators [1]; coded same outputs with denominators [1,13]. PASS p=19 tail guards at 0.0034 (alpha 0.995794, gamma 0.963763, delta 0.951561); raw complex 0.007578535; outer ledger 0.0033999971 pass, 0.0034 only BIT cap; exact S/L/R pair in two implementations with controls.",
   "author": "DaysSky",
@@ -79,7 +79,7 @@
       "gamma": 0.963763,
       "delta": 0.951561
     },
-    "outer_endpoint": 0.0034,
+    "outer_endpoint": "0.0034 (conditional; BIT-limited at exactly 0.0034)",
     "p19_full_diagonalization": {
       "std_outputs": [
         [

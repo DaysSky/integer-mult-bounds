@@ -39,7 +39,7 @@ def main():
         need('PASS outer ledger' in out2, 'local ledger')
     except Exception as e:
         print('local companion not run in this environment:', e)
-    print('PASS_CODED_REVERSE_WORD_P19_FULL_FORMAL_CONTROLLER_AND_PAIR p=19 coded controller (39 stages) diagonalizes to the standard outputs with denominator 13, guards/ledger pass at 0.0034, physical S/L/R pair exact')
+    print('PASS_P19_FORMAL_CONTROLLER_INVOICE_AND_LOCAL_PAIR p=19 formal coded controller (39 stages) diagonalizes with denominator 13, guards/ledger pass at 0.0034, single local S/L/R pair exact')
 
 if __name__ == '__main__':
     main()

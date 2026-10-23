@@ -1,4 +1,4 @@
-# The p=19 coded-reverse controller word: invoice, guards and physical pair
+# The p=19 formal coded-reverse controller: invoice, guards and local physical pair
 
 **The p=19 coded controller word has raw complex root 0.007578535; its full 39-stage
 controller diagonalizes to the standard outputs with denominator 13; its tail
@@ -7,8 +7,8 @@ S/L/R pair is exact. The per-stage native adapter, field-map tariff, denominator
 13/52 and compiler remain open.**
 
 PR4940's coded reverse controller at p=19 (pattern `IIIIIIIIITTTTTTTTT`) is the
-formal controller whose complex-side invoice and p=19 guards clear 0.0034; the supplied outer ledger passes at 0.0033999971 and is BIT-limited at exactly 0.0034. The p=8 word is not
-admissible there: its delta guard is 1.4628 at 0.0034. The p=19 word has
+formal controller whose complex-side invoice and p=19 guards clear 0.0034; the supplied outer ledger passes at 0.0033999971 and is BIT-limited at exactly 0.0034. The removed p8 package was not
+admissible there: its delta guard is 1.4628 at 0.0034. The p=19 formal controller has
 alpha=0.995794, gamma=0.963763, delta=0.951561 at 0.0034, so all three strict
 tail guards pass; the outer ledger passes at 0.0033999971 and at 0.0034 fails
 only `actual_bit_above_effective`. The raw complex root is 0.007578535, versus

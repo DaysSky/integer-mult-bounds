@@ -1,5 +1,5 @@
 {
-  "status": "PASS_CODED_REVERSE_WORD_P19_FULL_FORMAL_CONTROLLER_AND_PAIR",
+  "status": "PASS_P19_FORMAL_CONTROLLER_INVOICE_AND_LOCAL_PAIR",
   "word": "PR4940 coded controller p=19, pattern IIIIIIIIITTTTTTTTT",
   "raw_complex_root": 0.007578535189897761,
   "guards_at_0.0034": {
@@ -12,7 +12,7 @@
   "conditional_outer_endpoint": "0.0034 (BIT-limited at exactly 0.0034; ledger passes 0.0033999971)",
   "gain_over_00302015": "+12.5% (conditional, formal controller)",
   "physical_pair": "S=QDC^-1Q^-1D^-1, R=QCQ^-1, L=DQC^-1Q^-1D^-1; L(TB)R=standard",
-  "p8_note": "p8 word is not admissible at 0.0034: delta=1.462814",
+  "p8_note": "the removed p8 package was not admissible at 0.0034: delta=1.462814",
   "scope": "p19 full formal controller diagonalization, invoice/guards/ledger and local pair verified; per-stage native adapter, field-map tariff, denominator 13/52, compiler and BIT admission open",
   "p19_full_controller_diagonalization": {
     "outputs": [
