@@ -15,5 +15,5 @@ print('p19 cod',cod,flush=True)
 diagonalized=std is not None and cod is not None and std[0]==cod[0]
 print('p19 diagonalized',diagonalized,flush=True)
 import json
-diag={'p':19,'pattern':pat,'std':{'outputs':[list(x) for x in std[0]],'denominators':std[1]},'cod':{'outputs':[list(x) for x in cod[0]],'denominators':cod[1]},'diagonalized':diagonalized}
+diag={'p':19,'pattern':pat,'std':{'outputs':[list(x) for x in std[0]],'denominators':std[1]},'cod':{'outputs':[list(x) for x in cod[0]],'denominators':cod[1]},'diagonalized':diagonalized,'source':'research/coded-reverse-controller/verify.py diagonalize(19, pattern, coded)'}
 (HERE/'P19_DIAG.json').write_text(json.dumps(diag,indent=2))
