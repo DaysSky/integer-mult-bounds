@@ -47,13 +47,13 @@
     ]
   },
   "scope_status": "changed",
-  "actual_scope": "Full p=8 PR4940 coded reverse controller word (pattern IIIITTT), verified to diagonalize to the standard outputs with the 13-denominator boundary and the p=2 448x448 conjugation, composed with the exact physical S/L/R pair adapter. Raw complex root 0.007926; outer ledger 0.0034 with only the BIT cap failing.",
+  "actual_scope": "p=8 formal PR4940 coded controller and single local S/L/R pair. The p=8 delta guard is 1.462814 at 0.0034, so the p=8 word is not admissible there; the 0.0034 word is the p=19 package.",
   "scope_change_reason": "The local pair is exact and the formal coded controller is exact; composing the verified p=8 controller word with the physical pair gives a complete p=8 supplier word with a better complex root, without claiming the full native per-stage adapter.",
   "bottleneck_link": "The complex supplier root is the binding side; the p=8 coded controller raises it from 0.00302 to 0.007926 and the BIT cap becomes the limiting endpoint.",
   "budget_minutes": 60,
   "stop_rule": "Stop at one exact local pair or the first decisive failed substitution. No full p16 replay, new code family, compiler admission, or kappa claim.",
-  "outcome": "partial",
-  "evidence": "PASS p=8 IIIITTT diagonalization to the standard outputs; PASS p=2 448x448 coded==A Standard A^-1; raw complex 0.007926 (p=8) and 0.007579 (p=19); outer ledger passes 0.0033999971 and at 0.0034 only the BIT cap fails; exact physical S/L/R pair in two implementations with controls.",
+  "outcome": "negative-result",
+  "evidence": "PASS p=8 IIIITTT formal controller diagonalization; PASS p=2 448x448; local S/L/R pair exact; p=8 delta at 0.0034 = 1.462814, fail; the 0.0034 endpoint is retracted for p=8.",
   "author": "DaysSky",
   "ai_assistance": "Prepared with DeepSeek Harness assistance; source functions and data from PR4933/PR4940 and the companion physical-pair package.",
   "open_questions": [

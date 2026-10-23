@@ -2,9 +2,7 @@
   "schema_version": 1,
   "status": "ready",
   "python": "3.12",
-  "requirements": [
-    "numpy==2.3.5"
-  ],
+  "requirements": [],
   "inputs": [
     "research/coded-reverse-controller/verify.py",
     "research/coded-reverse-controller/README.md",
